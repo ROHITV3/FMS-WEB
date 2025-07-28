@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.v3.wam.app-mergeDebugResources-24:/values-v26/values-v26.xml",
+            "outputFile": "com.v3.wam.app-mergeDebugResources-46:/values-v26/values-v26.xml",
             "map": [
                 {
                     "source": "/Users/priyanka/.gradle/caches/8.13/transforms/6bfb780a0bae2e7cdaf000cffe73451c/transformed/appcompat-1.7.0/res/values-v26/values-v26.xml",

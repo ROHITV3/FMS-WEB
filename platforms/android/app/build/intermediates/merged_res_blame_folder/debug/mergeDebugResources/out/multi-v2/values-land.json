@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.v3.wam.app-mergeDebugResources-24:/values-land/values-land.xml",
+            "outputFile": "com.v3.wam.app-mergeDebugResources-46:/values-land/values-land.xml",
             "map": [
                 {
                     "source": "/Users/priyanka/.gradle/caches/8.13/transforms/6bfb780a0bae2e7cdaf000cffe73451c/transformed/appcompat-1.7.0/res/values-land/values-land.xml",
@@ -11,6 +11,23 @@
                         "startOffsets": "55,125,196",
                         "endColumns": "69,70,67",
                         "endOffsets": "120,191,259"
+                    }
+                },
+                {
+                    "source": "/Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,131,203,276",
+                        "endColumns": "75,71,72,71",
+                        "endOffsets": "126,198,271,343"
+                    },
+                    "to": {
+                        "startLines": "5,6,7,8",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "264,340,412,485",
+                        "endColumns": "75,71,72,71",
+                        "endOffsets": "335,407,480,552"
                     }
                 }
             ]

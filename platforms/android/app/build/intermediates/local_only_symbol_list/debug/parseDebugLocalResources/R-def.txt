@@ -1,6 +1,7 @@
 R_DEF: Internal format may change without notice
 local
 anim image_pop_in
+color accent
 color cdv_splashscreen_background
 drawable grid_background
 drawable ic_action_discard_dark
@@ -22,16 +23,27 @@ layout actionbar_done_button
 layout multiselectorgrid
 string activity_name
 string app_name
+string com.crashlytics.android.build_id
+string default_notification_channel_id
+string default_notification_channel_name
+string default_web_client_id
 string discard
 string done
 string error_database
+string firebase_database_url
 string free_version_label
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
 string launcher_name
 string maximum_selection_count_error_header
 string maximum_selection_count_error_message
 string multi_app_name
 string processing_images_header
 string processing_images_message
+string project_id
 string requesting_thumbnails
 style MyTheme
 xml camera_provider_paths

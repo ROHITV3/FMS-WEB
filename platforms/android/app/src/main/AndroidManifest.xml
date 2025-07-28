@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <manifest android:hardwareAccelerated="true" android:versionCode="0401040" android:versionName="4.1.4" xmlns:android="http://schemas.android.com/apk/res/android">
     <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <application android:hardwareAccelerated="true" android:icon="@drawable/ic_cdv_splashscreen" android:label="@string/app_name" android:requestLegacyExternalStorage="true" android:supportsRtl="true" android:usesCleartextTraffic="true">
         <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode" android:exported="true" android:label="WAM3" android:launchMode="singleTop" android:name="MainActivity" android:theme="@style/Theme.AppCompat.NoActionBar" android:windowSoftInputMode="adjustResize">
             <intent-filter android:label="WAM3">
@@ -15,6 +14,25 @@
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/camera_provider_paths" />
         </provider>
         <activity android:label="@string/multi_app_name" android:name="com.synconset.MultiImageChooserActivity" android:theme="@android:style/Theme.Holo.Light" />
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService" />
+        <service android:exported="false" android:name="org.apache.cordova.firebase.FirebasePluginMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <receiver android:name="org.apache.cordova.firebase.OnNotificationOpenReceiver" />
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="org.apache.cordova.firebase.OnNotificationReceiverActivity" android:noHistory="true" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/accent" />
+        <meta-data android:name="com.google.firebase.messaging.default_notification_channel_id" android:value="@string/default_notification_channel_id" />
+        <meta-data android:name="firebase_analytics_collection_enabled" android:value="true" />
+        <meta-data android:name="firebase_performance_collection_enabled" android:value="true" />
+        <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="true" />
+        <meta-data android:name="firebase_messaging_auto_init_enabled" android:value="true" />
+        <meta-data android:name="google_analytics_adid_collection_enabled" android:value="true" />
+        <meta-data android:name="google_analytics_default_allow_analytics_storage" android:value="true" />
+        <meta-data android:name="google_analytics_default_allow_ad_storage" android:value="true" />
+        <meta-data android:name="google_analytics_default_allow_ad_user_data" android:value="true" />
+        <meta-data android:name="google_analytics_default_allow_ad_personalization_signals" android:value="true" />
     </application>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -39,7 +57,6 @@
     <uses-feature android:name="android.hardware.location.gps" android:required="true" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.DELETE_CACHE_FILES" />
     <uses-feature android:name="android.hardware.telephony" android:required="false" />
@@ -60,4 +77,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 </manifest>

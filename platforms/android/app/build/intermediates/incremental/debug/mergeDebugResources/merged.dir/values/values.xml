@@ -1,8 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+    <attr format="boolean" name="barrierAllowsGoneWidgets"/>
+    <attr format="enum" name="barrierDirection">
+        <enum name="left" value="0"/>
+        <enum name="right" value="1"/>
+        <enum name="top" value="2"/>
+        <enum name="bottom" value="3"/>
+        <enum name="start" value="5"/>
+        <enum name="end" value="6"/>
+    </attr>
+    <attr format="reference" name="cardViewStyle"/>
+    <attr format="boolean" name="chainUseRtl"/>
+    <attr format="reference" name="constraintSet"/>
+    <attr format="string" name="constraint_referenced_ids"/>
+    <attr format="reference" name="content"/>
+    <attr format="reference" name="coordinatorLayoutStyle"/>
     <attr format="reference" name="drawerArrowStyle"/>
+    <attr name="emptyVisibility">
+        <enum name="gone" value="0"/>
+        <enum name="invisible" value="1"/>
+    </attr>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
+    <attr format="boolean" name="layout_constrainedHeight"/>
+    <attr format="boolean" name="layout_constrainedWidth"/>
+    <attr format="integer" name="layout_constraintBaseline_creator"/>
+    <attr format="reference|enum" name="layout_constraintBaseline_toBaselineOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="integer" name="layout_constraintBottom_creator"/>
+    <attr format="reference|enum" name="layout_constraintBottom_toBottomOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintBottom_toTopOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference" name="layout_constraintCircle"/>
+    <attr format="integer" name="layout_constraintCircleAngle"/>
+    <attr format="dimension" name="layout_constraintCircleRadius"/>
+    <attr format="string" name="layout_constraintDimensionRatio"/>
+    <attr format="reference|enum" name="layout_constraintEnd_toEndOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintEnd_toStartOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="dimension" name="layout_constraintGuide_begin"/>
+    <attr format="dimension" name="layout_constraintGuide_end"/>
+    <attr format="float" name="layout_constraintGuide_percent"/>
+    <attr name="layout_constraintHeight_default">
+        <enum name="spread" value="0"/>
+        <enum name="wrap" value="1"/>
+        <enum name="percent" value="2"/>
+    </attr>
+    <attr format="dimension|enum" name="layout_constraintHeight_max">
+        <enum name="wrap" value="-2"/>
+    </attr>
+    <attr format="dimension|enum" name="layout_constraintHeight_min">
+        <enum name="wrap" value="-2"/>
+    </attr>
+    <attr format="float" name="layout_constraintHeight_percent"/>
+    <attr format="float" name="layout_constraintHorizontal_bias"/>
+    <attr format="enum" name="layout_constraintHorizontal_chainStyle">
+        <enum name="spread" value="0"/>
+        <enum name="spread_inside" value="1"/>
+        <enum name="packed" value="2"/>
+    </attr>
+    <attr format="float" name="layout_constraintHorizontal_weight"/>
+    <attr format="integer" name="layout_constraintLeft_creator"/>
+    <attr format="reference|enum" name="layout_constraintLeft_toLeftOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintLeft_toRightOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="integer" name="layout_constraintRight_creator"/>
+    <attr format="reference|enum" name="layout_constraintRight_toLeftOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintRight_toRightOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintStart_toEndOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintStart_toStartOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="integer" name="layout_constraintTop_creator"/>
+    <attr format="reference|enum" name="layout_constraintTop_toBottomOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="reference|enum" name="layout_constraintTop_toTopOf">
+        <enum name="parent" value="0"/>
+    </attr>
+    <attr format="float" name="layout_constraintVertical_bias"/>
+    <attr format="enum" name="layout_constraintVertical_chainStyle">
+        <enum name="spread" value="0"/>
+        <enum name="spread_inside" value="1"/>
+        <enum name="packed" value="2"/>
+    </attr>
+    <attr format="float" name="layout_constraintVertical_weight"/>
+    <attr name="layout_constraintWidth_default">
+        <enum name="spread" value="0"/>
+        <enum name="wrap" value="1"/>
+        <enum name="percent" value="2"/>
+    </attr>
+    <attr format="dimension|enum" name="layout_constraintWidth_max">
+        <enum name="wrap" value="-2"/>
+    </attr>
+    <attr format="dimension|enum" name="layout_constraintWidth_min">
+        <enum name="wrap" value="-2"/>
+    </attr>
+    <attr format="float" name="layout_constraintWidth_percent"/>
+    <attr format="dimension" name="layout_editor_absoluteX"/>
+    <attr format="dimension" name="layout_editor_absoluteY"/>
+    <attr format="dimension" name="layout_goneMarginBottom"/>
+    <attr format="dimension" name="layout_goneMarginEnd"/>
+    <attr format="dimension" name="layout_goneMarginLeft"/>
+    <attr format="dimension" name="layout_goneMarginRight"/>
+    <attr format="dimension" name="layout_goneMarginStart"/>
+    <attr format="dimension" name="layout_goneMarginTop"/>
+    <attr name="layout_optimizationLevel">
+        <flag name="none" value="0"/>
+        <flag name="standard" value="7"/> 
+        <flag name="direct" value="1"/>
+        <flag name="barrier" value="2"/>
+        <flag name="chains" value="4"/>
+        <flag name="dimensions" value="8"/>
+        <flag name="groups" value="32"/>
+    </attr>
     <attr format="reference" name="nestedScrollViewStyle"/>
     <attr format="reference" name="postSplashScreenTheme"/>
     <attr format="dimension" name="splashScreenIconSize"/>
@@ -18,6 +145,7 @@
     <color name="abc_search_url_text_normal">#7fa87f</color>
     <color name="abc_search_url_text_pressed">@android:color/black</color>
     <color name="abc_search_url_text_selected">@android:color/black</color>
+    <color name="accent">#FF4081</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
     <color name="androidx_core_ripple_material_light">#1f000000</color>
@@ -32,11 +160,27 @@
     <color name="bright_foreground_inverse_material_light">@color/bright_foreground_material_dark</color>
     <color name="bright_foreground_material_dark">@android:color/white</color>
     <color name="bright_foreground_material_light">@android:color/black</color>
+    <color name="browser_actions_bg_grey">#F5F5F5</color>
+    <color name="browser_actions_divider_color">#1E000000</color>
+    <color name="browser_actions_text_color">#DE000000</color>
+    <color name="browser_actions_title_color">#646464</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="call_notification_answer_color">#1d873b</color>
     <color name="call_notification_decline_color">#d93025</color>
+    <color name="cardview_dark_background">#FF424242</color>
+    <color name="cardview_light_background">#FFFFFFFF</color>
+    <color name="cardview_shadow_end_color">#03000000</color>
+    <color name="cardview_shadow_start_color">#37000000</color>
     <color name="cdv_splashscreen_background">#FFFFFF</color>
+    <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
+    <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
+    <color name="common_google_signin_btn_text_dark_focused">@android:color/black</color>
+    <color name="common_google_signin_btn_text_dark_pressed">@android:color/white</color>
+    <color name="common_google_signin_btn_text_light_default">#90000000</color>
+    <color name="common_google_signin_btn_text_light_disabled">#1F000000</color>
+    <color name="common_google_signin_btn_text_light_focused">#90000000</color>
+    <color name="common_google_signin_btn_text_light_pressed">#DE000000</color>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
@@ -61,6 +205,7 @@
     <color name="material_grey_900">#ff212121</color>
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
+    <color name="notification_material_background_media_default_color">#ff424242</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
@@ -162,6 +307,13 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
+    <item format="float" name="bannerContentWeight" type="dimen">1.0</item>
+    <item format="float" name="bannerWeightSum" type="dimen">1.0</item>
+    <dimen name="browser_actions_context_menu_max_width">500dp</dimen>
+    <dimen name="browser_actions_context_menu_min_padding">20dp</dimen>
+    <dimen name="cardview_compat_inset_shadow">1dp</dimen>
+    <dimen name="cardview_default_elevation">2dp</dimen>
+    <dimen name="cardview_default_radius">2dp</dimen>
     <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
     <dimen name="compat_button_inset_vertical_material">6dp</dimen>
     <dimen name="compat_button_padding_horizontal_material">8dp</dimen>
@@ -169,6 +321,8 @@
     <dimen name="compat_control_corner_material">2dp</dimen>
     <dimen name="compat_notification_large_icon_max_height">320dp</dimen>
     <dimen name="compat_notification_large_icon_max_width">320dp</dimen>
+    <item format="float" name="dialogHeightPct" type="dimen">0.80</item>
+    <item format="float" name="dialogWidthPct" type="dimen">0.85</item>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
@@ -178,6 +332,8 @@
     <item format="float" name="hint_alpha_material_light" type="dimen">0.38</item>
     <item format="float" name="hint_pressed_alpha_material_dark" type="dimen">0.70</item>
     <item format="float" name="hint_pressed_alpha_material_light" type="dimen">0.54</item>
+    <dimen name="minImageHeight">50dp</dimen>
+    <dimen name="minImageWidth">50dp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
     <dimen name="notification_action_text_size">13sp</dimen>
     <dimen name="notification_big_circle_margin">12dp</dimen>
@@ -193,6 +349,7 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="paddingSmall">16dp</dimen>
     <dimen name="splashscreen_icon_mask_size_no_background">410dp</dimen>
     <dimen name="splashscreen_icon_mask_size_with_background">342dp</dimen>
     <dimen name="splashscreen_icon_mask_stroke_no_background">109dp</dimen>
@@ -200,6 +357,10 @@
     <dimen name="splashscreen_icon_size">?splashScreenIconSize</dimen>
     <dimen name="splashscreen_icon_size_no_background">288dp</dimen>
     <dimen name="splashscreen_icon_size_with_background">240dp</dimen>
+    <dimen name="subtitle_corner_radius">2dp</dimen>
+    <dimen name="subtitle_outline_width">2dp</dimen>
+    <dimen name="subtitle_shadow_offset">2dp</dimen>
+    <dimen name="subtitle_shadow_radius">2dp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
     <dimen name="tooltip_horizontal_padding">16dp</dimen>
     <dimen name="tooltip_margin">8dp</dimen>
@@ -248,6 +409,7 @@
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
     <item name="fragment_container_view_tag" type="id"/>
+    <item name="glide_custom_view_target_tag" type="id"/>
     <item name="home" type="id"/>
     <item name="line1" type="id"/>
     <item name="line3" type="id"/>
@@ -283,6 +445,7 @@
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="config_tooltipAnimTime">150</integer>
     <integer name="default_icon_animation_duration">10000</integer>
+    <integer name="google_play_services_version">12451000</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
@@ -312,6 +475,8 @@
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="activity_name">@string/launcher_name</string>
+    <string name="android.credentials.TYPE_PASSWORD_CREDENTIAL">Password</string>
+    <string name="androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL">Passkey</string>
     <string name="androidx_startup" translatable="false">androidx.startup</string>
     <string name="app_name">WAM3</string>
     <string name="call_notification_answer_action">Answer</string>
@@ -321,19 +486,59 @@
     <string name="call_notification_incoming_text">Incoming call</string>
     <string name="call_notification_ongoing_text">Ongoing call</string>
     <string name="call_notification_screening_text">Screening an incoming call</string>
+    <string name="card_content_descriptor">card</string>
+    <string name="com.crashlytics.android.build_id" ns2:ignore="UnusedResources,TypographyDashes" translatable="false">00000000000000000000000000000000</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
+    <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t work unless you enable Google Play services.</string>
+    <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
+    <string msgid="7153882981874058840" name="common_google_play_services_install_button">Install</string>
+    <string name="common_google_play_services_install_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are missing from your device.</string>
+    <string msgid="7215213145546190223" name="common_google_play_services_install_title">Get Google Play services</string>
+    <string name="common_google_play_services_notification_channel_name">Google Play services availability</string>
+    <string name="common_google_play_services_notification_ticker">Google Play services error</string>
+    <string name="common_google_play_services_unknown_issue"><ns1:g id="app_name">%1$s</ns1:g> is having trouble with Google Play services. Please try again.</string>
+    <string name="common_google_play_services_unsupported_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are not supported by your device.</string>
+    <string msgid="6556509956452265614" name="common_google_play_services_update_button">Update</string>
+    <string msgid="9053896323427875356" name="common_google_play_services_update_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run unless you update Google Play services.</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">Update Google Play services</string>
+    <string name="common_google_play_services_updating_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are currently updating.</string>
+    <string name="common_google_play_services_wear_update_text">New version of Google Play services needed. It will update itself shortly.</string>
+    <string name="common_open_on_phone">Open on phone</string>
+    <string name="common_signin_button_text">Sign in</string>
+    <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="copy_toast_msg">Link copied to clipboard</string>
+    <string name="default_notification_channel_id">fcm_default_channel</string>
+    <string name="default_notification_channel_name">Default</string>
+    <string name="default_web_client_id" translatable="false">1050943357176-tevgproetkmji1le4vd892a28u2gkntg.apps.googleusercontent.com</string>
     <string name="discard">Cancel</string>
     <string name="done">OK</string>
     <string name="error_database">There was an error opening the images database. Please report the problem.</string>
+    <string name="fallback_menu_item_copy_link">Copy link</string>
+    <string name="fallback_menu_item_open_in_browser">Open in browser</string>
+    <string name="fallback_menu_item_share_link">Share link</string>
+    <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
+    <string name="firebase_database_url" translatable="false">https://v3nity-wam3-push.firebaseio.com</string>
     <string name="free_version_label">Free version - Images left: %d</string>
+    <string name="gcm_defaultSenderId" translatable="false">1050943357176</string>
+    <string name="google_api_key" translatable="false">AIzaSyBc_celmcOgUo-3SF60Va_3Tr-iCJTvdi0</string>
+    <string name="google_app_id" translatable="false">1:1050943357176:android:084297b8fad58c3a3e3b0d</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBc_celmcOgUo-3SF60Va_3Tr-iCJTvdi0</string>
+    <string name="google_storage_bucket" translatable="false">v3nity-wam3-push.appspot.com</string>
     <string name="launcher_name">@string/app_name</string>
     <string name="maximum_selection_count_error_header">Limit reached</string>
     <string name="maximum_selection_count_error_message">You can only select %d photos at once.</string>
+    <string name="modal_content_descriptor">modal</string>
+    <string name="modal_inner_content_descriptor">modal inner</string>
     <string name="multi_app_name">MultiImageChooser</string>
     <string name="processing_images_header">Processing Images</string>
     <string name="processing_images_message">This may take a few moments</string>
+    <string name="project_id" translatable="false">v3nity-wam3-push</string>
     <string name="requesting_thumbnails">Requesting thumbnails, please be patient</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="tagmanager_preview_dialog_button">Continue</string>
+    <string name="tagmanager_preview_dialog_message">Preview mode updated.</string>
+    <string name="tagmanager_preview_dialog_title">Preview</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
@@ -359,6 +564,13 @@
     <style name="Base.Animation.AppCompat.Tooltip" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/abc_tooltip_enter</item>
         <item name="android:windowExitAnimation">@anim/abc_tooltip_exit</item>
+    </style>
+    <style name="Base.CardView" parent="android:Widget">
+        <item name="cardCornerRadius">@dimen/cardview_default_radius</item>
+        <item name="cardElevation">@dimen/cardview_default_elevation</item>
+        <item name="cardMaxElevation">@dimen/cardview_default_elevation</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="cardPreventCornerOverlap">true</item>
     </style>
     <style name="Base.DialogWindowTitle.AppCompat" parent="android:Widget">
         <item name="android:maxLines">1</item>
@@ -1429,6 +1641,99 @@
     </style>
     <style name="Base.v21.Theme.SplashScreen.Light" parent="android:Theme.DeviceDefault.Light.NoActionBar">
     </style>
+    <style name="CardView" parent="Base.CardView">
+    </style>
+    <style name="CardView.Dark">
+        <item name="cardBackgroundColor">@color/cardview_dark_background</item>
+    </style>
+    <style name="CardView.Light">
+        <item name="cardBackgroundColor">@color/cardview_light_background</item>
+    </style>
+    <style name="FiamUI" parent="Theme.AppCompat.Light"/>
+    <style name="FiamUI.Banner" parent="@style/FiamUI">
+        
+    </style>
+    <style name="FiamUI.Card" parent="@style/FiamUI">
+        
+    </style>
+    <style name="FiamUI.Card.ActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">right</item>
+        <item name="android:padding">@dimen/paddingSmall</item>
+    </style>
+    <style name="FiamUI.Card.ActionBar.Button" parent="@style/Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <style name="FiamUI.Card.ImageView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:minHeight">@dimen/minImageHeight</item>
+        <item name="android:minWidth">@dimen/minImageWidth</item>
+        <item name="android:src">@drawable/image_placeholder</item>
+    </style>
+    <style name="FiamUI.Card.Scroll">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/paddingSmall</item>
+        <item name="android:paddingLeft">@dimen/paddingSmall</item>
+        <item name="android:paddingRight">@dimen/paddingSmall</item>
+    </style>
+    <style name="FiamUI.CollapseButton" parent="FiamUI.CollapseButtonBase">
+        
+    </style>
+    <style name="FiamUI.CollapseButtonBase" parent="@style/Base.Widget.AppCompat.Button">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/collapse</item>
+
+        <item name="android:layout_marginRight">-12dp</item>
+        <item name="android:layout_marginTop">-12dp</item>
+    </style>
+    <style name="FiamUI.Modal" parent="@style/FiamUI">
+        
+    </style>
+    <style name="FiamUI.ModalBody" parent="@style/Base.TextAppearance.AppCompat.Body1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="FiamUI.ModalImageView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:minHeight">@dimen/minImageHeight</item>
+        <item name="android:minWidth">@dimen/minImageWidth</item>
+        <item name="android:src">@drawable/image_placeholder</item>
+    </style>
+    <style name="FiamUI.ResizableImageView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:minHeight">@dimen/minImageHeight</item>
+        <item name="android:minWidth">@dimen/minImageWidth</item>
+        <item name="android:src">@drawable/image_placeholder</item>
+    </style>
+    <style name="FiamUI.Text.BannerTitle" parent="@style/Base.TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="FiamUI.Text.Title" parent="@style/Base.TextAppearance.AppCompat.Headline">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
     <style name="MyTheme" parent="android:Theme.Holo.Light">
     </style>
     <style name="Platform.AppCompat" parent="android:Theme.Holo">
@@ -1707,12 +2012,17 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
+    <style name="TextAppearance.Compat.Notification.Info.Media"/>
     <style name="TextAppearance.Compat.Notification.Line2" parent="TextAppearance.Compat.Notification.Info"/>
+    <style name="TextAppearance.Compat.Notification.Line2.Media" parent="TextAppearance.Compat.Notification.Info.Media"/>
+    <style name="TextAppearance.Compat.Notification.Media"/>
     <style name="TextAppearance.Compat.Notification.Time">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
+    <style name="TextAppearance.Compat.Notification.Time.Media"/>
     <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
+    <style name="TextAppearance.Compat.Notification.Title.Media"/>
     <style name="TextAppearance.Widget.AppCompat.ExpandedMenu.Item" parent="Base.TextAppearance.Widget.AppCompat.ExpandedMenu.Item">
     </style>
     <style name="TextAppearance.Widget.AppCompat.Toolbar.Subtitle" parent="Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
@@ -1749,6 +2059,18 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    <style name="Theme.Hidden" parent="@android:style/Theme.DeviceDefault">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+    <style name="Theme.PlayCore.Transparent" parent="android:Theme">
+<item name="android:windowIsTranslucent">true</item>
+<item name="android:windowBackground">@android:color/transparent</item>
+<item name="android:windowContentOverlay">@null</item>
+<item name="android:windowNoTitle">true</item>
+<item name="android:windowIsFloating">true</item>
+<item name="android:backgroundDimEnabled">false</item>
+</style>
     <style name="Theme.SplashScreen" parent="Theme.SplashScreen.Common">
         <item name="postSplashScreenTheme">?android:attr/theme</item>
         <item name="windowSplashScreenAnimationDuration">
@@ -1884,6 +2206,9 @@
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
     <style name="Widget.Compat.NotificationActionContainer" parent=""/>
     <style name="Widget.Compat.NotificationActionText" parent=""/>
+    <style name="Widget.Support.CoordinatorLayout" parent="android:Widget">
+        <item name="statusBarBackground">#000000</item>
+    </style>
     <declare-styleable name="ActionBar">
         
         <attr name="navigationMode">
@@ -2535,6 +2860,34 @@
         
         <attr format="boolean" name="shortcutMatchRequired"/>
     </declare-styleable>
+    <declare-styleable name="CardView">
+        
+        <attr format="color" name="cardBackgroundColor"/>
+        
+        <attr format="dimension" name="cardCornerRadius"/>
+        
+        <attr format="dimension" name="cardElevation"/>
+        
+        <attr format="dimension" name="cardMaxElevation"/>
+        
+        <attr format="boolean" name="cardUseCompatPadding"/>
+        
+        <attr format="boolean" name="cardPreventCornerOverlap"/>
+        
+        <attr format="dimension" name="contentPadding"/>
+        
+        <attr format="dimension" name="contentPaddingLeft"/>
+        
+        <attr format="dimension" name="contentPaddingRight"/>
+        
+        <attr format="dimension" name="contentPaddingTop"/>
+        
+        <attr format="dimension" name="contentPaddingBottom"/>
+        
+        <attr name="android:minWidth"/>
+        
+        <attr name="android:minHeight"/>
+    </declare-styleable>
     <declare-styleable name="CheckedTextView">
         <attr name="android:checkMark"/>
         
@@ -2599,6 +2952,99 @@
             <!-- Combines the tint and icon color and alpha channels, clamping the
                  result to valid color values. Saturate(S + D) -->
             <enum name="add" value="16"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ConstraintLayout_Layout"><attr name="android:orientation"/><attr name="android:minWidth"/><attr name="android:minHeight"/><attr name="android:maxWidth"/><attr name="android:maxHeight"/><attr name="layout_optimizationLevel"/><attr name="constraintSet"/><attr name="barrierDirection"/><attr name="barrierAllowsGoneWidgets"/><attr name="constraint_referenced_ids"/><attr name="chainUseRtl"/><attr name="layout_constraintCircle"/><attr name="layout_constraintCircleRadius"/><attr name="layout_constraintCircleAngle"/><attr name="layout_constraintGuide_begin"/><attr name="layout_constraintGuide_end"/><attr name="layout_constraintGuide_percent"/><attr name="layout_constraintLeft_toLeftOf"/><attr name="layout_constraintLeft_toRightOf"/><attr name="layout_constraintRight_toLeftOf"/><attr name="layout_constraintRight_toRightOf"/><attr name="layout_constraintTop_toTopOf"/><attr name="layout_constraintTop_toBottomOf"/><attr name="layout_constraintBottom_toTopOf"/><attr name="layout_constraintBottom_toBottomOf"/><attr name="layout_constraintBaseline_toBaselineOf"/><attr name="layout_constraintStart_toEndOf"/><attr name="layout_constraintStart_toStartOf"/><attr name="layout_constraintEnd_toStartOf"/><attr name="layout_constraintEnd_toEndOf"/><attr name="layout_goneMarginLeft"/><attr name="layout_goneMarginTop"/><attr name="layout_goneMarginRight"/><attr name="layout_goneMarginBottom"/><attr name="layout_goneMarginStart"/><attr name="layout_goneMarginEnd"/><attr name="layout_constrainedWidth"/><attr name="layout_constrainedHeight"/><attr name="layout_constraintHorizontal_bias"/><attr name="layout_constraintVertical_bias"/><attr name="layout_constraintWidth_default"/><attr name="layout_constraintHeight_default"/><attr name="layout_constraintWidth_min"/><attr name="layout_constraintWidth_max"/><attr name="layout_constraintWidth_percent"/><attr name="layout_constraintHeight_min"/><attr name="layout_constraintHeight_max"/><attr name="layout_constraintHeight_percent"/><attr name="layout_constraintLeft_creator"/><attr name="layout_constraintTop_creator"/><attr name="layout_constraintRight_creator"/><attr name="layout_constraintBottom_creator"/><attr name="layout_constraintBaseline_creator"/><attr name="layout_constraintDimensionRatio"/><attr name="layout_constraintHorizontal_weight"/><attr name="layout_constraintVertical_weight"/><attr name="layout_constraintHorizontal_chainStyle"/><attr name="layout_constraintVertical_chainStyle"/><attr name="layout_editor_absoluteX"/><attr name="layout_editor_absoluteY"/></declare-styleable>
+    <declare-styleable name="ConstraintLayout_placeholder"><attr name="emptyVisibility"/><attr name="content"/></declare-styleable>
+    <declare-styleable name="ConstraintSet"><attr name="android:orientation"/><attr name="android:id"/><attr name="android:visibility"/><attr name="android:alpha"/><attr name="android:elevation"/><attr name="android:rotation"/><attr name="android:rotationX"/><attr name="android:rotationY"/><attr name="android:scaleX"/><attr name="android:scaleY"/><attr name="android:transformPivotX"/><attr name="android:transformPivotY"/><attr name="android:translationX"/><attr name="android:translationY"/><attr name="android:translationZ"/><attr name="android:layout_width"/><attr name="android:layout_height"/><attr name="android:layout_marginStart"/><attr name="android:layout_marginBottom"/><attr name="android:layout_marginTop"/><attr name="android:layout_marginEnd"/><attr name="android:layout_marginLeft"/><attr name="android:layout_marginRight"/><attr name="layout_constraintCircle"/><attr name="layout_constraintCircleRadius"/><attr name="layout_constraintCircleAngle"/><attr name="layout_constraintGuide_begin"/><attr name="layout_constraintGuide_end"/><attr name="layout_constraintGuide_percent"/><attr name="layout_constraintLeft_toLeftOf"/><attr name="layout_constraintLeft_toRightOf"/><attr name="layout_constraintRight_toLeftOf"/><attr name="layout_constraintRight_toRightOf"/><attr name="layout_constraintTop_toTopOf"/><attr name="layout_constraintTop_toBottomOf"/><attr name="layout_constraintBottom_toTopOf"/><attr name="layout_constraintBottom_toBottomOf"/><attr name="layout_constraintBaseline_toBaselineOf"/><attr name="layout_constraintStart_toEndOf"/><attr name="layout_constraintStart_toStartOf"/><attr name="layout_constraintEnd_toStartOf"/><attr name="layout_constraintEnd_toEndOf"/><attr name="layout_goneMarginLeft"/><attr name="layout_goneMarginTop"/><attr name="layout_goneMarginRight"/><attr name="layout_goneMarginBottom"/><attr name="layout_goneMarginStart"/><attr name="layout_goneMarginEnd"/><attr name="layout_constrainedWidth"/><attr name="layout_constrainedHeight"/><attr name="layout_constraintHorizontal_bias"/><attr name="layout_constraintVertical_bias"/><attr name="layout_constraintWidth_default"/><attr name="layout_constraintHeight_default"/><attr name="layout_constraintWidth_min"/><attr name="layout_constraintWidth_max"/><attr name="layout_constraintWidth_percent"/><attr name="layout_constraintHeight_min"/><attr name="layout_constraintHeight_max"/><attr name="layout_constraintHeight_percent"/><attr name="layout_constraintLeft_creator"/><attr name="layout_constraintTop_creator"/><attr name="layout_constraintRight_creator"/><attr name="layout_constraintBottom_creator"/><attr name="layout_constraintBaseline_creator"/><attr name="layout_constraintDimensionRatio"/><attr name="layout_constraintHorizontal_weight"/><attr name="layout_constraintVertical_weight"/><attr name="layout_constraintHorizontal_chainStyle"/><attr name="layout_constraintVertical_chainStyle"/><attr name="layout_editor_absoluteX"/><attr name="layout_editor_absoluteY"/><attr name="barrierDirection"/><attr name="constraint_referenced_ids"/><attr name="android:maxHeight"/><attr name="android:maxWidth"/><attr name="android:minHeight"/><attr name="android:minWidth"/><attr name="barrierAllowsGoneWidgets"/><attr name="chainUseRtl"/></declare-styleable>
+    <declare-styleable name="CoordinatorLayout">
+        
+        <attr format="reference" name="keylines"/>
+        
+        <attr format="color|reference" name="statusBarBackground"/>
+    </declare-styleable>
+    <declare-styleable name="CoordinatorLayout_Layout">
+        <attr name="android:layout_gravity"/>
+        
+        <attr format="string" name="layout_behavior"/>
+        
+        <attr format="reference" name="layout_anchor"/>
+        
+        <attr format="integer" name="layout_keyline"/>
+
+        
+        <attr name="layout_anchorGravity">
+            <!-- Push object to the top of its container, not changing its size. -->
+            <flag name="top" value="0x30"/>
+            <!-- Push object to the bottom of its container, not changing its size. -->
+            <flag name="bottom" value="0x50"/>
+            <!-- Push object to the left of its container, not changing its size. -->
+            <flag name="left" value="0x03"/>
+            <!-- Push object to the right of its container, not changing its size. -->
+            <flag name="right" value="0x05"/>
+            <!-- Place object in the vertical center of its container, not changing its size. -->
+            <flag name="center_vertical" value="0x10"/>
+            <!-- Grow the vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill_vertical" value="0x70"/>
+            <!-- Place object in the horizontal center of its container, not changing its size. -->
+            <flag name="center_horizontal" value="0x01"/>
+            <!-- Grow the horizontal size of the object if needed so it completely fills its container. -->
+            <flag name="fill_horizontal" value="0x07"/>
+            <!-- Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. -->
+            <flag name="center" value="0x11"/>
+            <!-- Grow the horizontal and vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill" value="0x77"/>
+            <!-- Additional option that can be set to have the top and/or bottom edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the vertical gravity: a top gravity will clip the bottom
+                 edge, a bottom gravity will clip the top edge, and neither will clip both edges. -->
+            <flag name="clip_vertical" value="0x80"/>
+            <!-- Additional option that can be set to have the left and/or right edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the horizontal gravity: a left gravity will clip the right
+                 edge, a right gravity will clip the left edge, and neither will clip both edges. -->
+            <flag name="clip_horizontal" value="0x08"/>
+            <!-- Push object to the beginning of its container, not changing its size. -->
+            <flag name="start" value="0x00800003"/>
+            <!-- Push object to the end of its container, not changing its size. -->
+            <flag name="end" value="0x00800005"/>
+        </attr>
+
+        
+        <attr format="enum" name="layout_insetEdge">
+            <!-- Don't inset. -->
+            <enum name="none" value="0x0"/>
+            <!-- Inset the top edge. -->
+            <enum name="top" value="0x30"/>
+            <!-- Inset the bottom edge. -->
+            <enum name="bottom" value="0x50"/>
+            <!-- Inset the left edge. -->
+            <enum name="left" value="0x03"/>
+            <!-- Inset the right edge. -->
+            <enum name="right" value="0x05"/>
+            <!-- Inset the start edge. -->
+            <enum name="start" value="0x00800003"/>
+            <!-- Inset the end edge. -->
+            <enum name="end" value="0x00800005"/>
+        </attr>
+        
+        <attr name="layout_dodgeInsetEdges">
+            <!-- Don't dodge any edges -->
+            <flag name="none" value="0x0"/>
+            <!-- Dodge the top inset edge. -->
+            <flag name="top" value="0x30"/>
+            <!-- Dodge the bottom inset edge. -->
+            <flag name="bottom" value="0x50"/>
+            <!-- Dodge the left inset edge. -->
+            <flag name="left" value="0x03"/>
+            <!-- Dodge the right inset edge. -->
+            <flag name="right" value="0x05"/>
+            <!-- Dodge the start inset edge. -->
+            <flag name="start" value="0x00800003"/>
+            <!-- Dodge the end inset edge. -->
+            <flag name="end" value="0x00800005"/>
+            <!-- Dodge all the inset edges. -->
+            <flag name="all" value="0x77"/>
         </attr>
     </declare-styleable>
     <declare-styleable name="DrawerArrowToggle">
@@ -2721,6 +3167,7 @@
         
         <attr name="android:color"/>
     </declare-styleable>
+    <declare-styleable name="LinearConstraintLayout"><attr name="android:orientation"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat">
         
         <attr name="android:orientation"/>
@@ -2757,6 +3204,19 @@
         
         <attr name="android:dropDownHorizontalOffset"/>
     </declare-styleable>
+    <declare-styleable name="LoadingImageView"><attr name="imageAspectRatioAdjust">
+<enum name="none" value="0"/>
+
+<enum name="adjust_width" value="1"/>
+
+<enum name="adjust_height" value="2"/>
+
+</attr>
+
+<attr format="float" name="imageAspectRatio"/>
+
+<attr format="boolean" name="circleCrop"/>
+</declare-styleable>
     <declare-styleable name="MenuGroup">
 
         
@@ -2922,6 +3382,10 @@
         
         <attr format="reference" name="subMenuArrow"/>
     </declare-styleable>
+    <declare-styleable name="ModalLayout">
+    <attr format="float" name="maxWidthPct" type="dimen"/>
+    <attr format="float" name="maxHeightPct" type="dimen"/>
+  </declare-styleable>
     <declare-styleable name="PopupWindow">
         
         <attr format="boolean" name="overlapAnchor"/>
@@ -2973,6 +3437,25 @@
         <attr format="reference" name="submitBackground"/>
         <attr name="android:focusable"/>
     </declare-styleable>
+    <declare-styleable name="SignInButton"><attr format="reference" name="buttonSize">
+<enum name="standard" value="0"/>
+
+<enum name="wide" value="1"/>
+
+<enum name="icon_only" value="2"/>
+
+</attr>
+<attr format="reference" name="colorScheme">
+<enum name="dark" value="0"/>
+
+<enum name="light" value="1"/>
+
+<enum name="auto" value="2"/>
+
+</attr>
+
+<attr format="reference|string" name="scopeUris"/>
+</declare-styleable>
     <declare-styleable name="Spinner">
         
         <attr name="android:prompt"/>

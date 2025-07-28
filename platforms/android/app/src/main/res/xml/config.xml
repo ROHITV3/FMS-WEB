@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget android-versionCode="0401040" id="com.v3.wam" version="4.1.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="ImagePicker">
+        <param name="android-package" value="com.synconset.ImagePicker" />
+    </feature>
+    <feature name="FirebasePlugin">
+        <param name="android-package" value="org.apache.cordova.firebase.FirebasePlugin" />
+        <param name="onload" value="true" />
+    </feature>
     <name>WAM3</name>
     <description>Sample Apache Cordova App</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
@@ -19,12 +29,8 @@
     <allow-intent href="market:*" />
     <icon src="assets/logo.png" />
     <preference name="loglevel" value="DEBUG" />
+    <preference name="FIREBASE_MESSAGING_IMMEDIATE_PAYLOAD_DELIVERY" value="false" />
+    <preference name="GradlePluginGoogleServicesEnabled" value="true" />
     <preference name="AndroidInsecureFileModeEnabled" value="true" />
     <preference name="AndroidXEnabled" value="true" />
-    <feature name="Camera">
-        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
-    </feature>
-    <feature name="ImagePicker">
-        <param name="android-package" value="com.synconset.ImagePicker" />
-    </feature>
 </widget>

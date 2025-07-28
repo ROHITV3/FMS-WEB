@@ -298,7 +298,7 @@
   "cordova-plugin-firebasex": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-firebasex@^17.0.0"
+      "id": "cordova-plugin-firebasex"
     },
     "is_top_level": true,
     "variables": {}

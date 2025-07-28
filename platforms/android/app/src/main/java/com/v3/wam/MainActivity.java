@@ -21,6 +21,8 @@ package com.v3.wam;
 
 import android.os.Bundle;
 
+import com.google.firebase.FirebaseApp;
+
 import org.apache.cordova.*;
 
 public class MainActivity extends CordovaActivity
@@ -28,6 +30,7 @@ public class MainActivity extends CordovaActivity
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+        FirebaseApp.initializeApp(this);
         super.onCreate(savedInstanceState);
 
         // enable Cordova apps to be started in the background

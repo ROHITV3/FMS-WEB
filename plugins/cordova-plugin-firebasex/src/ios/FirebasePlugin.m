@@ -25,7 +25,7 @@
 @synthesize notificationStack;
 
 static NSString*const LOG_TAG = @"FirebasePlugin[native]";
-static NSInteger const kNotificationStackSize = 10;
+static NSInteger const kNotificationStackSize = 32;
 static NSString*const FIREBASE_CRASHLYTICS_COLLECTION_ENABLED = @"FIREBASE_CRASHLYTICS_COLLECTION_ENABLED"; //preference
 static NSString*const FirebaseCrashlyticsCollectionEnabled = @"FirebaseCrashlyticsCollectionEnabled"; //plist
 static NSString*const FIREBASE_ANALYTICS_COLLECTION_ENABLED = @"FIREBASE_ANALYTICS_COLLECTION_ENABLED";
@@ -43,6 +43,7 @@ static FirebasePlugin* firebasePlugin;
 static BOOL pluginInitialized = NO;
 static BOOL registeredForRemoteNotifications = NO;
 static BOOL openSettingsEmitted = NO;
+static BOOL immediateMessagePayloadDelivery = NO;
 static NSMutableDictionary* authCredentials;
 static NSString* currentNonce; // used for Apple Sign In
 static FIRFirestore* firestore;
@@ -82,6 +83,7 @@ static NSMutableArray* pendingGlobalJS = nil;
     @try {
         preferences = [NSUserDefaults standardUserDefaults];
         googlePlist = [NSMutableDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"GoogleService-Info" ofType:@"plist"]];
+        immediateMessagePayloadDelivery = [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"FIREBASE_MESSAGING_IMMEDIATE_PAYLOAD_DELIVERY"] boolValue];
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationLaunchedWithUrl:) name:CDVPluginHandleOpenURLNotification object:nil];
 
@@ -571,17 +573,20 @@ static NSMutableArray* pendingGlobalJS = nil;
 }
 
 - (void)onMessageReceived:(CDVInvokedUrlCommand *)command {
-    @try {
-        self.notificationCallbackId = command.callbackId;
+    self.notificationCallbackId = command.callbackId;
+    [self sendPendingNotifications];
+}
 
-        if (self.notificationStack != nil && [self.notificationStack count]) {
+- (void)sendPendingNotifications {
+    if (self.notificationCallbackId != nil && self.notificationStack != nil && [self.notificationStack count]) {
+        @try {
             for (NSDictionary *userInfo in self.notificationStack) {
                 [self sendNotification:userInfo];
             }
             [self.notificationStack removeAllObjects];
+        } @catch (NSException *exception) {
+            [self handlePluginExceptionWithoutContext:exception];
         }
-    }@catch (NSException *exception) {
-        [self handlePluginExceptionWithContext:exception :command];
     }
 }
 
@@ -624,7 +629,7 @@ static NSMutableArray* pendingGlobalJS = nil;
             [self _logMessage:@"Message handled by custom receiver"];
             return;
         }
-        if (self.notificationCallbackId != nil) {
+        if (self.notificationCallbackId != nil && ([AppDelegate.instance.applicationInBackground isEqual:@(NO)] || immediateMessagePayloadDelivery )) {
             [self sendPluginDictionaryResultAndKeepCallback:userInfo command:self.commandDelegate callbackId:self.notificationCallbackId];
         } else {
             if (!self.notificationStack) {
@@ -1579,7 +1584,7 @@ static NSMutableArray* pendingGlobalJS = nil;
         if([self userNotSignedInError:command]) return;
         FIRUser* user = [FIRAuth auth].currentUser;
 
-        [user getIDTokenResultWithCompletion:^(FIRAuthTokenResult * _Nullable tokenResult, NSError * _Nullable error) {
+        [user getIDTokenResultForcingRefresh:YES completion:^(FIRAuthTokenResult * _Nullable tokenResult, NSError * _Nullable error) {
             if(error != nil){
                 [self sendPluginErrorWithError:error command:command];
                 return;
@@ -2969,7 +2974,41 @@ static NSMutableArray* pendingGlobalJS = nil;
         [result setValue:secondFactors forKey:@"secondFactors"];
 
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:result];
-    }else{
+    }else if (error.code == FIRAuthErrorCodeCredentialAlreadyInUse){
+        NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:[error userInfo]];
+        FIROAuthCredential* updatedCredential = userInfo[FIRAuthErrorUserInfoUpdatedCredentialKey];
+        NSMutableDictionary *responseDict = [[NSMutableDictionary alloc] init];
+
+        [responseDict setValue:@(error.code) forKey:@"errorCode"];
+        [responseDict setValue:error.domain forKey:@"errorDomain"];
+        [responseDict setValue:userInfo.description forKey:@"errorDescription"];
+        if (userInfo[FIRAuthErrorUserInfoNameKey]) {
+            [responseDict setValue:userInfo[FIRAuthErrorUserInfoNameKey] forKey:FIRAuthErrorUserInfoNameKey];
+        }
+        if (userInfo[FIRAuthErrorUserInfoEmailKey]) {
+            [responseDict setValue:userInfo[FIRAuthErrorUserInfoEmailKey] forKey:FIRAuthErrorUserInfoEmailKey];
+        }
+        if (userInfo[FIRAuthErrorUserInfoNameKey]) {
+            [responseDict setValue:userInfo[FIRAuthErrorUserInfoNameKey] forKey:FIRAuthErrorUserInfoNameKey];
+        }
+
+        if (updatedCredential) {
+            NSMutableDictionary *updatedCredentialDict = [[NSMutableDictionary alloc] init];
+            if (updatedCredential.provider) {
+                [updatedCredentialDict setValue:updatedCredential.provider forKey:@"provider"];
+            }
+            if (updatedCredential.IDToken) {
+                [updatedCredentialDict setValue:updatedCredential.IDToken forKey:@"IDToken"];
+            }
+            NSNumber* key = [self saveAuthCredential:updatedCredential];
+            [updatedCredentialDict setValue:key forKey:@"id"];
+            [responseDict setValue:updatedCredentialDict forKey:@"updatedCredential"];
+        }
+
+        // TODO: Make messageAsDictionary work with error status- currently it returns undefined
+        NSString *jsonString = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:responseDict options:0 error:nil] encoding:NSUTF8StringEncoding];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:jsonString];
+    } else {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:error.description];
     }
     return pluginResult;

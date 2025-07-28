@@ -174,6 +174,7 @@ public class FirebasePlugin extends CordovaPlugin {
     protected static final int POST_NOTIFICATIONS_PERMISSION_REQUEST_ID = 1;
 
     private static boolean inBackground = true;
+    private static boolean immediateMessagePayloadDelivery = false;
     private static ArrayList<Bundle> notificationStack = null;
     private static CallbackContext notificationCallbackContext;
     private static CallbackContext tokenRefreshCallbackContext;
@@ -236,6 +237,8 @@ public class FirebasePlugin extends CordovaPlugin {
                     if (getMetaDataFromManifest(GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS)) {
                         setPreference(GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS, true);
                     }
+
+                    immediateMessagePayloadDelivery = getPluginVariableFromConfigXml("FIREBASE_MESSAGING_IMMEDIATE_PAYLOAD_DELIVERY").equals("true");
 
                     FirebaseApp.initializeApp(applicationContext);
                     mFirebaseAnalytics = FirebaseAnalytics.getInstance(applicationContext);
@@ -594,6 +597,9 @@ public class FirebasePlugin extends CordovaPlugin {
     @Override
     public void onResume(boolean multitasking) {
         FirebasePlugin.inBackground = false;
+        if (FirebasePlugin.notificationCallbackContext != null) {
+            sendPendingNotifications();
+        }
     }
 
     @Override
@@ -611,6 +617,7 @@ public class FirebasePlugin extends CordovaPlugin {
         cordovaActivity = null;
         cordovaInterface = null;
         applicationContext = null;
+        onReset();
         super.onDestroy();
     }
 
@@ -664,11 +671,23 @@ public class FirebasePlugin extends CordovaPlugin {
 
     private void onMessageReceived(final CallbackContext callbackContext) {
         FirebasePlugin.notificationCallbackContext = callbackContext;
+        sendPendingNotifications();
+    }
+
+    private synchronized void sendPendingNotifications() {
         if (FirebasePlugin.notificationStack != null) {
-            for (Bundle bundle : FirebasePlugin.notificationStack) {
-                FirebasePlugin.sendMessage(bundle, applicationContext);
-            }
-            FirebasePlugin.notificationStack.clear();
+            this.cordova.getThreadPool().execute(new Runnable() {
+                public void run() {
+                    try {
+                        for (Bundle bundle : FirebasePlugin.notificationStack) {
+                            FirebasePlugin.sendMessage(bundle, applicationContext);
+                        }
+                        FirebasePlugin.notificationStack.clear();
+                    } catch (Exception e) {
+                        handleExceptionWithoutContext(e);
+                    }
+                }
+            });
         }
     }
 
@@ -707,7 +726,7 @@ public class FirebasePlugin extends CordovaPlugin {
     }
 
     public static void sendMessage(Bundle bundle, Context context) {
-        if (!FirebasePlugin.hasNotificationsCallback()) {
+        if (!FirebasePlugin.hasNotificationsCallback() || (inBackground && !immediateMessagePayloadDelivery)) {
             String packageName = context.getPackageName();
             if (FirebasePlugin.notificationStack == null) {
                 FirebasePlugin.notificationStack = new ArrayList<Bundle>();
@@ -3833,6 +3852,16 @@ public class FirebasePlugin extends CordovaPlugin {
 
     private boolean getMetaDataFromManifest(String name) throws Exception {
         return applicationContext.getPackageManager().getApplicationInfo(applicationContext.getPackageName(), PackageManager.GET_META_DATA).metaData.getBoolean(name);
+    }
+
+    private String getPluginVariableFromConfigXml(String name) {
+        String value = null;
+        try {
+            value = preferences.getString(name, null);
+        } catch (Exception e) {
+            Log.e(TAG, "Error getting "+name+" from config.xml", e);
+        }
+        return value;
     }
 
     private void setPreference(String name, boolean value) {
