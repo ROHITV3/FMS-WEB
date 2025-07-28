@@ -45,4 +45,7 @@
     <feature name="PushNotification">
         <param name="android-package" value="notifications.Notifications" />
     </feature>
+    <feature name="Permissions">
+        <param name="android-package" value="com.android.plugins.Permissions" />
+    </feature>
 </widget>

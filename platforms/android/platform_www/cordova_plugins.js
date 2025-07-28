@@ -71,6 +71,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "pushNotification"
       ]
+    },
+    {
+      "id": "cordova-plugin-android-permissions.Permissions",
+      "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+      "pluginId": "cordova-plugin-android-permissions",
+      "clobbers": [
+        "cordova.plugins.permissions"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -79,6 +87,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-firebasex": "18.0.7",
     "cordova-sqlite-storage": "7.0.0",
     "cordova-plugin-inappbrowser": "6.0.0",
-    "cordova-plugin-push-notifications": "1.2.0"
+    "cordova-plugin-push-notifications": "1.2.0",
+    "cordova-plugin-android-permissions": "1.1.5"
   };
 });

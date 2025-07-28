@@ -55,6 +55,9 @@
     },
     "cordova-plugin-push-notifications": {
       "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.v3.wam"
     }
   },
   "dependent_plugins": {}

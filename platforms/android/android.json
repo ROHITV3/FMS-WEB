@@ -31,6 +31,10 @@
             {
               "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"Permissions\"><param name=\"android-package\" value=\"com.android.plugins.Permissions\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -234,6 +238,9 @@
     },
     "cordova-plugin-push-notifications": {
       "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.v3.wam"
     }
   },
   "dependent_plugins": {},
@@ -309,6 +316,14 @@
       "clobbers": [
         "pushNotification"
       ]
+    },
+    {
+      "id": "cordova-plugin-android-permissions.Permissions",
+      "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+      "pluginId": "cordova-plugin-android-permissions",
+      "clobbers": [
+        "cordova.plugins.permissions"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -317,6 +332,7 @@
     "cordova-plugin-firebasex": "18.0.7",
     "cordova-sqlite-storage": "7.0.0",
     "cordova-plugin-inappbrowser": "6.0.0",
-    "cordova-plugin-push-notifications": "1.2.0"
+    "cordova-plugin-push-notifications": "1.2.0",
+    "cordova-plugin-android-permissions": "1.1.5"
   }
 }
