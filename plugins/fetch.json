@@ -18,7 +18,7 @@
   "cordova-plugin-app-event": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-app-event"
+      "id": "cordova-plugin-app-event@^1.2.2"
     },
     "is_top_level": true,
     "variables": {}

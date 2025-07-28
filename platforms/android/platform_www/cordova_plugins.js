@@ -88,6 +88,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-sqlite-storage": "7.0.0",
     "cordova-plugin-inappbrowser": "6.0.0",
     "cordova-plugin-push-notifications": "1.2.0",
-    "cordova-plugin-android-permissions": "1.1.5"
+    "cordova-plugin-android-permissions": "1.1.5",
+    "cordova-plugin-app-event": "1.2.2"
   };
 });

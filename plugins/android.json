@@ -58,6 +58,9 @@
     },
     "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-app-event": {
+      "PACKAGE_NAME": "com.v3.wam"
     }
   },
   "dependent_plugins": {}
