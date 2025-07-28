@@ -35,6 +35,10 @@
             {
               "xml": "<feature name=\"Permissions\"><param name=\"android-package\" value=\"com.android.plugins.Permissions\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"Launcher\"><param name=\"android-package\" value=\"com.hutchind.cordova.plugins.launcher.Launcher\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -244,6 +248,9 @@
     },
     "cordova-plugin-app-event": {
       "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-app-launcher": {
+      "PACKAGE_NAME": "com.v3.wam"
     }
   },
   "dependent_plugins": {},
@@ -327,6 +334,14 @@
       "clobbers": [
         "cordova.plugins.permissions"
       ]
+    },
+    {
+      "id": "cordova-plugin-app-launcher.Launcher",
+      "file": "plugins/cordova-plugin-app-launcher/www/Launcher.js",
+      "pluginId": "cordova-plugin-app-launcher",
+      "clobbers": [
+        "plugins.launcher"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -337,6 +352,7 @@
     "cordova-plugin-inappbrowser": "6.0.0",
     "cordova-plugin-push-notifications": "1.2.0",
     "cordova-plugin-android-permissions": "1.1.5",
-    "cordova-plugin-app-event": "1.2.2"
+    "cordova-plugin-app-event": "1.2.2",
+    "cordova-plugin-app-launcher": "0.4.0"
   }
 }

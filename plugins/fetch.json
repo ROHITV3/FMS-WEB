@@ -26,7 +26,7 @@
   "cordova-plugin-app-launcher": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-app-launcher"
+      "id": "cordova-plugin-app-launcher@^0.4.0"
     },
     "is_top_level": true,
     "variables": {}

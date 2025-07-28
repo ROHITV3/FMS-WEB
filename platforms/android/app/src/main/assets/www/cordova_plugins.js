@@ -79,6 +79,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "cordova.plugins.permissions"
       ]
+    },
+    {
+      "id": "cordova-plugin-app-launcher.Launcher",
+      "file": "plugins/cordova-plugin-app-launcher/www/Launcher.js",
+      "pluginId": "cordova-plugin-app-launcher",
+      "clobbers": [
+        "plugins.launcher"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -89,6 +97,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-inappbrowser": "6.0.0",
     "cordova-plugin-push-notifications": "1.2.0",
     "cordova-plugin-android-permissions": "1.1.5",
-    "cordova-plugin-app-event": "1.2.2"
+    "cordova-plugin-app-event": "1.2.2",
+    "cordova-plugin-app-launcher": "0.4.0"
   };
 });
