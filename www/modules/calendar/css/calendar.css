@@ -1,0 +1,594 @@
+h17 
+{
+    text-align: center;
+    font-size: 12px;
+    text-shadow: 0 0 0;
+    
+}
+h17 span { 
+    background-color: #AA0000; 
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+}
+
+#body
+{
+    height: 100% !important;
+    width: 100% !important;
+    float: left;
+}
+
+#calendarContainer
+{
+    margin-top: 10px;
+    height: 500px;
+    width: 100% !important;
+    float: left;
+    /*background: #00aa00;*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: -25px;
+}
+
+
+.calendarFooter
+{
+    width: 100% !important;
+    position: absolute;
+    
+}
+
+.footerLabel
+{
+    float: left;
+    font-size: 12px;
+    text-shadow: 0px 0px #000000;
+}
+
+#createJobDiv
+{
+    width: 100% !important;
+    float: left;
+    margin: auto;
+}
+
+#createJobDivOk
+{
+    float: left;
+    background: url("../img/copy_ok.png") no-repeat;
+    background-position: center; 
+    background-size: 80%;
+}
+
+#createJobDivCancel
+{
+    float: left;
+    background: url("../img/copy_cancel.png") no-repeat;
+    background-position: center; 
+    background-size: 80%;
+}
+
+#calTimeStart
+{
+    float: left;
+}
+
+    
+.calendarHeader
+{
+    width: 100% !important;
+    position: absolute;
+}
+
+#calendarChooseDateLabel
+{
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 0 0;
+}
+
+.headerCenter
+{
+    width: 70% !important;
+    height: 40px !important;
+    float: left;
+    line-height: 40px !important;
+    /*background: #990099;*/
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 0;
+    /*background: #990000;*/
+}
+
+.headerNavLeft
+{
+    width: 10% !important;
+    height: 100% !important;
+    float: left;
+}
+
+    .headerNavLeftImg
+    {
+        float:left;
+        height: 100% !important;
+        width: 100% !important;
+        background: url("../img/log-out.png") no-repeat;
+        background-position: center; 
+        background-size: 100%;
+        margin-left: 10px;
+    }
+
+/*    .headerNavLeftImg:active
+    {
+        background: url("../img/dots.png") no-repeat;
+        background-position: center; 
+        background-size: 100%;
+    }*/
+    
+    
+    
+.headerNavRight
+{
+    width: 10% !important;
+    height: 100% !important;
+    float: right;
+    margin-right: 5% !important;
+}
+
+    .headerNavRightImg
+    {
+        float:right;
+        height: 100% !important;
+        width: 100% !important;
+        background: url("../img/refresh_white.png") no-repeat;
+        background-position: center; 
+        background-size: 80%;
+    }
+    
+    .headerNavRightImg:active
+    {
+        background: url("../img/refresh_black.png") no-repeat;
+        background-position: center; 
+        background-size: 80%;
+    }
+    
+    
+.footerRefresh
+{
+    float: right;
+    margin-right: 3% !important;
+}
+
+    .footerRefreshImg
+    {
+        float:right;
+        background: url("../img/jobbidding_white.png") no-repeat;
+        background-position: center; 
+        background-size: 70%;
+    }
+    
+    .footerRefreshImg:active
+    {
+        background: url("../img/jobbidding_black.png") no-repeat;
+        background-position: center; 
+        background-size: 70%;
+    }
+    
+#footerAnnouncement
+{
+    float: left;
+    margin-left: 3% !important;
+}
+
+    #footerAnnouncementIcon
+    {
+        float:left;
+        background: url("../img/announcement_white.png") no-repeat;
+        background-position: center; 
+        background-size: 70%;
+    }
+    
+    #footerAnnouncementIcon:active
+    {
+        float:left;
+        background: url("../img/announcement_black.png") no-repeat;
+        background-position: center; 
+        background-size: 70%;
+    }
+    
+
+#topPad{
+    float: left;
+    width: 100%;
+    height: 0.5%;
+    /*background: #333;*/
+}
+
+#midPad{
+    float: left;
+    width: 100%;
+    height: 1.5%;
+    /*background: #333;*/
+}
+
+#monthYearContainer{
+    float: left;
+    width: 100%;
+    height: 20%;
+    /*background: #999900;*/
+}
+
+    #yearContainer{
+        float: left;
+        width: 90%;
+        height: 100%;
+        /*background: #000099;*/
+    }
+
+        #yearText{
+            float: left;
+            width: 40%;
+            height: 100%;
+            line-height: 100%;
+            /*background: #009900;*/
+            color: #000;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        #yearSelect{
+            float: left;
+            width: 100%;
+            height: 100%;
+            line-height: 100%;
+            /*background: #990000;*/
+            text-align: center;
+        }
+
+    #topspacer10{
+        float: left;
+        width: 10%;
+        height: 100%;
+    }
+    
+    #topspacer5{
+        float: left;
+        width: 5%;
+        height: 100%;
+    }
+
+    #monthContainer{
+        float: left;
+        width: 50%;
+        height: 100%;
+        /*background: #999900;*/
+    }
+
+        #monthText{
+            float: left;
+            width: 40%;
+            height: 100%;
+            line-height: 100%;
+            /*background: #009900;*/
+            color: #000;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #monthSelect{
+            float: left;
+            width: 100%;
+            height: 100%;
+            line-height: 100%;
+            /*background: #990000;*/
+            text-align: center;
+        }
+
+    .dropdownSelect{
+        font-size: 16px;
+    }
+    
+    .dropdownSelectMini{
+        font-size: 12px;
+    }
+
+#datesLeftSpacer{
+    float: left;
+    width: 5%;
+    height: 72%;
+    /*background: #666;*/
+}
+    
+
+#datesRightSpacer{
+    float: left;
+    width: 5%;
+    height: 72%;
+    /*background: #666;*/
+}
+
+    .datesRightSpacerMarker1{
+        float: left;
+        width: 100%;
+        height: 10%;
+        /*background: #ccc;*/
+    }
+    .datesRightSpacerMarker2{
+        float: left;
+        width: 100%;
+        height: 10%;
+        /*background: #333;*/
+    }
+
+#datesContainer{
+    float: left;
+    width: 90%;
+    height: 72%;
+    /*background: #aaa;*/
+}
+    #daysContainerSpacer{
+        float: left;
+        width: 100%;
+        height: 0.5%;
+        /*background: #990099;*/
+    }
+    
+    #allDatesSpacer{
+        float: left;
+        width: 100%;
+        height: 5%;
+        /*background: #990099;*/
+    }
+
+    #daysContainer{
+        float: left;
+        width: 100%;
+        height: 10%;
+        background: #444;
+    }
+        .singleDay{
+            float: left;
+            width: 12%;
+            height: 100%;
+            line-height: 100%;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 0 0 0;
+        }
+
+        .daySpacer{
+            float: left;
+            width: 2.66667%;
+            height: 100%;
+        }
+
+    #allDates{
+        float: left;
+        width: 100%;
+        height: 80%;
+        /*margin-top: 2.5%;*/
+        /*background: #0000aa;*/
+        /*overflow: scroll;*/
+    }
+        .singleLineSpacer{
+            float: left;
+            width: 100%;
+            height: 2.6666667%;
+            /*background: #0000aa;*/
+        }
+        
+        .singleLine{
+            float: left;
+            width: 100%;
+            height: 14%;
+            /*margin-top: 2.5%;*/
+            /*background: #98ab05;*/
+        }
+            .singleDateSpacer{
+                float: left;
+                /*width: 10px;*/
+                width: 3.8333333%;
+                height: 100%;
+                /*background: #aa0000;*/
+            }
+
+            .singleDate{
+                float: left;
+                /*width: 70px;*/
+                width: 11%;
+                height: 100%;
+                line-height: 100%;
+                font-size: 16px;
+                font-weight: bold;
+                text-align: center;
+                text-shadow: 0 0 0;
+                /*background: #009900;*/
+            }
+
+            .singleDateNoData{
+                background: #ddd;
+                color: #000;
+            }
+            
+            .singleDateNotThisMonth{
+                background: #eee;
+                color: #999;
+            }
+
+            .singleDateWithData{
+                background: rgba(112,156,212,1.0);
+                color: #000;
+            }
+            
+            .singleDateNotThisMonthWithData{
+                background: rgba(202,216,239,1.0);
+                color: #999;
+            }
+            
+            .singleDateWithDataNew{
+                background: rgba(112,156,212,1.0) url("../img/circle.png") no-repeat;
+                background-position: center; 
+                background-size: 80%;
+                color: #000;
+            }
+            
+            .singleDateNotThisMonthWithDataNew{
+                background: rgba(202,216,239,1.0) url("../img/circle_faded.png") no-repeat;
+                background-position: center; 
+                background-size: 80%;
+                color: #999;
+            }
+
+            .singleDateSelected{
+                background: #000;
+                color: #fff;
+            }
+            
+            
+            
+#activitiesContainer
+{
+    height: 500px;
+    width: 100% !important;
+    float: left;
+    /*background: #0000aa;*/
+    overflow-y: scroll;
+}
+
+    #activitiesLeftSpacer{
+        float: left;
+        width: 5%;
+        height: 100%;
+        /*background: #666;*/
+    }
+
+    #activitiesRightSpacer{
+        float: left;
+        width: 5%;
+        height: 100%;
+        /*background: #666;*/
+    }
+    
+    #cover{
+        width: 100%;
+        height: 100%;
+        background: #aa00aa;
+    }
+    
+    #allActivities{
+        float: left;
+        width: 90%;
+        height: 95%;
+        margin-top: 10px;
+        /*background: #aa0000;*/
+    }
+        .singleActivitySpacer{
+            float: left;
+            width: 100%;
+            height: 2.5%;
+            /*background: #000;*/
+        }
+        
+        .singleActivity{
+            float: left;
+            width: 100%;
+            height: 22.5%;
+            background: rgba(112,156,212,1.0);
+        }
+        
+        .singleActivityNoLoc{
+            float: left;
+            width: 100%;
+            height: 12.5%;
+            background: rgba(112,156,212,1.0);
+        }
+        
+        .singleActivityCancelled{
+            float: left;
+            width: 100%;
+            height: 22.5%;
+            background: #F00000;
+        }
+        
+        .singleActivity:active
+        {
+            background: #c4cfff;
+        }
+        
+            .activityTime, .activityTimeNoLoc{
+                float: left;
+                width: 24.5%;
+                height: 100%;
+                /*background: #990000;*/
+                line-height: 100%;
+                font-size: 12px;
+                font-weight: bold;
+                text-align: center;
+                text-shadow: 0 0 0;
+            }
+            
+            .activityDivider{
+                float: left;
+                width: 0.5%;
+                height: 100%;
+                background: #000;
+            }
+            
+            .activitySpacer{
+                float: left;
+                width: 3%;
+                height: 100%;
+            }
+            
+            .activityDetails{
+                float: left;
+                width: 72%;
+                height: 100%;
+                /*background: #990000;*/
+                font-size: 12px;
+                overflow-x: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                text-shadow: 0 0 0;
+            }
+            
+                .jobDetailsTemplateNoLoc{
+                    float: left;
+                    width: 100%;
+                    height: 100%;
+                    overflow-x: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    /*background: #009900;*/
+                }
+            
+                .jobDetailsTemplate{
+                    float: left;
+                    width: 100%;
+                    height: 50%;
+                    overflow-x: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    /*background: #009900;*/
+                }
+                
+                .jobDetailsLocDesc{
+                    float: left;
+                    width: 100%;
+                    height: 50%;
+                    overflow-x: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    /*background: #000099;*/
+                }
+            
