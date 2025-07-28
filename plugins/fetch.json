@@ -170,7 +170,7 @@
   "cordova-plugin-push-notifications": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-push-notifications"
+      "id": "cordova-plugin-push-notifications@^1.2.0"
     },
     "is_top_level": true,
     "variables": {}

@@ -52,6 +52,9 @@
     },
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-push-notifications": {
+      "PACKAGE_NAME": "com.v3.wam"
     }
   },
   "dependent_plugins": {}

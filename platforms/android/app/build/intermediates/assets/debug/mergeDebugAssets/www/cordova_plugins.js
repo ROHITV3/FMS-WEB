@@ -63,6 +63,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "cordova.InAppBrowser.open"
       ]
+    },
+    {
+      "id": "cordova-plugin-push-notifications.PushNotification",
+      "file": "plugins/cordova-plugin-push-notifications/www/PushNotification.js",
+      "pluginId": "cordova-plugin-push-notifications",
+      "clobbers": [
+        "pushNotification"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -70,6 +78,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-image-picker": "1.1.1",
     "cordova-plugin-firebasex": "18.0.7",
     "cordova-sqlite-storage": "7.0.0",
-    "cordova-plugin-inappbrowser": "6.0.0"
+    "cordova-plugin-inappbrowser": "6.0.0",
+    "cordova-plugin-push-notifications": "1.2.0"
   };
 });

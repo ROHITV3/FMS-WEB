@@ -39,4 +39,10 @@
     <feature name="InAppBrowser">
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
     </feature>
+    <preference name="GradlePluginKotlinEnabled" value="true" />
+    <preference name="GradlePluginKotlinCodeStyle" value="official" />
+    <preference name="GradlePluginKotlinVersion" value="1.6.20" />
+    <feature name="PushNotification">
+        <param name="android-package" value="notifications.Notifications" />
+    </feature>
 </widget>

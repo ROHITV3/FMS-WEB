@@ -30,14 +30,14 @@ cordova -v
 
 ## iOS
 
-Required Cordova iOS platform >= 5.0.0
+Required Cordova iOS platform >= 6.0.0
 
 After entering "plugin add" or "cordova build ios" command open iOS project in Xcode, go to Signing & Capabilities and click on "+" in left. Select Push Notification and generate SSL-certificate for push notification. You can check the instructions [here](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/establishing_a_certificate-based_connection_to_apns).
 
 
 ## Android
 
-Required Cordova Android platform >= 9.0.0
+Required Cordova Android platform >= 12.0.0
 
 After entering "plugin add" command, add new preference in config.xml of project:
 
@@ -132,18 +132,13 @@ window.pushNotification.tapped((payload) => {
 })
 ```
 
-May be combined with the iOS "resume" [event](https://cordova.apache.org/docs/en/10.x/cordova/events/events.html#resume) when the notification was clicked in the background. On Android, such manipulations are not needed, because clicking on a notification will rerender screen (activity).
+May be combined with the "resume" event when the notification was clicked in the background. The function "tapped" always returns an empty string. But, if there was a launch through a notification and there is a "payload" there, then it will give its contents:
 
-```kotlin
-val resultPendingIntent: PendingIntent? = TaskStackBuilder.create(this).run {
-  addNextIntentWithParentStack(resultIntent)
-  getPendingIntent(101, PendingIntent.FLAG_CANCEL_CURRENT)
-}
+```js
+document.addEventListener('resume', () => {
+  // call tapped function here...
+}, false)
 ```
-
-Responsible for this action FLAG_CANCEL_CURRENT. Using other flags did not lead to redrawing, but also did not update the data in Activity Extra. Maybe I can find a solution in the future.
-
-The function "tapped" always returns an empty string. But, if there was a launch through a notification and there is a "payload" there, then it will give its contents.
 
 It is obligatory to receive the "payload" data must be in the following form:
 
@@ -165,17 +160,32 @@ It is obligatory to receive the "payload" data must be in the following form:
 
 ```js
 {
-  data: {
-    title: "Hello Alex!", 
-    body: "You pretty boy!", 
-    payload: "payload 1234"
-  },
-  priority: "high",
-  content_available: true
+  message: {
+    token: "<token>"
+    data: {
+      title: "Hello Alex!", 
+      body: "You pretty boy!", 
+      channelId: "444",
+      notificationId: "1"
+      payload: "payload 1234"
+    }
+  }
 }
 ```
 
-Importantly, do this without "notification".
+channelId, notificationId, payload - Optional parameters.
+
+Don't use "notification" props, this is because it disable Intent update (breaking putExtra) and tapped function doesn't work.
+
+```kotlin
+val notifyIntent = Intent(this, mainActivity).apply {
+  flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+
+  if (payload != null) {
+    putExtra(Intent.EXTRA_TEXT, payload)
+  }
+}
+```
 
 # TypeScript
 

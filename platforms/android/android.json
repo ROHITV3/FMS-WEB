@@ -125,6 +125,14 @@
             {
               "xml": "<activity android:label=\"@string/multi_app_name\" android:name=\"com.synconset.MultiImageChooserActivity\" android:theme=\"@android:style/Theme.Holo.Light\"></activity>",
               "count": 1
+            },
+            {
+              "xml": "<meta-data android:name=\"com.google.firebase.messaging.default_notification_channel_id\" android:value=\"444\" />",
+              "count": 1
+            },
+            {
+              "xml": "<service android:exported=\"false\" android:name=\"notifications.MyFirebaseMessagingService\"><intent-filter><action android:name=\"com.google.firebase.MESSAGING_EVENT\" /></intent-filter></service>",
+              "count": 1
             }
           ],
           "/manifest": [
@@ -154,6 +162,22 @@
           "/*": [
             {
               "xml": "<preference name=\"GradlePluginGoogleServicesEnabled\" value=\"true\" />",
+              "count": 2
+            },
+            {
+              "xml": "<preference name=\"GradlePluginKotlinEnabled\" value=\"true\" />",
+              "count": 1
+            },
+            {
+              "xml": "<preference name=\"GradlePluginKotlinCodeStyle\" value=\"official\" />",
+              "count": 1
+            },
+            {
+              "xml": "<preference name=\"GradlePluginKotlinVersion\" value=\"1.6.20\" />",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"PushNotification\"><param name=\"android-package\" value=\"notifications.Notifications\" /></feature>",
               "count": 1
             }
           ]
@@ -206,6 +230,9 @@
       "PACKAGE_NAME": "com.v3.wam"
     },
     "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-push-notifications": {
       "PACKAGE_NAME": "com.v3.wam"
     }
   },
@@ -274,6 +301,14 @@
       "clobbers": [
         "cordova.InAppBrowser.open"
       ]
+    },
+    {
+      "id": "cordova-plugin-push-notifications.PushNotification",
+      "file": "plugins/cordova-plugin-push-notifications/www/PushNotification.js",
+      "pluginId": "cordova-plugin-push-notifications",
+      "clobbers": [
+        "pushNotification"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -281,6 +316,7 @@
     "cordova-plugin-image-picker": "1.1.1",
     "cordova-plugin-firebasex": "18.0.7",
     "cordova-sqlite-storage": "7.0.0",
-    "cordova-plugin-inappbrowser": "6.0.0"
+    "cordova-plugin-inappbrowser": "6.0.0",
+    "cordova-plugin-push-notifications": "1.2.0"
   }
 }
