@@ -114,7 +114,6 @@
         "ANDROID_FIREBASE_PERF_GRADLE_PLUGIN_VERSION": "1.4.2",
         "ANDROID_GRPC_OKHTTP": "1.68.0"
       },
-      "cordova-sqlite-storage": {},
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-push-notifications": {},
       "cordova-plugin-android-permissions": {},
@@ -122,7 +121,8 @@
       "cordova-plugin-app-launcher": {},
       "phonegap-plugin-barcodescanner": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
-      }
+      },
+      "cordova-sqlite-storage": {}
     }
   },
   "dependencies": {

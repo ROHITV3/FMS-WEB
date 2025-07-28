@@ -4,7 +4,7 @@
             "outputFile": "com.v3.wam.app-mergeDebugResources-47:/values-v27/values-v27.xml",
             "map": [
                 {
-                    "source": "/Users/priyanka/.gradle/caches/8.13/transforms/6e4be1fdee2310a41cc78b18e5c35a9a/transformed/jetified-core-splashscreen-1.0.1/res/values-v27/values-v27.xml",
+                    "source": "/Users/priyanka/.gradle/caches/8.13/transforms/2c6752eff41041026b77812341bd6e5f/transformed/jetified-core-splashscreen-1.0.1/res/values-v27/values-v27.xml",
                     "from": {
                         "startLines": "2,3,4,7",
                         "startColumns": "4,4,4,4",

@@ -4,7 +4,18 @@
             "outputFile": "com.v3.wam.app-mergeDebugResources-47:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/priyanka/.gradle/caches/8.13/transforms/2c43c474a932fb89279ff97edea2682e/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/priyanka/.gradle/caches/8.13/transforms/d2e617c55bb66ffed1f424b9c5fb05dc/transformed/appcompat-1.7.0/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,190,325,400,487,1225,1975,2094,2221,2443,2667,2782,2889,3002",
+                        "endLines": "2,3,4,5,19,33,34,35,38,42,43,44,45,49",
+                        "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
+                        "endOffsets": "185,320,395,482,1220,1970,2089,2216,2438,2662,2777,2884,2997,3227"
+                    }
+                },
+                {
+                    "source": "/Users/priyanka/.gradle/caches/8.13/transforms/c8265949a991f9af69f4834f8045395d/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,17 +31,6 @@
                         "endLines": "52",
                         "endColumns": "12",
                         "endOffsets": "3377"
-                    }
-                },
-                {
-                    "source": "/Users/priyanka/.gradle/caches/8.13/transforms/6bfb780a0bae2e7cdaf000cffe73451c/transformed/appcompat-1.7.0/res/values-v23/values-v23.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,190,325,400,487,1225,1975,2094,2221,2443,2667,2782,2889,3002",
-                        "endLines": "2,3,4,5,19,33,34,35,38,42,43,44,45,49",
-                        "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
-                        "endOffsets": "185,320,395,482,1220,1970,2089,2216,2438,2662,2777,2884,2997,3227"
                     }
                 }
             ]

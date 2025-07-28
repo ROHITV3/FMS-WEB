@@ -89,8 +89,20 @@ function initializeCordova(success, failure)
 ;
 window.onload = function () {
 	
-	window.open = cordova.InAppBrowser.open;
-	
+	document.addEventListener('deviceready', function() {
+      console.log('Device ready');
+
+      window.open = cordova.InAppBrowser.open;
+
+      initializeCordova(() => {
+        console.log('Cordova Initializing Success');
+        setup();
+      }, () => {
+        console.log('Cordova Initializing Failed');
+      });
+    });
+
+
     initializeCordova(function success() {
         console.log("Cordova Initializing Success");
         setup();
@@ -109,6 +121,16 @@ window.onload = function () {
     });
 
 };
+function initializeCordova(success, failure) {
+  console.log('cordova:', window.cordova);
+  console.log('cordova.InAppBrowser:', window.cordova ? cordova.InAppBrowser : 'cordova undefined');
+
+  if (window.cordova && cordova.InAppBrowser) {
+    success();
+  } else {
+    failure();
+  }
+}
 
 function setupLocation()
 {
