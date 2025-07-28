@@ -47,11 +47,29 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "FirebasePlugin"
       ]
+    },
+    {
+      "id": "cordova-sqlite-storage.SQLitePlugin",
+      "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+      "pluginId": "cordova-sqlite-storage",
+      "clobbers": [
+        "SQLitePlugin"
+      ]
+    },
+    {
+      "id": "cordova-plugin-inappbrowser.inappbrowser",
+      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+      "pluginId": "cordova-plugin-inappbrowser",
+      "clobbers": [
+        "cordova.InAppBrowser.open"
+      ]
     }
   ];
   module.exports.metadata = {
     "cordova-plugin-camera": "8.0.0",
     "cordova-plugin-image-picker": "1.1.1",
-    "cordova-plugin-firebasex": "18.0.7"
+    "cordova-plugin-firebasex": "18.0.7",
+    "cordova-sqlite-storage": "7.0.0",
+    "cordova-plugin-inappbrowser": "6.0.0"
   };
 });

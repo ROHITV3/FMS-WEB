@@ -122,7 +122,7 @@
   "cordova-plugin-inappbrowser": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-inappbrowser@5.0.0"
+      "id": "cordova-plugin-inappbrowser@^6.0.0"
     },
     "is_top_level": true,
     "variables": {}
@@ -218,7 +218,7 @@
   "cordova-sqlite-storage": {
     "source": {
       "type": "registry",
-      "id": "cordova-sqlite-storage"
+      "id": "cordova-sqlite-storage@^7.0.0"
     },
     "is_top_level": true,
     "variables": {}

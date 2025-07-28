@@ -23,6 +23,14 @@
             {
               "xml": "<feature name=\"FirebasePlugin\"><param name=\"android-package\" value=\"org.apache.cordova.firebase.FirebasePlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"SQLitePlugin\"><param name=\"android-package\" value=\"io.sqlc.SQLitePlugin\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -193,6 +201,12 @@
       "ANDROID_FIREBASE_PERF_GRADLE_PLUGIN_VERSION": "1.4.2",
       "ANDROID_GRPC_OKHTTP": "1.68.0",
       "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.v3.wam"
     }
   },
   "dependent_plugins": {},
@@ -244,11 +258,29 @@
       "clobbers": [
         "FirebasePlugin"
       ]
+    },
+    {
+      "id": "cordova-sqlite-storage.SQLitePlugin",
+      "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+      "pluginId": "cordova-sqlite-storage",
+      "clobbers": [
+        "SQLitePlugin"
+      ]
+    },
+    {
+      "id": "cordova-plugin-inappbrowser.inappbrowser",
+      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+      "pluginId": "cordova-plugin-inappbrowser",
+      "clobbers": [
+        "cordova.InAppBrowser.open"
+      ]
     }
   ],
   "plugin_metadata": {
     "cordova-plugin-camera": "8.0.0",
     "cordova-plugin-image-picker": "1.1.1",
-    "cordova-plugin-firebasex": "18.0.7"
+    "cordova-plugin-firebasex": "18.0.7",
+    "cordova-sqlite-storage": "7.0.0",
+    "cordova-plugin-inappbrowser": "6.0.0"
   }
 }

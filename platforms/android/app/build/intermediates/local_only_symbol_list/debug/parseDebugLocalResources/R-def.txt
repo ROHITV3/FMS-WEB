@@ -8,6 +8,9 @@ drawable ic_action_discard_dark
 drawable ic_action_discard_light
 drawable ic_action_done_dark
 drawable ic_action_done_light
+drawable ic_action_next_item
+drawable ic_action_previous_item
+drawable ic_action_remove
 drawable ic_cdv_splashscreen
 drawable ic_launcher
 drawable image_bg

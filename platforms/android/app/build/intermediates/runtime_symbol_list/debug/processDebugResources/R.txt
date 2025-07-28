@@ -784,6 +784,9 @@ int drawable ic_action_discard_dark 0x7f070071
 int drawable ic_action_discard_light 0x7f070072
 int drawable ic_action_done_dark 0x7f070073
 int drawable ic_action_done_light 0x7f070074
+int drawable ic_action_next_item 0x7f070095
+int drawable ic_action_previous_item 0x7f070096
+int drawable ic_action_remove 0x7f070097
 int drawable ic_call_answer 0x7f070075
 int drawable ic_call_answer_low 0x7f070076
 int drawable ic_call_answer_video 0x7f070077

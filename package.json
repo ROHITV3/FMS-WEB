@@ -29,7 +29,6 @@
     "cordova-plugin-firebasex": "^18.0.7",
     "cordova-plugin-geolocation": "^4.1.0",
     "cordova-plugin-globalization": "^1.11.0",
-    "cordova-plugin-inappbrowser": "^5.0.0",
     "cordova-plugin-media": "^5.0.4",
     "cordova-plugin-media-capture": "^3.0.3",
     "cordova-plugin-nativeaudio": "^3.0.9",
@@ -42,7 +41,6 @@
     "cordova-plugin-x-toast": "^2.7.3",
     "cordova-save-image-gallery": "^0.0.26",
     "cordova-sms-plugin": "^1.0.2",
-    "cordova-sqlite-storage": "^6.0.0",
     "cordova-support-google-services": "^1.4.1",
     "cordova.plugins.diagnostic": "^6.1.1",
     "es6-promise-plugin": "^4.2.2",
@@ -72,7 +70,6 @@
         "GPS_REQUIRED": "true"
       },
       "cordova-plugin-globalization": {},
-      "cordova-plugin-inappbrowser": {},
       "cordova-plugin-nativeaudio": {},
       "cordova-plugin-nativegeocoder": {},
       "cordova-plugin-network-information": {},
@@ -82,7 +79,6 @@
       "cordova-plugin-x-toast": {},
       "cordova-save-image-gallery": {},
       "cordova-sms-plugin": {},
-      "cordova-sqlite-storage": {},
       "cordova-support-google-services": {},
       "cordova.plugins.diagnostic": {
         "ANDROIDX_VERSION": "1.0.0",
@@ -129,12 +125,16 @@
         "ANDROID_GSON_VERSION": "2.11.0",
         "ANDROID_FIREBASE_PERF_GRADLE_PLUGIN_VERSION": "1.4.2",
         "ANDROID_GRPC_OKHTTP": "1.68.0"
-      }
+      },
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-inappbrowser": {}
     }
   },
   "dependencies": {
     "cordova-plugin-androidx-adapter": "^1.1.3",
     "cordova-plugin-camera": "^8.0.0",
-    "cordova-plugin-image-picker": "^1.1.3"
+    "cordova-plugin-image-picker": "^1.1.3",
+    "cordova-plugin-inappbrowser": "^6.0.0",
+    "cordova-sqlite-storage": "^7.0.0"
   }
 }
