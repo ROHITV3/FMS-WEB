@@ -132,6 +132,12 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/camera_provider_paths" />
         </provider>
+
+        <activity
+            android:name="com.synconset.MultiImageChooserActivity"
+            android:label="@string/multi_app_name"
+            android:theme="@android:style/Theme.Holo.Light" />
+
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.v3.wam.androidx-startup"

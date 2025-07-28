@@ -10,6 +10,9 @@
     "cordova-plugin-camera": {
       "ANDROIDX_CORE_VERSION": "1.6.+",
       "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-image-picker": {
+      "PACKAGE_NAME": "com.v3.wam"
     }
   },
   "dependent_plugins": {}

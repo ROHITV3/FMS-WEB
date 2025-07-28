@@ -31,9 +31,18 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "CameraPopoverHandle"
       ]
+    },
+    {
+      "id": "cordova-plugin-image-picker.ImagePicker",
+      "file": "plugins/cordova-plugin-image-picker/www/imagepicker.js",
+      "pluginId": "cordova-plugin-image-picker",
+      "clobbers": [
+        "plugins.imagePicker"
+      ]
     }
   ];
   module.exports.metadata = {
-    "cordova-plugin-camera": "8.0.0"
+    "cordova-plugin-camera": "8.0.0",
+    "cordova-plugin-image-picker": "1.1.1"
   };
 });

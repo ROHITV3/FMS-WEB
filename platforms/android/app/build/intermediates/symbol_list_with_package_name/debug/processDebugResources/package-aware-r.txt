@@ -24,6 +24,7 @@ anim btn_radio_to_on_mtrl_dot_group_animation
 anim btn_radio_to_on_mtrl_ring_outer_animation
 anim btn_radio_to_on_mtrl_ring_outer_path_animation
 anim fragment_fast_out_extra_slow_in
+anim image_pop_in
 animator fragment_close_enter
 animator fragment_close_exit
 animator fragment_fade_enter
@@ -633,6 +634,11 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable compat_splash_screen
 drawable compat_splash_screen_no_icon_background
+drawable grid_background
+drawable ic_action_discard_dark
+drawable ic_action_discard_light
+drawable ic_action_done_dark
+drawable ic_action_done_light
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -640,7 +646,10 @@ drawable ic_call_answer_video_low
 drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_cdv_splashscreen
+drawable ic_launcher
 drawable icon_background
+drawable image_bg
+drawable loading_icon
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -713,6 +722,10 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_text
+id actionbar_discard
+id actionbar_discard_textview
+id actionbar_done
+id actionbar_done_textview
 id actions
 id activity_chooser_view_content
 id add
@@ -743,6 +756,7 @@ id expand_activities_button
 id expanded_menu
 id forever
 id fragment_container_view_tag
+id gridview
 id group_divider
 id hide_ime_id
 id home
@@ -879,9 +893,13 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout actionbar_custom_view_done_discard
+layout actionbar_discard_button
+layout actionbar_done_button
 layout custom_dialog
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout multiselectorgrid
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -930,7 +948,17 @@ string call_notification_hang_up_action
 string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
+string discard
+string done
+string error_database
+string free_version_label
 string launcher_name
+string maximum_selection_count_error_header
+string maximum_selection_count_error_message
+string multi_app_name
+string processing_images_header
+string processing_images_message
+string requesting_thumbnails
 string search_menu_title
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat
@@ -1101,6 +1129,7 @@ style Base_v21_Theme_SplashScreen
 style Base_v21_Theme_SplashScreen_Light
 style Base_v27_Theme_SplashScreen
 style Base_v27_Theme_SplashScreen_Light
+style MyTheme
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_ThemeOverlay_AppCompat
@@ -1184,7 +1213,6 @@ style TextAppearance_Compat_Notification_Title
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
-style Theme_App_SplashScreen
 style Theme_AppCompat
 style Theme_AppCompat_CompactMenu
 style Theme_AppCompat_DayNight

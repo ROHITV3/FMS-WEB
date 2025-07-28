@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
@@ -321,7 +321,17 @@
     <string name="call_notification_incoming_text">Incoming call</string>
     <string name="call_notification_ongoing_text">Ongoing call</string>
     <string name="call_notification_screening_text">Screening an incoming call</string>
+    <string name="discard">Cancel</string>
+    <string name="done">OK</string>
+    <string name="error_database">There was an error opening the images database. Please report the problem.</string>
+    <string name="free_version_label">Free version - Images left: %d</string>
     <string name="launcher_name">@string/app_name</string>
+    <string name="maximum_selection_count_error_header">Limit reached</string>
+    <string name="maximum_selection_count_error_message">You can only select %d photos at once.</string>
+    <string name="multi_app_name">MultiImageChooser</string>
+    <string name="processing_images_header">Processing Images</string>
+    <string name="processing_images_message">This may take a few moments</string>
+    <string name="requesting_thumbnails">Requesting thumbnails, please be patient</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
@@ -1419,6 +1429,8 @@
     </style>
     <style name="Base.v21.Theme.SplashScreen.Light" parent="android:Theme.DeviceDefault.Light.NoActionBar">
     </style>
+    <style name="MyTheme" parent="android:Theme.Holo.Light">
+    </style>
     <style name="Platform.AppCompat" parent="android:Theme.Holo">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
@@ -1706,13 +1718,6 @@
     <style name="TextAppearance.Widget.AppCompat.Toolbar.Subtitle" parent="Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
     </style>
     <style name="TextAppearance.Widget.AppCompat.Toolbar.Title" parent="Base.TextAppearance.Widget.AppCompat.Toolbar.Title">
-    </style>
-    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen.IconBackground">
-        <item name="windowSplashScreenBackground">@color/cdv_splashscreen_background</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_cdv_splashscreen</item>
-        <item name="windowSplashScreenAnimationDuration">200</item>
-        <item name="postSplashScreenTheme">@style/Theme.AppCompat.NoActionBar</item>
-        <item name="android:windowOptOutEdgeToEdgeEnforcement" ns2:targetApi="35">true</item>
     </style>
     <style name="Theme.AppCompat" parent="Base.Theme.AppCompat"/>
     <style name="Theme.AppCompat.CompactMenu" parent="Base.Theme.AppCompat.CompactMenu"/>
