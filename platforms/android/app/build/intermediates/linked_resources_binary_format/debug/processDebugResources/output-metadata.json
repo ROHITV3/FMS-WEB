@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "LINKED_RESOURCES_BINARY_FORMAT",
+    "kind": "Directory"
+  },
+  "applicationId": "com.v3.wam",
+  "variantName": "debug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 401040,
+      "versionName": "4.1.4",
+      "outputFile": "linked-resources-binary-format-debug.ap_"
+    }
+  ],
+  "elementType": "File"
+}

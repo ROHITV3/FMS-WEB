@@ -1,0 +1,406 @@
+body{	
+	padding: 0;
+	margin: 0;
+	font-style:normal !important;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+.ui-page{
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+}
+
+.ui-page .ui-header{
+	background: rgba(67,125,198,1.0);
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+	/*padding-top: 17px !important;*/
+	border-top: 1px solid rgba(67,125,198,1.0);
+	color: white;
+}
+
+.ui-page .ui-header h1 {
+	display: inline-block;
+}
+
+[data-role=header] {
+	top:0;
+	position: fixed !important;
+	bottom: auto !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	text-align: center;
+	height: 50px;
+	font-size: small;
+}
+
+.ui-page .ui-footer{
+	background: rgba(67,125,198,1.0);
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+	border-bottom: 1px solid rgba(67,125,198,1.0);
+	color: white;
+}
+
+[data-role=footer] {
+	bottom:0;
+	position: fixed !important;
+	top: auto !important;
+	text-align: center;
+	min-height: 50px;
+}
+
+#bg {
+	background: #FFF;
+	width: 100%;
+	height: 100%;
+}
+#bg img {
+	position: absolute;
+	height: 100%;
+	top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ui-content {
+	padding: 0 !important;
+	margin: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.navBtn {
+	display: inline-block;
+	position: fixed;
+	height: 35px;
+}
+
+.navBtn img {
+	height: 100%;
+}
+
+.top {
+	top: 0;
+	padding-top: 7px;
+}
+
+.bot {
+	bottom: 0;
+	padding-bottom: 7px;
+}
+
+.left {
+	left: 0;
+	padding-left: 7px;
+}
+
+.right {
+	right: 0;
+	padding-right: 7px;
+}
+
+.right1 {
+	right: 25px;
+	padding-right: 25px;
+}
+
+#confirmPopup,#confirmPopupImages  {
+	width: initial;
+	z-index: 100;
+	background-color: #f5f5f5;	
+	margin: 0 auto;
+	border: 1px solid transparent;
+	border-radius: 15px;
+}
+
+#photoPreview {
+	max-width: 99%;
+	max-height: 99%;
+}
+
+#signature {
+	width: 100%;
+	z-index: 100;
+	background-color: #f5f5f5;	
+	margin: 0 auto;
+	border: 1px solid transparent;
+	border-radius: 15px;
+}
+
+#signaturepopup {
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.5);
+    z-index:1001;
+    position:fixed;
+    top:0;
+    left:0;
+    display:none;
+}
+
+#drawing {
+	width: 100%;
+	z-index: 100;
+	background-color: #f5f5f5;	
+	margin: 0 auto;
+	border: 1px solid transparent;
+	border-radius: 15px;
+}
+
+#drawingpopup {
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.5);
+    z-index:1001;
+    position:fixed;
+    top:0;
+    left:0;
+    display:none;
+}
+
+#confirmPopup .confirmTitle, #confirmPopupImages .confirmTitle, #signature .verifyTitle, #drawing .verifyTitle {
+	padding: 10px;
+	font-weight: bolder;
+	font-size: x-large;
+	font: "Calibri";
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	white-space: nowrap;
+	text-align: center;
+	background-color: #2272B9;
+	color: #FFFFFF;
+}	
+#confirmPopup .confirmText, #confirmPopupImages .confirmText, #signature .verifyText, #drawing .verifyText {
+	padding: 20px 10px;
+	font-size: medium;
+	font-weight: 400;
+	color: #757575;
+	text-align: center;
+        decor-color:transparent;
+}
+#confirmPopup .confirmBtn, #confirmPopupImages .confirmBtn, #signature .verifyBtn, #drawing .verifyBtn {
+	text-align: center;
+	width: 100%;
+	border-top: 1px solid #b2b2b2;
+	background-color: #f5f5f5;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	white-space: nowrap;
+}
+#confirmPopup .confirmBtn div, #confirmPopupImages .confirmBtn div, #signature .verifyBtn div, #drawing .verifyBtn div {
+	padding: 10px 0;
+	font-size: medium;
+	font-weight: 400;
+	font: "Calibri";
+	text-align: center;
+	color: #757575;
+	white-space: nowrap;
+	width: 50%;
+	display: inline-block;
+}
+#confirmPopup .confirmBtn div:first-child, #confirmPopupImages .confirmBtn div:first-child, #signature .verifyBtn div:first-child, #drawing .verifyBtn div:first-child {
+	border-right: 1px solid #b2b2b2;
+	border-bottom-left-radius: 10px;
+}
+#confirmPopup .confirmBtn div:last-child, #confirmPopupImages .confirmBtn div:last-child, #signature .verifyBtn div:last-child, #drawing .verifyBtn div:last-child {
+	border-bottom-right-radius: 10px;
+}
+
+#index {
+	background-color: #ffffff;
+}
+
+#loginBox {
+	position: absolute;
+	top: 16px;
+	width: 92%;
+	background-color: #ffffff;
+	padding: 4%;
+	text-align: center;
+}
+
+#loginBox .loginLogo{
+	width: 100%;
+}
+
+#loginBox .loginLogoText{
+	width: 100%;
+	color: darkgrey;
+	font-size: small;
+}
+
+#loginBox .ui-input-text {
+	border: 1px solid #d9d9d9 !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	text-shadow: none !important;
+}
+
+#loginUser {
+	background: white url(../img/user.png) no-repeat left;
+	padding-left: 35px;
+	font-size: x-large;
+	background-size: 35px;
+}
+
+#loginPassword {
+	background: white url(../img/password.png) no-repeat left;
+	padding-left: 35px;
+	font-size: x-large;
+	background-size: 35px;
+}
+
+#registerDeviceText {
+	width: 100%;
+	text-align: right;
+	font-style: italic;
+	color: #1869A9;
+	display: none;
+}
+
+#registerDeviceBtn {
+	background: white url(../img/device.png) no-repeat left;
+	padding-left: 35px;
+	font-size: x-large;
+	background-size: 35px;
+}
+#registerShell {
+	display: none;
+}
+
+#unitId {
+	background: white url(../img/device.png) no-repeat left;
+	padding-left: 35px;
+	font-size: x-large;
+	background-size: 35px;
+}
+
+#unitIdShell {
+	display: none;
+}
+
+.loginBtn {
+	background: #2086bf;
+	border: 1px solid #d9d9d9;
+	outline: none;
+	height: 50px;
+	width: auto;
+        min-width: 130px;
+	color: #ffffff;
+	margin-top: 10px;
+	font-size: x-large;
+}
+
+#settingsBtn {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    left: 10px;
+    z-index: 10;
+}
+
+#customer {
+	position: fixed;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+	font-size: small;
+}
+
+#version {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.settingsList {
+	padding: 10px;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.image img {
+   max-width:300px;
+   max-height:300px;
+   touch-action: none;
+}
+
+#image
+{
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    background-color: black;	
+    margin: 0 auto;
+    border: 1px solid transparent;
+    border-radius: 15px;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 2;
+  cursor: pointer;
+}
+
+
+#overlayBG{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  font-size: 30px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+.loginmanualBtn {
+	background: #2086bf;
+	border: 1px solid #d9d9d9;
+	outline: none;
+        width: 120px;
+        height: 50px;
+        text-align: center;
+	color: #ffffff;
+	margin-top: 10px;
+	font-size: x-large;
+}
+
+#loginmanualUser {
+	background: white url(../img/user.png) no-repeat left;
+	padding-left: 35px;
+	font-size: x-large;
+	background-size: 35px;
+}
+
+#loginmanualPassword {
+	background: white url(../img/password.png) no-repeat left;
+	padding-left: 35px;
+	font-size: x-large;
+	background-size: 35px;
+}
+
+
+#syncjobList .uploadCount img {
+        height: 20px;
+        padding: 0 5px;
+}

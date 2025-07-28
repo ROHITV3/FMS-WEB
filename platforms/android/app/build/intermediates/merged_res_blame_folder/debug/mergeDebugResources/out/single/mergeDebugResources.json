@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.v3.wam.app-debug-26:/xml_camera_provider_paths.xml.flat",
+        "source": "com.v3.wam.app-main-28:/xml/camera_provider_paths.xml"
+    },
+    {
+        "merged": "com.v3.wam.app-debug-26:/xml_cdv_core_file_provider_paths.xml.flat",
+        "source": "com.v3.wam.app-main-28:/xml/cdv_core_file_provider_paths.xml"
+    },
+    {
+        "merged": "com.v3.wam.app-debug-26:/xml_config.xml.flat",
+        "source": "com.v3.wam.app-main-28:/xml/config.xml"
+    },
+    {
+        "merged": "com.v3.wam.app-debug-26:/drawable_ic_cdv_splashscreen.xml.flat",
+        "source": "com.v3.wam.app-main-28:/drawable/ic_cdv_splashscreen.xml"
+    }
+]

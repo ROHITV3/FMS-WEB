@@ -1,0 +1,263 @@
+
+
+<div id="body" >
+    
+    <fieldset style="display:none">
+        <input type="hidden" name="reload" id="reload">
+        <input type="hidden" name="assetId" id="assetId">
+        <input type="hidden" name="selectedYear" id="selectedYear">
+        <input type="hidden" name="selectedMonth" id="selectedMonth">
+        <input type="hidden" name="selectedDate" id="selectedDate">
+    </fieldset>
+    
+    <div id="calHeader" class="calendarHeader" data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+        <div class="headerNavLeft" id="calendarHeaderLeft">
+            <div class="headerNavLeftImg" id="logoutBtn">
+            </div>
+        </div>
+
+        <div class="headerNavRight" id="calendarHeaderRight">
+            <div id="jobBiddingPageNav" class="headerNavRightImg" onclick="loadCalendar()">
+            </div>
+        </div>
+        
+        <div id="calendarChooseDateLabel"></div>
+    </div>
+
+    <div id="calendarContainer" >
+        
+        <div id="monthYearContainer">
+            <div id="topspacer5"></div>
+            <div id="yearContainer">
+                <input id="monthSelection" type="month" onchange="changeMonthYear()"
+                       min="2017-01" value="" style="text-align: center">
+            </div>
+            <div id="topspacer5"></div>
+        </div>
+        
+        
+        <div id="midPad"></div>
+        <div id="datesLeftSpacer"></div>
+        
+        <div id="datesContainer">
+            <div id="daysContainerSpacer"></div>
+            <div id="daysContainer">
+                <div class="singleDay">Su</div>
+                <div class="daySpacer"></div>
+                <div class="singleDay">Mo</div>
+                <div class="daySpacer"></div>
+                <div class="singleDay">Tu</div>
+                <div class="daySpacer"></div>
+                <div class="singleDay">We</div>
+                <div class="daySpacer"></div>
+                <div class="singleDay">Th</div>
+                <div class="daySpacer"></div>
+                <div class="singleDay">Fr</div>
+                <div class="daySpacer"></div>
+                <div class="singleDay">Sa</div>
+            </div>
+            
+            <div id="allDatesSpacer"></div>
+            <div id="allDates">
+<!--                <div class="singleLine"></div>
+                <div class="singleLineSpacer"></div>
+                <div class="singleLine"></div>
+                <div class="singleLineSpacer"></div>
+                <div class="singleLine"></div>
+                <div class="singleLineSpacer"></div>
+                <div class="singleLine"></div>
+                <div class="singleLineSpacer"></div>
+                <div class="singleLine"></div>-->
+<!--                <div class="singleLine">
+                    <div class="singleDate"></div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateNoData">1</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateWithData">2</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateSelected">3</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateWithData">4</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateNoData">5</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateNoData">6</div>
+                </div>-->
+            </div>
+        </div>
+<!--
+
+            <div id="allDates">
+                <div class="singleLine">
+                    <div class="singleDate"></div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateNoData">1</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateWithData">2</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateSelected">3</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateWithData">4</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateNoData">5</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateNoData">6</div>
+                </div>
+                <div class="singleLine">
+                    <div class="singleDate singleDateNoData">7</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateNoData">8</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateWithData">9</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateSelected">10</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateWithData">11</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateNoData">12</div>
+                        <div class="singleDateSpacer"></div>
+                    <div class="singleDate singleDateNoData">13</div>
+                </div>
+            </div>
+        </div>-->
+
+        <div id="datesRightSpacer">
+            <div class="datesRightSpacerMarker1"></div>
+            <div class="datesRightSpacerMarker2"></div>
+            <div class="datesRightSpacerMarker1"></div>
+            <div class="datesRightSpacerMarker2"></div>
+            <div class="datesRightSpacerMarker1"></div>
+            <div class="datesRightSpacerMarker2"></div>
+            <div class="datesRightSpacerMarker1"></div>
+            <div class="datesRightSpacerMarker2"></div>
+            <div class="datesRightSpacerMarker1"></div>
+            <div class="datesRightSpacerMarker2"></div>
+        </div>
+    </div>
+    
+    <div id="activitiesContainer">
+        <div id="activitiesLeftSpacer"></div>
+        <div id="allActivities">
+<!--            <div class="singleActivity">
+                <div class="activityTime">
+                    8.30 - 10.30
+                </div>
+                <div class="activityDivider"></div>
+                <div class="activitySpacer"></div>
+                <div class="activityDetails">
+                    <div class="activityDetailsAddress">658D Jurong West St 65</div>
+                    <div class="activityDetailsDescription">Grocery shopping and some other activities</div>
+                </div>
+                    
+            </div>
+            <div class="singleActivitySpacer"></div>
+            <div class="singleActivity">
+                
+            </div>-->
+        </div>
+        <div id="activitiesRightSpacer"></div>
+    </div>
+    
+    
+    <div id="calFooter" class="calendarFooter" data-role="footer" data-theme="a" data-position="fixed">
+        <div id="createJobDiv" style="display: none;">
+            <div id="labelTime" style="float: left; margin-left: 5px"></div>
+            <div style="float: left; margin-left: 10px">
+                <select id="timeDropdown" class="dropdownSelectMini">
+                    <option value="0700">07:00</option>
+                    <option value="0715">07:15</option>
+                    <option value="0730">07:30</option>
+                    <option value="0745">07:45</option>
+                    <option value="0800">08:00</option>
+                    <option value="0815">08:15</option>
+                    <option value="0830">08:30</option>
+                    <option value="0845">08:45</option>
+                    <option value="0900">09:00</option>
+                    <option value="0915">09:15</option>
+                    <option value="0930">09:30</option>
+                    <option value="0945">09:45</option>
+                    
+                    <option value="1000">10:00</option>
+                    <option value="1015">10:15</option>
+                    <option value="1030">10:30</option>
+                    <option value="1045">10:45</option>
+                    <option value="1100">11:00</option>
+                    <option value="1115">11:15</option>
+                    <option value="1130">11:30</option>
+                    <option value="1145">11:45</option>
+                    <option value="1200">12:00</option>
+                    <option value="1215">12:15</option>
+                    <option value="1230">12:30</option>
+                    <option value="1245">12:45</option>
+                    
+                    <option value="1300">13:00</option>
+                    <option value="1315">13:15</option>
+                    <option value="1330">13:30</option>
+                    <option value="1345">13:45</option>
+                    <option value="1400">14:00</option>
+                    <option value="1415">14:15</option>
+                    <option value="1430">14:30</option>
+                    <option value="1445">14:45</option>
+                    <option value="1500">15:00</option>
+                    <option value="1515">15:15</option>
+                    <option value="1530">15:30</option>
+                    <option value="1545">15:45</option>
+                    
+                    <option value="1600">16:00</option>
+                    <option value="1615">16:15</option>
+                    <option value="1630">16:30</option>
+                    <option value="1645">16:45</option>
+                    <option value="1700">17:00</option>
+                    <option value="1715">17:15</option>
+                    <option value="1730">17:30</option>
+                    <option value="1745">17:45</option>
+                    <option value="1800">18:00</option>
+                    <option value="1815">18:15</option>
+                    <option value="1830">18:30</option>
+                    <option value="1845">18:45</option>
+                </select>
+            </div>
+            <div id="labelDuration" style="float: left; margin-left: 10px"></div>
+            <div style="float: left; margin-left: 5px">
+                <select id="durationDropdown" class="dropdownSelectMini">
+                    <option value="30">30m</option>
+                    <option value="45">45m</option>
+                    <option value="60">1h</option>
+                    <option value="90">1h 30m</option>
+                    <option value="120">2h</option>
+                    <option value="150">2h 30m</option>
+                    <option value="180">3h</option>
+                    <option value="210">3h 30m</option>
+                    <option value="240">4h</option>
+                    <option value="270">4h 30m</option>
+                    <option value="300">5h</option>
+                    <option value="330">5h 30m</option>
+                    <option value="360">6h</option>
+                    <option value="390">6h 30m</option>
+                    <option value="420">7h</option>
+                    <option value="450">7h 30m</option>
+                    <option value="480">8h</option>
+                    <option value="510">8h 30m</option>
+                    <option value="540">9h</option>
+                    <option value="570">9h 30m</option>
+                    <option value="600">10h</option>
+                    <option value="630">10h 30m</option>
+                    <option value="660">11h</option>
+                    <option value="690">11h 30m</option>
+                    <option value="720">12h</option>
+                </select>
+            </div>
+            <div id="divOk" style="float: left; margin-left: 8px;" onclick="checkCreate()"></div>
+            <div id="divCancel" style="float: left; margin-left: 8px;" onclick="refreshOriginal()"></div>
+        </div>
+        
+        <div id="footerAnnouncement" style="float: left; margin-left: 5px"></div>
+        <div class="footerRefresh" id="footerRefreshRight"></div>
+    </div>
+
+    
+</div>
+
+
+
+
