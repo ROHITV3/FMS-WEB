@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "com.v3.wam.app-mergeDebugResources-49:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "com.v3.wam.app-mergeDebugResources-47:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/Users/priyanka/.gradle/caches/8.13/transforms/6bfb780a0bae2e7cdaf000cffe73451c/transformed/appcompat-1.7.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,193,263,337,413,472,543",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "119,188,258,332,408,467,538,606"
+                    }
+                },
+                {
+                    "source": "/Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -18,16 +28,6 @@
                         "startOffsets": "611,684",
                         "endColumns": "72,71",
                         "endOffsets": "679,751"
-                    }
-                },
-                {
-                    "source": "/Users/priyanka/.gradle/caches/8.13/transforms/e7d31d59e4368b62158c281434d4f460/transformed/appcompat-1.7.1/res/values-sw600dp-v13/values-sw600dp-v13.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,124,193,263,337,413,472,543",
-                        "endColumns": "68,68,69,73,75,58,70,67",
-                        "endOffsets": "119,188,258,332,408,467,538,606"
                     }
                 }
             ]

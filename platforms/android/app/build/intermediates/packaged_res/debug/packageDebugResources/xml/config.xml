@@ -51,4 +51,7 @@
     <feature name="Launcher">
         <param name="android-package" value="com.hutchind.cordova.plugins.launcher.Launcher" />
     </feature>
+    <feature name="BarcodeScanner">
+        <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
+    </feature>
 </widget>

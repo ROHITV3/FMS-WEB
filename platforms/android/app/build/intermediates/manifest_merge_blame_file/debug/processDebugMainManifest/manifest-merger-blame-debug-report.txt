@@ -25,194 +25,194 @@
 18-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:160-188
 19
 20    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-20-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:5-81
-20-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:22-78
+20-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:42:5-81
+20-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:42:22-78
 21    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-21-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:5-79
-21-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:22-76
+21-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:5-79
+21-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:22-76
 22    <uses-permission android:name="android.permission.BLUETOOTH" />
-22-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:5-68
-22-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:22-65
+22-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:5-68
+22-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:22-65
 23    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-23-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:5-74
-23-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:22-71
+23-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:5-74
+23-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:22-71
 24    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-24-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:5-81
-24-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:22-78
+24-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:5-81
+24-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:22-78
 25
 26    <queries>
-26-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:5-62:15
+26-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:5-61:15
 27        <intent>
-27-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:49:9-51:18
+27-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:9-50:18
 28            <action android:name="android.media.action.IMAGE_CAPTURE" />
-28-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:13-73
-28-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:21-70
+28-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:49:13-73
+28-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:49:21-70
 29        </intent>
 30        <intent>
-30-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:52:9-54:18
+30-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:51:9-53:18
 31            <action android:name="android.intent.action.GET_CONTENT" />
-31-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:53:13-72
-31-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:53:21-69
+31-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:52:13-72
+31-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:52:21-69
 32        </intent>
 33        <intent>
-33-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:9-57:18
+33-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:54:9-56:18
 34            <action android:name="android.intent.action.PICK" />
-34-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:13-65
-34-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:21-62
+34-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:13-65
+34-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:21-62
 35        </intent>
 36        <intent>
-36-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:9-61:18
+36-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:57:9-60:18
 37            <action android:name="com.android.camera.action.CROP" />
-37-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:13-69
-37-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:21-66
+37-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:13-69
+37-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:21-66
 38
 39            <data
-39-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:13-73
+39-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:13-73
 40                android:mimeType="image/*"
-40-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:19-45
+40-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:19-45
 41                android:scheme="content" />
-41-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:46-70
+41-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:46-70
 42        </intent>
 43        <intent>
-43-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:11:9-15:18
+43-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:11:9-15:18
 44            <action android:name="android.intent.action.VIEW" />
-44-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:12:13-65
-44-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:12:21-62
+44-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:12:13-65
+44-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:12:21-62
 45
 46            <data android:scheme="https" />
-46-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:13-73
-46-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:46-70
+46-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:13-73
+46-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:46-70
 47        </intent>
 48    </queries>
 49
 50    <uses-feature
-50-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:5-90
+50-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:5-90
 51        android:name="android.hardware.location.gps"
-51-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:19-63
+51-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:19-63
 52        android:required="true" />
-52-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:64-87
+52-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:64-87
 53
 54    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-54-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:64:5-80
-54-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:64:22-77
+54-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:5-80
+54-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:22-77
 55    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-55-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:65:5-75
-55-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:65:22-72
+55-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:64:5-75
+55-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:64:22-72
 56    <uses-permission android:name="android.permission.VIBRATE" />
-56-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:66:5-66
-56-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:66:22-63
+56-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:65:5-66
+56-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:65:22-63
 57    <uses-permission android:name="android.permission.DELETE_CACHE_FILES" />
-57-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:67:5-77
-57-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:67:22-74
+57-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:66:5-77
+57-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:66:22-74
 58
 59    <uses-feature
-59-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:68:5-88
+59-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:67:5-88
 60        android:name="android.hardware.telephony"
-60-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:68:19-60
+60-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:67:19-60
 61        android:required="false" />
-61-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:68:61-85
+61-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:67:61-85
 62
 63    <uses-permission android:name="android.permission.CAMERA" />
-63-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:69:5-65
-63-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:69:22-62
+63-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:68:5-65
+63-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:68:22-62
 64    <uses-permission android:name="android.permission.FLASHLIGHT" />
-64-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:70:5-69
-64-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:70:22-66
+64-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:69:5-69
+64-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:69:22-66
 65
 66    <uses-feature
-66-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:71:5-84
+66-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:70:5-84
 67        android:name="android.hardware.camera"
-67-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:71:19-57
+67-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:70:19-57
 68        android:required="true" />
-68-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:71:58-81
+68-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:70:58-81
 69    <uses-feature android:name="android.hardware.screen.portrait" />
-69-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:72:5-69
-69-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:72:19-66
+69-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:71:5-69
+69-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:71:19-66
 70
 71    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-71-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:73:5-77
-71-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:73:22-74
+71-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:72:5-77
+71-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:72:22-74
 72    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-72-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:74:5-76
-72-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:74:22-73
+72-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:73:5-76
+72-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:73:22-73
 73    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-73-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:75:5-75
-73-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:75:22-72
+73-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:74:5-75
+73-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:74:22-72
 74    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-74-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:5-75
-74-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:22-72
+74-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:75:5-75
+74-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:75:22-72
 75    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-75-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:5-79
-75-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:22-76
+75-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:5-79
+75-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:22-76
 76    <uses-permission android:name="android.permission.BLUETOOTH" />
-76-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:5-68
-76-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:22-65
+76-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:5-68
+76-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:22-65
 77    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-77-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:5-74
-77-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:22-71
+77-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:5-74
+77-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:22-71
 78    <uses-permission
-78-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:80:5-120
+78-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:79:5-120
 79        android:name="android.permission.BLUETOOTH_SCAN"
-79-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:80:22-70
+79-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:79:22-70
 80        android:usesPermissionFlags="neverForLocation" />
-80-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:80:71-117
+80-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:79:71-117
 81    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-81-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:81:5-76
-81-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:81:22-73
+81-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:80:5-76
+81-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:80:22-73
 82    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-82-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:5-81
-82-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:22-78
+82-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:42:5-81
+82-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:42:22-78
 83    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-83-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:5-79
-83-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:22-76
+83-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:5-79
+83-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:22-76
 84    <uses-permission android:name="android.permission.BLUETOOTH" />
-84-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:5-68
-84-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:22-65
+84-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:5-68
+84-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:22-65
 85    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-85-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:5-74
-85-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:22-71
+85-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:5-74
+85-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:22-71
 86    <uses-permission android:name="android.permission.INTERNET" />
-86-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:86:5-67
-86-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:86:22-64
+86-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:85:5-67
+86-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:85:22-64
 87    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-87-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:87:5-79
-87-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:87:22-76
+87-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:86:5-79
+87-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:86:22-76
 88    <uses-permission android:name="android.permission.WAKE_LOCK" />
-88-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:88:5-68
-88-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:88:22-65
+88-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:87:5-68
+88-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:87:22-65
 89    <uses-permission android:name="com.v3.wam.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-89-->[com.google.android.gms:play-services-tagmanager:18.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/537db38b6aa726185727e3188687ad9a/transformed/jetified-play-services-tagmanager-18.3.0/AndroidManifest.xml:22:5-97
-89-->[com.google.android.gms:play-services-tagmanager:18.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/537db38b6aa726185727e3188687ad9a/transformed/jetified-play-services-tagmanager-18.3.0/AndroidManifest.xml:22:22-94
+89-->[com.google.android.gms:play-services-tagmanager:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/e4d11f526ee92cd66ad036b691b275ae/transformed/jetified-play-services-tagmanager-18.1.1/AndroidManifest.xml:22:5-97
+89-->[com.google.android.gms:play-services-tagmanager:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/e4d11f526ee92cd66ad036b691b275ae/transformed/jetified-play-services-tagmanager-18.1.1/AndroidManifest.xml:22:22-94
 90    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 90-->[com.google.firebase:firebase-iid:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/4441d5d463b5ca4e162947d14b088cf4/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:26:5-82
 90-->[com.google.firebase:firebase-iid:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/4441d5d463b5ca4e162947d14b088cf4/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:26:22-79
 91    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-91-->[com.google.android.gms:play-services-measurement:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fb58c140be24faa8d3b1693bab6a2e0d/transformed/jetified-play-services-measurement-23.0.0/AndroidManifest.xml:26:5-110
-91-->[com.google.android.gms:play-services-measurement:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fb58c140be24faa8d3b1693bab6a2e0d/transformed/jetified-play-services-measurement-23.0.0/AndroidManifest.xml:26:22-107
+91-->[com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/14082b8256fe3d8597e271a059180293/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:26:5-110
+91-->[com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/14082b8256fe3d8597e271a059180293/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:26:22-107
 92    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-92-->[com.google.android.gms:play-services-measurement-api:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/5db854183fa554b24c3f4f191d8bf7bf/transformed/jetified-play-services-measurement-api-23.0.0/AndroidManifest.xml:25:5-79
-92-->[com.google.android.gms:play-services-measurement-api:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/5db854183fa554b24c3f4f191d8bf7bf/transformed/jetified-play-services-measurement-api-23.0.0/AndroidManifest.xml:25:22-76
+92-->[com.google.android.gms:play-services-measurement-impl:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/aa3861c037e5f2c74162c9c910ed4786/transformed/jetified-play-services-measurement-impl-22.2.0/AndroidManifest.xml:27:5-79
+92-->[com.google.android.gms:play-services-measurement-impl:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/aa3861c037e5f2c74162c9c910ed4786/transformed/jetified-play-services-measurement-impl-22.2.0/AndroidManifest.xml:27:22-76
 93    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
-93-->[com.google.android.gms:play-services-measurement-api:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/5db854183fa554b24c3f4f191d8bf7bf/transformed/jetified-play-services-measurement-api-23.0.0/AndroidManifest.xml:26:5-88
-93-->[com.google.android.gms:play-services-measurement-api:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/5db854183fa554b24c3f4f191d8bf7bf/transformed/jetified-play-services-measurement-api-23.0.0/AndroidManifest.xml:26:22-85
+93-->[com.google.android.gms:play-services-measurement-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/ae15c217c3ef67e104bbd5b8b662ff31/transformed/jetified-play-services-measurement-api-22.2.0/AndroidManifest.xml:26:5-88
+93-->[com.google.android.gms:play-services-measurement-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/ae15c217c3ef67e104bbd5b8b662ff31/transformed/jetified-play-services-measurement-api-22.2.0/AndroidManifest.xml:26:22-85
 94    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
-94-->[com.google.android.gms:play-services-measurement-api:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/5db854183fa554b24c3f4f191d8bf7bf/transformed/jetified-play-services-measurement-api-23.0.0/AndroidManifest.xml:27:5-82
-94-->[com.google.android.gms:play-services-measurement-api:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/5db854183fa554b24c3f4f191d8bf7bf/transformed/jetified-play-services-measurement-api-23.0.0/AndroidManifest.xml:27:22-79
+94-->[com.google.android.gms:play-services-measurement-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/ae15c217c3ef67e104bbd5b8b662ff31/transformed/jetified-play-services-measurement-api-22.2.0/AndroidManifest.xml:27:5-82
+94-->[com.google.android.gms:play-services-measurement-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/ae15c217c3ef67e104bbd5b8b662ff31/transformed/jetified-play-services-measurement-api-22.2.0/AndroidManifest.xml:27:22-79
 95    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 95-->[com.google.android.recaptcha:recaptcha:18.6.1] /Users/priyanka/.gradle/caches/8.13/transforms/a65b39292f2d6c193e053fc046e06345/transformed/jetified-recaptcha-18.6.1/AndroidManifest.xml:9:5-98
 95-->[com.google.android.recaptcha:recaptcha:18.6.1] /Users/priyanka/.gradle/caches/8.13/transforms/a65b39292f2d6c193e053fc046e06345/transformed/jetified-recaptcha-18.6.1/AndroidManifest.xml:9:22-95
 96
 97    <permission
-97-->[androidx.core:core:1.16.0] /Users/priyanka/.gradle/caches/8.13/transforms/b4eaa2e92738823132cfe758e162f17c/transformed/core-1.16.0/AndroidManifest.xml:22:5-24:47
+97-->[androidx.core:core:1.13.0] /Users/priyanka/.gradle/caches/8.13/transforms/5a32516705b3cf1764e167c0aa82b484/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
 98        android:name="com.v3.wam.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-98-->[androidx.core:core:1.16.0] /Users/priyanka/.gradle/caches/8.13/transforms/b4eaa2e92738823132cfe758e162f17c/transformed/core-1.16.0/AndroidManifest.xml:23:9-81
+98-->[androidx.core:core:1.13.0] /Users/priyanka/.gradle/caches/8.13/transforms/5a32516705b3cf1764e167c0aa82b484/transformed/core-1.13.0/AndroidManifest.xml:23:9-81
 99        android:protectionLevel="signature" />
-99-->[androidx.core:core:1.16.0] /Users/priyanka/.gradle/caches/8.13/transforms/b4eaa2e92738823132cfe758e162f17c/transformed/core-1.16.0/AndroidManifest.xml:24:9-44
+99-->[androidx.core:core:1.13.0] /Users/priyanka/.gradle/caches/8.13/transforms/5a32516705b3cf1764e167c0aa82b484/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
 100
 101    <application
-101-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:5-42:19
+101-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:5-41:19
 102        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-102-->[androidx.core:core:1.16.0] /Users/priyanka/.gradle/caches/8.13/transforms/b4eaa2e92738823132cfe758e162f17c/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
+102-->[androidx.core:core:1.13.0] /Users/priyanka/.gradle/caches/8.13/transforms/5a32516705b3cf1764e167c0aa82b484/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
 103        android:debuggable="true"
 104        android:extractNativeLibs="false"
 105        android:hardwareAccelerated="true"
@@ -350,621 +350,629 @@
 175-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:25:20-91
 176            android:resource="@color/accent" />
 176-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:25:92-124
-177        <!-- <meta-data android:name="com.google.firebase.messaging.default_notification_channel_id" android:value="@string/default_notification_channel_id" /> -->
-178        <meta-data
-178-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:9-96
-179            android:name="firebase_analytics_collection_enabled"
-179-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:20-72
-180            android:value="true" />
-180-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:73-93
-181        <meta-data
-181-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:9-98
-182            android:name="firebase_performance_collection_enabled"
-182-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:20-74
-183            android:value="true" />
-183-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:75-95
-184        <meta-data
-184-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:9-98
-185            android:name="firebase_crashlytics_collection_enabled"
-185-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:20-74
-186            android:value="true" />
-186-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:75-95
-187        <meta-data
-187-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:9-95
-188            android:name="firebase_messaging_auto_init_enabled"
-188-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:20-71
-189            android:value="true" />
-189-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:72-92
-190        <meta-data
-190-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:9-99
-191            android:name="google_analytics_adid_collection_enabled"
-191-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:20-75
-192            android:value="true" />
-192-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:76-96
-193        <meta-data
-193-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:9-107
-194            android:name="google_analytics_default_allow_analytics_storage"
-194-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:20-83
-195            android:value="true" />
-195-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:84-104
-196        <meta-data
-196-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:9-100
-197            android:name="google_analytics_default_allow_ad_storage"
-197-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:20-76
-198            android:value="true" />
-198-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:77-97
-199        <meta-data
-199-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:9-102
-200            android:name="google_analytics_default_allow_ad_user_data"
-200-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:20-78
-201            android:value="true" />
-201-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:79-99
-202        <meta-data
-202-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:9-116
-203            android:name="google_analytics_default_allow_ad_personalization_signals"
-203-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:20-92
-204            android:value="true" />
-204-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:93-113
-205        <meta-data
-205-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:9-119
-206            android:name="com.google.firebase.messaging.default_notification_channel_id"
-206-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:20-96
-207            android:value="444" />
-207-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:97-116
-208
-209        <service
-209-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:37:9-41:19
-210            android:name="notifications.MyFirebaseMessagingService"
-210-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:37:43-98
-211            android:exported="false" >
-211-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:37:18-42
-212            <intent-filter>
-212-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:19:13-21:29
-213                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-213-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:17-78
-213-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:25-75
-214            </intent-filter>
-215        </service>
-216        <service
-216-->[com.google.firebase:firebase-perf:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/03b9fda282f52cb643f814200e930ab7/transformed/jetified-firebase-perf-22.0.0/AndroidManifest.xml:11:9-20:19
-217            android:name="com.google.firebase.components.ComponentDiscoveryService"
-217-->[com.google.firebase:firebase-perf:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/03b9fda282f52cb643f814200e930ab7/transformed/jetified-firebase-perf-22.0.0/AndroidManifest.xml:12:13-84
-218            android:directBootAware="true"
-218-->[com.google.firebase:firebase-common:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/f501731e0389a423fad1c1af1873f0e2/transformed/jetified-firebase-common-22.0.0/AndroidManifest.xml:32:13-43
-219            android:exported="false" >
-219-->[com.google.firebase:firebase-perf:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/03b9fda282f52cb643f814200e930ab7/transformed/jetified-firebase-perf-22.0.0/AndroidManifest.xml:13:13-37
-220            <meta-data
-220-->[com.google.firebase:firebase-perf:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/03b9fda282f52cb643f814200e930ab7/transformed/jetified-firebase-perf-22.0.0/AndroidManifest.xml:14:13-16:85
-221                android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfKtxRegistrar"
-221-->[com.google.firebase:firebase-perf:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/03b9fda282f52cb643f814200e930ab7/transformed/jetified-firebase-perf-22.0.0/AndroidManifest.xml:15:17-112
-222                android:value="com.google.firebase.components.ComponentRegistrar" />
-222-->[com.google.firebase:firebase-perf:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/03b9fda282f52cb643f814200e930ab7/transformed/jetified-firebase-perf-22.0.0/AndroidManifest.xml:16:17-82
-223            <meta-data
-223-->[com.google.firebase:firebase-perf:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/03b9fda282f52cb643f814200e930ab7/transformed/jetified-firebase-perf-22.0.0/AndroidManifest.xml:17:13-19:85
-224                android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar"
-224-->[com.google.firebase:firebase-perf:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/03b9fda282f52cb643f814200e930ab7/transformed/jetified-firebase-perf-22.0.0/AndroidManifest.xml:18:17-109
-225                android:value="com.google.firebase.components.ComponentRegistrar" />
-225-->[com.google.firebase:firebase-perf:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/03b9fda282f52cb643f814200e930ab7/transformed/jetified-firebase-perf-22.0.0/AndroidManifest.xml:19:17-82
-226            <meta-data
-226-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:22:13-24:85
-227                android:name="com.google.firebase.components:com.google.firebase.inappmessaging.display.FirebaseInAppMessagingDisplayKtxRegistrar"
-227-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:23:17-147
-228                android:value="com.google.firebase.components.ComponentRegistrar" />
-228-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:24:17-82
-229            <meta-data
-229-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:25:13-27:85
-230                android:name="com.google.firebase.components:com.google.firebase.inappmessaging.display.FirebaseInAppMessagingDisplayRegistrar"
-230-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:26:17-144
-231                android:value="com.google.firebase.components.ComponentRegistrar" />
-231-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:27:17-82
-232            <meta-data
-232-->[com.google.firebase:firebase-functions:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/76c20fd6c081233931420c7a4274f3c9/transformed/jetified-firebase-functions-22.0.0/AndroidManifest.xml:15:13-17:85
-233                android:name="com.google.firebase.components:com.google.firebase.functions.FirebaseFunctionsKtxRegistrar"
-233-->[com.google.firebase:firebase-functions:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/76c20fd6c081233931420c7a4274f3c9/transformed/jetified-firebase-functions-22.0.0/AndroidManifest.xml:16:17-122
-234                android:value="com.google.firebase.components.ComponentRegistrar" />
-234-->[com.google.firebase:firebase-functions:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/76c20fd6c081233931420c7a4274f3c9/transformed/jetified-firebase-functions-22.0.0/AndroidManifest.xml:17:17-82
-235            <meta-data
-235-->[com.google.firebase:firebase-functions:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/76c20fd6c081233931420c7a4274f3c9/transformed/jetified-firebase-functions-22.0.0/AndroidManifest.xml:18:13-20:85
-236                android:name="com.google.firebase.components:com.google.firebase.functions.FunctionsRegistrar"
-236-->[com.google.firebase:firebase-functions:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/76c20fd6c081233931420c7a4274f3c9/transformed/jetified-firebase-functions-22.0.0/AndroidManifest.xml:19:17-111
-237                android:value="com.google.firebase.components.ComponentRegistrar" />
-237-->[com.google.firebase:firebase-functions:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/76c20fd6c081233931420c7a4274f3c9/transformed/jetified-firebase-functions-22.0.0/AndroidManifest.xml:20:17-82
-238            <meta-data
-238-->[com.google.firebase:firebase-iid:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/4441d5d463b5ca4e162947d14b088cf4/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:32:13-34:85
-239                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-239-->[com.google.firebase:firebase-iid:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/4441d5d463b5ca4e162947d14b088cf4/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:33:17-96
-240                android:value="com.google.firebase.components.ComponentRegistrar" />
-240-->[com.google.firebase:firebase-iid:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/4441d5d463b5ca4e162947d14b088cf4/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:34:17-82
-241            <meta-data
-241-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:69:13-71:85
-242                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-242-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:70:17-109
-243                android:value="com.google.firebase.components.ComponentRegistrar" />
-243-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:71:17-82
-244            <meta-data
-244-->[com.google.firebase:firebase-messaging-ktx:24.1.2] /Users/priyanka/.gradle/caches/8.13/transforms/0116366eff46668a102a09a22b45f04e/transformed/jetified-firebase-messaging-ktx-24.1.2/AndroidManifest.xml:26:13-28:85
-245                android:name="com.google.firebase.components:com.google.firebase.messaging.ktx.FirebaseMessagingLegacyRegistrar"
-245-->[com.google.firebase:firebase-messaging-ktx:24.1.2] /Users/priyanka/.gradle/caches/8.13/transforms/0116366eff46668a102a09a22b45f04e/transformed/jetified-firebase-messaging-ktx-24.1.2/AndroidManifest.xml:27:17-129
-246                android:value="com.google.firebase.components.ComponentRegistrar" />
-246-->[com.google.firebase:firebase-messaging-ktx:24.1.2] /Users/priyanka/.gradle/caches/8.13/transforms/0116366eff46668a102a09a22b45f04e/transformed/jetified-firebase-messaging-ktx-24.1.2/AndroidManifest.xml:28:17-82
-247            <meta-data
-247-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:57:13-59:85
-248                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
-248-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:58:17-122
-249                android:value="com.google.firebase.components.ComponentRegistrar" />
-249-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:59:17-82
-250            <meta-data
-250-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:60:13-62:85
-251                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-251-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:61:17-119
-252                android:value="com.google.firebase.components.ComponentRegistrar" />
-252-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:62:17-82
-253            <meta-data
-253-->[com.google.firebase:firebase-firestore:26.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/11496746777794990e0a11c08756375d/transformed/jetified-firebase-firestore-26.0.0/AndroidManifest.xml:17:13-19:85
-254                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
-254-->[com.google.firebase:firebase-firestore:26.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/11496746777794990e0a11c08756375d/transformed/jetified-firebase-firestore-26.0.0/AndroidManifest.xml:18:17-122
-255                android:value="com.google.firebase.components.ComponentRegistrar" />
-255-->[com.google.firebase:firebase-firestore:26.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/11496746777794990e0a11c08756375d/transformed/jetified-firebase-firestore-26.0.0/AndroidManifest.xml:19:17-82
-256            <meta-data
-256-->[com.google.firebase:firebase-firestore:26.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/11496746777794990e0a11c08756375d/transformed/jetified-firebase-firestore-26.0.0/AndroidManifest.xml:20:13-22:85
-257                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-257-->[com.google.firebase:firebase-firestore:26.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/11496746777794990e0a11c08756375d/transformed/jetified-firebase-firestore-26.0.0/AndroidManifest.xml:21:17-111
-258                android:value="com.google.firebase.components.ComponentRegistrar" />
-258-->[com.google.firebase:firebase-firestore:26.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/11496746777794990e0a11c08756375d/transformed/jetified-firebase-firestore-26.0.0/AndroidManifest.xml:22:17-82
-259            <meta-data
-259-->[com.google.firebase:firebase-crashlytics-ndk:20.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/7204edfdb723b484f8cba6a422b052e2/transformed/jetified-firebase-crashlytics-ndk-20.0.0/AndroidManifest.xml:32:13-34:85
-260                android:name="com.google.firebase.components:com.google.firebase.crashlytics.ndk.CrashlyticsNdkRegistrar"
-260-->[com.google.firebase:firebase-crashlytics-ndk:20.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/7204edfdb723b484f8cba6a422b052e2/transformed/jetified-firebase-crashlytics-ndk-20.0.0/AndroidManifest.xml:33:17-122
-261                android:value="com.google.firebase.components.ComponentRegistrar" />
-261-->[com.google.firebase:firebase-crashlytics-ndk:20.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/7204edfdb723b484f8cba6a422b052e2/transformed/jetified-firebase-crashlytics-ndk-20.0.0/AndroidManifest.xml:34:17-82
-262            <meta-data
-262-->[com.google.android.gms:play-services-measurement-api:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/5db854183fa554b24c3f4f191d8bf7bf/transformed/jetified-play-services-measurement-api-23.0.0/AndroidManifest.xml:33:13-35:85
-263                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-263-->[com.google.android.gms:play-services-measurement-api:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/5db854183fa554b24c3f4f191d8bf7bf/transformed/jetified-play-services-measurement-api-23.0.0/AndroidManifest.xml:34:17-139
-264                android:value="com.google.firebase.components.ComponentRegistrar" />
-264-->[com.google.android.gms:play-services-measurement-api:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/5db854183fa554b24c3f4f191d8bf7bf/transformed/jetified-play-services-measurement-api-23.0.0/AndroidManifest.xml:35:17-82
-265            <meta-data
-265-->[com.google.firebase:firebase-config:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/7ad27af4b286817f4bb63ec73c06b2b2/transformed/jetified-firebase-config-23.0.0/AndroidManifest.xml:29:13-31:85
-266                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.FirebaseRemoteConfigKtxRegistrar"
-266-->[com.google.firebase:firebase-config:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/7ad27af4b286817f4bb63ec73c06b2b2/transformed/jetified-firebase-config-23.0.0/AndroidManifest.xml:30:17-128
-267                android:value="com.google.firebase.components.ComponentRegistrar" />
-267-->[com.google.firebase:firebase-config:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/7ad27af4b286817f4bb63ec73c06b2b2/transformed/jetified-firebase-config-23.0.0/AndroidManifest.xml:31:17-82
-268            <meta-data
-268-->[com.google.firebase:firebase-config:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/7ad27af4b286817f4bb63ec73c06b2b2/transformed/jetified-firebase-config-23.0.0/AndroidManifest.xml:32:13-34:85
-269                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar"
-269-->[com.google.firebase:firebase-config:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/7ad27af4b286817f4bb63ec73c06b2b2/transformed/jetified-firebase-config-23.0.0/AndroidManifest.xml:33:17-117
-270                android:value="com.google.firebase.components.ComponentRegistrar" />
-270-->[com.google.firebase:firebase-config:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/7ad27af4b286817f4bb63ec73c06b2b2/transformed/jetified-firebase-config-23.0.0/AndroidManifest.xml:34:17-82
-271            <meta-data
-271-->[com.google.firebase:firebase-inappmessaging:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/8288f6545a4cc50e41e13c09bb23477d/transformed/jetified-firebase-inappmessaging-22.0.0/AndroidManifest.xml:14:13-16:85
-272                android:name="com.google.firebase.components:com.google.firebase.inappmessaging.FirebaseInAppMessagingKtxRegistrar"
-272-->[com.google.firebase:firebase-inappmessaging:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/8288f6545a4cc50e41e13c09bb23477d/transformed/jetified-firebase-inappmessaging-22.0.0/AndroidManifest.xml:15:17-132
-273                android:value="com.google.firebase.components.ComponentRegistrar" />
-273-->[com.google.firebase:firebase-inappmessaging:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/8288f6545a4cc50e41e13c09bb23477d/transformed/jetified-firebase-inappmessaging-22.0.0/AndroidManifest.xml:16:17-82
-274            <meta-data
-274-->[com.google.firebase:firebase-inappmessaging:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/8288f6545a4cc50e41e13c09bb23477d/transformed/jetified-firebase-inappmessaging-22.0.0/AndroidManifest.xml:17:13-19:85
-275                android:name="com.google.firebase.components:com.google.firebase.inappmessaging.FirebaseInAppMessagingRegistrar"
-275-->[com.google.firebase:firebase-inappmessaging:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/8288f6545a4cc50e41e13c09bb23477d/transformed/jetified-firebase-inappmessaging-22.0.0/AndroidManifest.xml:18:17-129
-276                android:value="com.google.firebase.components.ComponentRegistrar" />
-276-->[com.google.firebase:firebase-inappmessaging:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/8288f6545a4cc50e41e13c09bb23477d/transformed/jetified-firebase-inappmessaging-22.0.0/AndroidManifest.xml:19:17-82
-277            <meta-data
-277-->[com.google.firebase:firebase-crashlytics:20.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/94c13be409ecf322e6772290a07fe54a/transformed/jetified-firebase-crashlytics-20.0.0/AndroidManifest.xml:15:13-17:85
-278                android:name="com.google.firebase.components:com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar"
-278-->[com.google.firebase:firebase-crashlytics:20.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/94c13be409ecf322e6772290a07fe54a/transformed/jetified-firebase-crashlytics-20.0.0/AndroidManifest.xml:16:17-126
-279                android:value="com.google.firebase.components.ComponentRegistrar" />
-279-->[com.google.firebase:firebase-crashlytics:20.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/94c13be409ecf322e6772290a07fe54a/transformed/jetified-firebase-crashlytics-20.0.0/AndroidManifest.xml:17:17-82
-280            <meta-data
-280-->[com.google.firebase:firebase-crashlytics:20.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/94c13be409ecf322e6772290a07fe54a/transformed/jetified-firebase-crashlytics-20.0.0/AndroidManifest.xml:18:13-20:85
-281                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
-281-->[com.google.firebase:firebase-crashlytics:20.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/94c13be409ecf322e6772290a07fe54a/transformed/jetified-firebase-crashlytics-20.0.0/AndroidManifest.xml:19:17-115
-282                android:value="com.google.firebase.components.ComponentRegistrar" />
-282-->[com.google.firebase:firebase-crashlytics:20.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/94c13be409ecf322e6772290a07fe54a/transformed/jetified-firebase-crashlytics-20.0.0/AndroidManifest.xml:20:17-82
-283            <meta-data
-283-->[com.google.firebase:firebase-sessions:3.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/0558490d60b510b4e7e8274af9cae2e3/transformed/jetified-firebase-sessions-3.0.0/AndroidManifest.xml:25:13-27:85
-284                android:name="com.google.firebase.components:com.google.firebase.sessions.FirebaseSessionsRegistrar"
-284-->[com.google.firebase:firebase-sessions:3.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/0558490d60b510b4e7e8274af9cae2e3/transformed/jetified-firebase-sessions-3.0.0/AndroidManifest.xml:26:17-117
-285                android:value="com.google.firebase.components.ComponentRegistrar" />
-285-->[com.google.firebase:firebase-sessions:3.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/0558490d60b510b4e7e8274af9cae2e3/transformed/jetified-firebase-sessions-3.0.0/AndroidManifest.xml:27:17-82
-286            <meta-data
-286-->[com.google.firebase:firebase-installations:19.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/9f4abd0191bd7d50a7c190bc3826a9a6/transformed/jetified-firebase-installations-19.0.0/AndroidManifest.xml:15:13-17:85
-287                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
-287-->[com.google.firebase:firebase-installations:19.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/9f4abd0191bd7d50a7c190bc3826a9a6/transformed/jetified-firebase-installations-19.0.0/AndroidManifest.xml:16:17-130
-288                android:value="com.google.firebase.components.ComponentRegistrar" />
-288-->[com.google.firebase:firebase-installations:19.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/9f4abd0191bd7d50a7c190bc3826a9a6/transformed/jetified-firebase-installations-19.0.0/AndroidManifest.xml:17:17-82
-289            <meta-data
-289-->[com.google.firebase:firebase-installations:19.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/9f4abd0191bd7d50a7c190bc3826a9a6/transformed/jetified-firebase-installations-19.0.0/AndroidManifest.xml:18:13-20:85
-290                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-290-->[com.google.firebase:firebase-installations:19.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/9f4abd0191bd7d50a7c190bc3826a9a6/transformed/jetified-firebase-installations-19.0.0/AndroidManifest.xml:19:17-127
-291                android:value="com.google.firebase.components.ComponentRegistrar" />
-291-->[com.google.firebase:firebase-installations:19.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/9f4abd0191bd7d50a7c190bc3826a9a6/transformed/jetified-firebase-installations-19.0.0/AndroidManifest.xml:20:17-82
-292            <meta-data
-292-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/a3615232287bb078572237fcd3c0100f/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
-293                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-293-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/a3615232287bb078572237fcd3c0100f/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
-294                android:value="com.google.firebase.components.ComponentRegistrar" />
-294-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/a3615232287bb078572237fcd3c0100f/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
-295            <meta-data
-295-->[com.google.firebase:firebase-common:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/f501731e0389a423fad1c1af1873f0e2/transformed/jetified-firebase-common-22.0.0/AndroidManifest.xml:35:13-37:85
-296                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-296-->[com.google.firebase:firebase-common:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/f501731e0389a423fad1c1af1873f0e2/transformed/jetified-firebase-common-22.0.0/AndroidManifest.xml:36:17-109
-297                android:value="com.google.firebase.components.ComponentRegistrar" />
-297-->[com.google.firebase:firebase-common:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/f501731e0389a423fad1c1af1873f0e2/transformed/jetified-firebase-common-22.0.0/AndroidManifest.xml:37:17-82
-298            <meta-data
-298-->[com.google.firebase:firebase-abt:21.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/b50c3af6ba2901937e6df7bb10081086/transformed/jetified-firebase-abt-21.1.1/AndroidManifest.xml:12:13-14:85
-299                android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar"
-299-->[com.google.firebase:firebase-abt:21.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/b50c3af6ba2901937e6df7bb10081086/transformed/jetified-firebase-abt-21.1.1/AndroidManifest.xml:13:17-109
-300                android:value="com.google.firebase.components.ComponentRegistrar" />
-300-->[com.google.firebase:firebase-abt:21.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/b50c3af6ba2901937e6df7bb10081086/transformed/jetified-firebase-abt-21.1.1/AndroidManifest.xml:14:17-82
-301            <meta-data
-301-->[com.google.firebase:firebase-datatransport:19.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/6e15ff7d8d1e0ae84785b7e896df788d/transformed/jetified-firebase-datatransport-19.0.0/AndroidManifest.xml:25:13-27:85
-302                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-302-->[com.google.firebase:firebase-datatransport:19.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/6e15ff7d8d1e0ae84785b7e896df788d/transformed/jetified-firebase-datatransport-19.0.0/AndroidManifest.xml:26:17-115
-303                android:value="com.google.firebase.components.ComponentRegistrar" />
-303-->[com.google.firebase:firebase-datatransport:19.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/6e15ff7d8d1e0ae84785b7e896df788d/transformed/jetified-firebase-datatransport-19.0.0/AndroidManifest.xml:27:17-82
-304        </service>
-305
-306        <activity
-306-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:29:9-46:20
-307            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-307-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:30:13-80
-308            android:excludeFromRecents="true"
-308-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:31:13-46
-309            android:exported="true"
-309-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:32:13-36
-310            android:launchMode="singleTask"
-310-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:33:13-44
-311            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-311-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:34:13-72
-312            <intent-filter>
-312-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:35:13-45:29
-313                <action android:name="android.intent.action.VIEW" />
-313-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:12:13-65
-313-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:12:21-62
-314
-315                <category android:name="android.intent.category.DEFAULT" />
-315-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:38:17-76
-315-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:38:27-73
-316                <category android:name="android.intent.category.BROWSABLE" />
-316-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:39:17-78
-316-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:39:27-75
-317
-318                <data
-318-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:13-73
-319                    android:host="firebase.auth"
-320                    android:path="/"
-321                    android:scheme="genericidp" />
-321-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:46-70
-322            </intent-filter>
-323        </activity>
-324        <activity
-324-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:47:9-64:20
-325            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-325-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:48:13-79
-326            android:excludeFromRecents="true"
-326-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:49:13-46
-327            android:exported="true"
-327-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:50:13-36
-328            android:launchMode="singleTask"
-328-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:51:13-44
-329            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-329-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:52:13-72
-330            <intent-filter>
-330-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:53:13-63:29
-331                <action android:name="android.intent.action.VIEW" />
-331-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:12:13-65
-331-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:12:21-62
-332
-333                <category android:name="android.intent.category.DEFAULT" />
-333-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:38:17-76
-333-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:38:27-73
-334                <category android:name="android.intent.category.BROWSABLE" />
-334-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:39:17-78
-334-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:39:27-75
-335
-336                <data
-336-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:13-73
-337                    android:host="firebase.auth"
-338                    android:path="/"
-339                    android:scheme="recaptcha" />
-339-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:46-70
-340            </intent-filter>
-341        </activity>
-342
-343        <service
-343-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
-344            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
-344-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
-345            android:enabled="true"
-345-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
-346            android:exported="false" >
-346-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
-347            <meta-data
-347-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
-348                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
-348-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
-349                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
-349-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
-350        </service>
-351
-352        <activity
-352-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
-353            android:name="androidx.credentials.playservices.HiddenActivity"
-353-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
-354            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-354-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
-355            android:enabled="true"
-355-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
-356            android:exported="false"
-356-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
-357            android:fitsSystemWindows="true"
-357-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
-358            android:theme="@style/Theme.Hidden" >
-358-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
-359        </activity>
-360        <activity
-360-->[com.google.android.gms:play-services-auth:21.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/f2a3fd2ddf8d7ecf26153183b53f1fbd/transformed/jetified-play-services-auth-21.4.0/AndroidManifest.xml:23:9-27:75
-361            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-361-->[com.google.android.gms:play-services-auth:21.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/f2a3fd2ddf8d7ecf26153183b53f1fbd/transformed/jetified-play-services-auth-21.4.0/AndroidManifest.xml:24:13-93
-362            android:excludeFromRecents="true"
-362-->[com.google.android.gms:play-services-auth:21.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/f2a3fd2ddf8d7ecf26153183b53f1fbd/transformed/jetified-play-services-auth-21.4.0/AndroidManifest.xml:25:13-46
-363            android:exported="false"
-363-->[com.google.android.gms:play-services-auth:21.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/f2a3fd2ddf8d7ecf26153183b53f1fbd/transformed/jetified-play-services-auth-21.4.0/AndroidManifest.xml:26:13-37
-364            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-364-->[com.google.android.gms:play-services-auth:21.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/f2a3fd2ddf8d7ecf26153183b53f1fbd/transformed/jetified-play-services-auth-21.4.0/AndroidManifest.xml:27:13-72
-365        <!--
-366            Service handling Google Sign-In user revocation. For apps that do not integrate with
-367            Google Sign-In, this service will never be started.
-368        -->
-369        <service
-369-->[com.google.android.gms:play-services-auth:21.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/f2a3fd2ddf8d7ecf26153183b53f1fbd/transformed/jetified-play-services-auth-21.4.0/AndroidManifest.xml:33:9-37:51
-370            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-370-->[com.google.android.gms:play-services-auth:21.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/f2a3fd2ddf8d7ecf26153183b53f1fbd/transformed/jetified-play-services-auth-21.4.0/AndroidManifest.xml:34:13-89
-371            android:exported="true"
-371-->[com.google.android.gms:play-services-auth:21.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/f2a3fd2ddf8d7ecf26153183b53f1fbd/transformed/jetified-play-services-auth-21.4.0/AndroidManifest.xml:35:13-36
-372            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-372-->[com.google.android.gms:play-services-auth:21.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/f2a3fd2ddf8d7ecf26153183b53f1fbd/transformed/jetified-play-services-auth-21.4.0/AndroidManifest.xml:36:13-107
-373            android:visibleToInstantApps="true" />
-373-->[com.google.android.gms:play-services-auth:21.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/f2a3fd2ddf8d7ecf26153183b53f1fbd/transformed/jetified-play-services-auth-21.4.0/AndroidManifest.xml:37:13-48
-374
-375        <receiver
-375-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:29:9-40:20
-376            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-376-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:30:13-78
-377            android:exported="true"
-377-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:31:13-36
-378            android:permission="com.google.android.c2dm.permission.SEND" >
-378-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:32:13-73
-379            <intent-filter>
-379-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:33:13-35:29
-380                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-380-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:34:17-81
-380-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:34:25-78
-381            </intent-filter>
-382
-383            <meta-data
-383-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:37:13-39:40
-384                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
-384-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:38:17-92
-385                android:value="true" />
-385-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:39:17-37
-386        </receiver>
-387        <!--
-388             FirebaseMessagingService performs security checks at runtime,
-389             but set to not exported to explicitly avoid allowing another app to call it.
-390        -->
-391        <service
-391-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:46:9-53:19
-392            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-392-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:47:13-82
-393            android:directBootAware="true"
-393-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:48:13-43
-394            android:exported="false" >
-394-->[com.google.firebase:firebase-messaging:25.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fadd6e9fd3fc6b1fb07332b06ea6dd67/transformed/jetified-firebase-messaging-25.0.0/AndroidManifest.xml:49:13-37
-395            <intent-filter android:priority="-500" >
-395-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:19:13-21:29
-396                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-396-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:17-78
-396-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:25-75
-397            </intent-filter>
-398        </service>
-399        <service
-399-->[com.google.android.gms:play-services-tagmanager-api:18.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/0a0af466a07503336b11b3b089708fd9/transformed/jetified-play-services-tagmanager-api-18.3.0/AndroidManifest.xml:27:9-30:40
-400            android:name="com.google.android.gms.tagmanager.TagManagerService"
-400-->[com.google.android.gms:play-services-tagmanager-api:18.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/0a0af466a07503336b11b3b089708fd9/transformed/jetified-play-services-tagmanager-api-18.3.0/AndroidManifest.xml:28:13-79
-401            android:enabled="true"
-401-->[com.google.android.gms:play-services-tagmanager-api:18.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/0a0af466a07503336b11b3b089708fd9/transformed/jetified-play-services-tagmanager-api-18.3.0/AndroidManifest.xml:29:13-35
-402            android:exported="false" />
-402-->[com.google.android.gms:play-services-tagmanager-api:18.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/0a0af466a07503336b11b3b089708fd9/transformed/jetified-play-services-tagmanager-api-18.3.0/AndroidManifest.xml:30:13-37
-403
-404        <activity
-404-->[com.google.android.gms:play-services-tagmanager-api:18.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/0a0af466a07503336b11b3b089708fd9/transformed/jetified-play-services-tagmanager-api-18.3.0/AndroidManifest.xml:32:9-44:20
-405            android:name="com.google.android.gms.tagmanager.TagManagerPreviewActivity"
-405-->[com.google.android.gms:play-services-tagmanager-api:18.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/0a0af466a07503336b11b3b089708fd9/transformed/jetified-play-services-tagmanager-api-18.3.0/AndroidManifest.xml:33:13-87
-406            android:exported="true"
-406-->[com.google.android.gms:play-services-tagmanager-api:18.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/0a0af466a07503336b11b3b089708fd9/transformed/jetified-play-services-tagmanager-api-18.3.0/AndroidManifest.xml:34:13-36
-407            android:noHistory="true" > <!-- optional, removes the previewActivity from the activity stack. -->
-407-->[com.google.android.gms:play-services-tagmanager-api:18.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/0a0af466a07503336b11b3b089708fd9/transformed/jetified-play-services-tagmanager-api-18.3.0/AndroidManifest.xml:35:13-37
-408            <intent-filter>
-408-->[com.google.android.gms:play-services-tagmanager-api:18.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/0a0af466a07503336b11b3b089708fd9/transformed/jetified-play-services-tagmanager-api-18.3.0/AndroidManifest.xml:36:13-43:29
-409                <data android:scheme="tagmanager.c.com.v3.wam" />
-409-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:13-73
-409-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:46-70
-410
-411                <action android:name="android.intent.action.VIEW" />
-411-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:12:13-65
-411-->[com.google.firebase:firebase-inappmessaging-display:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c133c012d7047a79fce342aa933d8195/transformed/jetified-firebase-inappmessaging-display-22.0.0/AndroidManifest.xml:12:21-62
-412
-413                <category android:name="android.intent.category.DEFAULT" />
-413-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:38:17-76
-413-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:38:27-73
-414                <category android:name="android.intent.category.BROWSABLE" />
-414-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:39:17-78
-414-->[com.google.firebase:firebase-auth:24.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4526be3f770a292d591f91dde2defb8/transformed/jetified-firebase-auth-24.0.0/AndroidManifest.xml:39:27-75
-415            </intent-filter>
-416        </activity>
-417
-418        <receiver
-418-->[com.google.android.gms:play-services-measurement:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fb58c140be24faa8d3b1693bab6a2e0d/transformed/jetified-play-services-measurement-23.0.0/AndroidManifest.xml:29:9-33:20
-419            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-419-->[com.google.android.gms:play-services-measurement:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fb58c140be24faa8d3b1693bab6a2e0d/transformed/jetified-play-services-measurement-23.0.0/AndroidManifest.xml:30:13-85
-420            android:enabled="true"
-420-->[com.google.android.gms:play-services-measurement:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fb58c140be24faa8d3b1693bab6a2e0d/transformed/jetified-play-services-measurement-23.0.0/AndroidManifest.xml:31:13-35
-421            android:exported="false" >
-421-->[com.google.android.gms:play-services-measurement:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fb58c140be24faa8d3b1693bab6a2e0d/transformed/jetified-play-services-measurement-23.0.0/AndroidManifest.xml:32:13-37
-422        </receiver>
-423
-424        <service
-424-->[com.google.android.gms:play-services-measurement:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fb58c140be24faa8d3b1693bab6a2e0d/transformed/jetified-play-services-measurement-23.0.0/AndroidManifest.xml:39:9-43:72
-425            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-425-->[com.google.android.gms:play-services-measurement:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fb58c140be24faa8d3b1693bab6a2e0d/transformed/jetified-play-services-measurement-23.0.0/AndroidManifest.xml:40:13-87
-426            android:enabled="true"
-426-->[com.google.android.gms:play-services-measurement:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fb58c140be24faa8d3b1693bab6a2e0d/transformed/jetified-play-services-measurement-23.0.0/AndroidManifest.xml:41:13-35
-427            android:exported="false"
-427-->[com.google.android.gms:play-services-measurement:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fb58c140be24faa8d3b1693bab6a2e0d/transformed/jetified-play-services-measurement-23.0.0/AndroidManifest.xml:42:13-37
-428            android:permission="android.permission.BIND_JOB_SERVICE" />
-428-->[com.google.android.gms:play-services-measurement:23.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/fb58c140be24faa8d3b1693bab6a2e0d/transformed/jetified-play-services-measurement-23.0.0/AndroidManifest.xml:43:13-69
-429
-430        <activity
-430-->[com.google.android.gms:play-services-base:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/3b6acef659deb71d96e6157cf5c783a0/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:9-173
-431            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-431-->[com.google.android.gms:play-services-base:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/3b6acef659deb71d96e6157cf5c783a0/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:19-85
-432            android:exported="false"
-432-->[com.google.android.gms:play-services-base:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/3b6acef659deb71d96e6157cf5c783a0/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:146-170
-433            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-433-->[com.google.android.gms:play-services-base:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/3b6acef659deb71d96e6157cf5c783a0/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:86-145
-434
-435        <provider
-435-->[com.google.firebase:firebase-common:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/f501731e0389a423fad1c1af1873f0e2/transformed/jetified-firebase-common-22.0.0/AndroidManifest.xml:23:9-28:39
-436            android:name="com.google.firebase.provider.FirebaseInitProvider"
-436-->[com.google.firebase:firebase-common:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/f501731e0389a423fad1c1af1873f0e2/transformed/jetified-firebase-common-22.0.0/AndroidManifest.xml:24:13-77
-437            android:authorities="com.v3.wam.firebaseinitprovider"
-437-->[com.google.firebase:firebase-common:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/f501731e0389a423fad1c1af1873f0e2/transformed/jetified-firebase-common-22.0.0/AndroidManifest.xml:25:13-72
-438            android:directBootAware="true"
-438-->[com.google.firebase:firebase-common:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/f501731e0389a423fad1c1af1873f0e2/transformed/jetified-firebase-common-22.0.0/AndroidManifest.xml:26:13-43
-439            android:exported="false"
-439-->[com.google.firebase:firebase-common:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/f501731e0389a423fad1c1af1873f0e2/transformed/jetified-firebase-common-22.0.0/AndroidManifest.xml:27:13-37
-440            android:initOrder="100" />
-440-->[com.google.firebase:firebase-common:22.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/f501731e0389a423fad1c1af1873f0e2/transformed/jetified-firebase-common-22.0.0/AndroidManifest.xml:28:13-36
-441
-442        <uses-library
-442-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /Users/priyanka/.gradle/caches/8.13/transforms/808d42fcc3e5fea68db8d7a0b913711e/transformed/jetified-ads-adservices-1.1.0-beta11/AndroidManifest.xml:23:9-25:40
-443            android:name="android.ext.adservices"
-443-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /Users/priyanka/.gradle/caches/8.13/transforms/808d42fcc3e5fea68db8d7a0b913711e/transformed/jetified-ads-adservices-1.1.0-beta11/AndroidManifest.xml:24:13-50
-444            android:required="false" />
-444-->[androidx.privacysandbox.ads:ads-adservices:1.1.0-beta11] /Users/priyanka/.gradle/caches/8.13/transforms/808d42fcc3e5fea68db8d7a0b913711e/transformed/jetified-ads-adservices-1.1.0-beta11/AndroidManifest.xml:25:13-37
-445
-446        <provider
-446-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-447            android:name="androidx.startup.InitializationProvider"
-447-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
-448            android:authorities="com.v3.wam.androidx-startup"
-448-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
-449            android:exported="false" >
-449-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
-450            <meta-data
-450-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-451                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-451-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
-452                android:value="androidx.startup" />
-452-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
-453            <meta-data
-453-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/priyanka/.gradle/caches/8.13/transforms/df3c96d31f6a4bb43135db9abc17113e/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
-454                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-454-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/priyanka/.gradle/caches/8.13/transforms/df3c96d31f6a4bb43135db9abc17113e/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
-455                android:value="androidx.startup" />
-455-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/priyanka/.gradle/caches/8.13/transforms/df3c96d31f6a4bb43135db9abc17113e/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
-456            <meta-data
-456-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
-457                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-457-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
-458                android:value="androidx.startup" />
-458-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
-459        </provider>
-460
-461        <meta-data
-461-->[com.google.android.gms:play-services-basement:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/896ff2f8f0068f52593385f1171d3e60/transformed/jetified-play-services-basement-18.5.0/AndroidManifest.xml:21:9-23:69
-462            android:name="com.google.android.gms.version"
-462-->[com.google.android.gms:play-services-basement:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/896ff2f8f0068f52593385f1171d3e60/transformed/jetified-play-services-basement-18.5.0/AndroidManifest.xml:22:13-58
-463            android:value="@integer/google_play_services_version" />
-463-->[com.google.android.gms:play-services-basement:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/896ff2f8f0068f52593385f1171d3e60/transformed/jetified-play-services-basement-18.5.0/AndroidManifest.xml:23:13-66
-464
-465        <receiver
-465-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
-466            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-466-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
-467            android:directBootAware="false"
-467-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
-468            android:enabled="true"
-468-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
-469            android:exported="true"
-469-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
-470            android:permission="android.permission.DUMP" >
-470-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
-471            <intent-filter>
-471-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
-472                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-472-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
-472-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
-473            </intent-filter>
-474            <intent-filter>
-474-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
-475                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-475-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
-475-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
-476            </intent-filter>
-477            <intent-filter>
-477-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
-478                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-478-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
-478-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
-479            </intent-filter>
-480            <intent-filter>
-480-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
-481                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-481-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
-481-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
-482            </intent-filter>
-483        </receiver>
-484
-485        <service
-485-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/760876031434219b489558cc44e101a9/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:26:9-32:19
-486            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-486-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/760876031434219b489558cc44e101a9/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:27:13-103
-487            android:exported="false" >
-487-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/760876031434219b489558cc44e101a9/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:28:13-37
-488            <meta-data
-488-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/760876031434219b489558cc44e101a9/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:29:13-31:39
-489                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-489-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/760876031434219b489558cc44e101a9/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:30:17-94
-490                android:value="cct" />
-490-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/760876031434219b489558cc44e101a9/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:31:17-36
-491        </service>
-492        <service
-492-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:24:9-28:19
-493            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-493-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:25:13-117
-494            android:exported="false"
-494-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:26:13-37
-495            android:permission="android.permission.BIND_JOB_SERVICE" >
-495-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:27:13-69
-496        </service>
-497
-498        <receiver
-498-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:30:9-32:40
-499            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-499-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:31:13-132
-500            android:exported="false" /> <!-- The activities will be merged into the manifest of the hosting app. -->
-500-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:32:13-37
-501        <activity
-501-->[com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/caches/8.13/transforms/6a5e0c1b864832c0d19c77cc50d1b45f/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:14:9-18:65
-502            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-502-->[com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/caches/8.13/transforms/6a5e0c1b864832c0d19c77cc50d1b45f/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:15:13-93
-503            android:exported="false"
-503-->[com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/caches/8.13/transforms/6a5e0c1b864832c0d19c77cc50d1b45f/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:16:13-37
-504            android:stateNotNeeded="true"
-504-->[com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/caches/8.13/transforms/6a5e0c1b864832c0d19c77cc50d1b45f/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:17:13-42
-505            android:theme="@style/Theme.PlayCore.Transparent" />
-505-->[com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/caches/8.13/transforms/6a5e0c1b864832c0d19c77cc50d1b45f/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:18:13-62
-506    </application>
-507
-508</manifest>
+177        <meta-data
+177-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:26:9-96
+178            android:name="firebase_analytics_collection_enabled"
+178-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:26:20-72
+179            android:value="true" />
+179-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:26:73-93
+180        <meta-data
+180-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:9-98
+181            android:name="firebase_performance_collection_enabled"
+181-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:20-74
+182            android:value="true" />
+182-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:75-95
+183        <meta-data
+183-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:9-98
+184            android:name="firebase_crashlytics_collection_enabled"
+184-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:20-74
+185            android:value="true" />
+185-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:75-95
+186        <meta-data
+186-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:9-95
+187            android:name="firebase_messaging_auto_init_enabled"
+187-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:20-71
+188            android:value="true" />
+188-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:72-92
+189        <meta-data
+189-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:9-99
+190            android:name="google_analytics_adid_collection_enabled"
+190-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:20-75
+191            android:value="true" />
+191-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:76-96
+192        <meta-data
+192-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:9-107
+193            android:name="google_analytics_default_allow_analytics_storage"
+193-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:20-83
+194            android:value="true" />
+194-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:84-104
+195        <meta-data
+195-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:9-100
+196            android:name="google_analytics_default_allow_ad_storage"
+196-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:20-76
+197            android:value="true" />
+197-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:77-97
+198        <meta-data
+198-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:9-102
+199            android:name="google_analytics_default_allow_ad_user_data"
+199-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:20-78
+200            android:value="true" />
+200-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:79-99
+201        <meta-data
+201-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:9-116
+202            android:name="google_analytics_default_allow_ad_personalization_signals"
+202-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:20-92
+203            android:value="true" />
+203-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:93-113
+204        <meta-data
+204-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:9-119
+205            android:name="com.google.firebase.messaging.default_notification_channel_id"
+205-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:20-96
+206            android:value="444" />
+206-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:97-116
+207
+208        <service
+208-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:9-40:19
+209            android:name="notifications.MyFirebaseMessagingService"
+209-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:43-98
+210            android:exported="false" >
+210-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:18-42
+211            <intent-filter>
+211-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:19:13-21:29
+212                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+212-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:17-78
+212-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:25-75
+213            </intent-filter>
+214        </service>
+215        <service
+215-->[com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/2cf1de7bcb4afe245b786bc6990796e7/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:11:9-20:19
+216            android:name="com.google.firebase.components.ComponentDiscoveryService"
+216-->[com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/2cf1de7bcb4afe245b786bc6990796e7/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:12:13-84
+217            android:directBootAware="true"
+217-->[com.google.firebase:firebase-common:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/12a7cd89559c6bd98feba880296e6d5e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:32:13-43
+218            android:exported="false" >
+218-->[com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/2cf1de7bcb4afe245b786bc6990796e7/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:13:13-37
+219            <meta-data
+219-->[com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/2cf1de7bcb4afe245b786bc6990796e7/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:14:13-16:85
+220                android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfKtxRegistrar"
+220-->[com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/2cf1de7bcb4afe245b786bc6990796e7/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:15:17-112
+221                android:value="com.google.firebase.components.ComponentRegistrar" />
+221-->[com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/2cf1de7bcb4afe245b786bc6990796e7/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:16:17-82
+222            <meta-data
+222-->[com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/2cf1de7bcb4afe245b786bc6990796e7/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:17:13-19:85
+223                android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar"
+223-->[com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/2cf1de7bcb4afe245b786bc6990796e7/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:18:17-109
+224                android:value="com.google.firebase.components.ComponentRegistrar" />
+224-->[com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/2cf1de7bcb4afe245b786bc6990796e7/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:19:17-82
+225            <meta-data
+225-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:22:13-24:85
+226                android:name="com.google.firebase.components:com.google.firebase.inappmessaging.display.FirebaseInAppMessagingDisplayKtxRegistrar"
+226-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:23:17-147
+227                android:value="com.google.firebase.components.ComponentRegistrar" />
+227-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:24:17-82
+228            <meta-data
+228-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:25:13-27:85
+229                android:name="com.google.firebase.components:com.google.firebase.inappmessaging.display.FirebaseInAppMessagingDisplayRegistrar"
+229-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:26:17-144
+230                android:value="com.google.firebase.components.ComponentRegistrar" />
+230-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:27:17-82
+231            <meta-data
+231-->[com.google.firebase:firebase-functions:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/ae092ceb3327f107a450bfd7a082f2b3/transformed/jetified-firebase-functions-21.1.0/AndroidManifest.xml:15:13-17:85
+232                android:name="com.google.firebase.components:com.google.firebase.functions.FirebaseFunctionsKtxRegistrar"
+232-->[com.google.firebase:firebase-functions:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/ae092ceb3327f107a450bfd7a082f2b3/transformed/jetified-firebase-functions-21.1.0/AndroidManifest.xml:16:17-122
+233                android:value="com.google.firebase.components.ComponentRegistrar" />
+233-->[com.google.firebase:firebase-functions:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/ae092ceb3327f107a450bfd7a082f2b3/transformed/jetified-firebase-functions-21.1.0/AndroidManifest.xml:17:17-82
+234            <meta-data
+234-->[com.google.firebase:firebase-functions:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/ae092ceb3327f107a450bfd7a082f2b3/transformed/jetified-firebase-functions-21.1.0/AndroidManifest.xml:18:13-20:85
+235                android:name="com.google.firebase.components:com.google.firebase.functions.FunctionsRegistrar"
+235-->[com.google.firebase:firebase-functions:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/ae092ceb3327f107a450bfd7a082f2b3/transformed/jetified-firebase-functions-21.1.0/AndroidManifest.xml:19:17-111
+236                android:value="com.google.firebase.components.ComponentRegistrar" />
+236-->[com.google.firebase:firebase-functions:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/ae092ceb3327f107a450bfd7a082f2b3/transformed/jetified-firebase-functions-21.1.0/AndroidManifest.xml:20:17-82
+237            <meta-data
+237-->[com.google.firebase:firebase-iid:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/4441d5d463b5ca4e162947d14b088cf4/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:32:13-34:85
+238                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+238-->[com.google.firebase:firebase-iid:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/4441d5d463b5ca4e162947d14b088cf4/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:33:17-96
+239                android:value="com.google.firebase.components.ComponentRegistrar" />
+239-->[com.google.firebase:firebase-iid:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/4441d5d463b5ca4e162947d14b088cf4/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:34:17-82
+240            <meta-data
+240-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:69:13-71:85
+241                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+241-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:70:17-109
+242                android:value="com.google.firebase.components.ComponentRegistrar" />
+242-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:71:17-82
+243            <meta-data
+243-->[com.google.firebase:firebase-messaging-ktx:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/d08abe30ebaf78e22865287ee341b78e/transformed/jetified-firebase-messaging-ktx-24.1.0/AndroidManifest.xml:26:13-28:85
+244                android:name="com.google.firebase.components:com.google.firebase.messaging.ktx.FirebaseMessagingLegacyRegistrar"
+244-->[com.google.firebase:firebase-messaging-ktx:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/d08abe30ebaf78e22865287ee341b78e/transformed/jetified-firebase-messaging-ktx-24.1.0/AndroidManifest.xml:27:17-129
+245                android:value="com.google.firebase.components.ComponentRegistrar" />
+245-->[com.google.firebase:firebase-messaging-ktx:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/d08abe30ebaf78e22865287ee341b78e/transformed/jetified-firebase-messaging-ktx-24.1.0/AndroidManifest.xml:28:17-82
+246            <meta-data
+246-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:57:13-59:85
+247                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
+247-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:58:17-122
+248                android:value="com.google.firebase.components.ComponentRegistrar" />
+248-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:59:17-82
+249            <meta-data
+249-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:60:13-62:85
+250                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+250-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:61:17-119
+251                android:value="com.google.firebase.components.ComponentRegistrar" />
+251-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:62:17-82
+252            <meta-data
+252-->[com.google.firebase:firebase-firestore:25.1.2] /Users/priyanka/.gradle/caches/8.13/transforms/a08b932fb37aad966c4283c4dd188992/transformed/jetified-firebase-firestore-25.1.2/AndroidManifest.xml:17:13-19:85
+253                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+253-->[com.google.firebase:firebase-firestore:25.1.2] /Users/priyanka/.gradle/caches/8.13/transforms/a08b932fb37aad966c4283c4dd188992/transformed/jetified-firebase-firestore-25.1.2/AndroidManifest.xml:18:17-122
+254                android:value="com.google.firebase.components.ComponentRegistrar" />
+254-->[com.google.firebase:firebase-firestore:25.1.2] /Users/priyanka/.gradle/caches/8.13/transforms/a08b932fb37aad966c4283c4dd188992/transformed/jetified-firebase-firestore-25.1.2/AndroidManifest.xml:19:17-82
+255            <meta-data
+255-->[com.google.firebase:firebase-firestore:25.1.2] /Users/priyanka/.gradle/caches/8.13/transforms/a08b932fb37aad966c4283c4dd188992/transformed/jetified-firebase-firestore-25.1.2/AndroidManifest.xml:20:13-22:85
+256                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+256-->[com.google.firebase:firebase-firestore:25.1.2] /Users/priyanka/.gradle/caches/8.13/transforms/a08b932fb37aad966c4283c4dd188992/transformed/jetified-firebase-firestore-25.1.2/AndroidManifest.xml:21:17-111
+257                android:value="com.google.firebase.components.ComponentRegistrar" />
+257-->[com.google.firebase:firebase-firestore:25.1.2] /Users/priyanka/.gradle/caches/8.13/transforms/a08b932fb37aad966c4283c4dd188992/transformed/jetified-firebase-firestore-25.1.2/AndroidManifest.xml:22:17-82
+258            <meta-data
+258-->[com.google.firebase:firebase-crashlytics-ndk:19.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/08be94e0a832bb4d1792d0b53233d60f/transformed/jetified-firebase-crashlytics-ndk-19.4.0/AndroidManifest.xml:32:13-34:85
+259                android:name="com.google.firebase.components:com.google.firebase.crashlytics.ndk.CrashlyticsNdkRegistrar"
+259-->[com.google.firebase:firebase-crashlytics-ndk:19.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/08be94e0a832bb4d1792d0b53233d60f/transformed/jetified-firebase-crashlytics-ndk-19.4.0/AndroidManifest.xml:33:17-122
+260                android:value="com.google.firebase.components.ComponentRegistrar" />
+260-->[com.google.firebase:firebase-crashlytics-ndk:19.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/08be94e0a832bb4d1792d0b53233d60f/transformed/jetified-firebase-crashlytics-ndk-19.4.0/AndroidManifest.xml:34:17-82
+261            <meta-data
+261-->[com.google.android.gms:play-services-measurement-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/ae15c217c3ef67e104bbd5b8b662ff31/transformed/jetified-play-services-measurement-api-22.2.0/AndroidManifest.xml:33:13-35:85
+262                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+262-->[com.google.android.gms:play-services-measurement-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/ae15c217c3ef67e104bbd5b8b662ff31/transformed/jetified-play-services-measurement-api-22.2.0/AndroidManifest.xml:34:17-139
+263                android:value="com.google.firebase.components.ComponentRegistrar" />
+263-->[com.google.android.gms:play-services-measurement-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/ae15c217c3ef67e104bbd5b8b662ff31/transformed/jetified-play-services-measurement-api-22.2.0/AndroidManifest.xml:35:17-82
+264            <meta-data
+264-->[com.google.firebase:firebase-config:22.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/345b81806a93c8164a3833b60300791e/transformed/jetified-firebase-config-22.1.0/AndroidManifest.xml:29:13-31:85
+265                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.FirebaseRemoteConfigKtxRegistrar"
+265-->[com.google.firebase:firebase-config:22.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/345b81806a93c8164a3833b60300791e/transformed/jetified-firebase-config-22.1.0/AndroidManifest.xml:30:17-128
+266                android:value="com.google.firebase.components.ComponentRegistrar" />
+266-->[com.google.firebase:firebase-config:22.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/345b81806a93c8164a3833b60300791e/transformed/jetified-firebase-config-22.1.0/AndroidManifest.xml:31:17-82
+267            <meta-data
+267-->[com.google.firebase:firebase-config:22.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/345b81806a93c8164a3833b60300791e/transformed/jetified-firebase-config-22.1.0/AndroidManifest.xml:32:13-34:85
+268                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar"
+268-->[com.google.firebase:firebase-config:22.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/345b81806a93c8164a3833b60300791e/transformed/jetified-firebase-config-22.1.0/AndroidManifest.xml:33:17-117
+269                android:value="com.google.firebase.components.ComponentRegistrar" />
+269-->[com.google.firebase:firebase-config:22.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/345b81806a93c8164a3833b60300791e/transformed/jetified-firebase-config-22.1.0/AndroidManifest.xml:34:17-82
+270            <meta-data
+270-->[com.google.firebase:firebase-inappmessaging:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/21f1fb048d443a8b53865f16f937e676/transformed/jetified-firebase-inappmessaging-21.0.1/AndroidManifest.xml:14:13-16:85
+271                android:name="com.google.firebase.components:com.google.firebase.inappmessaging.FirebaseInAppMessagingKtxRegistrar"
+271-->[com.google.firebase:firebase-inappmessaging:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/21f1fb048d443a8b53865f16f937e676/transformed/jetified-firebase-inappmessaging-21.0.1/AndroidManifest.xml:15:17-132
+272                android:value="com.google.firebase.components.ComponentRegistrar" />
+272-->[com.google.firebase:firebase-inappmessaging:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/21f1fb048d443a8b53865f16f937e676/transformed/jetified-firebase-inappmessaging-21.0.1/AndroidManifest.xml:16:17-82
+273            <meta-data
+273-->[com.google.firebase:firebase-inappmessaging:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/21f1fb048d443a8b53865f16f937e676/transformed/jetified-firebase-inappmessaging-21.0.1/AndroidManifest.xml:17:13-19:85
+274                android:name="com.google.firebase.components:com.google.firebase.inappmessaging.FirebaseInAppMessagingRegistrar"
+274-->[com.google.firebase:firebase-inappmessaging:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/21f1fb048d443a8b53865f16f937e676/transformed/jetified-firebase-inappmessaging-21.0.1/AndroidManifest.xml:18:17-129
+275                android:value="com.google.firebase.components.ComponentRegistrar" />
+275-->[com.google.firebase:firebase-inappmessaging:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/21f1fb048d443a8b53865f16f937e676/transformed/jetified-firebase-inappmessaging-21.0.1/AndroidManifest.xml:19:17-82
+276            <meta-data
+276-->[com.google.firebase:firebase-crashlytics:19.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4aa212e02d84c80e9176e3d60e4fcb5/transformed/jetified-firebase-crashlytics-19.4.0/AndroidManifest.xml:15:13-17:85
+277                android:name="com.google.firebase.components:com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar"
+277-->[com.google.firebase:firebase-crashlytics:19.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4aa212e02d84c80e9176e3d60e4fcb5/transformed/jetified-firebase-crashlytics-19.4.0/AndroidManifest.xml:16:17-126
+278                android:value="com.google.firebase.components.ComponentRegistrar" />
+278-->[com.google.firebase:firebase-crashlytics:19.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4aa212e02d84c80e9176e3d60e4fcb5/transformed/jetified-firebase-crashlytics-19.4.0/AndroidManifest.xml:17:17-82
+279            <meta-data
+279-->[com.google.firebase:firebase-crashlytics:19.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4aa212e02d84c80e9176e3d60e4fcb5/transformed/jetified-firebase-crashlytics-19.4.0/AndroidManifest.xml:18:13-20:85
+280                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+280-->[com.google.firebase:firebase-crashlytics:19.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4aa212e02d84c80e9176e3d60e4fcb5/transformed/jetified-firebase-crashlytics-19.4.0/AndroidManifest.xml:19:17-115
+281                android:value="com.google.firebase.components.ComponentRegistrar" />
+281-->[com.google.firebase:firebase-crashlytics:19.4.0] /Users/priyanka/.gradle/caches/8.13/transforms/c4aa212e02d84c80e9176e3d60e4fcb5/transformed/jetified-firebase-crashlytics-19.4.0/AndroidManifest.xml:20:17-82
+282            <meta-data
+282-->[com.google.firebase:firebase-sessions:2.0.8] /Users/priyanka/.gradle/caches/8.13/transforms/76eaa9672e2bca47cb531a94da32bd51/transformed/jetified-firebase-sessions-2.0.8/AndroidManifest.xml:29:13-31:85
+283                android:name="com.google.firebase.components:com.google.firebase.sessions.FirebaseSessionsRegistrar"
+283-->[com.google.firebase:firebase-sessions:2.0.8] /Users/priyanka/.gradle/caches/8.13/transforms/76eaa9672e2bca47cb531a94da32bd51/transformed/jetified-firebase-sessions-2.0.8/AndroidManifest.xml:30:17-117
+284                android:value="com.google.firebase.components.ComponentRegistrar" />
+284-->[com.google.firebase:firebase-sessions:2.0.8] /Users/priyanka/.gradle/caches/8.13/transforms/76eaa9672e2bca47cb531a94da32bd51/transformed/jetified-firebase-sessions-2.0.8/AndroidManifest.xml:31:17-82
+285            <meta-data
+285-->[com.google.firebase:firebase-installations:18.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/05d9c32fdec7f13057efcc3065c5af4d/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:15:13-17:85
+286                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+286-->[com.google.firebase:firebase-installations:18.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/05d9c32fdec7f13057efcc3065c5af4d/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:16:17-130
+287                android:value="com.google.firebase.components.ComponentRegistrar" />
+287-->[com.google.firebase:firebase-installations:18.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/05d9c32fdec7f13057efcc3065c5af4d/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:17:17-82
+288            <meta-data
+288-->[com.google.firebase:firebase-installations:18.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/05d9c32fdec7f13057efcc3065c5af4d/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:18:13-20:85
+289                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+289-->[com.google.firebase:firebase-installations:18.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/05d9c32fdec7f13057efcc3065c5af4d/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:19:17-127
+290                android:value="com.google.firebase.components.ComponentRegistrar" />
+290-->[com.google.firebase:firebase-installations:18.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/05d9c32fdec7f13057efcc3065c5af4d/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:20:17-82
+291            <meta-data
+291-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/a3615232287bb078572237fcd3c0100f/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+292                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+292-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/a3615232287bb078572237fcd3c0100f/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
+293                android:value="com.google.firebase.components.ComponentRegistrar" />
+293-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/a3615232287bb078572237fcd3c0100f/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+294            <meta-data
+294-->[com.google.firebase:firebase-common:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/12a7cd89559c6bd98feba880296e6d5e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+295                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+295-->[com.google.firebase:firebase-common:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/12a7cd89559c6bd98feba880296e6d5e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:36:17-109
+296                android:value="com.google.firebase.components.ComponentRegistrar" />
+296-->[com.google.firebase:firebase-common:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/12a7cd89559c6bd98feba880296e6d5e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+297            <meta-data
+297-->[com.google.firebase:firebase-abt:21.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/b50c3af6ba2901937e6df7bb10081086/transformed/jetified-firebase-abt-21.1.1/AndroidManifest.xml:12:13-14:85
+298                android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar"
+298-->[com.google.firebase:firebase-abt:21.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/b50c3af6ba2901937e6df7bb10081086/transformed/jetified-firebase-abt-21.1.1/AndroidManifest.xml:13:17-109
+299                android:value="com.google.firebase.components.ComponentRegistrar" />
+299-->[com.google.firebase:firebase-abt:21.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/b50c3af6ba2901937e6df7bb10081086/transformed/jetified-firebase-abt-21.1.1/AndroidManifest.xml:14:17-82
+300            <meta-data
+300-->[com.google.firebase:firebase-datatransport:19.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/6e15ff7d8d1e0ae84785b7e896df788d/transformed/jetified-firebase-datatransport-19.0.0/AndroidManifest.xml:25:13-27:85
+301                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+301-->[com.google.firebase:firebase-datatransport:19.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/6e15ff7d8d1e0ae84785b7e896df788d/transformed/jetified-firebase-datatransport-19.0.0/AndroidManifest.xml:26:17-115
+302                android:value="com.google.firebase.components.ComponentRegistrar" />
+302-->[com.google.firebase:firebase-datatransport:19.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/6e15ff7d8d1e0ae84785b7e896df788d/transformed/jetified-firebase-datatransport-19.0.0/AndroidManifest.xml:27:17-82
+303        </service>
+304
+305        <activity
+305-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:29:9-46:20
+306            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+306-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:30:13-80
+307            android:excludeFromRecents="true"
+307-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:31:13-46
+308            android:exported="true"
+308-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:32:13-36
+309            android:launchMode="singleTask"
+309-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:33:13-44
+310            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+310-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:34:13-72
+311            <intent-filter>
+311-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:35:13-45:29
+312                <action android:name="android.intent.action.VIEW" />
+312-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:12:13-65
+312-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:12:21-62
+313
+314                <category android:name="android.intent.category.DEFAULT" />
+314-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:38:17-76
+314-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:38:27-73
+315                <category android:name="android.intent.category.BROWSABLE" />
+315-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:39:17-78
+315-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:39:27-75
+316
+317                <data
+317-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:13-73
+318                    android:host="firebase.auth"
+319                    android:path="/"
+320                    android:scheme="genericidp" />
+320-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:46-70
+321            </intent-filter>
+322        </activity>
+323        <activity
+323-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:47:9-64:20
+324            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+324-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:48:13-79
+325            android:excludeFromRecents="true"
+325-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:49:13-46
+326            android:exported="true"
+326-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:50:13-36
+327            android:launchMode="singleTask"
+327-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:51:13-44
+328            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+328-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:52:13-72
+329            <intent-filter>
+329-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:53:13-63:29
+330                <action android:name="android.intent.action.VIEW" />
+330-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:12:13-65
+330-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:12:21-62
+331
+332                <category android:name="android.intent.category.DEFAULT" />
+332-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:38:17-76
+332-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:38:27-73
+333                <category android:name="android.intent.category.BROWSABLE" />
+333-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:39:17-78
+333-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:39:27-75
+334
+335                <data
+335-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:13-73
+336                    android:host="firebase.auth"
+337                    android:path="/"
+338                    android:scheme="recaptcha" />
+338-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:46-70
+339            </intent-filter>
+340        </activity>
+341
+342        <service
+342-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
+343            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+343-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
+344            android:enabled="true"
+344-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
+345            android:exported="false" >
+345-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
+346            <meta-data
+346-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
+347                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
+347-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
+348                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
+348-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
+349        </service>
+350
+351        <activity
+351-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
+352            android:name="androidx.credentials.playservices.HiddenActivity"
+352-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
+353            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+353-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
+354            android:enabled="true"
+354-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
+355            android:exported="false"
+355-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
+356            android:fitsSystemWindows="true"
+356-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
+357            android:theme="@style/Theme.Hidden" >
+357-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/priyanka/.gradle/caches/8.13/transforms/ed6f49dfca43da60373f8a9aa5da9283/transformed/jetified-credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
+358        </activity>
+359        <activity
+359-->[com.google.android.gms:play-services-auth:21.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9b9ac7c3d87e669ba9c19fe59c83ce2/transformed/jetified-play-services-auth-21.3.0/AndroidManifest.xml:23:9-27:75
+360            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+360-->[com.google.android.gms:play-services-auth:21.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9b9ac7c3d87e669ba9c19fe59c83ce2/transformed/jetified-play-services-auth-21.3.0/AndroidManifest.xml:24:13-93
+361            android:excludeFromRecents="true"
+361-->[com.google.android.gms:play-services-auth:21.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9b9ac7c3d87e669ba9c19fe59c83ce2/transformed/jetified-play-services-auth-21.3.0/AndroidManifest.xml:25:13-46
+362            android:exported="false"
+362-->[com.google.android.gms:play-services-auth:21.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9b9ac7c3d87e669ba9c19fe59c83ce2/transformed/jetified-play-services-auth-21.3.0/AndroidManifest.xml:26:13-37
+363            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+363-->[com.google.android.gms:play-services-auth:21.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9b9ac7c3d87e669ba9c19fe59c83ce2/transformed/jetified-play-services-auth-21.3.0/AndroidManifest.xml:27:13-72
+364        <!--
+365            Service handling Google Sign-In user revocation. For apps that do not integrate with
+366            Google Sign-In, this service will never be started.
+367        -->
+368        <service
+368-->[com.google.android.gms:play-services-auth:21.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9b9ac7c3d87e669ba9c19fe59c83ce2/transformed/jetified-play-services-auth-21.3.0/AndroidManifest.xml:33:9-37:51
+369            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+369-->[com.google.android.gms:play-services-auth:21.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9b9ac7c3d87e669ba9c19fe59c83ce2/transformed/jetified-play-services-auth-21.3.0/AndroidManifest.xml:34:13-89
+370            android:exported="true"
+370-->[com.google.android.gms:play-services-auth:21.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9b9ac7c3d87e669ba9c19fe59c83ce2/transformed/jetified-play-services-auth-21.3.0/AndroidManifest.xml:35:13-36
+371            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+371-->[com.google.android.gms:play-services-auth:21.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9b9ac7c3d87e669ba9c19fe59c83ce2/transformed/jetified-play-services-auth-21.3.0/AndroidManifest.xml:36:13-107
+372            android:visibleToInstantApps="true" />
+372-->[com.google.android.gms:play-services-auth:21.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9b9ac7c3d87e669ba9c19fe59c83ce2/transformed/jetified-play-services-auth-21.3.0/AndroidManifest.xml:37:13-48
+373
+374        <receiver
+374-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:29:9-40:20
+375            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+375-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:30:13-78
+376            android:exported="true"
+376-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:31:13-36
+377            android:permission="com.google.android.c2dm.permission.SEND" >
+377-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:32:13-73
+378            <intent-filter>
+378-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:33:13-35:29
+379                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+379-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:34:17-81
+379-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:34:25-78
+380            </intent-filter>
+381
+382            <meta-data
+382-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:37:13-39:40
+383                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
+383-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:38:17-92
+384                android:value="true" />
+384-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:39:17-37
+385        </receiver>
+386        <!--
+387             FirebaseMessagingService performs security checks at runtime,
+388             but set to not exported to explicitly avoid allowing another app to call it.
+389        -->
+390        <service
+390-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:46:9-53:19
+391            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+391-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:47:13-82
+392            android:directBootAware="true"
+392-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:48:13-43
+393            android:exported="false" >
+393-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/10900603ff07af1aa6837b58d536eecf/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:49:13-37
+394            <intent-filter android:priority="-500" >
+394-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:19:13-21:29
+395                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+395-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:17-78
+395-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:25-75
+396            </intent-filter>
+397        </service>
+398        <service
+398-->[com.google.android.gms:play-services-tagmanager-api:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/a189837d64cbfaee84f0c44ac27d3021/transformed/jetified-play-services-tagmanager-api-18.1.1/AndroidManifest.xml:27:9-30:40
+399            android:name="com.google.android.gms.tagmanager.TagManagerService"
+399-->[com.google.android.gms:play-services-tagmanager-api:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/a189837d64cbfaee84f0c44ac27d3021/transformed/jetified-play-services-tagmanager-api-18.1.1/AndroidManifest.xml:28:13-79
+400            android:enabled="true"
+400-->[com.google.android.gms:play-services-tagmanager-api:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/a189837d64cbfaee84f0c44ac27d3021/transformed/jetified-play-services-tagmanager-api-18.1.1/AndroidManifest.xml:29:13-35
+401            android:exported="false" />
+401-->[com.google.android.gms:play-services-tagmanager-api:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/a189837d64cbfaee84f0c44ac27d3021/transformed/jetified-play-services-tagmanager-api-18.1.1/AndroidManifest.xml:30:13-37
+402
+403        <activity
+403-->[com.google.android.gms:play-services-tagmanager-api:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/a189837d64cbfaee84f0c44ac27d3021/transformed/jetified-play-services-tagmanager-api-18.1.1/AndroidManifest.xml:32:9-44:20
+404            android:name="com.google.android.gms.tagmanager.TagManagerPreviewActivity"
+404-->[com.google.android.gms:play-services-tagmanager-api:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/a189837d64cbfaee84f0c44ac27d3021/transformed/jetified-play-services-tagmanager-api-18.1.1/AndroidManifest.xml:33:13-87
+405            android:exported="true"
+405-->[com.google.android.gms:play-services-tagmanager-api:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/a189837d64cbfaee84f0c44ac27d3021/transformed/jetified-play-services-tagmanager-api-18.1.1/AndroidManifest.xml:34:13-36
+406            android:noHistory="true" > <!-- optional, removes the previewActivity from the activity stack. -->
+406-->[com.google.android.gms:play-services-tagmanager-api:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/a189837d64cbfaee84f0c44ac27d3021/transformed/jetified-play-services-tagmanager-api-18.1.1/AndroidManifest.xml:35:13-37
+407            <intent-filter>
+407-->[com.google.android.gms:play-services-tagmanager-api:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/a189837d64cbfaee84f0c44ac27d3021/transformed/jetified-play-services-tagmanager-api-18.1.1/AndroidManifest.xml:36:13-43:29
+408                <data android:scheme="tagmanager.c.com.v3.wam" />
+408-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:13-73
+408-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:46-70
+409
+410                <action android:name="android.intent.action.VIEW" />
+410-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:12:13-65
+410-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/67848c235f1e473911b39914d1647966/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:12:21-62
+411
+412                <category android:name="android.intent.category.DEFAULT" />
+412-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:38:17-76
+412-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:38:27-73
+413                <category android:name="android.intent.category.BROWSABLE" />
+413-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:39:17-78
+413-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/0b88f08916cdc0d94456215d2e17f70d/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:39:27-75
+414            </intent-filter>
+415        </activity>
+416
+417        <receiver
+417-->[com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/14082b8256fe3d8597e271a059180293/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:29:9-33:20
+418            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+418-->[com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/14082b8256fe3d8597e271a059180293/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:30:13-85
+419            android:enabled="true"
+419-->[com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/14082b8256fe3d8597e271a059180293/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:31:13-35
+420            android:exported="false" >
+420-->[com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/14082b8256fe3d8597e271a059180293/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:32:13-37
+421        </receiver>
+422
+423        <service
+423-->[com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/14082b8256fe3d8597e271a059180293/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:39:9-43:72
+424            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+424-->[com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/14082b8256fe3d8597e271a059180293/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:40:13-87
+425            android:enabled="true"
+425-->[com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/14082b8256fe3d8597e271a059180293/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:41:13-35
+426            android:exported="false"
+426-->[com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/14082b8256fe3d8597e271a059180293/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:42:13-37
+427            android:permission="android.permission.BIND_JOB_SERVICE" />
+427-->[com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/14082b8256fe3d8597e271a059180293/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:43:13-69
+428
+429        <activity
+429-->[com.google.android.gms:play-services-base:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/3b6acef659deb71d96e6157cf5c783a0/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+430            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+430-->[com.google.android.gms:play-services-base:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/3b6acef659deb71d96e6157cf5c783a0/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+431            android:exported="false"
+431-->[com.google.android.gms:play-services-base:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/3b6acef659deb71d96e6157cf5c783a0/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+432            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+432-->[com.google.android.gms:play-services-base:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/3b6acef659deb71d96e6157cf5c783a0/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+433
+434        <service
+434-->[com.google.firebase:firebase-sessions:2.0.8] /Users/priyanka/.gradle/caches/8.13/transforms/76eaa9672e2bca47cb531a94da32bd51/transformed/jetified-firebase-sessions-2.0.8/AndroidManifest.xml:22:9-25:40
+435            android:name="com.google.firebase.sessions.SessionLifecycleService"
+435-->[com.google.firebase:firebase-sessions:2.0.8] /Users/priyanka/.gradle/caches/8.13/transforms/76eaa9672e2bca47cb531a94da32bd51/transformed/jetified-firebase-sessions-2.0.8/AndroidManifest.xml:23:13-80
+436            android:enabled="true"
+436-->[com.google.firebase:firebase-sessions:2.0.8] /Users/priyanka/.gradle/caches/8.13/transforms/76eaa9672e2bca47cb531a94da32bd51/transformed/jetified-firebase-sessions-2.0.8/AndroidManifest.xml:24:13-35
+437            android:exported="false" />
+437-->[com.google.firebase:firebase-sessions:2.0.8] /Users/priyanka/.gradle/caches/8.13/transforms/76eaa9672e2bca47cb531a94da32bd51/transformed/jetified-firebase-sessions-2.0.8/AndroidManifest.xml:25:13-37
+438
+439        <provider
+439-->[com.google.firebase:firebase-common:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/12a7cd89559c6bd98feba880296e6d5e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+440            android:name="com.google.firebase.provider.FirebaseInitProvider"
+440-->[com.google.firebase:firebase-common:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/12a7cd89559c6bd98feba880296e6d5e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+441            android:authorities="com.v3.wam.firebaseinitprovider"
+441-->[com.google.firebase:firebase-common:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/12a7cd89559c6bd98feba880296e6d5e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+442            android:directBootAware="true"
+442-->[com.google.firebase:firebase-common:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/12a7cd89559c6bd98feba880296e6d5e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+443            android:exported="false"
+443-->[com.google.firebase:firebase-common:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/12a7cd89559c6bd98feba880296e6d5e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+444            android:initOrder="100" />
+444-->[com.google.firebase:firebase-common:21.0.0] /Users/priyanka/.gradle/caches/8.13/transforms/12a7cd89559c6bd98feba880296e6d5e/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+445        <provider
+445-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+446            android:name="androidx.startup.InitializationProvider"
+446-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
+447            android:authorities="com.v3.wam.androidx-startup"
+447-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
+448            android:exported="false" >
+448-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
+449            <meta-data
+449-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+450                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+450-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
+451                android:value="androidx.startup" />
+451-->[androidx.emoji2:emoji2:1.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/e5029e327357f70e693f87db46e0322b/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
+452            <meta-data
+452-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/priyanka/.gradle/caches/8.13/transforms/df3c96d31f6a4bb43135db9abc17113e/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+453                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+453-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/priyanka/.gradle/caches/8.13/transforms/df3c96d31f6a4bb43135db9abc17113e/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+454                android:value="androidx.startup" />
+454-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/priyanka/.gradle/caches/8.13/transforms/df3c96d31f6a4bb43135db9abc17113e/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+455            <meta-data
+455-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+456                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+456-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+457                android:value="androidx.startup" />
+457-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+458        </provider>
+459
+460        <uses-library
+460-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/priyanka/.gradle/caches/8.13/transforms/3f984dc370563f870a8c4b86dda3077c/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:23:9-25:40
+461            android:name="android.ext.adservices"
+461-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/priyanka/.gradle/caches/8.13/transforms/3f984dc370563f870a8c4b86dda3077c/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:24:13-50
+462            android:required="false" />
+462-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/priyanka/.gradle/caches/8.13/transforms/3f984dc370563f870a8c4b86dda3077c/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:25:13-37
+463
+464        <meta-data
+464-->[com.google.android.gms:play-services-basement:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/896ff2f8f0068f52593385f1171d3e60/transformed/jetified-play-services-basement-18.5.0/AndroidManifest.xml:21:9-23:69
+465            android:name="com.google.android.gms.version"
+465-->[com.google.android.gms:play-services-basement:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/896ff2f8f0068f52593385f1171d3e60/transformed/jetified-play-services-basement-18.5.0/AndroidManifest.xml:22:13-58
+466            android:value="@integer/google_play_services_version" />
+466-->[com.google.android.gms:play-services-basement:18.5.0] /Users/priyanka/.gradle/caches/8.13/transforms/896ff2f8f0068f52593385f1171d3e60/transformed/jetified-play-services-basement-18.5.0/AndroidManifest.xml:23:13-66
+467
+468        <service
+468-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/760876031434219b489558cc44e101a9/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:26:9-32:19
+469            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+469-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/760876031434219b489558cc44e101a9/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:27:13-103
+470            android:exported="false" >
+470-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/760876031434219b489558cc44e101a9/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:28:13-37
+471            <meta-data
+471-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/760876031434219b489558cc44e101a9/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:29:13-31:39
+472                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+472-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/760876031434219b489558cc44e101a9/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:30:17-94
+473                android:value="cct" />
+473-->[com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/760876031434219b489558cc44e101a9/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:31:17-36
+474        </service>
+475
+476        <receiver
+476-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+477            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+477-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+478            android:directBootAware="false"
+478-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+479            android:enabled="true"
+479-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+480            android:exported="true"
+480-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+481            android:permission="android.permission.DUMP" >
+481-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+482            <intent-filter>
+482-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+483                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+483-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+483-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+484            </intent-filter>
+485            <intent-filter>
+485-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+486                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+486-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+486-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+487            </intent-filter>
+488            <intent-filter>
+488-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+489                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+489-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+489-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+490            </intent-filter>
+491            <intent-filter>
+491-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+492                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+492-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+492-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/priyanka/.gradle/caches/8.13/transforms/640342a343641eb33e9260bc60d13549/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+493            </intent-filter>
+494        </receiver>
+495
+496        <service
+496-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:24:9-28:19
+497            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+497-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:25:13-117
+498            android:exported="false"
+498-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:26:13-37
+499            android:permission="android.permission.BIND_JOB_SERVICE" >
+499-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:27:13-69
+500        </service>
+501
+502        <receiver
+502-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:30:9-32:40
+503            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+503-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:31:13-132
+504            android:exported="false" /> <!-- The activities will be merged into the manifest of the hosting app. -->
+504-->[com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/edbefb653153b62d7d7f50c5bddcf518/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:32:13-37
+505        <activity
+505-->[com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/caches/8.13/transforms/6a5e0c1b864832c0d19c77cc50d1b45f/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:14:9-18:65
+506            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+506-->[com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/caches/8.13/transforms/6a5e0c1b864832c0d19c77cc50d1b45f/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:15:13-93
+507            android:exported="false"
+507-->[com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/caches/8.13/transforms/6a5e0c1b864832c0d19c77cc50d1b45f/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:16:13-37
+508            android:stateNotNeeded="true"
+508-->[com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/caches/8.13/transforms/6a5e0c1b864832c0d19c77cc50d1b45f/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:17:13-42
+509            android:theme="@style/Theme.PlayCore.Transparent" />
+509-->[com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/caches/8.13/transforms/6a5e0c1b864832c0d19c77cc50d1b45f/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:18:13-62
+510    </application>
+511
+512</manifest>
