@@ -1,138 +1,142 @@
 [
     {
-        "merged": "com.v3.wam.app-debug-49:/xml_cdv_core_file_provider_paths.xml.flat",
-        "source": "com.v3.wam.app-main-51:/xml/cdv_core_file_provider_paths.xml"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_next_item.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_next_item.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-mdpi_ic_launcher.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-mdpi/ic_launcher.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_discard_dark.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-mdpi/ic_action_discard_dark.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-hdpi_ic_action_remove.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-hdpi/ic_action_remove.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/xml_cdv_core_file_provider_paths.xml.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/xml/cdv_core_file_provider_paths.xml"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-xxhdpi_ic_action_remove.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-xxhdpi/ic_action_remove.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-xxhdpi_ic_action_remove.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-xxhdpi/ic_action_remove.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/layout_actionbar_discard_button.xml.flat",
-        "source": "com.v3.wam.app-main-51:/layout/actionbar_discard_button.xml"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_done_light.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-mdpi/ic_action_done_light.png"
+    },
+    {
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_previous_item.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-mdpi/ic_action_previous_item.png"
     },
     {
         "merged": "com.v3.wam.app-debug-49:/xml_config.xml.flat",
         "source": "com.v3.wam.app-main-51:/xml/config.xml"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_done_dark.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-mdpi/ic_action_done_dark.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/anim_image_pop_in.xml.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/anim/image_pop_in.xml"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-hdpi_ic_action_previous_item.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-hdpi/ic_action_previous_item.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable_ic_cdv_splashscreen.xml.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable/ic_cdv_splashscreen.xml"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-hdpi_image_bg.9.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-hdpi/image_bg.9.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_remove.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_remove.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_done_light.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-mdpi/ic_action_done_light.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-hdpi_ic_action_previous_item.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-hdpi/ic_action_previous_item.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-hdpi_loading_icon.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-hdpi/loading_icon.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-hdpi_ic_action_next_item.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-hdpi/ic_action_next_item.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable_grid_background.xml.flat",
-        "source": "com.v3.wam.app-main-51:/drawable/grid_background.xml"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/layout_multiselectorgrid.xml.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/layout/multiselectorgrid.xml"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/layout_actionbar_done_button.xml.flat",
-        "source": "com.v3.wam.app-main-51:/layout/actionbar_done_button.xml"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_next_item.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-mdpi/ic_action_next_item.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_discard_dark.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-mdpi/ic_action_discard_dark.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_done_dark.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-mdpi/ic_action_done_dark.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_remove.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_remove.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/layout_actionbar_custom_view_done_discard.xml.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/layout/actionbar_custom_view_done_discard.xml"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/xml_camera_provider_paths.xml.flat",
-        "source": "com.v3.wam.app-main-51:/xml/camera_provider_paths.xml"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/xml_camera_provider_paths.xml.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/xml/camera_provider_paths.xml"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/layout_actionbar_custom_view_done_discard.xml.flat",
-        "source": "com.v3.wam.app-main-51:/layout/actionbar_custom_view_done_discard.xml"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable_grid_background.xml.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable/grid_background.xml"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_remove.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-mdpi/ic_action_remove.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-xxhdpi_ic_action_next_item.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-xxhdpi/ic_action_next_item.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-xxhdpi_ic_action_previous_item.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-xxhdpi/ic_action_previous_item.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_previous_item.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_previous_item.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/layout_multiselectorgrid.xml.flat",
-        "source": "com.v3.wam.app-main-51:/layout/multiselectorgrid.xml"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-mdpi_ic_launcher.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/anim_image_pop_in.xml.flat",
-        "source": "com.v3.wam.app-main-51:/anim/image_pop_in.xml"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-hdpi_loading_icon.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-hdpi/loading_icon.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_next_item.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_next_item.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_discard_light.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_discard_light.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_done_dark.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_done_dark.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_remove.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-mdpi/ic_action_remove.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable_ic_cdv_splashscreen.xml.flat",
-        "source": "com.v3.wam.app-main-51:/drawable/ic_cdv_splashscreen.xml"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-hdpi_ic_action_remove.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-hdpi/ic_action_remove.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_next_item.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-mdpi/ic_action_next_item.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_discard_light.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-mdpi/ic_action_discard_light.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_done_dark.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_done_dark.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-hdpi_ic_action_next_item.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-hdpi/ic_action_next_item.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-hdpi_image_bg.9.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-hdpi/image_bg.9.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_previous_item.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-mdpi/ic_action_previous_item.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-xxhdpi_ic_action_previous_item.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-xxhdpi/ic_action_previous_item.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_discard_light.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_discard_light.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/layout_actionbar_discard_button.xml.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/layout/actionbar_discard_button.xml"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-xhdpi_ic_launcher.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-xhdpi/ic_launcher.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/layout_actionbar_done_button.xml.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/layout/actionbar_done_button.xml"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_done_light.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_done_light.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/xml_config.xml.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/xml/config.xml"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_discard_dark.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_discard_dark.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_discard_dark.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_discard_dark.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_previous_item.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_previous_item.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-mdpi_ic_action_discard_light.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-mdpi/ic_action_discard_light.png"
     },
     {
-        "merged": "com.v3.wam.app-debug-49:/drawable-xxhdpi_ic_action_next_item.png.flat",
-        "source": "com.v3.wam.app-main-51:/drawable-xxhdpi/ic_action_next_item.png"
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-xhdpi_ic_action_done_light.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-xhdpi/ic_action_done_light.png"
     }
 ]

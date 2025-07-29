@@ -31,14 +31,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-ble-central": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-ble-central"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-camera": {
     "source": {
       "type": "registry",
@@ -58,7 +50,7 @@
   "cordova-plugin-console": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-console"
+      "id": "cordova-plugin-console@^1.1.0"
     },
     "is_top_level": true,
     "variables": {}
@@ -66,7 +58,7 @@
   "cordova-plugin-datepicker": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-datepicker"
+      "id": "cordova-plugin-datepicker@^0.9.3"
     },
     "is_top_level": true,
     "variables": {}
@@ -98,7 +90,7 @@
   "cordova-plugin-geolocation": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-geolocation@4.1.0"
+      "id": "cordova-plugin-geolocation@^5.0.0"
     },
     "is_top_level": true,
     "variables": {}

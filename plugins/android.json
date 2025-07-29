@@ -68,6 +68,16 @@
     "phonegap-plugin-barcodescanner": {
       "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-geolocation": {
+      "GPS_REQUIRED": "true",
+      "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-datepicker": {
+      "PACKAGE_NAME": "com.v3.wam"
     }
   },
   "dependent_plugins": {}
