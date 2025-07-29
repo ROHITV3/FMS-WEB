@@ -96,6 +96,9 @@
     },
     "cordova-plugin-globalization": {
       "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.v3.wam"
     }
   },
   "dependent_plugins": {}

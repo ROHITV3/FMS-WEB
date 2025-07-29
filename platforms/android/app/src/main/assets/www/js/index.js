@@ -6,7 +6,8 @@ var initialheight; //used to record initial screen height
 
 //var databaseIP = 'http://203.125.7.40/V3nity4OmSree/';
 
-var databaseIP = 'http://www.v3nity.com:80/V3Nity4/'; //global databaseIP variable
+//var databaseIP = 'http://www.v3nity.com:80/V3Nity4/'; //global databaseIP variable
+var databaseIP = 'http://www.v3nity.com/V3Nity4LX'; //global databaseIP variable //UAT
 
 //http://203.125.7.40/V3nity4Feedback
 
