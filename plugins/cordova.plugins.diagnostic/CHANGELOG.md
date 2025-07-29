@@ -1,4 +1,117 @@
 # CHANGELOG
+
+**v7.2.3**
+* (android) bugfix: dynamically resolve BuildConfig class (and remove hard-coded example app package name) when determining isDebugBuild()
+
+**v7.2.2**
+* (ios & android) feat: add isDebugBuild()
+* fix: Separate isMobileDataEnabled() for Android vs isMobileDataAuthorized() for iOS. 
+  * Resolves [#482](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/482)
+
+
+**v7.2.1**
+* (android) fix logic in native resolution of single combined permission status in `getCameraAuthorizationStatus()` so it handles case where storage permissions are not requested
+
+**v7.2.0**
+* (android) feat: direct getExternalSdCardDetails without permission request
+  * Merged from PR [#501](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/501)
+* (doc) Add note about reinstalling plugin after adding modules preference to config.xml
+* (doc) Clarify functionality of `enableDebug()` method
+  * Merged from PR [#522](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/522)
+* (ios) Add conditions to not use CTCellularData on Mac Catalyst.
+  * Merged from PR [#521](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/521)
+  * Resolves [#520](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/520)
+* (ios) feat: add switchToNotificationSettings function for iOS platform
+  * Merged from PR [#517](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/517)
+* (ios) feat: add Resource Bundle to provide the Privacy Manifest
+  * Merged from PR [#516](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/516)
+* (android) fix: Bump WRITE_EXTERNAL_STORAGE to 32 for camera
+  * Merged from PR [#510](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/510)
+  * Resolves [#518](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/518)
+* (doc) fix: recommend use of `<edit-config>` instead of `<config-file>`
+  * Merged from PR [#505](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/505)
+* (android) fix: remove unused imports
+  * Merged from PR [#504](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/504)
+* (doc) correct example log for Ephemeral permission granted
+  * Merged from PR [#503](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/503)
+* (android) fix: replace deprecated StatFs functions
+  * Merged from PR [#502](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/502)
+* (android) improve camera authorisation handling and support new behaviour in API 34 / Android 14
+  * Add `getCameraAuthorizationStatuses()` to return the individual statuses of requested permissions related to camera
+  * Change `getCameraAuthorizationStatus()` to natively derive the single combined status result based upon build SDK version and requested permission statuses
+    * Return a `LIMITED` status on Android 14 if user selects limited access to photo library (return `GRANTED` if user selects to allow access to all)
+  * Resolves [#519](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/519)
+
+
+**v7.1.4**
+* (android) bugfix: decide if a permission is implicitly granted by checking if the device runtime is less than, but the build SDK used for the app is greater is or equal than, the SDK version in which the permission was added.
+  * Resolves [#508](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/508)
+* (android) tweak: throw error if a requested runtime permission is not supported by the build SDK version
+* (android) bugfix: when requesting camera permission, storage permission should also be requested by default if not specified but is currently not being
+
+
+**v7.1.3**
+* (android) update camera module to support READ_MEDIA permissions on Android 13+
+* (android): For new runtime permissions added in API 33, consider them implicitly granted if the build SDK >= 33 and device runtime is < 33.
+  * Resolves [#493](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/493)
+* (android) fix: Return error if attempting to change Bluetooth state when build SDK >= API 33 as this is no longer support.
+  * Resolves [#496](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/496)
+* (android) fix: getExternalSdCardDetails on API 33
+  * Merged from PR [#495](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/495)
+* (types) Using unlimited arrays in the TypeScript definition
+  * Merged from PR [#497](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/497)    
+
+
+**v7.1.2**
+* (Android) fix: Data roaming setting not available on API 32+
+* (Android) Support new media storage permissions on Android 13 / API 33.
+  * Resolves [#488](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/488).
+* (ios) bugfix: Check argument for Photo Library Access Level is not null before attempting to perform string compare.
+  * Resolves [#483](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/483).
+* (doc) Document issue with "Only this time" option in run-time permissions on Android 11+.
+  * Resolves [#486](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/486).
+
+
+**v7.1.1**
+* (Android, iOS) feat: Add `isMobileDataEnabled()` to core module.
+    * Based on PR [#478](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/478)
+* (iOS) bugfix: Only allow Bluetooth permission request if not already requested.
+    * Resolves [#477](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/477).
+* (iOS) bugfix: Resolve the correct authorization status after requesting camera roll authorization and granting LIMITED access.
+    * Resolves [#476](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/476).
+
+
+**v7.1.0**
+* (Android, iOS) feat: add support to fetch device OS and build SDK details
+
+
+**v7.0.0**
+* (Android) BREAKING chore: Remove deprecated aliases `cordova.plugins.diagnostic.runtimePermission` and  `cordova.plugins.diagnostic.runtimePermissionStatus`
+    - Use `cordova.plugins.diagnostic.permission` and `cordova.plugins.diagnostic.permissionStatus` instead.
+* (iOS) feat: Add support for Photo Library access levels on iOS 14+
+    * Resolves [#473](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/473).
+    * Add support to show Limited-Library Selection UI for Photo Roll in iOS 14+
+* (Android) feat: Add `isAirplaneModeEnabled()` to check if airplane mode is enabled on the device.
+* (iOS) feat: add support for checking Bluetooth authorization status on iOS
+* (Android) feat: Add support Bluetooth run-time permissions on API 31+
+    * Merged from PR [#465](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/465)
+* (Android) BREAKING fix: Update location API for approximate vs precise location permission on Android 12+
+    * See https://developer.android.com/training/location/permissions#approximate-request
+    * Resolves [#468](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/468).
+* (Android) fix: Update Android Location module to use LocationManager instead of Settings.Secure.LOCATION_MODE for APIs 28 and higher.
+    * Merged from PR [#466](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/466)    
+* (iOS) BREAKING fix: If `getLocationAccuracyAuthorization()` is called on <iOS 14, return `FULL` accuracy to success handler (instead of invoking error handler).
+* (iOS) fix: expose and document EPHEMERAL and PROVISIONAL authorization statues for iOS notifications.
+    * Resolves [#443](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/443).
+* (Android) fix Add support for all dangerous (runtime) permissions up to API 33.
+    * Resolves [#448](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/448) and [#460](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/460).
+* (Android) bugfix: fix cold restart for API 29+
+    * Resolves [#453](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/453).
+* (Windows) BREAKING chore: Remove support for deprecated Windows 10 Mobile platform
+* (Build) fix: Bump minimist to v1.2.6 to prevent security issues
+    * Merged from PR [#464](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/464)
+
+
 **v6.1.1**
 * Assorted type corrections
     * Merged from PR [#446](https://github.com/dpa99c/cordova-diagnostic-plugin/pull/446)

@@ -17,55 +17,50 @@ interface Diagnostic {
      * @type {Object}
      */
     permission: {
-        "READ_CALENDAR": "READ_CALENDAR";
-        "WRITE_CALENDAR": "WRITE_CALENDAR";
-        "CAMERA": "CAMERA";
-        "READ_CONTACTS": "READ_CONTACTS";
-        "WRITE_CONTACTS": "WRITE_CONTACTS";
-        "GET_ACCOUNTS": "GET_ACCOUNTS";
-        "ACCESS_FINE_LOCATION": "ACCESS_FINE_LOCATION";
-        "ACCESS_COARSE_LOCATION": "ACCESS_COARSE_LOCATION";
+        "ACCEPT_HANDOVER": "ACCEPT_HANDOVER";
         "ACCESS_BACKGROUND_LOCATION": "ACCESS_BACKGROUND_LOCATION";
-        "RECORD_AUDIO": "RECORD_AUDIO";
-        "READ_PHONE_STATE": "READ_PHONE_STATE";
-        "CALL_PHONE": "CALL_PHONE";
-        "ADD_VOICEMAIL": "ADD_VOICEMAIL";
-        "USE_SIP": "USE_SIP";
-        "PROCESS_OUTGOING_CALLS": "PROCESS_OUTGOING_CALLS";
-        "READ_CALL_LOG": "READ_CALL_LOG";
-        "WRITE_CALL_LOG": "WRITE_CALL_LOG";
-        "SEND_SMS": "SEND_SMS";
-        "RECEIVE_SMS": "RECEIVE_SMS";
-        "READ_SMS": "READ_SMS";
-        "RECEIVE_WAP_PUSH": "RECEIVE_WAP_PUSH";
-        "RECEIVE_MMS": "RECEIVE_MMS";
-        "WRITE_EXTERNAL_STORAGE": "WRITE_EXTERNAL_STORAGE";
-        "READ_EXTERNAL_STORAGE": "READ_EXTERNAL_STORAGE";
-        "BODY_SENSORS": "BODY_SENSORS";
+        "ACCESS_COARSE_LOCATION": "ACCESS_COARSE_LOCATION";
+        "ACCESS_FINE_LOCATION": "ACCESS_FINE_LOCATION";
+        "ACCESS_MEDIA_LOCATION": "ACCESS_MEDIA_LOCATION";
         "ACTIVITY_RECOGNITION": "ACTIVITY_RECOGNITION";
+        "ADD_VOICEMAIL": "ADD_VOICEMAIL";
+        "ANSWER_PHONE_CALLS": "ANSWER_PHONE_CALLS";
+        "BLUETOOTH_ADVERTISE": "BLUETOOTH_ADVERTISE";
+        "BLUETOOTH_CONNECT": "BLUETOOTH_CONNECT";
+        "BLUETOOTH_SCAN": "BLUETOOTH_SCAN";
+        "BODY_SENSORS": "BODY_SENSORS";
+        "BODY_SENSORS_BACKGROUND": "BODY_SENSORS_BACKGROUND";
+        "CALL_PHONE": "CALL_PHONE";
+        "CAMERA": "CAMERA";
+        "GET_ACCOUNTS": "GET_ACCOUNTS";
+        "NEARBY_WIFI_DEVICES": "NEARBY_WIFI_DEVICES";
+        "POST_NOTIFICATIONS": "POST_NOTIFICATIONS";
+        "PROCESS_OUTGOING_CALLS": "PROCESS_OUTGOING_CALLS";
+        "READ_CALENDAR": "READ_CALENDAR";
+        "READ_CALL_LOG": "READ_CALL_LOG";
+        "READ_CONTACTS": "READ_CONTACTS";
+        "READ_EXTERNAL_STORAGE": "READ_EXTERNAL_STORAGE";
+        "READ_MEDIA_AUDIO": "READ_MEDIA_AUDIO";
+        "READ_MEDIA_IMAGES": "READ_MEDIA_IMAGES";
+        "READ_MEDIA_VIDEO": "READ_MEDIA_VIDEO";
+        "READ_PHONE_NUMBERS": "READ_PHONE_NUMBERS";
+        "READ_PHONE_STATE": "READ_PHONE_STATE";
+        "READ_SMS": "READ_SMS";
+        "RECEIVE_MMS": "RECEIVE_MMS";
+        "RECEIVE_SMS": "RECEIVE_SMS";
+        "RECEIVE_WAP_PUSH": "RECEIVE_WAP_PUSH";
+        "RECORD_AUDIO": "RECORD_AUDIO";
+        "SEND_SMS": "SEND_SMS";
+        "USE_SIP": "USE_SIP";
+        "UWB_RANGING": "UWB_RANGING";
+        "WRITE_CALENDAR": "WRITE_CALENDAR";
+        "WRITE_CALL_LOG": "WRITE_CALL_LOG";
+        "WRITE_CONTACTS": "WRITE_CONTACTS";
+        "WRITE_EXTERNAL_STORAGE": "WRITE_EXTERNAL_STORAGE";
     };
+    
 
     /**
-     * ANDROID ONLY
-     * Permission groups indicate which associated permissions will also be requested if a given permission is requested.
-     * See http://developer.android.com/guide/topics/security/permissions.html#perm-groups
-     * @type {Object}
-     */
-    permissionGroups: {
-        "CALENDAR": ["READ_CALENDAR", "WRITE_CALENDAR"];
-        "CAMERA": ["CAMERA"];
-        "CONTACTS": ["READ_CONTACTS", "WRITE_CONTACTS", "GET_ACCOUNTS"];
-        "LOCATION": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"];
-        "MICROPHONE": ["RECORD_AUDIO"];
-        "PHONE": ["READ_PHONE_STATE", "CALL_PHONE", "ADD_VOICEMAIL", "USE_SIP", "PROCESS_OUTGOING_CALLS", "READ_CALL_LOG", "WRITE_CALL_LOG"];
-        "SENSORS": ["BODY_SENSORS"];
-        "SMS": ["SEND_SMS", "RECEIVE_SMS", "READ_SMS", "RECEIVE_WAP_PUSH", "RECEIVE_MMS"];
-        "STORAGE": ["READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"];
-        "PHYSICAL_ACTIVITY": ["ACTIVITY_RECOGNITION"];
-    };
-
-    /**
-     * ANDROID and iOS ONLY
      * Constants for requesting and reporting the various permission states.
      * @type {Object}
      */
@@ -75,6 +70,8 @@ interface Diagnostic {
 
         // iOS only
         "RESTRICTED": "restricted";
+        "EPHEMERAL": "ephemeral";
+        "PROVISIONAL": "provisional";
 
         // Both iOS and Android
         "GRANTED": "authorized"|"GRANTED";
@@ -99,7 +96,6 @@ interface Diagnostic {
     };
 
     /**
-     * ANDROID and iOS ONLY
      * Location authorization mode
      * @type {Object}
      */
@@ -109,7 +105,6 @@ interface Diagnostic {
     };
 
     /**
-     * iOS ONLY
      * Location accuracy authorization
      * @type {Object}
      */
@@ -132,7 +127,6 @@ interface Diagnostic {
     };
 
     /**
-     * ANDROID and iOS ONLY
      * Constants for the various Bluetooth hardware states.
      * @type {Object}
      */
@@ -209,7 +203,7 @@ interface Diagnostic {
     /**
      * Checks if Wifi is available.
      * On iOS this returns true if the device is connected to a network by WiFi.
-     * On Android and Windows 10 Mobile this returns true if the WiFi setting is set to enabled, and is the same as isWifiEnabled()
+     * On Android this returns true if the WiFi setting is set to enabled, and is the same as isWifiEnabled()
      * @param successCallback
      * @param errorCallback
      */
@@ -221,7 +215,6 @@ interface Diagnostic {
     /**
      * Checks if camera is available.
      * On Android & iOS this returns true if the device has a camera AND the application is authorized to use it.
-     * On Windows 10 Mobile this returns true if the device has a rear-facing camera.
      * @param successCallbackOrParams
      * @param errorCallback
      * @param externalStorageOrParams
@@ -234,7 +227,7 @@ interface Diagnostic {
 
     /**
      * Checks if Bluetooth is available to the app.
-     * Returns true if the device has Bluetooth capabilities AND if Bluetooth setting is switched on (same on Android, iOS and Windows 10 Mobile)
+     * Returns true if the device has Bluetooth capabilities AND if Bluetooth setting is switched on (same on Android, iOS)
      * @param successCallback
      * @param errorCallback
      */
@@ -244,31 +237,31 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and WINDOWS ONLY
+     * ANDROID ONLY
      * Displays the device location settings to allow user to enable location services/change location mode.
      */
     switchToLocationSettings?: () => void;
 
     /**
-     * ANDROID and WINDOWS ONLY
+     * ANDROID ONLY
      * Displays mobile settings to allow user to enable mobile data.
      */
     switchToMobileDataSettings?: () => void;
 
     /**
-     * ANDROID and WINDOWS ONLY
+     * ANDROID ONLY
      * Displays Bluetooth settings to allow user to enable Bluetooth.
      */
     switchToBluetoothSettings?: () => void;
 
     /**
-     * ANDROID and WINDOWS ONLY
+     * ANDROID ONLY
      * Displays WiFi settings to allow user to enable WiFi.
      */
     switchToWifiSettings?: () => void;
 
     /**
-     * ANDROID and WINDOWS ONLY
+     * ANDROID ONLY
      * Returns true if the WiFi setting is set to enabled, and is the same as isWifiAvailable()
      * @param successCallback
      * @param errorCallback
@@ -279,7 +272,7 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and WINDOWS ONLY
+     * ANDROID ONLY
      * Enables/disables WiFi on the device.
      * @param successCallback
      * @param errorCallback
@@ -292,7 +285,7 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and WINDOWS ONLY
+     * ANDROID ONLY
      * Enables/disables Bluetooth on the device.
      * @param successCallback
      * @param errorCallback
@@ -305,7 +298,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Enables debug mode, which logs native plugin debug messages to the native and JS consoles.
      * Debug mode is initially disabled on plugin initialisation.
      */
@@ -314,9 +306,106 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
-     * Returns true if the device setting for location is on. 
-     * On Android this returns true if Location Mode is switched on. 
+     * Returns true if the current build is a debug build.
+     * @param successCallback
+     * @param errorCallback
+     */
+    isDebugBuild?: (
+        successCallback: (enabled: boolean) => void,
+        errorCallback: (error: string) => void
+    ) => void;
+
+
+
+    /**
+     * ANDROID ONLY
+     *
+     * Checks if airplane mode is enabled on device.
+     *
+     * @param successCallback
+     * @param errorCallback
+     */
+    isAirplaneModeEnabled?: (
+        successCallback: () => boolean,
+        errorCallback: (error: string) => void
+    ) => void;
+
+    /**
+     * ANDROID ONLY
+     *
+     * Checks if mobile data is enabled on device.
+     *
+     * @param successCallback
+     * @param errorCallback
+     */
+    isMobileDataEnabled?: (
+        successCallback: () => boolean,
+        errorCallback: (error: string) => void
+    ) => void;
+
+    /**
+     * IOS ONLY
+     *
+     * Checks if mobile data is authorized for this app.
+     *
+     * @param successCallback
+     * @param errorCallback
+     */
+    isMobileDataAuthorized?: (
+        successCallback: () => boolean,
+        errorCallback: (error: string) => void
+    ) => void;
+
+    /**
+     *
+     * Checks if accessibility mode is enabled on device.
+     *
+     * @param successCallback
+     * @param errorCallback
+     */
+    isAccessibilityModeEnabled?: (
+            successCallback: () => boolean,
+            errorCallback: (error: string) => void
+        ) => void;
+
+    /**
+     * ANDROID ONLY
+     *
+     * Checks if touch exploration of accessibility mode is enabled on device.
+     *
+     * @param successCallback
+     * @param errorCallback
+     */
+    isTouchExplorationEnabled?: (
+        successCallback: () => boolean,
+        errorCallback: (error: string) => void
+    ) => void;
+        
+    /**
+     * Returns details of the OS of the device on which the app is currently running
+     *
+     * @param successCallback
+     * @param errorCallback
+     */
+    getDeviceOSVersion?: (
+        successCallback: (details: {version: string, apiLevel: number, apiName: string}) => void,
+        errorCallback: (error: string) => void
+    ) => void;
+
+    /**
+     * Returns details of the SDK levels used to build the app.
+     *
+     * @param successCallback
+     * @param errorCallback
+     */
+    getBuildOSVersion?: (
+        successCallback: (details: {targetApiLevel: number, targetApiName: string, minApiLevel: number, minApiName: string}) => void,
+        errorCallback: (error: string) => void
+    ) => void;
+
+    /**
+     * Returns true if the device setting for location is on.
+     * On Android this returns true if Location Mode is switched on.
      * On iOS this returns true if Location Services is switched on.
      * @param successCallback
      * @param errorCallback
@@ -327,7 +416,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Checks if the application is authorized to use location.
      * @param successCallback
      * @param errorCallback
@@ -338,7 +426,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Returns the location authorization status for the application.
      * @param successCallback
      * @param errorCallback
@@ -348,21 +435,33 @@ interface Diagnostic {
         errorCallback: (error: string) => void
     ) => void;
 
+
     /**
-     * ANDROID and iOS ONLY
+     * Android ONLY
+     * Returns the individual location authorization status for each type of location access (FINE, COARSE and BACKGROUND).
+     * @param successCallback
+     * @param errorCallback
+     */
+    getLocationAuthorizationStatuses?: (
+        successCallback: (status: string) => void,
+        errorCallback: (error: string) => void
+    ) => void;
+
+    /**
      * Requests location authorization for the application.
      * @param successCallback
      * @param errorCallback
      * @param mode - (optional / iOS & Android >= 10) location authorization mode specified as a locationAuthorizationMode constant. If not specified, defaults to WHEN_IN_USE.
+     * @param accuracy
      */
     requestLocationAuthorization?: (
         successCallback: (status: string) => void,
         errorCallback: (error: string) => void,
-        mode?: string
+        mode?: string,
+        accuracy?: string
     ) => void;
 
     /**
-     * iOS ONLY
      * Returns the location accuracy authorization for the application.
      * @param successCallback
      * @param errorCallback
@@ -387,7 +486,6 @@ interface Diagnostic {
 
 
     /**
-     * ANDROID and iOS ONLY
      * Checks if camera hardware is present on device.
      * @param successCallback
      * @param errorCallback
@@ -398,7 +496,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Checks if the application is authorized to use the camera.
      * @param successCallback
      * @param errorCallback
@@ -411,7 +508,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Returns the camera authorization status for the application.
      * @param successCallback
      * @param errorCallback
@@ -424,7 +520,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Requests camera authorization for the application.
      * @param successCallback
      * @param errorCallback
@@ -437,7 +532,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Checks if the application is authorized to use the microphone.
      * @param successCallback
      * @param errorCallback
@@ -448,7 +542,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Returns the microphone authorization status for the application.
      * @param successCallback
      * @param errorCallback
@@ -459,7 +552,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Requests microphone authorization for the application.
      * @param successCallback
      * @param errorCallback
@@ -470,7 +562,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Checks if the application is authorized to use contacts (address book).
      * @param successCallback
      * @param errorCallback
@@ -481,7 +572,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Returns the contacts authorization status for the application.
      * @param successCallback
      * @param errorCallback
@@ -492,7 +582,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Requests contacts authorization for the application.
      * @param successCallback
      * @param errorCallback
@@ -503,7 +592,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Checks if the application is authorized to use the calendar.
      * @param successCallback
      * @param errorCallback
@@ -514,7 +602,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Returns the calendar authorization status for the application.
      * @param successCallback
      * @param errorCallback
@@ -525,7 +612,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Requests calendar authorization for the application.
      * @param successCallback
      * @param errorCallback
@@ -536,7 +622,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Opens settings page for this app.
      * On Android, this opens the "App Info" page in the Settings app.
      * On iOS, this opens the app settings page in the Settings app.
@@ -547,7 +632,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Returns the state of Bluetooth on the device.
      * @param successCallback
      * @param errorCallback
@@ -558,7 +642,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Registers a function to be called when a change in Bluetooth state occurs. Pass in a falsey value to de-register the currently registered function.
      * @param successCallback
      */
@@ -567,7 +650,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Registers a function to be called when a change in Location state occurs. Pass in a falsey value to de-register the currently registered function.
      * On Android, this occurs when the Location Mode is changed.
      * On iOS, this occurs when location authorization status is changed. This can be triggered either by the user's response to a location permission authorization dialog, by the user turning on/off Location Services, or by the user changing the Location authorization state specifically for your app.
@@ -604,7 +686,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Returns CPU architecture of the current device.
      * @param successCallback
      * @param errorCallback
@@ -615,7 +696,6 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Returns the current battery level of the device as a percentage.
      * @param successCallback
      * @param errorCallback
@@ -808,6 +888,39 @@ interface Diagnostic {
     ) => void;
 
     /**
+     * Returns the Bluetooth authorization status of the application on the device.
+     * @param successCallback
+     * @param errorCallback
+     */
+    getBluetoothAuthorizationStatus: (
+        successCallback: (statuses: [{string: boolean}]) => void,
+        errorCallback: (error: string) => void
+    ) => void;
+
+    /**
+     * ANDROID ONLY
+     * Returns the authorization statuses for various Bluetooth run-time permissions on Android 12+ / API 31+
+     * On Android 11 / API 30 and below, all will be returned as GRANTED if the manifest has BLUETOOTH since they are implicitly granted at build-time.
+     * @param successCallback
+     * @param errorCallback
+     */
+    getBluetoothAuthorizationStatuses?: (
+        successCallback: (statuses: [{string: boolean}]) => void,
+        errorCallback: (error: string) => void
+    ) => void;
+
+    /**
+     * ANDROID ONLY
+     * Checks if the device setting for Airplane Mode is switched on.
+     * @param successCallback
+     * @param errorCallback
+     */
+    isAirplaneModeOn?: (
+      successCallback: (enabled: boolean) => void,
+      errorCallback: (error: string) => void
+    ) => void;
+
+    /**
      * ANDROID ONLY
      * Checks if the application is authorized to use external storage.
      * @param successCallback
@@ -902,7 +1015,8 @@ interface Diagnostic {
      */
     isCameraRollAuthorized?: (
         successCallback: (authorized: boolean) => void,
-        errorCallback: (error: string) => void
+        errorCallback: (error: string) => void,
+        accessLevel?: string
     ) => void;
 
     /**
@@ -913,7 +1027,8 @@ interface Diagnostic {
      */
     getCameraRollAuthorizationStatus?: (
         successCallback: (status: string) => void,
-        errorCallback: (error: string) => void
+        errorCallback: (error: string) => void,
+        accessLevel?: string
     ) => void;
 
     /**
@@ -924,17 +1039,36 @@ interface Diagnostic {
      */
     requestCameraRollAuthorization?: (
         successCallback: (status: string) => void,
+        errorCallback: (error: string) => void,
+        accessLevel?: string
+    ) => void;
+
+    /**
+     * iOS ONLY
+     * Presents limited library picker UI on iOS 14+
+     * @param successCallback
+     * @param errorCallback
+     */
+    presentLimitedLibraryPicker?: (
+        successCallback: (identifiers?: string[]) => void,
         errorCallback: (error: string) => void
     ) => void;
 
     /**
-     * ANDROID and iOS ONLY
      * Checks if remote (push) notifications are enabled.
      * @param successCallback
      * @param errorCallback
      */
     isRemoteNotificationsEnabled?: (
         successCallback: (enabled: boolean) => void,
+        errorCallback: (error: string) => void
+    ) => void;
+
+    /**
+     * Opens the notification settings page for this app.
+     */
+    switchToNotificationSettings?: (
+        successCallback: () => void,
         errorCallback: (error: string) => void
     ) => void;
 
@@ -1064,14 +1198,15 @@ interface Diagnostic {
     ) => void;
 
     /**
-     * iOS ONLY
      * Requests Bluetooth authorization for the application.
      * @param successCallback
      * @param errorCallback
+     * @param permissions - ANDROID ONLY
      */
     requestBluetoothAuthorization?: (
         successCallback: () => void,
-        errorCallback: (error: string) => void
+        errorCallback: (error: string) => void,
+        permissions?: (string[])
     ) => void;
 
     /**

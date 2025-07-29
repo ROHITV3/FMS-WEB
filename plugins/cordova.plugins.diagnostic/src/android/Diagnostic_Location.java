@@ -142,7 +142,7 @@ public class Diagnostic_Location extends CordovaPlugin{
      * @return                  True if the action was valid, false if not.
      */
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        currentContext = callbackContext;
+        Diagnostic.instance.currentContext = currentContext = callbackContext;
 
         try {
             if (action.equals("switchToLocationSettings")){
@@ -245,9 +245,12 @@ public class Diagnostic_Location extends CordovaPlugin{
     public void requestLocationAuthorization(JSONArray args, CallbackContext callbackContext) throws Exception{
         JSONArray permissionsToRequest = new JSONArray();
         boolean shouldRequestBackground = args.getBoolean(0);
+        boolean shouldRequestPrecise = args.getBoolean(1);
 
-        permissionsToRequest.put(gpsLocationPermission);
         permissionsToRequest.put(networkLocationPermission);
+        if(shouldRequestPrecise || Build.VERSION.SDK_INT < 31){
+            permissionsToRequest.put(gpsLocationPermission);
+        }
 
         if(shouldRequestBackground && Build.VERSION.SDK_INT >= 29 ){
             permissionsToRequest.put(backgroundLocationPermission);
@@ -271,9 +274,9 @@ public class Diagnostic_Location extends CordovaPlugin{
      */
     private int getLocationMode() throws Exception {
         int mode;
-        if (Build.VERSION.SDK_INT >= 19){ // Kitkat and above
+        if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 28){ // Kitkat to Oreo, Settings.Secute.LOCATION_MODE was deprecated in Pie (https://developer.android.com/reference/android/provider/Settings.Secure#LOCATION_MODE)
             mode = Settings.Secure.getInt(this.cordova.getActivity().getContentResolver(), Settings.Secure.LOCATION_MODE);
-        }else{ // Pre-Kitkat
+        }else{ // Pre-Kitkat and post-Oreo
             if(isLocationProviderEnabled(LocationManager.GPS_PROVIDER) && isLocationProviderEnabled(LocationManager.NETWORK_PROVIDER)){
                 mode = 3;
             } else if(isLocationProviderEnabled(LocationManager.GPS_PROVIDER)){
@@ -288,7 +291,7 @@ public class Diagnostic_Location extends CordovaPlugin{
     }
 
     private boolean isLocationAuthorized() throws Exception {
-        boolean authorized = diagnostic.hasPermission(diagnostic.permissionsMap.get(gpsLocationPermission)) || diagnostic.hasPermission(diagnostic.permissionsMap.get(networkLocationPermission));
+        boolean authorized = diagnostic.hasRuntimePermission(diagnostic.permissionsMap.get(gpsLocationPermission)) || diagnostic.hasRuntimePermission(diagnostic.permissionsMap.get(networkLocationPermission));
         Log.v(TAG, "Location permission is "+(authorized ? "authorized" : "unauthorized"));
         return authorized;
     }

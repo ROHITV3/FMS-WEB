@@ -223,6 +223,32 @@ static NSString*const REMOTE_NOTIFICATIONS_BADGE = @"badge";
     }];
 }
 
+- (void) switchToNotificationSettings: (CDVInvokedUrlCommand*)command
+{
+    @try {
+        if (@available(iOS 15.4, *)) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString: UIApplicationOpenNotificationSettingsURLString] options:@{} completionHandler:^(BOOL success) {
+                if (success) {
+                    [diagnostic sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] :command];
+                }else{
+                    [diagnostic sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR] :command];
+                }
+            }];
+        } else { 
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString: UIApplicationOpenSettingsURLString] options:@{} completionHandler:^(BOOL success) {
+                if (success) {
+                    [diagnostic sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK] :command];
+                }else{
+                    [diagnostic sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR] :command];
+                }
+            }];
+        }
+    }
+    @catch (NSException *exception) {
+        [diagnostic handlePluginException:exception :command];
+    }
+}
+
 - (void) _isRegisteredForRemoteNotifications:(void (^)(BOOL result))completeBlock {
     dispatch_async(dispatch_get_main_queue(), ^{
         BOOL registered = [UIApplication sharedApplication].isRegisteredForRemoteNotifications;

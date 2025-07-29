@@ -25,7 +25,10 @@ var Diagnostic = (function(){
         "DENIED_ALWAYS": "denied_always", // User denied access to this permission
         "RESTRICTED": "restricted", // Permission is unavailable and user cannot enable it.  For example, when parental controls are in effect for the current user.
         "GRANTED": "authorized", //  User granted access to this permission
-        "GRANTED_WHEN_IN_USE": "authorized_when_in_use" //  User granted access use location permission only when app is in use
+        "GRANTED_WHEN_IN_USE": "authorized_when_in_use", //  User granted access use location permission only when app is in use
+        "EPHEMERAL": "ephemeral", // The app is authorized to schedule or receive notifications for a limited amount of time.
+        "PROVISIONAL": "provisional", // The application is provisionally authorized to post non-interruptive user notifications.
+        "LIMITED": "limited" // The app has limited access to the Photo Library
     };
 
     Diagnostic.cpuArchitecture = {
@@ -147,6 +150,95 @@ var Diagnostic = (function(){
             errorCallback,
             'Diagnostic',
             'getCurrentBatteryLevel',
+            []);
+    };
+
+    /**
+     * Checks if mobile data is authorized for this app.
+     * Returns true if the per-app Mobile Data setting is set to enabled (regardless of whether the device is currently connected to a cellular network)
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single boolean parameter which is TRUE if mobile data is enabled.
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     *  This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.isMobileDataAuthorized = function(successCallback, errorCallback) {
+        return cordova.exec(Diagnostic._ensureBoolean(successCallback),
+            errorCallback,
+            'Diagnostic',
+            'isMobileDataAuthorized',
+            []);
+    };
+
+
+    /**
+     * Checks if accessibility mode (VoiceOver) is enabled/running on device.
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single boolean parameter which is TRUE if accessibility mode is enabled.
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     *  This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.isAccessibilityModeEnabled = function(successCallback, errorCallback) {
+        return cordova.exec(Diagnostic._ensureBoolean(successCallback),
+            errorCallback,
+            'Diagnostic',
+            'isAccessibilityModeEnabled',
+            []);
+    };
+
+    /**
+     * Returns details of the OS of the device on which the app is currently running
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single object parameter with the following fields:
+     * - {string} version - version string of the OS e.g. "11.0"
+     * - {integer} apiLevel - API level of the OS e.g. 30
+     * - {string} apiName - code name for API level e.g. "FROYO"
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     *  This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.getDeviceOSVersion = function(successCallback, errorCallback) {
+        return cordova.exec(successCallback,
+            errorCallback,
+            'Diagnostic',
+            'getDeviceOSVersion',
+            []);
+    };
+
+    /**
+     * Returns details of the SDK levels used to build the app.
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single object parameter with the following fields:
+     * - {integer} targetApiLevel - API level of the target SDK (used to build the app)
+     * - {string} targetApiName - code name for API level of the target SDK e.g. "FROYO"
+     * - {integer} minApiLevel - API level of the minimum SDK (lowest on which the app can be installed)
+     * - {string} minApiName - code name for API level of the minimum SDK e.g. "FROYO"
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     *  This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.getBuildOSVersion = function(successCallback, errorCallback) {
+        return cordova.exec(successCallback,
+            errorCallback,
+            'Diagnostic',
+            'getBuildOSVersion',
+            []);
+    };
+
+    /**
+     * Checks if the current app build is a debug build.
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single boolean parameter which is TRUE if the app is a debug build.
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     *  This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.isDebugBuild = function(successCallback, errorCallback) {
+        return cordova.exec(Diagnostic._ensureBoolean(successCallback),
+            errorCallback,
+            'Diagnostic',
+            'isDebugBuild',
             []);
     };
 
@@ -432,8 +524,14 @@ var Diagnostic = (function(){
      * This callback function is passed a single boolean parameter which is TRUE if access to Camera Roll is authorized.
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
+     * @param {Function} accessLevel - (optional) On iOS 14+, specifies the level of access to the photo library to query as a constant in cordova.plugins.diagnostic.photoLibraryAccessLevel`
+     * - Possible values are:
+     *      - ADD_ONLY - can add to but not read from Photo Library
+     *      - READ_WRITE - can both add to and read from Photo Library
+     * - Defaults to ADD_ONLY if not specified
+     * - Has no effect on iOS 13 or below
      */
-    Diagnostic.isCameraRollAuthorized = function(successCallback, errorCallback) {
+    Diagnostic.isCameraRollAuthorized = function(successCallback, errorCallback, accessLevel) {
         if(cordova.plugins.diagnostic.camera){
             cordova.plugins.diagnostic.camera.isCameraRollAuthorized.apply(this, arguments);
         }else{
@@ -448,8 +546,14 @@ var Diagnostic = (function(){
      * This callback function is passed a single string parameter which indicates the authorization status as a constant in `cordova.plugins.diagnostic.permissionStatus`.
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
+     * @param {Function} accessLevel - (optional) On iOS 14+, specifies the level of access to the photo library to query as a constant in cordova.plugins.diagnostic.photoLibraryAccessLevel`
+     * - Possible values are:
+     *      - ADD_ONLY - can add to but not read from Photo Library
+     *      - READ_WRITE - can both add to and read from Photo Library
+     * - Defaults to ADD_ONLY if not specified
+     * - Has no effect on iOS 13 or below
      */
-    Diagnostic.getCameraRollAuthorizationStatus = function(successCallback, errorCallback) {
+    Diagnostic.getCameraRollAuthorizationStatus = function(successCallback, errorCallback, accessLevel) {
         if(cordova.plugins.diagnostic.camera){
             cordova.plugins.diagnostic.camera.getCameraRollAuthorizationStatus.apply(this, arguments);
         }else{
@@ -466,10 +570,24 @@ var Diagnostic = (function(){
      * `cordova.plugins.diagnostic.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS`
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
+     * @param {Function} accessLevel - On iOS 14+, specifies the level of access to the photo library as a constant in cordova.plugins.diagnostic.photoLibraryAccessLevel`
+     * - Possible values are:
+     *      - ADD_ONLY - can add to but not read from Photo Library
+     *      - READ_WRITE - can both add to and read from Photo Library
+     * - Defaults to ADD_ONLY if not specified
+     * - Has no effect on iOS 13 or below
      */
-    Diagnostic.requestCameraRollAuthorization = function(successCallback, errorCallback) {
+    Diagnostic.requestCameraRollAuthorization = function(successCallback, errorCallback, accessLevel) {
         if(cordova.plugins.diagnostic.camera){
             cordova.plugins.diagnostic.camera.requestCameraRollAuthorization.apply(this, arguments);
+        }else{
+            throw "Diagnostic Camera module is not installed";
+        }
+    };
+
+    Diagnostic.presentLimitedLibraryPicker = function(successCallback, errorCallback) {
+        if(cordova.plugins.diagnostic.camera){
+            cordova.plugins.diagnostic.camera.presentLimitedLibraryPicker.apply(this, arguments);
         }else{
             throw "Diagnostic Camera module is not installed";
         }
@@ -582,6 +700,14 @@ var Diagnostic = (function(){
         }
     };
 
+    Diagnostic.getBluetoothAuthorizationStatus = function(successCallback, errorCallback) {
+        if(cordova.plugins.diagnostic.bluetooth){
+            cordova.plugins.diagnostic.bluetooth.getAuthorizationStatus.apply(this, arguments);
+        }else{
+            throw "Diagnostic Bluetooth module is not installed";
+        }
+    };
+
     /***********************
      * Remote Notifications
      ***********************/
@@ -600,6 +726,21 @@ var Diagnostic = (function(){
             cordova.plugins.diagnostic.notifications.isRemoteNotificationsEnabled.apply(this, arguments);
         }else{
             throw "Diagnostic Notifications module is not installed";
+        }
+    };
+
+    /**
+     * Switches to the notification settings page in the Settings app
+     * 
+     * @param {Function} successCallback - The callback which will be called when switch to settings is successful.
+     * @param {Function} errorCallback - The callback which will be called when switch to settings encounters an error.
+     * This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.switchToNotificationSettings = function(successCallback, errorCallback) {
+        if (cordova.plugins.diagnostic.notifications){
+            cordova.plugins.diagnostic.notifications.switchToNotificationSettings.apply(this, arguments);
+        } else {
+            throw "Diagnostic Notification module is not installed";
         }
     };
 
@@ -1000,6 +1141,8 @@ var Diagnostic = (function(){
             throw "Diagnostic Motion module is not installed";
         }
     };
+
+
 
     return Diagnostic;
 })();

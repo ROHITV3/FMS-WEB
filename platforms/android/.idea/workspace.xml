@@ -15,151 +15,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="adc3a0d6-718c-4908-828a-5fe62a8c19c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android.json" beforeDir="false" afterPath="$PROJECT_DIR$/android.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/assets/debug/mergeDebugAssets/www/cordova_plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/assets/debug/mergeDebugAssets/www/cordova_plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/cordova_plugins.js.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/cordova_plugins.js.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/dirs_bucket_0/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/dirs_bucket_0/graph.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/dirs_bucket_1/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/dirs_bucket_1/graph.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/dirs_bucket_2/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/dirs_bucket_2/graph.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/dirs_bucket_3/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/dirs_bucket_3/graph.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/dirs_bucket_4/graph.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/dirs_bucket_4/graph.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/xml_config.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mergeDebugResources/xml_config.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/single/mergeDebugResources.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/single/mergeDebugResources.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/xml/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/packageDebugResources/xml/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/processDebugResources/stableIds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/processDebugResources/stableIds.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/www/cordova_plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/www/cordova_plugins.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cordova/defaults.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cordova/defaults.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/platform_www/cordova_plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/platform_www/cordova_plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/android.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugins/android.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/CHANGES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/battery/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/battery/config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/battery/hooks/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/battery/www/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/battery/www/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/battery/www/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/bluefruitle/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/bluefruitle/config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/bluefruitle/hooks/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/bluefruitle/www/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/bluefruitle/www/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/bluefruitle/www/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/heartrate/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/heartrate/config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/heartrate/hooks/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/heartrate/www/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/heartrate/www/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/heartrate/www/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/metawear/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/metawear/config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/metawear/hooks/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/metawear/www/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/metawear/www/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/metawear/www/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/redbearlab/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/redbearlab/config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/redbearlab/hooks/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/redbearlab/www/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/redbearlab/www/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/redbearlab/www/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/rfduinoLedButton/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/rfduinoLedButton/config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/rfduinoLedButton/hooks/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/rfduinoLedButton/www/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/rfduinoLedButton/www/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/rfduinoLedButton/www/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/robosmart/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/robosmart/config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/robosmart/hooks/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/robosmart/www/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/robosmart/www/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/robosmart/www/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/sensortag/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/sensortag/config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/sensortag/hooks/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/sensortag/www/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/sensortag/www/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/sensortag/www/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/sensortag_cc2650/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/sensortag_cc2650/config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/sensortag_cc2650/hooks/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/sensortag_cc2650/www/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/sensortag_cc2650/www/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/examples/sensortag_cc2650/www/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/hooks/after_prepare.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/plugin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/android/BLECentralPlugin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/android/BLECommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/android/Helper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/android/Peripheral.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/android/SequentialCallbackContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/android/UUIDHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/browser/BLECentralPlugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/ios/BLECentralPlugin.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/ios/BLECentralPlugin.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/ios/BLECommandContext.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/ios/BLECommandContext.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/ios/CBPeripheral+Extensions.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/ios/CBPeripheral+Extensions.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/src/wp/BLECentralPlugin.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/tests/plugin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/tests/tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/types.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-ble-central/www/ble.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-compat/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-compat/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-compat/.jshintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-compat/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-compat/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-compat/RELEASENOTES.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-compat/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-compat/plugin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-compat/src/android/BuildHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-compat/src/android/PermissionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/RELEASENOTES.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/RELEASENOTES.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/src/android/Geolocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/src/android/Geolocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/src/ios/CDVLocation.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/src/ios/CDVLocation.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/src/windows/GeolocationProxy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/www/Coordinates.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/www/Coordinates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/www/Position.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/www/Position.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/www/PositionError.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/www/PositionError.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/www/android/geolocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/www/android/geolocation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/www/geolocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-geolocation/www/geolocation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/fetch.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../plugins/fetch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

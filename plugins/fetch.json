@@ -74,7 +74,7 @@
   "cordova-plugin-dialogs": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-dialogs"
+      "id": "cordova-plugin-dialogs@^2.0.2"
     },
     "is_top_level": true,
     "variables": {}
@@ -170,7 +170,7 @@
   "cordova-plugin-spinner-dialog": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-spinner-dialog"
+      "id": "cordova-plugin-spinner-dialog@^1.3.1"
     },
     "is_top_level": true,
     "variables": {}
@@ -226,7 +226,7 @@
   "cordova.plugins.diagnostic": {
     "source": {
       "type": "registry",
-      "id": "cordova.plugins.diagnostic@6.1.1"
+      "id": "cordova.plugins.diagnostic@^7.2.3"
     },
     "is_top_level": true,
     "variables": {}

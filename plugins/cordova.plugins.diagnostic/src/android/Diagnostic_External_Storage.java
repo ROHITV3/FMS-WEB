@@ -25,8 +25,9 @@ package cordova.plugins;
 import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
-import androidx.core.os.EnvironmentCompat;
 import android.util.Log;
+
+import androidx.core.os.EnvironmentCompat;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -51,7 +52,6 @@ public class Diagnostic_External_Storage extends CordovaPlugin{
      * Constants *
      *************/
 
-
     /**
      * Tag for debug log messages
      */
@@ -73,8 +73,6 @@ public class Diagnostic_External_Storage extends CordovaPlugin{
      * Current Cordova callback context (on this thread)
      */
     protected CallbackContext currentContext;
-
-    protected static String externalStoragePermission = "READ_EXTERNAL_STORAGE";
 
 
     /*************
@@ -111,7 +109,7 @@ public class Diagnostic_External_Storage extends CordovaPlugin{
      * @return                  True if the action was valid, false if not.
      */
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        currentContext = callbackContext;
+        Diagnostic.instance.currentContext = currentContext = callbackContext;
 
         try {
             if(action.equals("getExternalSdCardDetails")) {
@@ -127,25 +125,12 @@ public class Diagnostic_External_Storage extends CordovaPlugin{
         return true;
     }
 
-    public static void onReceivePermissionResult() throws JSONException{
-        instance._getExternalSdCardDetails();
-    }
 
     /************
      * Internals
      ***********/
 
-    protected void getExternalSdCardDetails() throws Exception{
-        String permission = diagnostic.permissionsMap.get(externalStoragePermission);
-        if (diagnostic.hasPermission(permission)) {
-            _getExternalSdCardDetails();
-        } else {
-            diagnostic.requestRuntimePermission(permission, Diagnostic.GET_EXTERNAL_SD_CARD_DETAILS_PERMISSION_REQUEST);
-        }
-    }
-
-
-    protected void _getExternalSdCardDetails() throws JSONException {
+    protected void getExternalSdCardDetails() throws JSONException {
         String[] storageDirectories = getStorageDirectories();
 
         JSONArray details = new JSONArray();
@@ -178,9 +163,7 @@ public class Diagnostic_External_Storage extends CordovaPlugin{
     protected long getFreeSpaceInBytes(String path) {
         try {
             StatFs stat = new StatFs(path);
-            long blockSize = stat.getBlockSize();
-            long availableBlocks = stat.getAvailableBlocks();
-            return availableBlocks * blockSize;
+            return stat.getAvailableBytes();
         } catch (IllegalArgumentException e) {
             // The path was invalid. Just return 0 free bytes.
             return 0;

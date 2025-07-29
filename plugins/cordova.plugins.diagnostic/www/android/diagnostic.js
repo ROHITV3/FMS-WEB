@@ -27,75 +27,71 @@ var Diagnostic = (function(){
      * See http://developer.android.com/guide/topics/security/permissions.html#perm-groups
      * @type {Object}
      */
-    Diagnostic.runtimePermission = // deprecated
-        Diagnostic.permission = {
-            "READ_CALENDAR": "READ_CALENDAR",
-            "WRITE_CALENDAR": "WRITE_CALENDAR",
-            "CAMERA": "CAMERA",
-            "READ_CONTACTS": "READ_CONTACTS",
-            "WRITE_CONTACTS": "WRITE_CONTACTS",
-            "GET_ACCOUNTS": "GET_ACCOUNTS",
-            "ACCESS_FINE_LOCATION": "ACCESS_FINE_LOCATION",
-            "ACCESS_COARSE_LOCATION": "ACCESS_COARSE_LOCATION",
-            "ACCESS_BACKGROUND_LOCATION": "ACCESS_BACKGROUND_LOCATION",
-            "RECORD_AUDIO": "RECORD_AUDIO",
-            "READ_PHONE_STATE": "READ_PHONE_STATE",
-            "CALL_PHONE": "CALL_PHONE",
-            "ADD_VOICEMAIL": "ADD_VOICEMAIL",
-            "USE_SIP": "USE_SIP",
-            "PROCESS_OUTGOING_CALLS": "PROCESS_OUTGOING_CALLS",
-            "READ_CALL_LOG": "READ_CALL_LOG",
-            "WRITE_CALL_LOG": "WRITE_CALL_LOG",
-            "SEND_SMS": "SEND_SMS",
-            "RECEIVE_SMS": "RECEIVE_SMS",
-            "READ_SMS": "READ_SMS",
-            "RECEIVE_WAP_PUSH": "RECEIVE_WAP_PUSH",
-            "RECEIVE_MMS": "RECEIVE_MMS",
-            "WRITE_EXTERNAL_STORAGE": "WRITE_EXTERNAL_STORAGE",
-            "READ_EXTERNAL_STORAGE": "READ_EXTERNAL_STORAGE",
-            "BODY_SENSORS": "BODY_SENSORS",
-            "ACTIVITY_RECOGNITION": "ACTIVITY_RECOGNITION"
-        };
+    Diagnostic.permission = {
+        "ACCEPT_HANDOVER": "ACCEPT_HANDOVER",
+        "ACCESS_BACKGROUND_LOCATION": "ACCESS_BACKGROUND_LOCATION",
+        "ACCESS_COARSE_LOCATION": "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION": "ACCESS_FINE_LOCATION",
+        "ACCESS_MEDIA_LOCATION": "ACCESS_MEDIA_LOCATION",
+        "ACTIVITY_RECOGNITION": "ACTIVITY_RECOGNITION",
+        "ADD_VOICEMAIL": "ADD_VOICEMAIL",
+        "ANSWER_PHONE_CALLS": "ANSWER_PHONE_CALLS",
+        "BLUETOOTH_ADVERTISE": "BLUETOOTH_ADVERTISE",
+        "BLUETOOTH_CONNECT": "BLUETOOTH_CONNECT",
+        "BLUETOOTH_SCAN": "BLUETOOTH_SCAN",
+        "BODY_SENSORS": "BODY_SENSORS",
+        "BODY_SENSORS_BACKGROUND": "BODY_SENSORS_BACKGROUND",
+        "CALL_PHONE": "CALL_PHONE",
+        "CAMERA": "CAMERA",
+        "GET_ACCOUNTS": "GET_ACCOUNTS",
+        "NEARBY_WIFI_DEVICES": "NEARBY_WIFI_DEVICES",
+        "POST_NOTIFICATIONS": "POST_NOTIFICATIONS",
+        "PROCESS_OUTGOING_CALLS": "PROCESS_OUTGOING_CALLS",
+        "READ_CALENDAR": "READ_CALENDAR",
+        "READ_CALL_LOG": "READ_CALL_LOG",
+        "READ_CONTACTS": "READ_CONTACTS",
+        "READ_EXTERNAL_STORAGE": "READ_EXTERNAL_STORAGE",
+        "READ_MEDIA_AUDIO": "READ_MEDIA_AUDIO",
+        "READ_MEDIA_IMAGES": "READ_MEDIA_IMAGES",
+        "READ_MEDIA_VIDEO": "READ_MEDIA_VIDEO",
+        "READ_PHONE_NUMBERS": "READ_PHONE_NUMBERS",
+        "READ_PHONE_STATE": "READ_PHONE_STATE",
+        "READ_SMS": "READ_SMS",
+        "RECEIVE_MMS": "RECEIVE_MMS",
+        "RECEIVE_SMS": "RECEIVE_SMS",
+        "RECEIVE_WAP_PUSH": "RECEIVE_WAP_PUSH",
+        "RECORD_AUDIO": "RECORD_AUDIO",
+        "SEND_SMS": "SEND_SMS",
+        "USE_SIP": "USE_SIP",
+        "UWB_RANGING": "UWB_RANGING",
+        "WRITE_CALENDAR": "WRITE_CALENDAR",
+        "WRITE_CALL_LOG": "WRITE_CALL_LOG",
+        "WRITE_CONTACTS": "WRITE_CONTACTS",
+        "WRITE_EXTERNAL_STORAGE": "WRITE_EXTERNAL_STORAGE"
+    };
 
-    /**
-     * Permission groups indicate which associated permissions will also be requested if a given permission is requested.
-     * See http://developer.android.com/guide/topics/security/permissions.html#perm-groups
-     * @type {Object}
-     */
-    Diagnostic.runtimePermissionGroups = // deprecated
-        Diagnostic.permissionGroups = {
-            "CALENDAR": ["READ_CALENDAR", "WRITE_CALENDAR"],
-            "CAMERA": ["CAMERA"],
-            "CONTACTS": ["READ_CONTACTS", "WRITE_CONTACTS", "GET_ACCOUNTS"],
-            "LOCATION": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "ACCESS_BACKGROUND_LOCATION"],
-            "MICROPHONE": ["RECORD_AUDIO"],
-            "PHONE": ["READ_PHONE_STATE", "CALL_PHONE", "ADD_VOICEMAIL", "USE_SIP", "PROCESS_OUTGOING_CALLS", "READ_CALL_LOG", "WRITE_CALL_LOG"],
-            "SENSORS": ["BODY_SENSORS"],
-            "SMS": ["SEND_SMS", "RECEIVE_SMS", "READ_SMS", "RECEIVE_WAP_PUSH", "RECEIVE_MMS"],
-            "STORAGE": ["READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"],
-            "PHYSICAL_ACTIVITY": ["ACTIVITY_RECOGNITION"]
-        };
 
-    Diagnostic.runtimePermissionStatus = // deprecated
-        Diagnostic.permissionStatus = {
-            //  Location permission requested and 
-            //      app build SDK/user device is Android >10 and user granted background location ("all the time") permission,
-            //      or app build SDK/user device is Android 6-9 and user granted location permission,
-            //  or non-location permission requested
-            //      and app build SDK/user device is Android >=6 and user granted permission
-            //  or app build SDK/user device is Android <6
-            "GRANTED": "GRANTED",
-            //  Location permission requested 
-            //  and app build SDK/user device is Android >10 
-            //  and user granted background foreground location ("while-in-use") permission
-            "GRANTED_WHEN_IN_USE": "authorized_when_in_use",
-            // User denied access to this permission
-            "DENIED_ONCE": "DENIED_ONCE",
-            // User denied access to this permission and checked "Never Ask Again" box.
-            "DENIED_ALWAYS": "DENIED_ALWAYS",
-            // App has not yet requested access to this permission.
-            "NOT_REQUESTED": "NOT_REQUESTED"
-        };
+    Diagnostic.permissionStatus = {
+        //  Location permission requested and
+        //      app build SDK/user device is Android >10 and user granted background location ("all the time") permission,
+        //      or app build SDK/user device is Android 6-9 and user granted location permission,
+        //  or non-location permission requested
+        //      and app build SDK/user device is Android >=6 and user granted permission
+        //  or app build SDK/user device is Android <6
+        "GRANTED": "GRANTED",
+        //  Location permission requested
+        //  and app build SDK/user device is Android >10
+        //  and user granted background foreground location ("while-in-use") permission
+        "GRANTED_WHEN_IN_USE": "authorized_when_in_use",
+        // User denied access to this permission
+        "DENIED_ONCE": "DENIED_ONCE",
+        // User denied access to this permission and checked "Never Ask Again" box.
+        "DENIED_ALWAYS": "DENIED_ALWAYS",
+        // App has not yet requested access to this permission.
+        "NOT_REQUESTED": "NOT_REQUESTED",
+        // Limited access to the photo library on Android 14 (API 34) and above
+        "LIMITED": "LIMITED"
+    };
 
     Diagnostic.cpuArchitecture = {
         UNKNOWN: "unknown",
@@ -117,11 +113,34 @@ var Diagnostic = (function(){
     Diagnostic._onNFCStateChange =
         Diagnostic._onPermissionRequestComplete = function(){};
 
+    Diagnostic._combinePermissionStatuses = function(statuses){
+        var status = Diagnostic.permissionStatus.NOT_REQUESTED;
+        if(anyStatusIs(statuses, Diagnostic.permissionStatus.DENIED_ALWAYS)){
+            status = Diagnostic.permissionStatus.DENIED_ALWAYS;
+        }else if(anyStatusIs(statuses, Diagnostic.permissionStatus.DENIED_ONCE)){
+            status = Diagnostic.permissionStatus.DENIED_ONCE;
+        }else if(anyStatusIs(statuses, Diagnostic.permissionStatus.GRANTED)){
+            status = Diagnostic.permissionStatus.GRANTED;
+        }
+        return status;
+    };
+
     /********************
      *
      * Internal functions
      *
      ********************/
+
+    function anyStatusIs(statuses, status){
+        var anyStatus = false;
+        for(var permission in statuses){
+            if(statuses[permission] === status){
+                anyStatus = true;
+                break;
+            }
+        }
+        return anyStatus;
+    }
 
     function checkForInvalidPermissions(permissions, errorCallback){
         if(typeof(permissions) !== "object") permissions = [permissions];
@@ -463,6 +482,109 @@ var Diagnostic = (function(){
             []);
     };
 
+    /**
+     * Checks if airplane mode is enabled on device.
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single boolean parameter which is TRUE if airplane mode is enabled.
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     *  This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.isAirplaneModeEnabled = function(successCallback, errorCallback) {
+        return cordova.exec(Diagnostic._ensureBoolean(successCallback),
+            errorCallback,
+            'Diagnostic',
+            'isAirplaneModeEnabled',
+            []);
+    };
+
+    /**
+     * Checks if mobile data is enabled in device settings.
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single boolean parameter which is TRUE if mobile data is enabled.
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     *  This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.isMobileDataEnabled = function(successCallback, errorCallback) {
+        return cordova.exec(Diagnostic._ensureBoolean(successCallback),
+            errorCallback,
+            'Diagnostic',
+            'isMobileDataEnabled',
+            []);
+    };
+
+    /**
+     * Checks if accessibility mode (talkback) is enabled on device.
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single boolean parameter which is TRUE if accessibility mode is enabled.
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     *  This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.isAccessibilityModeEnabled = function(successCallback, errorCallback) {
+        return cordova.exec(Diagnostic._ensureBoolean(successCallback),
+            errorCallback,
+            'Diagnostic',
+            'isAccessibilityModeEnabled',
+            []);
+    };
+
+    /**
+     * Checks if touch exploration (in accessibility mode) is enabled on device.
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single boolean parameter which is TRUE if touch exploration (in accessibility mode) is enabled.
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     *  This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.isTouchExplorationEnabled = function(successCallback, errorCallback) {
+        return cordova.exec(Diagnostic._ensureBoolean(successCallback),
+            errorCallback,
+            'Diagnostic',
+            'isTouchExplorationEnabled',
+            []);
+    };
+
+    /**
+     * Returns details of the OS of the device on which the app is currently running
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single object parameter with the following fields:
+     * - {string} version - version string of the OS e.g. "11.0"
+     * - {integer} apiLevel - API level of the OS e.g. 30
+     * - {string} apiName - code name for API level e.g. "FROYO"
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     *  This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.getDeviceOSVersion = function(successCallback, errorCallback) {
+        return cordova.exec(successCallback,
+            errorCallback,
+            'Diagnostic',
+            'getDeviceOSVersion',
+            []);
+    };
+
+    /**
+     * Returns details of the SDK levels used to build the app.
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single object parameter with the following fields:
+     * - {integer} targetApiLevel - API level of the target SDK (used to build the app)
+     * - {string} targetApiName - code name for API level of the target SDK e.g. "FROYO"
+     * - {integer} minApiLevel - API level of the minimum SDK (lowest on which the app can be installed)
+     * - {string} minApiName - code name for API level of the minimum SDK e.g. "FROYO"
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     *  This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.getBuildOSVersion = function(successCallback, errorCallback) {
+        return cordova.exec(successCallback,
+            errorCallback,
+            'Diagnostic',
+            'getBuildOSVersion',
+            []);
+    };
+
     /************
      * Location *
      ************/
@@ -609,8 +731,12 @@ var Diagnostic = (function(){
      * @param {Function} successCallback - function to call on successful request for runtime permissions.
      * This callback function is passed a single string parameter which defines the resulting authorisation status as a value in cordova.plugins.diagnostic.permissionStatus.
      * @param {Function} errorCallback - function to call on failure to request authorisation.
+     * @param {String} mode - (optional) location authorization mode as a constant in `cordova.plugins.diagnostic.locationAuthorizationMode`.
+     * If not specified, defaults to `cordova.plugins.diagnostic.locationAuthorizationMode.WHEN_IN_USE`.
+     * @param {String} accuracy - (optional) requested location accuracy as a constant in in `cordova.plugins.diagnostic.locationAccuracyAuthorization`.
+     * If not specified, defaults to `cordova.plugins.diagnostic.locationAccuracyAuthorization.FULL`.
      */
-    Diagnostic.requestLocationAuthorization = function(successCallback, errorCallback){
+    Diagnostic.requestLocationAuthorization = function(successCallback, errorCallback, mode, accuracy){
         if(cordova.plugins.diagnostic.location){
             cordova.plugins.diagnostic.location.requestLocationAuthorization.apply(this, arguments);
         }else{
@@ -628,6 +754,21 @@ var Diagnostic = (function(){
     Diagnostic.getLocationAuthorizationStatus = function(successCallback, errorCallback){
         if(cordova.plugins.diagnostic.location){
             cordova.plugins.diagnostic.location.getLocationAuthorizationStatus.apply(this, arguments);
+        }else{
+            throw "Diagnostic Location module is not installed";
+        }
+    };
+
+    /**
+     * Returns the individual location authorization status for each type of location access (FINE, COARSE and BACKGROUND)
+     * Note: this is intended for Android 6 / API 23 and above. Calling on Android 5 / API 22 and below will always return GRANTED status as permissions are already granted at installation time.
+     * @param {Function} successCallback - function to call on successful request for runtime permissions statuses.
+     * This callback function is passed a single string parameter which defines the current authorisation status as a value in cordova.plugins.diagnostic.permissionStatus.
+     * @param {Function} errorCallback - function to call on failure to request authorisation status.
+     */
+    Diagnostic.getLocationAuthorizationStatuses = function(successCallback, errorCallback){
+        if(cordova.plugins.diagnostic.location){
+            cordova.plugins.diagnostic.location.getLocationAuthorizationStatuses.apply(this, arguments);
         }else{
             throw "Diagnostic Location module is not installed";
         }
@@ -659,6 +800,26 @@ var Diagnostic = (function(){
     Diagnostic.registerLocationStateChangeHandler = function(successCallback) {
         if(cordova.plugins.diagnostic.location){
             cordova.plugins.diagnostic.location.registerLocationStateChangeHandler.apply(this, arguments);
+        }else{
+            throw "Diagnostic Location module is not installed";
+        }
+    };
+
+    /**
+     * Returns the location accuracy authorization for the application.
+     * Will invoke the error callback if location permission is not yet granted.
+     *
+     * @param {Function} successCallback - The callback which will be called when operation is successful.
+     * This callback function is passed a single string parameter which indicates the location accuracy authorization as a constant in `cordova.plugins.diagnostic.locationAccuracyAuthorization`.
+     * Possible values are:
+     * `cordova.plugins.diagnostic.locationAccuracyAuthorization.FULL`
+     * `cordova.plugins.diagnostic.locationAccuracyAuthorization.REDUCED`
+     * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
+     * This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.getLocationAccuracyAuthorization = function(successCallback, errorCallback){
+        if(cordova.plugins.diagnostic.location){
+            cordova.plugins.diagnostic.location.getLocationAccuracyAuthorization.apply(this, arguments);
         }else{
             throw "Diagnostic Location module is not installed";
         }
@@ -782,6 +943,26 @@ var Diagnostic = (function(){
     Diagnostic.getCameraAuthorizationStatus = function(params){
         if(cordova.plugins.diagnostic.camera){
             cordova.plugins.diagnostic.camera.getCameraAuthorizationStatus.apply(this, arguments);
+        }else{
+            throw "Diagnostic Camera module is not installed";
+        }
+    };
+
+    /**
+     * Returns the individual authorisation statuses for runtime permissions to use the camera.
+     * Note: this is intended for Android 6 / API 23 and above. Calling on Android 5 / API 22 and below will always return GRANTED status as permissions are already granted at installation time.
+     * @param {Object} params - (optional) parameters:
+     *  - {Function} successCallback - function to call on successful request for runtime permission status.
+     * This callback function is passed a single object parameter where each key indicates the permission name and the value defines the current authorisation status as a value in cordova.plugins.diagnostic.permissionStatus.
+     *  - {Function} errorCallback - function to call on failure to request authorisation status.
+     * - {Boolean} storage - (Android only) If true, queries storage permissions in addition to CAMERA run-time permission.
+     *  On Android 13+, storage permissions are READ_MEDIA_IMAGES and READ_MEDIA_VIDEO. On Android 9-12, storage permission is READ_EXTERNAL_STORAGE.
+     *  cordova-plugin-camera requires both storage and camera permissions.
+     *  Defaults to true.
+     */
+    Diagnostic.getCameraAuthorizationStatuses = function(params){
+        if(cordova.plugins.diagnostic.camera){
+            cordova.plugins.diagnostic.camera.getCameraAuthorizationStatuses.apply(this, arguments);
         }else{
             throw "Diagnostic Camera module is not installed";
         }
@@ -1037,6 +1218,64 @@ var Diagnostic = (function(){
             throw "Diagnostic Bluetooth module is not installed";
         }
     };
+
+    /**
+     * Returns the combined authorization status for the various Bluetooth run-time permissions on Android 12+ / API 31+
+     * If any of 3 Bluetooth permissions is GRANTED, it will return GRANTED.
+     * On Android 11 / API 30 and below, will return GRANTED if the manifest has BLUETOOTH since they are implicitly granted at build-time.
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single string parameter which is the authorization status for the Bluetooth run-time permission.
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     * This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.getBluetoothAuthorizationStatus = function(successCallback, errorCallback){
+        if(cordova.plugins.diagnostic.bluetooth){
+            cordova.plugins.diagnostic.bluetooth.getAuthorizationStatus.apply(this, arguments);
+        }else{
+            throw "Diagnostic Bluetooth module is not installed";
+        }
+    };
+
+
+    /**
+     * Returns the authorization statuses for various Bluetooth run-time permissions on Android 12+ / API 31+
+     * On Android 11 / API 30 and below, all will be returned as GRANTED if the manifest has BLUETOOTH since they are implicitly granted at build-time.
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single array parameter which is a list of authorization statuses for the various Bluetooth run-time permissions.
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     *  This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.getBluetoothAuthorizationStatuses = function(successCallback, errorCallback){
+        if(cordova.plugins.diagnostic.bluetooth){
+            cordova.plugins.diagnostic.bluetooth.getAuthorizationStatuses.apply(this, arguments);
+        }else{
+            throw "Diagnostic Bluetooth module is not installed";
+        }
+    };
+
+    /**
+     * Requests Bluetooth authorization for the application on Android 12+ / API 31+
+     * On Android 11 / API 30 and below, this will have no effect since all Bluetooth permissions will be GRANTED at built-time if the manifest has BLUETOOTH permission.
+     *
+     *
+     * @param {Function} successCallback - The callback which will be called when operation is successful.
+     * This callback function is not passed any parameters.
+     * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
+     * This callback function is passed a single string parameter containing the error message.
+     * @param {Array} permissions - (optional) list of Bluetooth permissions to request.
+     * Valid values: "BLUETOOTH_ADVERTISE", "BLUETOOTH_CONNECT", "BLUETOOTH_SCAN".
+     * If not specified, all 3 permissions will be requested.
+     */
+    Diagnostic.requestBluetoothAuthorization = function(successCallback, errorCallback, permissions){
+        if(cordova.plugins.diagnostic.bluetooth){
+            cordova.plugins.diagnostic.bluetooth.requestBluetoothAuthorization.apply(this, arguments);
+        }else{
+            throw "Diagnostic Bluetooth module is not installed";
+        }
+    };
+
 
     /**********************
      * Remote Notifications
@@ -1320,6 +1559,23 @@ var Diagnostic = (function(){
             throw "Diagnostic NFC module is not installed";
         }
     };
+
+    /**
+     * Checks if the current app build is a debug build.
+     *
+     * @param {Function} successCallback -  The callback which will be called when the operation is successful.
+     * This callback function is passed a single boolean parameter which is TRUE if the app is a debug build.
+     * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
+     *  This callback function is passed a single string parameter containing the error message.
+     */
+    Diagnostic.isDebugBuild = function(successCallback, errorCallback) {
+        return cordova.exec(Diagnostic._ensureBoolean(successCallback),
+            errorCallback,
+            'Diagnostic',
+            'isDebugBuild',
+            []);
+    };
+
 
     return Diagnostic;
 });
