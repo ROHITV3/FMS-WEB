@@ -89,6 +89,10 @@
     },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-file": {
+      "ANDROIDX_WEBKIT_VERSION": "1.4.0",
+      "PACKAGE_NAME": "com.v3.wam"
     }
   },
   "dependent_plugins": {}
