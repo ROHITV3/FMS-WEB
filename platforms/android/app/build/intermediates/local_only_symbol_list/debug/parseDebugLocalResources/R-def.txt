@@ -23,6 +23,7 @@ id gridview
 layout actionbar_custom_view_done_discard
 layout actionbar_discard_button
 layout actionbar_done_button
+layout custom_splash
 layout multiselectorgrid
 string activity_name
 string app_name
@@ -48,6 +49,7 @@ string processing_images_header
 string processing_images_message
 string project_id
 string requesting_thumbnails
+style AppTheme.Splash
 style MyTheme
 xml camera_provider_paths
 xml cdv_core_file_provider_paths

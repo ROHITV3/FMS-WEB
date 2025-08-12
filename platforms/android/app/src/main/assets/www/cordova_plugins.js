@@ -65,14 +65,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "cordova-plugin-push-notifications.PushNotification",
-      "file": "plugins/cordova-plugin-push-notifications/www/PushNotification.js",
-      "pluginId": "cordova-plugin-push-notifications",
-      "clobbers": [
-        "pushNotification"
-      ]
-    },
-    {
       "id": "cordova-plugin-android-permissions.Permissions",
       "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
       "pluginId": "cordova-plugin-android-permissions",
@@ -442,6 +434,38 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "Connection"
       ]
+    },
+    {
+      "id": "cordova-plugin-push-notifications.PushNotification",
+      "file": "plugins/cordova-plugin-push-notifications/www/PushNotification.js",
+      "pluginId": "cordova-plugin-push-notifications",
+      "clobbers": [
+        "pushNotification"
+      ]
+    },
+    {
+      "id": "cordova-plugin-ble-central.ble",
+      "file": "plugins/cordova-plugin-ble-central/www/ble.js",
+      "pluginId": "cordova-plugin-ble-central",
+      "clobbers": [
+        "ble"
+      ]
+    },
+    {
+      "id": "cordova-plugin-device.device",
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "pluginId": "cordova-plugin-device",
+      "clobbers": [
+        "device"
+      ]
+    },
+    {
+      "id": "cordova-plugin-x-toast.Toast",
+      "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+      "pluginId": "cordova-plugin-x-toast",
+      "clobbers": [
+        "window.plugins.toast"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -450,7 +474,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-firebasex": "18.0.7",
     "cordova-sqlite-storage": "7.0.0",
     "cordova-plugin-inappbrowser": "6.0.0",
-    "cordova-plugin-push-notifications": "1.2.0",
     "cordova-plugin-android-permissions": "1.1.5",
     "cordova-plugin-app-event": "1.2.2",
     "cordova-plugin-app-launcher": "0.4.0",
@@ -463,6 +486,11 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-dialogs": "2.0.2",
     "cordova-plugin-file": "8.1.3",
     "cordova-plugin-globalization": "1.11.0",
-    "cordova-plugin-network-information": "3.0.0"
+    "cordova-plugin-network-information": "3.0.0",
+    "cordova-plugin-push-notifications": "1.2.0",
+    "cordova-plugin-ble-central": "2.0.0",
+    "cordova-plugin-device": "3.0.0",
+    "cordova-plugin-vibration": "3.1.1",
+    "cordova-plugin-x-toast": "2.7.3"
   };
 });

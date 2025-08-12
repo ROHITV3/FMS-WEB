@@ -53,9 +53,6 @@
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "com.v3.wam"
     },
-    "cordova-plugin-push-notifications": {
-      "PACKAGE_NAME": "com.v3.wam"
-    },
     "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "com.v3.wam"
     },
@@ -98,6 +95,22 @@
       "PACKAGE_NAME": "com.v3.wam"
     },
     "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-push-notifications": {
+      "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-ble-central": {
+      "ACCESS_BACKGROUND_LOCATION": "false",
+      "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-x-toast": {
       "PACKAGE_NAME": "com.v3.wam"
     }
   },

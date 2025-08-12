@@ -4,6 +4,23 @@
             "outputFile": "com.v3.wam.app-mergeDebugResources-47:/values-fr/values-fr.xml",
             "map": [
                 {
+                    "source": "/Users/priyanka/WAM3/platforms/android/app/src/main/res/values-fr/multiimagechooser_strings_fr.xml",
+                    "from": {
+                        "startLines": "9,10,3,2,7,8,1,5,6,4",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "710,754,164,77,526,605,16,373,444,281",
+                        "endColumns": "43,35,116,86,78,104,60,70,81,91",
+                        "endOffsets": "749,785,276,159,600,705,72,439,521,368"
+                    },
+                    "to": {
+                        "startLines": "88,89,90,94,102,103,136,178,179,180",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "8282,8326,8362,8805,9366,9445,11978,15807,15878,15960",
+                        "endColumns": "43,35,116,86,78,104,60,70,81,91",
+                        "endOffsets": "8321,8357,8474,8887,9440,9545,12034,15873,15955,16047"
+                    }
+                },
+                {
                     "source": "/Users/priyanka/.gradle/caches/8.13/transforms/bc6449076c49f13098a5ab86a5b76abe/transformed/jetified-credentials-1.2.0-rc01/res/values-fr/values-fr.xml",
                     "from": {
                         "startLines": "2,3",
@@ -86,23 +103,6 @@
                         "startOffsets": "8175,8479,8581,8700",
                         "endColumns": "106,101,118,104",
                         "endOffsets": "8277,8576,8695,8800"
-                    }
-                },
-                {
-                    "source": "/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/res/values-fr/multiimagechooser_strings_fr.xml",
-                    "from": {
-                        "startLines": "9,10,3,2,7,8,1,5,6,4",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "710,754,164,77,526,605,16,373,444,281",
-                        "endColumns": "43,35,116,86,78,104,60,70,81,91",
-                        "endOffsets": "749,785,276,159,600,705,72,439,521,368"
-                    },
-                    "to": {
-                        "startLines": "88,89,90,94,102,103,136,178,179,180",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "8282,8326,8362,8805,9366,9445,11978,15807,15878,15960",
-                        "endColumns": "43,35,116,86,78,104,60,70,81,91",
-                        "endOffsets": "8321,8357,8474,8887,9440,9545,12034,15873,15955,16047"
                     }
                 },
                 {

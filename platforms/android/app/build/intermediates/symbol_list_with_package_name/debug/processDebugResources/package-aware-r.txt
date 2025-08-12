@@ -1189,6 +1189,7 @@ layout card
 layout card_landscape_inner
 layout card_portrait_inner
 layout custom_dialog
+layout custom_splash
 layout encode
 layout help
 layout history_list_item
@@ -1449,6 +1450,7 @@ style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
 style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
+style AppTheme_Splash
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog

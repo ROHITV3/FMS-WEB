@@ -60,6 +60,10 @@
         "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-mdpi/ic_action_done_dark.png"
     },
     {
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable_ic_launcher.png.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable/ic_launcher.png"
+    },
+    {
         "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/layout_actionbar_custom_view_done_discard.xml.flat",
         "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/layout/actionbar_custom_view_done_discard.xml"
     },
@@ -114,6 +118,10 @@
     {
         "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/drawable-xxhdpi_ic_action_previous_item.png.flat",
         "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/drawable-xxhdpi/ic_action_previous_item.png"
+    },
+    {
+        "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/layout_custom_splash.xml.flat",
+        "source": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-main-51:/layout/custom_splash.xml"
     },
     {
         "merged": "/Users/priyanka/.gradle/daemon/8.13/com.v3.wam.app-debug-49:/layout_actionbar_discard_button.xml.flat",

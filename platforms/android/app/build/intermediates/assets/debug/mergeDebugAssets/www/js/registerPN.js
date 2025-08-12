@@ -12,7 +12,7 @@ function registerDevice()
 	
         var push = PushNotification.init({
               android: {
-                      senderID: "1046366413061",
+                      senderID: "1050943357176",
                       forceShow : true ,
                       badge: 'true',
                       sound: 'true',

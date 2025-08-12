@@ -1,13 +1,15 @@
-window.localStorage["version"] = "4.1.4b"; //set app version number
+window.localStorage["version"] = "4.2.17"; //set app version number
 // var network = "zonglipub"; //global variable that decides which databaseIP to connect to
 var initialheight; //used to record initial screen height
 //var databaseIP = 'http://v3nity.com/V3Nity4CMS/'; //global databaseIP variable
-//var databaseIP = 'http://203.125.7.40/V3nity4'; //global .40 
+//var databaseIP = 'http://203.125.7.40/V3nity4'; //global .40 // production
 
 //var databaseIP = 'http://203.125.7.40/V3nity4OmSree/';
 
 //var databaseIP = 'http://www.v3nity.com:80/V3Nity4/'; //global databaseIP variable
 var databaseIP = 'http://www.v3nity.com/V3Nity4LX'; //global databaseIP variable //UAT
+
+console.log("database"+databaseIP);
 
 //http://203.125.7.40/V3nity4Feedback
 
@@ -63,7 +65,7 @@ var autoRefresh = true;
 
 var $geotagPointer;
 
-var jobDuration = 1; 
+var jobDuration = 1;
 var jobDurationTimer;
 var jobEndedInTime = true;
 
@@ -71,8 +73,18 @@ var downloadTimer;
 var synArr = [];
 var galleryResize = 0;
 
-function initializeCordova(success, failure) 
+var pictureSource; // Picture source
+var destinationType; // Destination type
+var saveFlag = 0;
+var formtemplate_URL;
+var form_options = "";
+var form_cust_option ="";
+const DESFIRE_SELECT_PICC = '00 A4 04 00 07 D2 76 00 00 85 01 00';
+const DESFIRE_SELECT_AID = '90 5A 00 00 03 AA AA AA 00';
+
+function initializeCordova(success, failure)
 {
+
     var timer = window.setInterval(function () {
         if (window.device) {
             window.clearInterval(timer);
@@ -89,30 +101,23 @@ function initializeCordova(success, failure)
 }
 ;
 window.onload = function () {
-	
-	document.addEventListener('deviceready', function() {
-      console.log('Device ready');
 
-      window.open = cordova.InAppBrowser.open;
-
-      initializeCordova(() => {
-        console.log('Cordova Initializing Success');
-        setup();
-      }, () => {
-        console.log('Cordova Initializing Failed');
-      });
-    });
-
+	window.open = cordova.InAppBrowser.open;
+    window.screen.orientation.lock('portrait');
 
     initializeCordova(function success() {
         console.log("Cordova Initializing Success");
         setup();
-        
-        
+
+document.addEventListener("deviceready", function() {
+    init();
+    var permissions = cordova.plugins.permissions;
+});
+
 //        document.addEventListener("pause", function() {
 //            cordova.plugins.backgroundMode.disable();
 //        }, false);
-//        
+//
 //        document.addEventListener("resume", function() {
 //            cordova.plugins.backgroundMode.enable();
 //        }, false);
@@ -122,16 +127,6 @@ window.onload = function () {
     });
 
 };
-function initializeCordova(success, failure) {
-  console.log('cordova:', window.cordova);
-  console.log('cordova.InAppBrowser:', window.cordova ? cordova.InAppBrowser : 'cordova undefined');
-
-  if (window.cordova && cordova.InAppBrowser) {
-    success();
-  } else {
-    failure();
-  }
-}
 
 function setupLocation()
 {
@@ -150,7 +145,11 @@ function setupLocation()
             {timeout: 30000});
 }
 
+function init() {
+    pictureSource = navigator.camera.PictureSourceType;
+    destinationType = navigator.camera.DestinationType;
 
+}
 function receiveErrorDevicePNRegistration() { // these are for push notification
 
 }
@@ -161,7 +160,6 @@ function receiveSuccessfulDevicePNRegistration() {
 function onPushNotification() { //Refresh job when there is new push notification sent
     if (isJobHistoryCheck  == true) {loadHistoryJob("all"); } else {loadJob("all"); }
 }
-
 function setup() {
     initialheight = $('body').height();
     document.addEventListener("backbutton", onBackKeyDown, false);
@@ -189,7 +187,7 @@ function setup() {
     columns.push({name: "weburl", type: "text", primaryKey: false, nullable: false});
     columns.push({name: "send", type: "int", primaryKey: false, nullable: true});
     db.create('locations', columns, null);
-    
+
     columns = [];
     columns.push({name: "id", type: "text", primaryKey: false, nullable: false});
     columns.push({name: "job_id", type: "text", primaryKey: false, nullable: false});
@@ -208,41 +206,42 @@ function setup() {
 
     permissions.checkPermission(permissionList, function (status)
     {
+
         if (status.hasPermission)
         {
-                
+
 //                db = new Database('v3nity.db');
 //                db.open();
-//                
+//
 //                var columns = [];
 //                var checkColumns = [];
-//                
+//
 //                columns = [];
 //                columns.push({name: "id", type: "int", primaryKey: false, nullable: false});
 //                columns.push({name: "weburl", type: "text", primaryKey: false, nullable: false});
 //                columns.push({name: "send", type: "int", primaryKey: false, nullable: true});
 //                db.create('locations', columns, null);
-                
+
         } else
         {
             permissions.requestPermissions(
                 permissionList,
-                function(status) 
+                function(status)
                 {
                     if (!status.hasPermission)
                     {
-                        alert('Please enable camera / location / storage permissions for application to work properly.')
+                        //alert('Please enable camera / location / storage permissions for application to work properly.')
                     }
                 },
-                function error() 
+                function error()
                 {
                    //  alert('Please enable camera / storage / location permissions for application to work properly.');
                 }
             );
         }
     });
-    
-    
+
+
 //    sms.requestPermission(function() {
 //        //CONFIGURATION
 //        var options = {
@@ -256,35 +255,56 @@ function setup() {
 //        var success = function () { alert('Message sent successfully'); };
 //        var error = function (e) { alert('Message Failed:' + e); };
 //        sms.send('94376506', 'Hello There!', options, success, error);
-//        
+//
 //    }, function(error) {
 //        console.info('[WARN] Permission not accepted')
 //        // Handle permission not accepted
 //    });
-    
+
     document.addEventListener("resume", onResume, false);
-    
+
     window.onerror = function (message, file, line)
     {
         writeLogs("error from listener on " + file + " at " + line + ": " + message);
         //console.log("error from listener on " + file + " at " + line + ": " + message);
     }
-    
-    
+
+        window.pushNotification.registration((token) => {
+          console.log(token);
+
+          console.log('registration event: ' + token);
+          localStorage.setItem("deviceID", token);
+          localStorage.setItem("deviceType", 1);
+          registered = true;
+
+        })
+
+        window.pushNotification.tapped((payload) => {
+          console.log(payload);
+
+//            navigator.notification.alert(
+//                              "data.message",         // message
+//                              null, // callback
+//                              "data.title",           // title
+//                              'Ok'                  // buttonName
+//                            );
+
+        })
+
 //    alert(device.version);
-//    
+//
 //    if(device.version >= 11){
-//        
+//
 //        window.plugins.launcher. launch(
 //           {packageName:'my.package',
 //           dataType:'text/plain',
 //               extras: [
 //                   {"name":"android.intent.extra.TEXT", "value":"text", "dataType":"CharArray"}
-//               ]}, successCallback, errorCallback);        
-//        
+//               ]}, successCallback, errorCallback);
+//
 //    }
-    
-    
+
+
     /*
      * for cleansolution
      */
@@ -292,15 +312,16 @@ function setup() {
 //    window.localStorage["databaseIP"] = 'http://v3nity.com:80/V3Nity4';
 //    window.localStorage["customer"] = 'Clean Solutions WAM';
 //    window.localStorage["unitId"] = 'CS-049';
-    
+
 
     // Important: register device for PN services!
     // Uses function in registerPN.js.
     // DEPRECATED for ANDROID 8.0.0 and higher
-    //registerDevice();
-    registerFCMDevice();
+   //registerDevice();
+  registerFCMDevice();
 
     if (localStorage.getItem("databaseIP") != null) {
+
         databaseIP = window.localStorage["databaseIP"]; //get databaseIP from localStorage
         $('#customer').html('<h4>' + localStorage.getItem("customer") + '</h4>'); //get customer's name from localstorage
         $("#registerDeviceBtn").val(localStorage.getItem("assetLabel")); //get device name from localstorage
@@ -321,7 +342,7 @@ function setup() {
         $("#registerDeviceText").toggle();
         $("#registerShell").toggle();
     })
-    
+
 
     $("#registerDeviceBtn").bind('click', function () {
         $("#registerDeviceBtn").blur();
@@ -367,13 +388,13 @@ function setup() {
                 }
         );
     });
-    
+
     //https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry/getDirectory for create and exclusive logic
     var folder = "WAM";
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 1, function (fileSys) {
         fileSys.root.getDirectory(folder, {create: true, exclusive: false}, function (directory) {
             appDirectory = directory;
-            console.log("App directory initialized.");
+            console.log("App directory initialized.",appDirectory);
             appDirectory.getDirectory("Upload", {create: true, exclusive: false}, function (directory) {
                 uploadDirectory = directory;
                 console.log("Upload directory initialized.");
@@ -405,20 +426,20 @@ function setup() {
         createFile(); // create logFile
         deleteFile(); // delete logFile > 7 days.
         deleteUploadJobFile();
-        
+
         if (window.localStorage["databaseIP"] == 'http://202.40.233.199:80/V3Nity4/')
         {
             //alert ('IP Switch')
             window.localStorage["databaseIP"] = 'http://www.v3nity.com:80/V3Nity4/';
             databaseIP = 'http://www.v3nity.com:80/V3Nity4/';
         }
-        
+
         if (window.localStorage["databaseIP"] == 'http://www.v3nity.com:80/V3Nity4/')
         {
             window.localStorage["databaseIP"] = 'https://www.v3nity.com/V3Nity4/';
             databaseIP = 'https://www.v3nity.com/V3Nity4/';
         }
-        
+
         if (localStorage.getItem("loginUser") != null && localStorage.getItem("loginPassword") != null) {
             $("#loginUser").val(localStorage.getItem("loginUser")); //get loginUser from localstorage
             $("#loginPassword").val(localStorage.getItem("loginPassword")); //get loginPassword from localstorage
@@ -437,7 +458,7 @@ function setup() {
         console.log("greater than 746 ");
 //        $drawdiv.jSignature({
 //            'lineWidth': 0,
-//            'width': 576,
+//            'width': 576, ur
 //            'height': 720,
 //            'background-color': 'transparent',
 //            'decor-color': 'transparent',
@@ -547,14 +568,14 @@ function setup() {
                     $("#languageSelect").change(function () {
                         changeLanguage($(this).val());
                     })
-                    
+
                     if (window.localStorage["calendarMode"] != null) {
                         $("#calendarModeSelect").find('option[value="' + window.localStorage["calendarMode"] + '"]').attr("selected", true);
                     }
                     $("#calendarModeSelect").change(function () {
                         changeCalendarMode($(this).val());
                     })
-                    
+
                     spinIn();
                     $.mobile.changePage("#settings", {transition: 'fade'});
                     spinOut();
@@ -576,7 +597,7 @@ function setup() {
             spinOut();
         }, 500);
     });
-    
+
 //    function on() {
 //      document.getElementById("overlay").style.display = "block";
 //    }
@@ -592,24 +613,24 @@ function setup() {
             clearInterval(downloadTimer);
             spinOut();
         }, 500);
-    });    
-    
+    });
+
     $('#main .uploadCount').bind('click', function () {
-        
+
         $.mobile.changePage("#syncjobList", {transition: "fade"});
         showUploadJobFile("all");
-        
-        var timeleft = 20;
-        downloadTimer = setInterval(function(){
-        timeleft--;
-            if(timeleft <= 0){
-              timeleft = 20;
-              showUploadJobFile("all");  
-            }   
-        },1000);
-        
-    });    
-    
+
+//        var timeleft = 20;
+//        downloadTimer = setInterval(function(){
+//        timeleft--;
+//            if(timeleft <= 0){
+//              timeleft = 20;
+//              showUploadJobFile("all");
+//            }
+//        },1000);
+
+    });
+
     $('#ManualRegistrationBtn').bind('click', function(){
 //        $("#loginmanualUser").val('');
 //        $("#loginmanualPassword").val('');
@@ -622,47 +643,47 @@ function setup() {
         pathname = pathname.replace(/\//g, '');
         $("#domain").val(host);
         $("#applicationName").val(pathname);
-        $("#labelName").val(localStorage.getItem("assetLabel"));                
-        $("#companyName").val(localStorage.getItem("customer"));                
-        $("#unitIdName").val(localStorage.getItem("unitId"));  
-        $("#offlineRecords").val(localStorage.getItem("mobileRecords"));  
+        $("#labelName").val(localStorage.getItem("assetLabel"));
+        $("#companyName").val(localStorage.getItem("customer"));
+        $("#unitIdName").val(localStorage.getItem("unitId"));
+        $("#offlineRecords").val(localStorage.getItem("mobileRecords"));
         //console.log("DataValue :- " + localStorage.getItem("mobileRecords"));
 
         if (localStorage.getItem("mobileRecords") == null) {
             $("#offlineRecords").val("1000");
         }
     });
-    
+
 //    $('#btnmCancel').bind('click', function () {
 //        off();
 //    });
-    
+
     $('#btnmOk').on('click', function () {
-        
+
         var user = $('#loginmanualUser').val(), password = $('#loginmanualPassword').val();
-        
+
         if (user.length != 0 && password.length != 0 ) {
-            
-            console.log("ip: " + databaseIP);   
-            
+
+            console.log("ip: " + databaseIP);
+
             var loginmURL = databaseIP + "Controller/mobile_controller.jsp?type=system&action=getcustomerid"
                     + "&uname=" + encodeURIComponent(user)
                     + "&pwd=" + encodeURIComponent(password);
-            console.log("loginmURL: " + loginmURL);   
-        
+            console.log("loginmURL: " + loginmURL);
+
             $.ajax({
                 url: loginmURL,
                 type: 'GET',
                 timeout: 30000,
                 success: function (data) {
-                    
+
                     if (data.result) {
-                        
+
                         window.localStorage['customerid'] = data.customer_id;
                         window.localStorage['customername'] = data.customer;
                         spinOut();
                         off();
-                        
+
                         window.location = "#ManualDeviceRegistrationPage";
 
                         var url = databaseIP;
@@ -671,18 +692,18 @@ function setup() {
                         pathname = pathname.replace(/\//g, '');
                         $("#domain").val(host);
                         $("#applicationName").val(pathname);
-                        $("#labelName").val(localStorage.getItem("assetLabel"));                
-                        $("#companyName").val(localStorage.getItem("customer"));                
-                        $("#unitIdName").val(localStorage.getItem("unitId"));  
-                        $("#offlineRecords").val(localStorage.getItem("mobileRecords"));  
+                        $("#labelName").val(localStorage.getItem("assetLabel"));
+                        $("#companyName").val(localStorage.getItem("customer"));
+                        $("#unitIdName").val(localStorage.getItem("unitId"));
+                        $("#offlineRecords").val(localStorage.getItem("mobileRecords"));
                         //console.log("DataValue :- " + localStorage.getItem("mobileRecords"));
-                        
+
                         if (localStorage.getItem("mobileRecords") == null) {
                             $("#offlineRecords").val("1000");
                         }
-                        
-                    } 
-                    else 
+
+                    }
+                    else
                     {
                         navigator.notification.alert(lang.Mobile007, function () {
                         }, lang.Mobile006, '✔');
@@ -702,7 +723,7 @@ function setup() {
                     off();
                 }
             })
-          
+
         } else {
             if (user.length == 0) {
                 navigator.notification.alert(lang.Mobile011, function () {
@@ -710,28 +731,28 @@ function setup() {
             } else if (password.length == 0) {
                 navigator.notification.alert(lang.Mobile012, function () {
                 }, lang.Mobile010, '✔');
-            } 
-        }        
-        
+            }
+        }
+
     });
-    
-    
+
+
     $('.SaveBtn').bind('click', function(){
         var applicationName = $('#applicationName').val(), unitid = $('#unitIdName').val(), company = $('#companyName').val(), label = $('#labelName').val() , offlineRecords = $('#offlineRecords').val() ;
         var domain = 'http://' + $('#domain').val() + '/' + applicationName + '/';
         var result = "";
         if(domain.length != 0 && applicationName.length != 0 && unitid.length != 0){
-            
+
             spinIn();
-           
+
             var registrationUrl = domain + "/Controller/mobile_controller.jsp?type=system&action=checkcustomer&unitid=" + unitid;
-            
+
             $.ajax({
                 url: registrationUrl,
                 type: 'GET',
                 timeout: 15000,
                 success: function (data) {
-                    
+
                     if (data.result) {
                         window.localStorage["databaseIP"] = domain;                         // localStorage - after log out, won't store data
                         databaseIP = window.localStorage["databaseIP"]; //get databaseIP from localStorage
@@ -748,22 +769,22 @@ function setup() {
                         }
                         if(offlineRecords.length == 0){
                            $('#offlineRecords').val("1000");
-                        }  
-                        
+                        }
+
                         console.log("offlineRecords = " + offlineRecords);
-                        
+
                         window.localStorage["assetLabel"] = label;
                         $("#registerDeviceBtn").val(localStorage.getItem("assetLabel"));
                         window.localStorage["unitId"] = unitid;
                         $("#unitId").val(localStorage.getItem("unitId")); //get unitId from localstorage
-                        
+
                         spinOut();
-                        $.mobile.changePage("#index", {transition: 'fade', reverse: 'true'});                       
+                        $.mobile.changePage("#index", {transition: 'fade', reverse: 'true'});
                     } else {
                         $("#languageSelect").find('option[value="' + window.localStorage["language"] + '"]').attr("selected", true);
-                        spinOut();                        
+                        spinOut();
                         navigator.notification.alert('Please fill correct details.', function () {
-                            }, 'Credential Mismatch' , '✔');                        
+                            }, 'Credential Mismatch' , '✔');
                     }
                 },
                 error: function (error, errorText, errorThrown) {
@@ -771,7 +792,7 @@ function setup() {
                             }, 'Credential Mismatch' , '✔');
                     spinOut();
                 }
-            })            
+            })
         }else{
             if(domain.length == 0){
                 navigator.notification.alert('Please enter your Domain.', function () {
@@ -784,9 +805,9 @@ function setup() {
                     }, 'Missing Field' , '✔');
             }
         }
-                  
+
     });
-    
+
     $('.CancelBtn').bind('click', function(){
         spinIn();
         //do something here to apply settings before going back
@@ -795,7 +816,7 @@ function setup() {
             spinOut();
         }, 500);
     });
-    
+
     $('#ManualDeviceRegistrationPage .backBtn').bind('click', function () {
         spinIn();
         //do something here to apply settings before going back
@@ -804,7 +825,7 @@ function setup() {
             spinOut();
         }, 500);
     });
-	
+
     var inputSearchBox = document.getElementById('inputSearch');
     inputSearchBox.onkeyup = function(){
        $('#main .jobList li').each(function()
@@ -814,19 +835,19 @@ function setup() {
            {
                $(this).css("display","list-item");
            }
-           else 
+           else
            {
                $(this).css("display","none");
            }
-       }); 
-    };		
-	
+       });
+    };
+
 
     $('#logoutNav').bind('click', function () {
         if (localStorage.getItem("uploadQueue") == "[]" || window.localStorage["uploadQueue"] == undefined) {
-            
+
             console.log("A11");
-            
+
             navigator.notification.confirm(
                     lang.Mobile025,
                     confirmLogout,
@@ -838,77 +859,429 @@ function setup() {
             }, lang.Mobile026, '✔');
         }
     });
-    
-    $('#calendarNav').bind('click', function () 
+
+    $('#calendarNav').bind('click', function ()
     {
         // this to cater for offline data
-        $('#main .jobList ul').html(''); 
-        $('#main .jobCount span').html('0'); 
+        $('#main .jobList ul').html('');
+        $('#main .jobCount span').html('0');
         jobsLoaded = 0;
         allJob = [];
         // this to cater for offline data
-    
+
         backToCalendar();
     });
-    
-    $('.adhocBtn').bind('click', function () {
-        var driverid = window.sessionStorage["userID"];
-        var formtemplate_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=downloadFormTemplates&driver=" + driverid;
-       
-        
-        $.ajax({
-            url: formtemplate_URL,
-            type: 'GET',
-            timeout: 30000,
-            success: function (data) {
-                if (data.result) {
-                    var form_name = data.arrFormName.split(",");
-                    var form_id = data.arrFormId.split(",");
-                    var form_options = "";
-                    for (i = 0; i < form_id.length; i++) {
-                        form_options = form_options + "<option value='" + form_id[i] + "'>" + form_name[i] + "</option>";
-                    }
-                    
-                    
-                    var form_cust_option ="";
-                    
-                    if (data.jobCustomerName != null && !data.jobCustomerName == '')
-                    {
-                        //alert('here!')
-                        var form_cust_name = data.jobCustomerName.split(",");
-                        var form_cust_id = data.jobCustomerId.split(",");
+    function parseCustomerOptions(jobCustomerNames, jobCustomerIds) {
+        // Ensure the inputs are not null or empty
+        if (!jobCustomerNames || !jobCustomerIds) {
+            return ''; // Return an empty string if data is invalid
+        }
 
-                        form_cust_option = form_cust_option + "<option value='0'>" + "</option>";
-                        
-                        for (var j = 0; j < form_cust_id.length; j++) 
-                        {
-                            form_cust_option = form_cust_option + "<option value='" + form_cust_id[j] + "'>" + form_cust_name[j] + "</option>";
-                        }
-                        
-                        //alert(form_cust_option)
-                    }
-                    
-                    confirmPopup(
-                            "<div class='adhocForm'><label>" + lang.Mobile029 + "</label><select id='ftempid'>" + form_options + "</select><br><br>" +
-                            "<label>" + "Customer" + "</label><select id='ftempcust'>" + form_cust_option + "</select><br><br>" +
-                            "<label>" + lang.Mobile030 + "</label><input type='number' value='10' placeholder='" + lang.Mobile031 + "' ><br><br>" +
-                            "<label>" + lang.Mobile032 + "</label><textarea maxlength='100' rows='2' placeholder='" + lang.Mobile033 + "'></textarea><br><br>" +
-                            "<label>Description </label><input id='adDesc' maxlength='900' rows='2' placeholder='Description'></input></div>"
-                            , confirmAdhoc, lang.Mobile028, ["✘", "✔"]);
-                    
-                    
-                    
-                } else {
-                    console.log("adhoc_form_types fail: result returns fail.");
-                }
-            },
-            error: function (error, errorText, errorThrown) {
-                console.log("adhoc_form_types error: " + error.responseText + " errorText: " + errorText + " errorThrown: " + errorThrown);
-                spinOut();
-            }
+        // Split the input strings into arrays
+        var customerNames = jobCustomerNames.split(",");
+        var customerIds = jobCustomerIds.split(",");
+
+        // Create an array of customer objects, each containing an 'id' and 'name'
+        var customers = [];
+        for (var i = 0; i < customerIds.length; i++) {
+            customers.push({
+                id: customerIds[i],
+                name: customerNames[i]
+            });
+        }
+
+        // Sort the array of customers alphabetically by the 'name' property
+        customers.sort(function(a, b) {
+            return a.name.localeCompare(b.name); // Sort by customer name
         });
+
+        // Create the HTML <option> elements after sorting
+        var form_cust_option = '';
+        for (var i = 0; i < customers.length; i++) {
+            form_cust_option += "<option value='" + customers[i].id + "'>" + customers[i].name + "</option>";
+        }
+
+        return form_cust_option;
+    }
+    function sortFormCustOptions(form_cust_option) {
+        // Create a temporary DOM element to parse the options
+        var tempDiv = document.createElement('div');
+        tempDiv.innerHTML = "<select>" + form_cust_option + "</select>";
+
+        // Get the <option> elements from the temporary select element
+        var options = Array.from(tempDiv.querySelectorAll('option'));
+
+        // Sort the options alphabetically based on their text content
+        options.sort(function(a, b) {
+            return a.textContent.localeCompare(b.textContent); // Sort by option text
+        });
+
+        // Rebuild the form_cust_option string after sorting
+        var sortedFormCustOption = '';
+        options.forEach(function(option) {
+            sortedFormCustOption += option.outerHTML; // Collect the sorted options
+        });
+
+        return sortedFormCustOption;
+    }
+
+
+    // TODO change this for production
+$('.adhocBtn').bind('click', function () {
+        var driverid = window.sessionStorage["userID"];
+        var airconCustomer = window.sessionStorage["airconCustomer"];
+        console.log('----airconCustomer: ',airconCustomer)
+        if (airconCustomer == "true"){
+            console.log('---- inside airconCustomer true');
+            formtemplate_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=downloadFormTemplates2&driver=" + driverid;
+            $.ajax({
+                            url: formtemplate_URL,
+                            type: 'GET',
+                            timeout: 30000,
+                            success: function(data) {
+                               // console.log('Data is :::', JSON.stringify(data));
+                                if (data.result) {
+                                    var form_options = parseOptions(data.arrFormId, data.arrFormName);
+                                    var form_cust_option = parseCustomerOptions(data.jobCustomerName, data.jobCustomerId);
+                                    var form_pest_option = "<option value='0'></option>";  // Initialize with default option
+                                    var form_cust_option = parseCustomerOptions(data.jobCustomerName, data.jobCustomerId);
+                                    //var form_cust_option = parseCustomerOptions(data.jobCustomerName, data.jobCustomerId);
+                                  //  console.log("Before Sorting:");
+                                   // console.log(form_cust_option);
+
+                                    // Step 2: Sort the options
+                                    form_cust_option = sortFormCustOptions(form_cust_option);
+                                  //  form_cust_option = sorted_form_cust_option;
+                                   // console.log("After Sorting:");
+                                    //console.log(sorted_form_cust_option);
+                                    // Initial popup display without contract details
+                                    generatePopup(form_options, form_cust_option, form_pest_option);
+
+                                    // Now that the initial popup is displayed, proceed to fetch and add contract details
+                                     var customer_id = $('#ftempcust').val();
+                                     console.log("----> customer_id: " + customer_id);
+                                     if(customer_id != 0){
+                                        fetchAndUpdateContractDetails(driverid, customer_id);
+                                     }
+                                } else {
+                                    console.log("adhoc_form_types fail: result returns fail.");
+                                }
+                                spinOut();
+                            },
+                            error: function(error, errorText, errorThrown) {
+                                console.error("adhoc_form_types error:", error.responseText, " errorText:", errorText, " errorThrown:", errorThrown);
+                                spinOut();
+                            }
+                        });
+        } else
+        {
+            console.log('---- inside airconCustomer false');
+            formtemplate_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=downloadFormTemplates&driver=" + driverid;
+            $.ajax({
+                        url: formtemplate_URL,
+                        type: 'GET',
+                        timeout: 30000,
+                        success: function (data) {
+                           // console.log('Data is :::',JSON.stringify(data));
+                            if (data.result) {
+                                var form_name = data.arrFormName.split(",");
+                                var form_id = data.arrFormId.split(",");
+                                var contractId = data.arrContractId
+                                 form_options = "";
+                                for (i = 0; i < form_id.length; i++) {
+                                    form_options = form_options + "<option value='" + form_id[i] + "'>" + form_name[i] + "</option>";
+                                }
+                                 form_cust_option ="";
+                                form_cust_option = form_cust_option + "<option value='0'>" + "</option>";
+                                if (data.jobCustomerName != null && !data.jobCustomerName == '')
+                                {
+                                    var form_cust_name = data.jobCustomerName.split(",");
+                                    var form_cust_id = data.jobCustomerId.split(",");
+                                    for (i = 0; i < form_cust_id.length; i++)
+                                    {
+                                        form_cust_option = form_cust_option + "<option value='" + form_cust_id[i] + "'>" + form_cust_name[i] + "</option>";
+                                        //console.log('form_cust_option',form_cust_option);
+                                    }
+                                }
+                                var form_pest_option ="";
+                               form_pest_option = form_pest_option + "<option value='0'>" + "</option>";
+                                if (data.arrPestType != null && !data.arrPestType == '')
+                                {
+                                 if (data.arrCustomerName != null || !data.arrCustomerName == '' || data.arrContractId != null || !data.arrContractId == '' || data.arrServiceType != null || !data.arrServiceType == '' ){
+                                  var customername = data.arrCustomerName.split(",");
+                                  var contractId = data.arrContractId.split(",");
+                                  var pestType = data.arrPestType.split(",");
+                                  var serviceType = data.arrServiceType.split(",");
+                                  for (var j = 0; j < contractId.length; j++)
+                                  {
+                                     form_pest_option = form_pest_option + "<option value='" + contractId[j] + "'>"  + customername[j].concat(" - ",serviceType[j]," - ",pestType[j]) + "</option>";
+                                  }
+                                 }
+                               }
+                               confirmPopup(
+                                   "<div class='adhocForm'>" +
+                                       "<label>" + lang.Mobile029 + "</label>" +
+                                       "<input type='text' id='templateSearchInput' placeholder='Search Template...' oninput='filterTemplateOptions()' style='width:100%; margin-bottom:5px;' />" +
+                                       "<select id='ftempid' onchange='clearSearchInput()'>" + form_options + "</select><br><br>" +
+                                         "<input type='text' id='customerSearchInput' placeholder='Search Customer...' oninput='filterCustomerOptions()' style='width:100%; margin-bottom:5px;' />" +
+                                       "<label>Customer</label><select id='ftempcust' onchange='clearCustomerSearchInput()'>" + form_cust_option + "</select><br><br>" +
+                                       "<label>Contract</label><select id='ftempestype'>" + form_pest_option + "</select><br><br>" +
+                                       "<label>" + lang.Mobile030 + "</label><input type='number' value='10' placeholder='" + lang.Mobile031 + "' ><br><br>" +
+                                       "<label>" + lang.Mobile032 + "</label><textarea maxlength='100' rows='2' placeholder='" + lang.Mobile033 + "'></textarea><br><br>" +
+                                       "<label>Description</label><input id='adDesc' maxlength='900' rows='2' placeholder='Description'></input>" +
+                                   "</div>",
+                                   confirmAdhoc,
+                                   lang.Mobile028,
+                                   ["✘", "✔"]
+                               );
+
+
+                            } else {
+                                console.log("adhoc_form_types fail: result returns fail.");
+                            }
+                        },
+
+                        error: function (error, errorText, errorThrown) {
+                             JSON.stringify("Error is ",errorThrown)
+                            console.log("adhoc_form_types error: " + error.responseText + " errorText: " + errorText + " errorThrown: " + errorThrown);
+                            spinOut();
+                        }
+                    });
+        }
+        console.log("Form url:",formtemplate_URL)
+
+
     });
 
+
+    function fetchAndUpdateContractDetails(driverid, customer_id) {
+                        console.log('fetchAndUpdateContractDetails',driverid)
+                      if (!customer_id || customer_id === '0') {
+                            console.error('Invalid customer ID selected');
+                            return;
+                        }
+                        databaseIP = "https://www.v3nity.com/V3Nity4LX"
+                        var contract_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=getcontract&driver=" + driverid + "&customer=" + customer_id;
+                        console.log('contract_URL', contract_URL);
+
+                        $.ajax({
+                            url: contract_URL,
+                            type: 'GET',
+                            success: function(contractData) {
+                                console.log('Contract Data:', JSON.stringify(contractData));
+                                var updated_form_pest_option = parseContractOptions(contractData);
+                                // Update the dropdown in the popup
+                                $('#ftempestype').html(updated_form_pest_option);
+                            },
+                            error: function(err) {
+                                console.error("Error fetching contract data:", err);
+                            }
+                        });
+                    }
+
+                   $(document).on('change', '#ftempcust', function() {
+                        var customerId = $(this).val();
+                        var driverId = window.sessionStorage.getItem("userID");
+                       // console.log("-----> customerId: " + customerId + "; driverId:" + driverId);
+                        if (customerId != 0) {
+                          // TODO delete below hardcoded line for production
+                          // 13 had data
+                        //  customerId = 13;
+                          fetchAndUpdateContractDetails(driverId, customerId);
+                        }
+                    });
+
+                function parseOptions(ids, names) {
+                    var options = "";
+                    var idsArray = ids.split(",");
+                    var namesArray = names.split(",");
+                    for (var i = 0; i < idsArray.length; i++) {
+                        options += "<option value='" + idsArray[i] + "'>" + namesArray[i] + "</option>";
+                    }
+                    return options;
+                }
+
+                function parseCustomerOptions(names, ids) {
+                    var options = "<option value='0'></option>";
+                    if (names && names.trim() !== '' && ids) {
+                        var namesArray = names.split(",");
+                        var idsArray = ids.split(",");
+                        for (var i = 0; i < idsArray.length; i++) {
+                            options += "<option value='" + idsArray[i] + "'>" + namesArray[i] + "</option>";
+                        }
+                    }
+                    return options;
+                }
+
+                function parseContractOptions(contractData) {
+                    let options = "<option value='0'>Select a Contract</option>";  // Default option
+                    console.log('Contract Data is:', JSON.stringify(contractData));
+                    if (contractData || contractData.contracts || contractData.contracts.length > 0) {
+                        if (contractData.arrCustomerName != null || !contractData.arrCustomerName == '' || contractData.arrContractId != null || !contractData.arrContractId == '' || contractData.arrServiceType != null || !contractData.arrServiceType == '' ){
+                                              var customername = contractData.arrCustomerName.split(",");
+                                              var contractId = contractData.arrContractId.split(",");
+                                              var pestType = contractData.arrPestType.split(",");
+                                              var serviceType = contractData.arrServiceType.split(",");
+                                              if(customername != null){
+                                              for (var j = 0; j < contractId.length; j++)
+                                              {
+                                                // options +=   "<option value='" + contractId[j] + "'>"  + customername[j].concat(" - ",serviceType[j]," - ",pestType[j]) + "</option>";
+                                                 options +=   "<option value='" + contractId[j] + "'>"  + customername[j] + "</option>";
+
+                                              }
+                                             }
+                                             }
+                    }
+                    return options;
+                }
+
+
+                function generatePopup(form_options, form_cust_option, form_pest_option) {
+                    confirmPopup(
+                        "<div class='adhocForm'><label>" + lang.Mobile029 + "</label><select id='ftempid'>" + form_options + "</select><br><br>" +
+                        "<label>" + "Customer" + "</label><select id='ftempcust'>" + form_cust_option + "</select><br><br>" +
+                        "<label>" + "Contract" + "</label><select id='ftempestype'>" + form_pest_option + "</select><br><br>" +
+                        "<label>" + lang.Mobile030 + "</label><input type='number' value='10' placeholder='" + lang.Mobile031 + "'><br><br>" +
+                        "<label>" + lang.Mobile032 + "</label><textarea maxlength='100' rows='2' placeholder='" + lang.Mobile033 + "'></textarea><br><br>" +
+                        "<label>Description</label><input id='adDesc' maxlength='900' rows='2' placeholder='Description'></input></div>",
+                        confirmAdhoc, lang.Mobile028, ["✘", "✔"]
+                    );
+                }
+//$(function() {
+//    $('.adhocBtn').bind('click', function() {
+//            spinIn();
+//            var driverid = window.sessionStorage.getItem("userID");
+//            console.log("driverid:", driverid);
+//            databaseIP = "https://www.v3nity.com/V3Nity4LX";
+//            var formtemplate_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=downloadFormTemplates2&driver=" + driverid;
+//            console.log('Form url ***', formtemplate_URL);
+//
+//            $.ajax({
+//                url: formtemplate_URL,
+//                type: 'GET',
+//                timeout: 30000,
+//                success: function(data) {
+//                    console.log('Data is :::', JSON.stringify(data));
+//                    if (data.result) {
+//                        var form_options = parseOptions(data.arrFormId, data.arrFormName);
+//                        var form_cust_option = parseCustomerOptions(data.jobCustomerName, data.jobCustomerId);
+//                        var form_pest_option = "<option value='0'></option>";  // Initialize with default option
+//
+//                        // Initial popup display without contract details
+//                        generatePopup(form_options, form_cust_option, form_pest_option);
+//
+//                        // Now that the initial popup is displayed, proceed to fetch and add contract details
+//                         var customer_id = $('#ftempcust').val();
+//                         console.log("----> customer_id: " + customer_id);
+//                         if(customer_id != 0){
+//                            fetchAndUpdateContractDetails(driverid, customer_id);
+//                         }
+//                    } else {
+//                        console.log("adhoc_form_types fail: result returns fail.");
+//                    }
+//                    spinOut();
+//                },
+//                error: function(error, errorText, errorThrown) {
+//                    console.error("adhoc_form_types error:", error.responseText, " errorText:", errorText, " errorThrown:", errorThrown);
+//                    spinOut();
+//                }
+//            });
+//        });
+//
+//        function fetchAndUpdateContractDetails(driverid, customer_id) {
+//            console.log('fetchAndUpdateContractDetails',driverid)
+//          if (!customer_id || customer_id === '0') {
+//                console.error('Invalid customer ID selected');
+//                return;
+//            }
+//            databaseIP = "https://www.v3nity.com/V3Nity4LX"
+//            var contract_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=getcontract&driver=" + driverid + "&customer=" + customer_id;
+//            console.log('contract_URL', contract_URL);
+//
+//            $.ajax({
+//                url: contract_URL,
+//                type: 'GET',
+//                success: function(contractData) {
+//                    console.log('Contract Data:', JSON.stringify(contractData));
+//                    var updated_form_pest_option = parseContractOptions(contractData);
+//                    // Update the dropdown in the popup
+//                    $('#ftempestype').html(updated_form_pest_option);
+//                },
+//                error: function(err) {
+//                    console.error("Error fetching contract data:", err);
+//                }
+//            });
+//        }
+//
+//       $(document).on('change', '#ftempcust', function() {
+//            var customerId = $(this).val();
+//            var driverId = window.sessionStorage.getItem("userID");
+//           // console.log("-----> customerId: " + customerId + "; driverId:" + driverId);
+//            if (customerId != 0) {
+//              // TODO delete below hardcoded line for production
+//              // 13 had data
+//            //  customerId = 13;
+//              fetchAndUpdateContractDetails(driverId, customerId);
+//            }
+//        });
+//
+//    function parseOptions(ids, names) {
+//        var options = "";
+//        var idsArray = ids.split(",");
+//        var namesArray = names.split(",");
+//        for (var i = 0; i < idsArray.length; i++) {
+//            options += "<option value='" + idsArray[i] + "'>" + namesArray[i] + "</option>";
+//        }
+//        return options;
+//    }
+//
+//    function parseCustomerOptions(names, ids) {
+//        var options = "<option value='0'></option>";
+//        if (names && names.trim() !== '' && ids) {
+//            var namesArray = names.split(",");
+//            var idsArray = ids.split(",");
+//            for (var i = 0; i < idsArray.length; i++) {
+//                options += "<option value='" + idsArray[i] + "'>" + namesArray[i] + "</option>";
+//            }
+//        }
+//        return options;
+//    }
+//
+//    function parseContractOptions(contractData) {
+//        let options = "<option value='0'>Select a Contract</option>";  // Default option
+//        console.log('Contract Data is:', JSON.stringify(contractData));
+//        if (contractData || contractData.contracts || contractData.contracts.length > 0) {
+//            if (contractData.arrCustomerName != null || !contractData.arrCustomerName == '' || contractData.arrContractId != null || !contractData.arrContractId == '' || contractData.arrServiceType != null || !contractData.arrServiceType == '' ){
+//                                  var customername = contractData.arrCustomerName.split(",");
+//                                  var contractId = contractData.arrContractId.split(",");
+//                                  var pestType = contractData.arrPestType.split(",");
+//                                  var serviceType = contractData.arrServiceType.split(",");
+//                                  if(customername != null){
+//                                  for (var j = 0; j < contractId.length; j++)
+//                                  {
+//                                    // options +=   "<option value='" + contractId[j] + "'>"  + customername[j].concat(" - ",serviceType[j]," - ",pestType[j]) + "</option>";
+//                                     options +=   "<option value='" + contractId[j] + "'>"  + customername[j] + "</option>";
+//
+//                                  }
+//                                 }
+//                                 }
+//        }
+//        return options;
+//    }
+//
+//
+//    function generatePopup(form_options, form_cust_option, form_pest_option) {
+//        confirmPopup(
+//            "<div class='adhocForm'><label>" + lang.Mobile029 + "</label><select id='ftempid'>" + form_options + "</select><br><br>" +
+//            "<label>" + "Customer" + "</label><select id='ftempcust'>" + form_cust_option + "</select><br><br>" +
+//            "<label>" + "Contract" + "</label><select id='ftempestype'>" + form_pest_option + "</select><br><br>" +
+//            "<label>" + lang.Mobile030 + "</label><input type='number' value='10' placeholder='" + lang.Mobile031 + "'><br><br>" +
+//            "<label>" + lang.Mobile032 + "</label><textarea maxlength='100' rows='2' placeholder='" + lang.Mobile033 + "'></textarea><br><br>" +
+//            "<label>Description</label><input id='adDesc' maxlength='900' rows='2' placeholder='Description'></input></div>",
+//            confirmAdhoc, lang.Mobile028, ["✘", "✔"]
+//        );
+//    }
+//});
     $('#main .refreshBtn').bind('click', function () {
         if (isJobHistoryCheck  == true) {
             loadHistoryJob("all");
@@ -919,27 +1292,28 @@ function setup() {
         //ocrScanData();
 
     });
-	
-	
-    $(".autorefreshBtn").bind("click", function () { 
+
+
+    $(".autorefreshBtn").bind("click", function () {
          var img_type = $('#autorefreshimg').attr("src") ;
-         if(img_type == "img/ref_on.png") 
+         if(img_type == "img/ref_on.png")
          {
              autoRefresh = false;
              $('#autorefreshimg').attr('src', 'img/ref_off.png');
-             window.plugins.toast.show("Job auto-refresh turned OFF", 'long', 'center', 
-                    function(success){}, function(error){});            
+             window.plugins.toast.show("Job auto-refresh turned OFF", 'long', 'center',
+                    function(success){}, function(error){});
          }
-         else if(img_type == "img/ref_off.png") 
+         else if(img_type == "img/ref_off.png")
          {
              autoRefresh = true;
              $('#autorefreshimg').attr('src', 'img/ref_on.png');
-             window.plugins.toast.show("Job auto-refresh turned ON", 'long', 'center', 
-                                function(success){}, function(error){});             
-         } 
-    }); 	
-	
+             window.plugins.toast.show("Job auto-refresh turned ON", 'long', 'center',
+                                function(success){}, function(error){});
+         }
+    });
+
     $('#form .saveBtn').bind('click', function () {
+        saveFlag = true;
         spinIn();
         writeLogs("form saveBtn clicked,  id = " + window.sessionStorage["selected_id"]);
         resetFormSaver();
@@ -948,10 +1322,10 @@ function setup() {
 
 
     bindSubmitBtn();
-    
-    function bindSubmitBtn() 
+
+    function bindSubmitBtn()
     {
-        $('#form .submitBtn').on('touchstart', function (e) 
+        $('#form .submitBtn').on('touchstart', function (e)
         {
             $(this).off('touchstart');
 //            var beaconId = sessionStorage.getItem('beacon_id');
@@ -959,22 +1333,22 @@ function setup() {
             clearTimeout(otptimerId);
 
             var confirmSubmitstat = checkBeaconSubmit();
-            
-            if ($('.otp-field')[0]) {        
-                
-                var chkOtp = true;   
+
+            if ($('.otp-field')[0]) {
+
+                var chkOtp = true;
                 $('.verify-otp').each(function(){
                     if($(this).data('verified') === 'false' || $(this).data('verified') === undefined)
                     {
                         chkOtp = false;
                     }
-                });                
+                });
                 if(!chkOtp)
                 {
                     navigator.notification.alert("OTP not verified.", function () {
                     }, "Submit failed.", '✔');
                 }else {
-                    if (confirmSubmitstat) 
+                    if (confirmSubmitstat)
                     {
         //                sessionStorage.removeItem('beacon_id');
                         console.log("A12");
@@ -984,18 +1358,18 @@ function setup() {
                                 lang.Mobile112,
                                 ["✘", "✔"]
                                 );
-                    } 
-                    else 
+                    }
+                    else
                     {
                         navigator.notification.alert('Please move nearer to location.', function () {
                         }, 'Alert', '✔');
-                    } 
-                    
+                    }
+
                 }
-                
+
             }else{
-                
-                if (confirmSubmitstat) 
+
+                if (confirmSubmitstat)
                 {
     //                sessionStorage.removeItem('beacon_id');
                     console.log("A13");
@@ -1005,26 +1379,26 @@ function setup() {
                             lang.Mobile112,
                             ["✘", "✔"]
                             );
-                } 
-                else 
+                }
+                else
                 {
                     navigator.notification.alert('Please move nearer to location.', function () {
                     }, 'Alert', '✔');
-                }                
-                
+                }
+
             }
-            
-            
+
+
             // how to disable touchstartevent from firing twice
 
-            
+
             setTimeout(function () {
                 bindSubmitBtn();
             }, 1000);
         });
     }
 
-        
+
     bindBackBtn();
     function bindBackBtn() {
 //        sessionStorage.removeItem('beacon_id');
@@ -1049,8 +1423,8 @@ function setup() {
             initQueueList();
         }, "Enter Queue List", 'OK');
     });
-    
-    $(".HistoryBtn").bind("click", function () { 
+
+    $(".HistoryBtn").bind("click", function () {
          var img_type = $('#historyimg').attr("src") ;
          if(img_type == "img/currentjob.png") {
              isJobHistoryCheck = true;
@@ -1062,7 +1436,6 @@ function setup() {
              loadJob("all");
          }
     });
-
 
     cordova.plugins.diagnostic.isGpsLocationEnabled(
             function (enabled)
@@ -1094,7 +1467,7 @@ function setup() {
         utcOffset = parseInt(s.utc_offset, 10) + parseInt(s.dst_offset, 10);
 
     });
-    
+
     //CHX2020
 //    setTimeout(function()
 //    {
@@ -1104,13 +1477,104 @@ function setup() {
 //        });
 //        cordova.plugins.backgroundMode.enable();
 //    }, 500);
-    
-    
+
+
+}
+
+// this for search form template
+function filterTemplateOptions() {
+    console.log("Search triggered");
+
+    const input = document.getElementById('templateSearchInput').value.toLowerCase();
+    const select = document.getElementById('ftempid');
+
+    // Create temporary select with original options
+    const tempSelect = document.createElement('select');
+    tempSelect.innerHTML = form_options;
+
+    if (input.length < 1) {
+        // If input is empty, show all options
+        select.innerHTML = '';
+        Array.from(tempSelect.options).forEach(opt => select.appendChild(opt));
+        return;
+    }
+
+    const filteredOptions = Array.from(tempSelect.options).filter(opt =>
+        opt.text.toLowerCase().startsWith(input) // <== only starts with
+    );
+
+    // Clear and repopulate the select
+    select.innerHTML = '';
+    filteredOptions.forEach(opt => select.appendChild(opt));
+}
+function clearSearchInput() {
+    const select = document.getElementById('ftempid');
+    const selectedValue = select.value; // ✅ Save selected option's value
+
+    document.getElementById('templateSearchInput').value = ''; // Clear input
+
+    const tempSelect = document.createElement('select');
+    tempSelect.innerHTML = form_options;
+
+    select.innerHTML = ''; // Reset select list
+
+    Array.from(tempSelect.options).forEach(opt => {
+        const newOpt = opt.cloneNode(true);
+        if (newOpt.value === selectedValue) {
+            newOpt.selected = true; // ✅ Restore selection
+        }
+        select.appendChild(newOpt);
+    });
+}
+// this for search form Customer
+function filterCustomerOptions() {
+    console.log("Search triggered");
+
+    const input = document.getElementById('customerSearchInput').value.toLowerCase();
+    const select = document.getElementById('ftempcust');
+
+    // Create temporary select with original options
+    const customerSelect = document.createElement('select');
+    customerSelect.innerHTML = form_cust_option;
+
+    if (input.length < 1) {
+        // If input is empty, show all options
+        select.innerHTML = '';
+        Array.from(customerSelect.options).forEach(opt => select.appendChild(opt));
+        return;
+    }
+
+    const filteredOptions = Array.from(customerSelect.options).filter(opt =>
+        opt.text.toLowerCase().startsWith(input) // <== only starts with
+    );
+
+    // Clear and repopulate the select
+    select.innerHTML = '';
+    filteredOptions.forEach(opt => select.appendChild(opt));
+}
+function clearCustomerSearchInput() {
+    const select = document.getElementById('ftempcust');
+    const selectedValue = select.value; // ✅ Save selected option's value
+
+    document.getElementById('customerSearchInput').value = ''; // Clear input
+
+    const customerSelect = document.createElement('select');
+    customerSelect.innerHTML = form_cust_option;
+
+    select.innerHTML = ''; // Reset select list
+
+    Array.from(customerSelect.options).forEach(opt => {
+        const newOpt = opt.cloneNode(true);
+        if (newOpt.value === selectedValue) {
+            newOpt.selected = true; // ✅ Restore selection
+        }
+        select.appendChild(newOpt);
+    });
 }
 
 
 function ocrScanData(){
-
+    console.log("DEBUG ocrScanData");
     navigator.camera.getPicture(onSuccess, onFail, { quality: 100, correctOrientation: true });
 
     function onSuccess(imageData) {
@@ -1124,7 +1588,7 @@ function ocrScanData(){
                 console.log(recognizedText);
                // console.log(JSON.stringify(recognizedText));
                 console.log("data here " + (JSON.stringify(recognizedText.lines.linetext.toString())));
-                
+
                 //alert(recognizedText);
           }
           function onFail(message) {
@@ -1133,14 +1597,14 @@ function ocrScanData(){
     }
     function onFail(message) {
           alert('Failed because: ' + message);
-    }    
-    
+    }
+
 }
 
-function checkBeaconSubmit() 
+function checkBeaconSubmit()
 {
     var output = false;
-    
+
     if (startJobBeaconId === '-1')
     {
         output = true;
@@ -1148,13 +1612,13 @@ function checkBeaconSubmit()
     else
     {
         var beaconId = checkLastDetectedBeacons(startJobBeaconId);
-    
-        if (beaconId !== '') 
+
+        if (beaconId !== '')
         {
             output = true;
         }
     }
-    
+
     return output;
 }
 
@@ -1174,11 +1638,11 @@ function onResume()
                         ["✘", "✔"]
                         );
             }
-        }, 
-        function (error) 
+        },
+        function (error)
         {
             console.error("The following error occurred: " + error);
-        }   
+        }
     );
 }
 
@@ -1186,7 +1650,7 @@ function goToLocationSettings(response) {
     if (response == 2)
     { //if Yes
         cordova.plugins.diagnostic.switchToLocationSettings();
-    } 
+    }
     else
     {
         navigator.notification.alert('Please enable GPS location first.',
@@ -1261,7 +1725,7 @@ function writeLogs(logText) {
         }, errorCallback1);
     });
 
-    function writeContent(fileEntry) { // if there are multiple entries in the same seconds, it might overwrite same line of logs. 
+    function writeContent(fileEntry) { // if there are multiple entries in the same seconds, it might overwrite same line of logs.
         // Create a FileWriter object for our FileEntry (log.txt).
         fileEntry.createWriter(function (fileWriter) {
             fileWriter.seek(fileWriter.length); // Start write position at EOF.
@@ -1369,36 +1833,37 @@ function confirmExit(response) {
 function confirmAdhoc(response) {
     if (response == 2)
     { //if OK
-        
+
         var user_id = window.sessionStorage["userID"];
         //var templateid = $('#confirmPopup select').val();
         var duration = $('#confirmPopup input[type="number"]').val();
         var location = $('#confirmPopup textarea').val();
-		
+
 		var templateid = $('#ftempid').val();
         var customerid = $('#ftempcust').val() ;
 		var adhocDesc = $('#adDesc').val() ;
-        
+		var contractId = $('#ftempestype').val();
+
         if (customerid == "") {
             customerid = 0;
         }
-        
+
         var chkAdhocLocationCondition = true;
-        
+
         if (mobileCompulsoryAdhocLocation == true){
-            if (location.length == 0) {    
+            if (location.length == 0) {
                 chkAdhocLocationCondition = true;
                 navigator.notification.alert("Unable to create adhoc job. Please specify location.", function () {
                         }, "Location Not Specified", '✔');
             }else {
                 chkAdhocLocationCondition = false;
-            }            
+            }
         }else {
             chkAdhocLocationCondition = false;
         }
-        
+
         if(chkAdhocLocationCondition == false){
-           
+
             if (templateid != null && duration != null )
             {
                 spinIn();
@@ -1412,19 +1877,23 @@ function confirmAdhoc(response) {
                 JSONText.timezone = timeZone;
                 JSONText.zoneid = zoneId;
                 JSONText.utcoffset = utcOffset;
-                JSONText = JSON.stringify(JSONText);
-
+                JSONText.contractId = contractId;
+                var requestJSON = JSON.stringify(JSONText);
+                //alert("action=adhoc");
                 var createAdhoc_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=adhoc";
+                console.log('URL is:',createAdhoc_URL);
+                console.log("requestJSON:", requestJSON);
 
                 $.ajax({
                     type: 'POST',
                     url: createAdhoc_URL,
-                    data: JSONText,
+                    data: requestJSON,
                     contentType: "application/json",
                     dataType: "json",
                     cache: false,
                     timeout: 30000,
                     success: function (data) {
+                        console.log("sucessData",data);
                         if (data.result) {
                             spinOut();
                             navigator.notification.alert(lang.Mobile035, function () {
@@ -1433,7 +1902,7 @@ function confirmAdhoc(response) {
                                loadHistoryJob("all");
                             } else {
                                loadJob("all");
-                            }  
+                            }
                         } else {
                             spinOut();
                             console.log("createAdhoc failed: " + data.text);
@@ -1453,13 +1922,14 @@ function confirmAdhoc(response) {
                         }, lang.Mobile036, '✔');
                     }
                 });
+
             } else {
                 navigator.notification.alert(lang.Mobile038, function () {
                 }, lang.Mobile036, '✔');
-            }              
-            
+            }
+
         }
-        
+
     } //else do nothing
 }
 
@@ -1612,24 +2082,25 @@ function setLanguage() {
     $("#main .lastUpdate").html(lang.Mobile023 + " <span>-</span>")
 }
 
-    
+
 
 function login() {
     var user = $('#loginUser').val(), password = $('#loginPassword').val(), unitid = $('#unitId').val();
     var deviceID = localStorage.getItem("deviceID");
     var deviceType = localStorage.getItem("deviceType");
+     console.log(">> Device ID WAM3: "  + deviceID + "...");
 
-    
      // databaseIP = "http://v3nity.com/V3Nity4UAT/" ;
-     // databaseIP = 'http://203.125.7.40/V3nity4/'; //global .40 
+     // databaseIP = 'http://203.125.7.40/V3nity4/'; //global .40
 
     if (databaseIP != "" && databaseIP != undefined) {
         if (user.length != 0 && password.length != 0 && unitid.length != 0) { //if user & password & unitid fields are not empty
            var networkState = navigator.connection.type;
            if (networkState !== Connection.NONE) {
-               
+
                 spinIn();
-    //            console.log(">> Logging In " + user + " To " + databaseIP + "...");
+
+                console.log(">> Logging In " + user + " To " + databaseIP + "...");
                 var loginURL = databaseIP + "/Controller/mobile_controller.jsp?type=system&action=login"
                         + "&username=" + encodeURIComponent(user)
                         + "&password=" + encodeURIComponent(password)
@@ -1638,38 +2109,40 @@ function login() {
                         + "&deviceType=" + encodeURIComponent(deviceType)
                         + "&ver=" + encodeURIComponent(window.localStorage["version"]);
                 console.log("loginURL: " + loginURL);
-
+               // alert("loginURL: " + loginURL);
                 $.ajax({
                     url: loginURL,
                     type: 'GET',
                     timeout: 40000,
-                    success: function (data) 
+                    success: function (data)
                     {
                         if (data.result) {
-                            
-                            
+
+                            console.log('Data is',JSON.stringify(data));
                             window.localStorage["loginsuccessdata"] = JSON.stringify(data);
 
                             getCurrentLocationNew(34,'');
 
                             if (localStorage.getItem("mobileRecords") == null) {
                                 window.localStorage["mobileRecords"] = "1000";
-                            }                        
+                            }
 
                             console.log(">> Log In Success...");
                             window.localStorage['loginUser'] = user;
                             window.localStorage['loginPassword'] = password;
                             window.localStorage['unitId'] = unitid;
 
+
                             window.sessionStorage["userID"] = data.data.id;
                             window.sessionStorage["username"] = data.data.username;
                             window.sessionStorage["driver"] = data.data.driver;
                             window.sessionStorage["assetId"] = data.data.assetId;
+                            window.sessionStorage["airconCustomer"] = data.data.airconCustomer;
 							galleryResize = data.data.galleryResize;
-							
+
                             window.localStorage['galleryHeight'] = data.data.galleryHeight;
                             window.localStorage['galleryWidth'] = data.data.galleryWidth;
-                            window.localStorage['galleryQuality'] = data.data.galleryQuality;							
+                            window.localStorage['galleryQuality'] = data.data.galleryQuality;
 
                             if (data.data.beacons)
                             {
@@ -1721,10 +2194,11 @@ function login() {
                                     // default quality used
                                     window.sessionStorage["imgQuality"] = 40;
                                 }
-                            } 
+                            }
                             else
                             {
                                 // default quality used
+                                console.log("debug cam quality 20");
                                 window.sessionStorage["imgQuality"] = 40;
                             }
 
@@ -1734,14 +2208,15 @@ function login() {
 
                                 if (theScale > 0.5 && theScale <= 2.5)
                                 {
-                                    window.sessionStorage["imgDimension"] = 400 * theScale;
+                                    window.sessionStorage["imgDimension"] = 200 * theScale;
                                 } else
                                 {
-                                    window.sessionStorage["imgDimension"] = 400;
+                                    window.sessionStorage["imgDimension"] = 200;
                                 }
-                            } 
+                            }
                             else
                             {
+                                console.log("debug camScale");
                                 window.sessionStorage["imgDimension"] = 400;
                             }
 
@@ -1760,7 +2235,7 @@ function login() {
                             {
                                 console.log("^^^ Enable capture loc");
                                 captureStartEndLocation = true;
-                            } 
+                            }
                             else
                             {
                                 console.log("^^^ Disable capture loc");
@@ -1776,14 +2251,14 @@ function login() {
                                 mobileCompulsoryEndCoordinate = true;
                             } else{
                                 mobileCompulsoryEndCoordinate = false;
-                            } 
-                            
-                            
-                            if (data.data.mobileEnforceJobDurationSeconds != undefined && data.data.mobileEnforceJobDurationSeconds > 0) { 
+                            }
+
+
+                            if (data.data.mobileEnforceJobDurationSeconds != undefined && data.data.mobileEnforceJobDurationSeconds > 0) {
                                     jobDuration = data.data.mobileEnforceJobDurationSeconds ;
                             } else {
                                     jobDuration = 1; // reset back to original
-                            }	
+                            }
 
 
 
@@ -1797,7 +2272,7 @@ function login() {
 
 
                            // CHX2019
-                            if (appDirectory != undefined && uploadDirectory != undefined) 
+                            if (appDirectory != undefined && uploadDirectory != undefined)
                             {
                                 setTimeout(function () {
                                     getUserLocation();
@@ -1849,8 +2324,8 @@ function login() {
     //                                console.log('scanning...');
                                     checkBluetoothInterval();
                                 }, window.sessionStorage["bluetoothScanRate"]);
-                        } 
-                        else 
+                        }
+                        else
                         {
                             navigator.notification.alert(lang.Mobile007, function () {
                             }, lang.Mobile006, '✔');
@@ -1890,17 +2365,17 @@ function login() {
                         spinOut();
                     }
                 });
-               
-               
+
+
            }else {
-                               
+
                             var data = JSON.parse(window.localStorage["loginsuccessdata"]);
-               
+
                             getCurrentLocationNew(34,'');
 
                             if (localStorage.getItem("mobileRecords") == null) {
                                 window.localStorage["mobileRecords"] = "1000";
-                            }                        
+                            }
 
                             console.log(">> Log In Success...");
                             window.localStorage['loginUser'] = user;
@@ -1962,7 +2437,7 @@ function login() {
                                     // default quality used
                                     window.sessionStorage["imgQuality"] = 40;
                                 }
-                            } 
+                            }
                             else
                             {
                                 // default quality used
@@ -1978,12 +2453,12 @@ function login() {
                                     window.sessionStorage["imgDimension"] = 400 * theScale;
                                 } else
                                 {
-                                    window.sessionStorage["imgDimension"] = 400;
+                                    window.sessionStorage["imgDimension"] = 200;
                                 }
-                            } 
+                            }
                             else
                             {
-                                window.sessionStorage["imgDimension"] = 400;
+                                window.sessionStorage["imgDimension"] = 300;
                             }
 
                             //console.log("Text=" + data.text + ", User=" + data.data.username + ", ID=" + data.data.id + ", Driver=" + data.data.driver + ", AssetId=" + data.data.assetId);
@@ -2001,7 +2476,7 @@ function login() {
                             {
                                 console.log("^^^ Enable capture loc");
                                 captureStartEndLocation = true;
-                            } 
+                            }
                             else
                             {
                                 console.log("^^^ Disable capture loc");
@@ -2018,13 +2493,13 @@ function login() {
                             } else{
                                 mobileCompulsoryEndCoordinate = false;
                             }
-                            
-                            
-                            if (data.data.mobileEnforceJobDurationSeconds != undefined && data.data.mobileEnforceJobDurationSeconds > 0) { 
+
+
+                            if (data.data.mobileEnforceJobDurationSeconds != undefined && data.data.mobileEnforceJobDurationSeconds > 0) {
                                     jobDuration = data.data.mobileEnforceJobDurationSeconds ;
                             } else {
                                     jobDuration = 1; // reset back to original
-                            }	
+                            }
 
 
 
@@ -2038,7 +2513,7 @@ function login() {
 
 
                            // CHX2019
-                            if (appDirectory != undefined && uploadDirectory != undefined) 
+                            if (appDirectory != undefined && uploadDirectory != undefined)
                             {
                                 setTimeout(function () {
                                     getUserLocation();
@@ -2089,10 +2564,10 @@ function login() {
                                 {
     //                                console.log('scanning...');
                                     checkBluetoothInterval();
-                                }, window.sessionStorage["bluetoothScanRate"]);               
-        
+                                }, window.sessionStorage["bluetoothScanRate"]);
+
            }
-            
+
         } else {
             if (user.length == 0) {
                 navigator.notification.alert(lang.Mobile011, function () {
@@ -2109,7 +2584,7 @@ function login() {
         navigator.notification.alert(lang.Mobile014, function () {
         }, lang.Mobile013, '✔');
     }
-    
+
 }
 
 
@@ -2117,16 +2592,16 @@ function login() {
 
 
 function getCurrentLocationNew(eventId,job_id) {
-    
+
     console.log("New Modify function");
-    
+
     var geoOptions = {enableHighAccuracy: true, timeout: 10000};
     navigator.geolocation.getCurrentPosition(function (position)
     {
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
         sendLocationNew(lat, lng,eventId,job_id);
-        
+
     }, function (error) {
         geolocFail();
     }, geoOptions);
@@ -2136,14 +2611,14 @@ function getCurrentLocationNew(eventId,job_id) {
     }
 }
 
-function sendLocationNew(lat, lng,  eventId, job_id) 
+function sendLocationNew(lat, lng,  eventId, job_id)
 {
     var user_id = window.sessionStorage["userID"];
     var asset_id = window.sessionStorage["assetId"];
     var unit_id = window.localStorage['unitId'];
-    
+
     var updateUserGps_URL = '';
-    
+
     updateUserGps_URL = databaseIP + "Controller/mobile_controller.jsp?type=track&action=gps&driver=" + encodeURIComponent(user_id) + "&assetId=" + encodeURIComponent(asset_id) + "&longitude=" + encodeURIComponent(lng) + "&latitude=" + encodeURIComponent(lat) + "&event=" + encodeURIComponent(eventId) + "&unitId=" + encodeURIComponent(unit_id) + "&direct=1&reference=" + job_id;
 
     console.log('********SENDING GPS NEW: ' + updateUserGps_URL);
@@ -2163,15 +2638,15 @@ function sendLocationNew(lat, lng,  eventId, job_id)
             console.log("updateUserGps error: " + error + " errorText: " + errorText + " errorThrown: " + errorThrown);
         }
     });
-    
+
 }
 
-function logout() 
+function logout()
 {
     // CHX2021 remove ID
     var networkState = navigator.connection.type;
-    
-    if (networkState !== Connection.NONE) 
+
+    if (networkState !== Connection.NONE)
     {
         var driverId = window.sessionStorage["userID"];
         var logoutURL = databaseIP + "/Controller/mobile_controller.jsp?type=system&action=logout"
@@ -2182,25 +2657,25 @@ function logout()
             url: logoutURL,
             type: 'GET',
             timeout: 15000,
-            success: function (data) 
+            success: function (data)
             {
-                
+
             },
             error: function (error, errorText, errorThrown) {
-                
+
             }
         });
     }
-    
-    
+
+
     // this to cater for offline data
-    $('#main .jobList ul').html(''); 
-    $('#main .jobCount span').html('0'); 
+    $('#main .jobList ul').html('');
+    $('#main .jobCount span').html('0');
     jobsLoaded = 0;
     allJob = [];
     // this to cater for offline data
 
-    $('#mainSelectedDate').val('');                    
+    $('#mainSelectedDate').val('');
     deleteLocalData();
 
     window.clearInterval(jobInterval);
@@ -2220,9 +2695,9 @@ function logout()
         $.mobile.changePage("#index", {transition: 'fade', reverse: 'true'});
         spinOut();
     }, 500);
-                    
-    
-    
+
+
+
     //CHX2020
 //    cordova.plugins.foregroundService.stop();
 }
@@ -2230,14 +2705,14 @@ function logout()
 function backToCalendar()
 {
     // this to cater for offline data
-    $('#main .jobList ul').html(''); 
-    $('#main .jobCount span').html('0'); 
+    $('#main .jobList ul').html('');
+    $('#main .jobCount span').html('0');
     jobsLoaded = 0;
     allJob = [];
     // this to cater for offline data
-    
-//    $('#mainSelectedDate').val('');                    
-    
+
+//    $('#mainSelectedDate').val('');
+
     spinIn();
     window.clearInterval(jobInterval);
     setTimeout(function () {
@@ -2254,10 +2729,10 @@ function getUserLocation() {
 
     if (wifiAttribute == 1) {
 //        console.log('wifi attr 1')
-        
+
         WifiWizard.isWifiEnabled(
-        function (result) 
-        { //depend weather this is needed, but it is working now. 
+        function (result)
+        { //depend weather this is needed, but it is working now.
             if (result === false)
             {
                 WifiWizard.setWifiEnabled(true, function () {
@@ -2268,30 +2743,30 @@ function getUserLocation() {
                     //console.log("Failed to Enable Wifi in this device");
                 });
             }
-        }, 
-        function () 
+        },
+        function ()
         {
             //console.log("Wifi Disabled");
         });
-        
-        
+
+
         WifiWizard.startScan(function () {
             //console.log("WifiWizard success");
-        }, function () {});  // seem like sometime it will get cached response instead.    
-        // https://developer.android.com/about/versions/oreo/background-location-limits 
+        }, function () {});  // seem like sometime it will get cached response instead.
+        // https://developer.android.com/about/versions/oreo/background-location-limits
 
-        WifiWizard.getScanResults(options, function (networks) 
+        WifiWizard.getScanResults(options, function (networks)
         {
-            networks.sort(sort_by('level', {})); // sort according to signal strength. 
-            for (var i = networks.length - 3; i < networks.length; i++) 
+            networks.sort(sort_by('level', {})); // sort according to signal strength.
+            for (var i = networks.length - 3; i < networks.length; i++)
             {
-                if (i < 0) 
+                if (i < 0)
                 {
                     getCurrentLocation(); // if no wifi then go directly to get GPS
                     return false;
                 }
                 networksArray.push([networks[i]['BSSID'], networks[i]['level'], networks[i]['SSID']]);
-                
+
                 //console.log(i + ': ' + networks[i]['BSSID'] + ' -- ' + networks[i]['SSID']);
             }
             // only return value when the wifi details are already in our database. ** SSID1 is the strongest signal strength with lowest negative rate.
@@ -2299,13 +2774,13 @@ function getUserLocation() {
                     + "&quality1=" + encodeURIComponent(networksArray[2][1]) + "&quality2=" + encodeURIComponent(networksArray[1][1]) + "&quality3=" + encodeURIComponent(networksArray[0][1]) + "&mode=0&name1=" + encodeURIComponent(networksArray[2][2]) + "&name2=" + encodeURIComponent(networksArray[1][2]) + "&name3=" + encodeURIComponent(networksArray[0][2]);
 
             writeLogs(networksArray[2][0] + " q: " + networksArray[2][1] + " 2 " + networksArray[1][0] + " q: " + networksArray[1][1] + " 3: " + networksArray[0][0] + " q: " + networksArray[0][1]);
-            
+
             //console.log("=== calls returnwifi_url: " + returnwifi_url);
-            
+
             /*
              *  New function to capture more wifis
              */
-            
+
             var amtOfNetworksUsed = 0;
             var MAX_NETWORKS = 10;
             var newNetworksArray = [];
@@ -2314,8 +2789,8 @@ function getUserLocation() {
             var toastData = '';
             var sqlData = '';
             var referencedData = '';
-            
-            
+
+
             if (networks.length > MAX_NETWORKS)
             {
                 amtOfNetworksUsed = MAX_NETWORKS;
@@ -2324,65 +2799,65 @@ function getUserLocation() {
             {
                 amtOfNetworksUsed = networks.length;
             }
-            
-            for (var i = 0; i < networks.length; i++) 
+
+            for (var i = 0; i < networks.length; i++)
             {
                 //console.log('SCANNED >> ' + i + ': ' + networks[i]['SSID'] + ' xx ' + networks[i]['BSSID'] +  ' -- ' + networks[i]['level'])
                 if (sqlData !== '') sqlData += ',';
                 sqlData += '\'' + networks[i]['BSSID'] + '\'';
             }
-            
-            
-            for (var i = networks.length-1; i > networks.length-1-amtOfNetworksUsed; i--) 
+
+
+            for (var i = networks.length-1; i > networks.length-1-amtOfNetworksUsed; i--)
             {
                 newNetworksArray.push([networks[i]['BSSID'], networks[i]['level'], networks[i]['SSID']]);
-                
+
                 if (ssidList !== '') ssidList += ',';
                 ssidList += encodeURIComponent(networks[i]['BSSID']);
-                
+
                 if (qualityList !== '') qualityList += ',';
                 qualityList += encodeURIComponent(networks[i]['level']);
-                
+
                 if (toastData !== '') toastData += '\n';
                 toastData += networks[i]['SSID'] + ': ' + encodeURIComponent(networks[i]['level']);
-                
+
                 //console.log('USED FOR REF >> ' + networks[i]['SSID'] + ' xx ' + networks[i]['BSSID'] +  ' -- ' + networks[i]['level'])
                 if (referencedData !== '') referencedData += ',';
                 referencedData += '\'' + networks[i]['BSSID'] + '\'';
-                
+
                 if ( i == 0) break;
-                
+
             }
-//            
-            
+//
+
             //console.log('new_returnwifi_url', new_returnwifi_url);
-            
+
 //            console.log('sqlData', sqlData);
 //            console.log('referencedData', referencedData);
 
 
             //var new_returnwifi_url = databaseIP + "/Controller/mobile_controller.jsp?type=hotspot&action=search&mode=0&s=" + ssidList + "&q=" + qualityList;
-            
+
             var new_returnwifi_url = '';
-            
+
             var geoOptions = {enableHighAccuracy: true, timeout: 25000};
             navigator.geolocation.getCurrentPosition(function (position)
             {
-                new_returnwifi_url = databaseIP + "/Controller/mobile_controller.jsp?type=hotspot&action=search&mode=0&s=" + ssidList + "&q=" + qualityList + "&lat=" + position.coords.latitude + "&lon=" + position.coords.longitude ;   
-                
+                new_returnwifi_url = databaseIP + "/Controller/mobile_controller.jsp?type=hotspot&action=search&mode=0&s=" + ssidList + "&q=" + qualityList + "&lat=" + position.coords.latitude + "&lon=" + position.coords.longitude ;
+
                     if (DEBUG_MODE)
                     {
-                        window.plugins.toast.show(toastData, 'long', 'center', 
+                        window.plugins.toast.show(toastData, 'long', 'center',
                                 function(success)
                                 {
                                     //console.log('toast success: ' + a)
-                                }, 
+                                },
                                 function(error)
                                 {
         //                            alert('toast error: ' + b)
                                 });
-                    }                
-                
+                    }
+
                     $.ajax({
                         url: new_returnwifi_url,
                         type: 'GET',
@@ -2391,7 +2866,7 @@ function getUserLocation() {
                                 if (data.data !== undefined) {
                                     //alert("nearby wifi name  " + testName  +"\nlevel" + data.data[0].Level + " location " + data.data[0].location);
                                     writeLogs("id =  " + data.data[0].id + " location = " + data.data[0].location + " level " + data.data[0].Level);
-                                    // *****id return is the table column id ** NOT THE PATTERN 
+                                    // *****id return is the table column id ** NOT THE PATTERN
                                     referenceId = data.data[0].id;
                                     var locId = data.data[0].location;
                                     var levelId = data .data[0].Level;
@@ -2400,11 +2875,11 @@ function getUserLocation() {
                                     if (DEBUG_MODE)
                                     {
                                         window.plugins.toast.show('Has referenceId: ' + referenceId + '\nLocation: ' + locId
-                                                                        + '\nLevel: ' + levelId, 'long', 'center', 
+                                                                        + '\nLevel: ' + levelId, 'long', 'center',
                                             function(success)
                                             {
                                                 //console.log('toast success: ' + a)
-                                            }, 
+                                            },
                                             function(error)
                                             {
                     //                            alert('toast error: ' + b)
@@ -2418,11 +2893,11 @@ function getUserLocation() {
                                 } else {
                                     if (DEBUG_MODE)
                                     {
-                                        window.plugins.toast.show('No references returned!', 'long', 'center', 
+                                        window.plugins.toast.show('No references returned!', 'long', 'center',
                                             function(success)
                                             {
                                                 //console.log('toast success: ' + a)
-                                            }, 
+                                            },
                                             function(error)
                                             {
                     //                            alert('toast error: ' + b)
@@ -2433,11 +2908,11 @@ function getUserLocation() {
                             } else {
                                 if (DEBUG_MODE)
                                     {
-                                        window.plugins.toast.show('No references returned!', 'long', 'center', 
+                                        window.plugins.toast.show('No references returned!', 'long', 'center',
                                             function(success)
                                             {
                                                 //console.log('toast success: ' + a)
-                                            }, 
+                                            },
                                             function(error)
                                             {
                     //                            alert('toast error: ' + b)
@@ -2450,11 +2925,11 @@ function getUserLocation() {
                             console.log("returnwifi error: " + error.responseText + " errorText: " + errorText + " errorThrown: " + errorThrown);
                             getCurrentLocation();
                         }
-                    });                
-                
-                
+                    });
+
+
             }, function (error) {
-                
+
             }, geoOptions);
 
 
@@ -2472,20 +2947,20 @@ function getUserLocation() {
 //    {
 //        var lat = position.coords.latitude;
 //        var lng = position.coords.longitude;
-//        if (eventId === 130 || eventId === 27) 
+//        if (eventId === 130 || eventId === 27)
 //        {
 //            sendLocation(lat, lng, "", eventId, referenceId, referenceType);
-//        } 
-//        else 
+//        }
+//        else
 //        {
 //            sendLocation(lat, lng, "", "", "", "");
 //        }
 //    }, function (error) {
 //        //checkGPSService();
 //        //no need to send. No Wifi location nor GPS locations
-//        
+//
 //        console.log("Get User LongLat Failed or Timed Out");
-//        
+//
 ////        geolocFail();
 ////        if (eventId === 130) {
 ////            sendLocation(0, 0, "", eventId, referenceId, referenceType);
@@ -2505,17 +2980,17 @@ function getCurrentLocation(eventId, referenceId, referenceType) {
     {
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
-        
-        if (eventId === 130 || eventId === 27) 
+
+        if (eventId === 130 || eventId === 27)
         {
             sendLocation(lat, lng, "", eventId, referenceId, referenceType);
         }
-        else if (eventId === START_JOB_EVENT) 
+        else if (eventId === START_JOB_EVENT)
         {
             $('.form-sheet').attr("start-lat", lat);
             $('.form-sheet').attr("start-lon", lng);
         }
-        else 
+        else
         {
             sendLocation(lat, lng, "", "", "", "");
         }
@@ -2525,18 +3000,18 @@ function getCurrentLocation(eventId, referenceId, referenceType) {
 
 
     function geolocFail() {
-        
+
         var geoOptions = {enableHighAccuracy: false, timeout: 25000};
         navigator.geolocation.getCurrentPosition(function (position)
         {
             var lat = position.coords.latitude;
             var lng = position.coords.longitude;
 
-            if (eventId === 130 || eventId === 27)  
+            if (eventId === 130 || eventId === 27)
             {
                 sendLocation(lat, lng, "", eventId, referenceId, referenceType);
             }
-            else if (eventId === START_JOB_EVENT) 
+            else if (eventId === START_JOB_EVENT)
             {
                 $('.form-sheet').attr("start-lat", lat);
                 $('.form-sheet').attr("start-lon", lng);
@@ -2545,11 +3020,11 @@ function getCurrentLocation(eventId, referenceId, referenceType) {
                 sendLocation(lat, lng, "", "", "", "");
             }
         }, function (error) {
-            if (eventId === 130 || eventId === 27)  
+            if (eventId === 130 || eventId === 27)
             {
                 sendLocation(0, 0, "", eventId, referenceId, referenceType);
             }
-            else if (eventId === START_JOB_EVENT) 
+            else if (eventId === START_JOB_EVENT)
             {
                 $('.form-sheet').attr("start-lat", "0.0");
                 $('.form-sheet').attr("start-lon", "0.0");
@@ -2558,24 +3033,24 @@ function getCurrentLocation(eventId, referenceId, referenceType) {
     }
 }
 
-function sendLocation(lat, lng, location, eventId, referenceId, referenceType) 
+function sendLocation(lat, lng, location, eventId, referenceId, referenceType)
 {
     var user_id = window.sessionStorage["userID"];
     var asset_id = window.sessionStorage["assetId"];
     var unit_id = window.localStorage['unitId'];
-    
+
     var updateUserGps_URL = '';
-    
+
     var beaconIndex = 0;
-    
-    
-    if (eventId !== "") 
-    { 
+
+
+    if (eventId !== "")
+    {
         // if you want to insert stuff into dev server, use direct = 1;
         var send = false;
         var date = new Date();
         ((lastsentid === '') || (lastsentid !== referenceId)) ? send = true : send = false;
-        
+
         var beacons = JSON.parse(window.sessionStorage["beaconId"]);
         for (var i = 0 ; i < beacons.length ; i++)
         {
@@ -2585,17 +3060,17 @@ function sendLocation(lat, lng, location, eventId, referenceId, referenceType)
                 break;
             }
         }
-        
+
         //console.log("Interval +" + sendInterval);
-        
+
         var interval = date.getTime() - lastsenttime[beaconIndex];
-        
-        if ((interval >= sendInterval) || (send)) 
+
+        if ((interval >= sendInterval) || (send))
         {
             send = true;
             lastsentid = referenceId;
             lastsenttime[beaconIndex] = date.getTime();
-            
+
             if (direct){
                  updateUserGps_URL = databaseIP + "Controller/mobile_controller.jsp?type=track&action=gps&driver=" + encodeURIComponent(user_id) + "&assetId=" + encodeURIComponent(asset_id) + "&longitude=" + encodeURIComponent(lng) + "&latitude=" + encodeURIComponent(lat)
                 + "&event=" + encodeURIComponent(eventId) + "&direct=" + encodeURIComponent(direct) + "&reference=" + encodeURIComponent(referenceId) + "&referenceType=" + encodeURIComponent(referenceType) + "&unitId=" + encodeURIComponent(unit_id);
@@ -2605,31 +3080,31 @@ function sendLocation(lat, lng, location, eventId, referenceId, referenceType)
                 + "&event=" + encodeURIComponent(eventId) + "&reference=" + encodeURIComponent(referenceId) + "&referenceType=" + encodeURIComponent(referenceType) + "&unitId=" + encodeURIComponent(unit_id);
             }
         }
-        
+
 //        console.log('****GPS BeaconIndex ' + beaconIndex + ' --- ' + send + ' -- last sent for ' + referenceId + ': ' + lastsenttime[beaconIndex]);
-    } 
-    else 
+    }
+    else
     {
         send = true;
         updateUserGps_URL = databaseIP + "Controller/mobile_controller.jsp?type=track&action=gps&driver=" + encodeURIComponent(user_id) + "&assetId=" + encodeURIComponent(asset_id) + "&longitude=" + encodeURIComponent(lng) + "&latitude=" + encodeURIComponent(lat) + "&unitId=" + encodeURIComponent(unit_id);
     }
-    
-    
+
+
     var today = new Date();
 
     var dateTimeId = today.getDate() + "/" + (today.getMonth()+1) + "/" + today.getFullYear() + " " + + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
     updateUserGps_URL = updateUserGps_URL + "&timestamp=" + encodeURIComponent(dateTimeId) ;
-    
+
     if (disableGps)
     {
         return;
     }
-    
-    if (send) 
+
+    if (send)
     {
         console.log('********SENDING GPS: ' + updateUserGps_URL);
-        
+
         $.ajax({
             url: updateUserGps_URL,
             type: 'GET',
@@ -2650,39 +3125,39 @@ function sendLocation(lat, lng, location, eventId, referenceId, referenceType)
             }
         });
     }
-    
+
     sendLocationToServerOfflineMode();
-    
+
 }
 
 function deleteLocalData(){
-    
+
     var exist = 0 ;
-    
-    console.log('Deleted Start'); 
-    
+
+    console.log('Deleted Start');
+
     db.getAll('locations',function(results) {
-        console.log('N Result ' + JSON.stringify(results)); 
+        console.log('N Result ' + JSON.stringify(results));
         if (results.rows.length > 0){
             for (var i = 0; i < results.rows.length; i++) {
-            console.log('SendValue ' + results.rows.item(i).send); 
+            console.log('SendValue ' + results.rows.item(i).send);
                 if(results.rows.item(i).send === 1 ){
-                    console.log('SendValue1 ' + results.rows.item(i).send); 
+                    console.log('SendValue1 ' + results.rows.item(i).send);
                     exist = 1;
-                }                
+                }
             }
         }
     },null);
-    
+
     if (exist == 0) {
-        console.log('exist ' + exist); 
+        console.log('exist ' + exist);
         db.deleteAll('locations',function(results)
         {
-               console.log('mobile data deleted'); 
-        },null);        
-        
+               console.log('mobile data deleted');
+        },null);
+
     }
-    
+
 }
 
 function saveLocationInLocal(weburl) {
@@ -2704,18 +3179,18 @@ function saveLocationInLocal(weburl) {
 }
 
 function sendLocationToServerOfflineMode() {
-    
+
     db.getAll('locations',function(results) {
 //        console.log("TotalLength :- " + results.rows.length );
         if (results.rows.length > 0){
             for (var i = 0; i < results.rows.length; i++)
             {
 //                console.log("Value of Send :- " +results.rows.item(i).send);
-                
+
                 if(results.rows.item(i).send === 1 ){
-                    
+
 //                    console.log("Value of Send in Case 1  :- " +results.rows.item(i).send);
-                    
+
                     var url = "";
                     url = results.rows.item(i).weburl;
 
@@ -2729,9 +3204,9 @@ function sendLocationToServerOfflineMode() {
                         timeout: 30000,
                         success: function (data) {
                             if (data.result) {
-                                
+
                                 console.log('Updated' );
-                                
+
                                 columns = [];
                                 columns.push({name: "id", value: id});
                                 columns.push({name: "weburl", value: url});
@@ -2747,31 +3222,31 @@ function sendLocationToServerOfflineMode() {
                                 {
                                     sendLocationToServerOfflineMode();
                                     console.log('success DB: ' + success.message);
-                                });   
-//                                                               
-                               
+                                });
+//
+
                             } else {
-                                
+
                                 console.log('Not Updated' );
-                                
+
                             }
                         },
                         error: function (error, errorText, errorThrown) {
                             console.log("updateUserGps error: " + error + " errorText: " + errorText + " errorThrown: " + errorThrown);
                         }
                     });
-                    
+
                     break;
-                
+
                 }
-                
+
             }
 //            console.log("LoopEnd  "  );
-           
+
         }
-        
+
     },null);
-    
+
 }
 
 var count;
@@ -2785,7 +3260,7 @@ function loadJob(type) {
     if (localStorage.getItem("uploadQueue") != "[]" && localStorage.getItem("uploadQueue") != null) {
         tuploadQueue = JSON.parse(window.localStorage["uploadQueue"]).toString().split(",");
         uploadCount = tuploadQueue.length;
-        $('.uploadCount span').html(uploadCount); //update Upload count	
+        $('.uploadCount span').html(uploadCount); //update Upload count
     } else {
         $('.uploadCount span').html("0"); //update Upload count
     }
@@ -2794,34 +3269,34 @@ function loadJob(type) {
     var offset = 0;
     var downloadURL;
     var newJob; //boolean to determine whether there were new jobs loaded
-    
-    var networkState = navigator.connection.type; 
+
+    var networkState = navigator.connection.type;
     if (networkState !== Connection.NONE) {
             db.deleteAll('jobdetails',function(results)
             {
-                console.log('mobile jobs data deleted');  
-                if (type == "all") 
+                console.log('mobile jobs data deleted');
+                if (type == "all")
                 {
                     loadDownload("all");
                     newJob = false;
                 } else if (type == "new") {
                     loadDownload("new");
                     newJob = false;
-                }                        
-            },null);          
+                }
+            },null);
     }else {
-        if (type == "all") 
+        if (type == "all")
         {
             loadDownload("all");
             newJob = false;
         } else if (type == "new") {
             loadDownload("new");
             newJob = false;
-        }     
+        }
     }
-    
+
     function loadDownload(type) {
-            
+
         if ($('#mainSelectedDate').val() !== '')
         {
             if (type == "all") {
@@ -2840,34 +3315,36 @@ function loadJob(type) {
                 downloadURL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=download&fetch=" + fetch + "&offset=" + offset + "&driver=" + user_id + "&mode=1";
             }
         }
-        
-        
-        //// Offline load job functionality added 
-        
+        console.log('downloadURL',downloadURL);
+
+        //// Offline load job functionality added
+
         if (networkState !== Connection.NONE) {
-            
+
 //            console.log("downloadURL: " + downloadURL);
 
             $.ajax({
                 url: downloadURL,
                 type: 'GET',
                 timeout: 30000,
-                success: function (data) 
+                success: function (data)
                 {
                     if (data.result)
                     {
                         // only reset if successfully retrieve
+                       // console.log('Job list data is',JSON.stringify(data))
                         if (parseInt(offset,10) == 0)
                         {
                             $('#main .jobList ul').html(''); //clear list
                             $('#main .jobCount span').html('0'); //reset count
                             jobsLoaded = 0;
-                            allJob = [];                          
-                            
+                            allJob = [];
+
                         }
 
                         if (data.data.total != 0)
                         {
+                           // console.log('Job list inside data',JSON.stringify(data.data))
                             var receivedJob = [];
                             count = 0;
 
@@ -2879,7 +3356,7 @@ function loadJob(type) {
 
                             while (data.data.jobs[count])
                             {
-                                
+
                                 columns = [];
                                 columns.push({name: "id", value: data.data.jobs[count].id});
                                 columns.push({name: "job_id", value: data.data.jobs[count].job_id});
@@ -2900,8 +3377,8 @@ function loadJob(type) {
                                 function(error)
                                 {
                                     console.log('error:JobData ' + error.message);
-                                });	                                
-                                
+                                });
+
                                 var duration = data.data.jobs[count].duration;
                                 var schedule_dt = data.data.jobs[count].schedule_dt;
                                 var format_dt = schedule_dt.slice(0, 4) + "/" + schedule_dt.slice(4, 6) + "/" + schedule_dt.slice(6, 8) + " " + schedule_dt.slice(8, 10) + ":" + schedule_dt.slice(10, 12) + ":" + schedule_dt.slice(12, 14);
@@ -2948,24 +3425,74 @@ function loadJob(type) {
                                 var template_name = data.data.jobs[count].template_name;
                                 var details = Base64.decode(data.data.jobs[count].details);
                                 var html_file = id + "_" + schedule_dt + "_" + user_id + ".v3";
-                                if ($('li[job_id=' + id + ']').length == 0)
-                                { //check if alrdy exist in local
-    //                                console.log('here if 1')
-                                    $('#main .jobList ul').append("<li name='" + html_file + "' location_desc='" + description + job_location  + "' job_name='" + template_name + "' job_id='" + id + "' job_type_id='" + job_type_id + "' job_status='" + status + "' latitude='" + latitude + "' longitude='" + longitude + "'>" +
-                                            "<span class='job-title'><img src='img/location.png' /><span class='job-value job-location'>" + job_location + "</span></span><br>" +
-                                            "<span class='job-title'><img src='img/job.png' /><span class='job-value job-name'>" + template_name + "</span></span><br>" +
-                                            "<span class='job-title'><img src='img/description.png' /><span class='job-value job-description'>" + description + "</span></span><br>" +
-                                            "<span class='job-title'><img src='img/type.png' /><span class='job-value job-type'>" + job_type + "</span></span><br>" +
-                                            "<span class='job-title'><img src='img/schedule.png' /><span class='job-value job-dt'>" + format_dt + "</span></span><br>" +
-                                            "<span class='job-title'><img src='img/status.png' /><span class='job-value job-status'>" + stat(status) + "</span></span><br>" +
-                                            "<span class='job-title'><img src='img/id.png' /><span class='job-value job-id'>" + job_number + "</span></span><br>" +
-                                            Base64.decode(preview) +
-                                            "</li>");
-                                    if (latitude != 0 && longitude != 0) {
-                                        $('li[job_id=' + id + ']').prepend("<span class='job-title' style='border-bottom:2px solid #eeeeee;margin:5px;'><img src='img/navigate.png' /><span class='job-value job-navigate' style='color:blue;font-weight:bold!important'>" + lang.Mobile054 + "</span></span>");
-                                    }
-                                } else
+//                                if ($('li[job_id=' + id + ']').length == 0) { // Check if already exists in local
+//                                    console.log('here if  ********');
+//
+//                                    // Create the new job item as a string
+//                                    let newJobItem = "<li name='" + html_file + "' location_desc='" + description + job_location + "' job_name='" + template_name + "' job_id='" + id + "' job_type_id='" + job_type_id + "' job_status='" + status + "' latitude='" + latitude + "' longitude='" + longitude + "'>" +
+//                                        "<span class='job-title'><img src='img/location.png' /><span class='job-value job-location'>" + job_location + "</span></span><br>" +
+//                                        "<span class='job-title'><img src='img/job.png' /><span class='job-value job-name'>" + template_name + "</span></span><br>" +
+//                                        "<span class='job-title'><img src='img/description.png' /><span class='job-value job-description'>" + description + "</span></span><br>" +
+//                                        "<span class='job-title'><img src='img/type.png' /><span class='job-value job-type'>" + job_type + "</span></span><br>" +
+//                                        "<span class='job-title'><img src='img/schedule.png' /><span class='job-value job-dt'>" + format_dt + "</span></span><br>" +
+//                                        "<span class='job-title'><img src='img/status.png' /><span class='job-value job-status'>" + stat(status) + "</span></span><br>" +
+//                                        "<span class='job-title'><img src='img/id.png' /><span class='job-value job-id'>" + job_number + "</span></span><br>" +
+//                                        Base64.decode(preview) +
+//                                        "</li>";
+//
+//                                    // Append the new job item to an array for reverse order insertion
+//                                    let jobElements = $('#main .jobList ul li');
+//                                    jobElements = jobElements.add($(newJobItem)); // Add the new job item to the list of existing items
+//
+//                                    // Reverse the collection and append it
+//                                    jobElements.get().reverse().forEach(function(jobItem) {
+//                                        $('#main .jobList ul').append(jobItem);
+//                                    });
+//
+//                                    // Prepend the navigate button if the location is available
+//                                    if (latitude != 0 && longitude != 0) {
+//                                        $('li[job_id=' + id + ']').prepend("<span class='job-title' style='border-bottom:2px solid #eeeeee;margin:5px;'><img src='img/navigate.png' /><span class='job-value job-navigate' style='color:blue;font-weight:bold!important'>" + lang.Mobile054 + "</span></span>");
+//                                    }
+//                                }
+                                 if ($('li[job_id=' + id + ']').length == 0) { // Check if already exists in local
+                                     console.log('here if  ********');
+
+                                     // Create the new job item as a string
+                                     let newJobItem = "<li name='" + html_file + "' location_desc='" + description + job_location + "' job_name='" + template_name + "' job_id='" + id + "' job_type_id='" + job_type_id + "' job_status='" + status + "' latitude='" + latitude + "' longitude='" + longitude + "'>" +
+                                         "<span class='job-title'><img src='img/location.png' /><span class='job-value job-location'>" + job_location + "</span></span><br>" +
+                                         "<span class='job-title'><img src='img/job.png' /><span class='job-value job-name'>" + template_name + "</span></span><br>" +
+                                         "<span class='job-title'><img src='img/description.png' /><span class='job-value job-description'>" + description + "</span></span><br>" +
+                                         "<span class='job-title'><img src='img/type.png' /><span class='job-value job-type'>" + job_type + "</span></span><br>" +
+                                         "<span class='job-title'><img src='img/schedule.png' /><span class='job-value job-dt'>" + format_dt + "</span></span><br>" +
+                                         "<span class='job-title'><img src='img/status.png' /><span class='job-value job-status'>" + stat(status) + "</span></span><br>" +
+                                         "<span class='job-title'><img src='img/id.png' /><span class='job-value job-id'>" + job_number + "</span></span><br>" +
+                                         Base64.decode(preview) +
+                                         "</li>";
+
+                                     // Append the new job item to the job list
+                                     if (template_name === "Attendance") {
+                                         // Insert at the end for "Attendance"
+                                         $('#main .jobList ul').append(newJobItem);
+                                     } else {
+                                         // For other job types, insert at the beginning (reverse order)
+                                         let jobElements = $('#main .jobList ul li');
+                                         jobElements = jobElements.add($(newJobItem)); // Add the new job item to the list of existing items
+
+                                         // Reverse the collection and append it  jobElements.get().reverse().
+                                         jobElements.get().forEach(function(jobItem) {
+                                             $('#main .jobList ul').append(jobItem);
+                                         });
+                                     }
+
+                                     // Prepend the navigate button if the location is available
+                                     if (latitude != 0 && longitude != 0) {
+                                         $('li[job_id=' + id + ']').prepend("<span class='job-title' style='border-bottom:2px solid #eeeeee;margin:5px;'><img src='img/navigate.png' /><span class='job-value job-navigate' style='color:blue;font-weight:bold!important'>" + lang.Mobile054 + "</span></span>");
+                                     }
+                                 }
+
+                                 else
                                 { //else update
+                                    console.log('here if update ********')
                                     $('#main .jobList li[job_id=' + id + ']').attr('name', html_file);
                                     $('#main .jobList li[job_id=' + id + ']').attr('job_name', template_name);
 									$('#main .jobList li[job_id=' + id + ']').attr('location_desc', description + job_location);
@@ -2986,13 +3513,16 @@ function loadJob(type) {
                                         $('li[job_id=' + id + ']').prepend("<span class='job-title' style='border-bottom:2px solid #eeeeee;margin:5px;'><img src='img/navigate.png' /><span class='job-value job-navigate' style='color:blue;font-weight:bold!important'>" + lang.Mobile054 + "</span></span>");
                                     }
                                 }
+                               // console.log('-----> loadDownload type: ' + type + "; status: " + status);
                                 if (type == "all")
                                 {
                                     allJob.push(id);
-                                    newDownload(html_file, details);
-
+                                    newDownload(html_file, details, status);
+                                   // console.log('-----> html_file: ', html_file);
+                                   // console.log('----> details: ', details);
                                     if (status == "2")
                                     { //if it's scheduled planned job
+                                        console.log('DEBUG status is 1',status);
                                         receivedJob.push(id); //push in array for status change to received
                                         $('#main .jobList li[job_id=' + id + ']').attr('job_status', '12'); //update status display in advanced
                                         console.log('new for id ' + id + ', count = ' + count);
@@ -3002,6 +3532,7 @@ function loadJob(type) {
                                     $('#main .jobCount span').html(jobsLoaded);
                                 } else if (type == "new")
                                 {
+                                    //alert("DEBUG status is 123",status);
                                     if (status == "2")
                                     {
                                         newJob = true;
@@ -3015,6 +3546,7 @@ function loadJob(type) {
                                         jobsLoaded++;
                                         $('#main .jobCount span').html(jobsLoaded);
                                     } else if (status == "8" || status == "9" || status == "12" || status == "13") { //ended/handover/received/uploading job that is likely to be a broadcast
+
                                         offset++;
                                     }
                                     count++;
@@ -3075,28 +3607,29 @@ function loadJob(type) {
                                         console.log("TYPE NEW");
                                         loadDownload("new");
                                     }
-                                } 
-                                else 
+                                }
+                                else
                                 { //no more jobs to fetch, proceed to bind list items
                                     $('#main .jobList li').off('click');
                                     $('#main .jobList li').one('click', function () {
-                                        if ($(this).attr('name') != null && $(e.target).attr('class') != "job-value job-navigate"  && $(e.target).attr('class') != "e-warrant") {
-                                            
+                                        if ($(this).attr('name') != null && $(e.target).attr('class') != "job-value job-navigate" && $(e.target).attr('class') != "job-media" && $(e.target).attr('class') != "e-warrant") {
+
                                             var timeleft = jobDuration;
                                             jobEndedInTime = false ;
                                             jobDurationTimer = setInterval(function(){
                                                 timeleft--;
                                                 if(timeleft <= 0){
                                                         clearInterval(jobDurationTimer);
-                                                        jobEndedInTime = true ;  
+                                                        jobEndedInTime = true ;
                                                 }
-                                            },1000); 
-        
+                                            },1000);
+
                                             goForm($(this).attr('job_id'), $(this).attr('name'), $(this).attr('job_name'), $(this).attr('job_type_id'), $(this).attr('job_status'), false);
                                         }
                                     });
                                     $('#main .jobList .job-navigate').unbind('click'); //xxx
                                     $('#main .jobList .job-navigate').bind('click', function () {
+                                       console.log('Navigation');
                                         var lat = $(this).parent().parent().attr('latitude');
                                         var lng = $(this).parent().parent().attr('longitude');
                                         if (lat != "0" && lng != "0" && lat != undefined && lng != undefined) {
@@ -3104,7 +3637,7 @@ function loadJob(type) {
     //                                        var staticmap = 'https://maps.googleapis.com/maps/api/staticmap?center=' + lat + ',' + lng + '&zoom=15&size=260x260&maptype=roadmap&markers=color:red%7C' + lat + ',' + lng;
                                             var staticmap = 'http://www.v3nity.com:80/V3Nity4/googleapi?type=map&action=static&lat=' + lat + '&lon=' + lng + '&maptype=roadmap&zoom=15&width=260&height=260'; // not using databaseIP cause only V3Nity4 have this new function as of 20 sep
                                             confirmPopup(
-                                                    "<div style='min-width:260px;min-height:260px'><img src='" + staticmap + "' style='max-height:100%;max-width:100%'/></div>"
+                                                    "<div style='min-width:260px;min-height:260px'><img src='" + staticmap + "' style='max-height:200%;max-width:200%'/></div>"
                                                     , function (response) {
                                                         rebindMainJobList();
                                                         if (response == 2) { //if Yes
@@ -3117,15 +3650,15 @@ function loadJob(type) {
                                                             }
                                                             $("#confirmPopup").css({"width": "initial"});
                                                         } else {
-                                                            //else do nothing	
+                                                            //else do nothing
                                                             $("#confirmPopup").css({"width": "initial"});
                                                         }
                                                     }, lang.Mobile053, ["✔", "➡"]);
                                         } else {
-                                            // navigator.notification.alert('Unable to show map. Location coordinates are not available for this job.',function(){},'Coordinates Unavailable','✔');										
+                                            // navigator.notification.alert('Unable to show map. Location coordinates are not available for this job.',function(){},'Coordinates Unavailable','✔');
                                         }
                                     });
-                                    
+
                                     $('#main .jobList .e-warrant').unbind('click');
                                     $('#main .jobList .e-warrant').bind('click', function () {
                                         console.log("Open PDF1");
@@ -3136,37 +3669,38 @@ function loadJob(type) {
                                        // window.open(str, '_blank', 'location=yes')
                                        rebindMainJobList();
                                        //loadJob("all");
-                                       
-                                    });                                
-                                    
+
+                                    });
+
                                 }
                             }
 
                             // spinOut()
-                        } 
+                        }
                         else if (jobsLoaded != 0)
                         { //no more jobs to fetch, proceed to bind list items
     //                        console.log("Fetching Finished.");
     //                        console.log("ALL JOBS: " + allJob.toString());
                             $('#main .jobList li').off('click');
                             $('#main .jobList li').one('click', function (e) {
-                                if ($(this).attr('name') != null && $(e.target).attr('class') != "job-value job-navigate"  && $(e.target).attr('class') != "e-warrant") {
-                                    
+                                if ($(this).attr('name') != null && $(e.target).attr('class') != "job-value job-navigate" && $(e.target).attr('class') != "job-media" && $(e.target).attr('class') != "e-warrant") {
+
                                     var timeleft = jobDuration;
                                     jobEndedInTime = false ;
                                     jobDurationTimer = setInterval(function(){
                                         timeleft--;
                                         if(timeleft <= 0){
                                                 clearInterval(jobDurationTimer);
-                                                jobEndedInTime = true ;  
+                                                jobEndedInTime = true ;
                                         }
-                                    },1000); 
-        
+                                    },1000);
+
                                     goForm($(this).attr('job_id'), $(this).attr('name'), $(this).attr('job_name'), $(this).attr('job_type_id'), $(this).attr('job_status'));
                                 }
                             });
-                            $('#main .jobList .job-navigate').unbind('click'); 
+                            $('#main .jobList .job-navigate').unbind('click');
                             $('#main .jobList .job-navigate').bind('click', function () {
+                                console.log("DEBUG 1");
                                 var lat = $(this).parent().parent().attr('latitude');
                                 var lng = $(this).parent().parent().attr('longitude');
                                 if (lat != "0" && lng != "0" && lat != undefined && lng != undefined) {
@@ -3192,10 +3726,10 @@ function loadJob(type) {
                                                 }
                                             }, "Map", ["✔", "➡"]);
                                 } else {
-                                    // navigator.notification.alert('Unable to show map. Location coordinates are not available for this job.',function(){},'Coordinates Unavailable','✔');								
+                                    // navigator.notification.alert('Unable to show map. Location coordinates are not available for this job.',function(){},'Coordinates Unavailable','✔');
                                 }
                             });
-                            
+
                             $('#main .jobList .e-warrant').unbind('click');
                             $('#main .jobList .e-warrant').bind('click', function () {
                                 console.log("Open PDF2");
@@ -3206,8 +3740,8 @@ function loadJob(type) {
                                 rebindMainJobList();
                                 //loadJob("all");
                               //  window.open(str, '_blank', 'location=yes')
-                            });                                
-                            
+                            });
+
                             if (newJob)
                             { //if new jobs is loaded in loadNew
                                 navigator.notification.beep(1);
@@ -3236,15 +3770,15 @@ function loadJob(type) {
             });
 
         }else {
-            
-            
-            
-            ////Load Offline job 
+
+
+
+            ////Load Offline job
             $('#main .jobList ul').html(''); //clear list
             $('#main .jobCount span').html('0'); //reset count
             jobsLoaded = 0;
             allJob = [];
-            
+
             var receivedJob = [];
             count = 0;
 
@@ -3255,16 +3789,16 @@ function loadJob(type) {
             }
 
             db.getAll('jobdetails',function(results) {
-                console.log('N Result ' + JSON.stringify(results)); 
+                console.log('N Result ' + JSON.stringify(results));
                 if (results.rows.length > 0){
-                    
+
                     for (var i = 0; i < results.rows.length; i++) {
-                        
+
                         var duration = results.rows.item(i).duration;
                         var schedule_dt = results.rows.item(i).schedule_dt;
                         var format_dt = schedule_dt.slice(0, 4) + "/" + schedule_dt.slice(4, 6) + "/" + schedule_dt.slice(6, 8) + " " + schedule_dt.slice(8, 10) + ":" + schedule_dt.slice(10, 12) + ":" + schedule_dt.slice(12, 14);
                         var id = results.rows.item(i).id;
-                        
+
                         var jobIsUploading = false;
                         for (var j = 0 ; j < uploadQueueArr.length ; j++)
                         {
@@ -3274,12 +3808,12 @@ function loadJob(type) {
                                 jobIsUploading = true;
                                 break;
                             }
-                        }                        
+                        }
                         if (jobIsUploading)
                         {
                             count++;
                             continue;
-                        }                        
+                        }
 
                         var job_type_id = results.rows.item(i).job_type_id;
                         var job_type;
@@ -3302,10 +3836,11 @@ function loadJob(type) {
                         }
                         var template_name = results.rows.item(i).template_name;
                         var details = Base64.decode(results.rows.item(i).details);
-                        var html_file = id + "_" + schedule_dt + "_" + user_id + ".v3";                        
-                        
+                        var html_file = id + "_" + schedule_dt + "_" + user_id + ".v3";
+
                         if ($('li[job_id=' + id + ']').length == 0)
                         { //check if alrdy exist in local
+                            console.log('here if 11 ********')
                             $('#main .jobList ul').append("<li name='" + html_file + "' location_desc='" + description + job_location  + "' job_name='" + template_name + "' job_id='" + id + "' job_type_id='" + job_type_id + "' job_status='" + status + "' latitude='" + latitude + "' longitude='" + longitude + "'>" +
                                     "<span class='job-title'><img src='img/location.png' /><span class='job-value job-location'>" + job_location + "</span></span><br>" +
                                     "<span class='job-title'><img src='img/job.png' /><span class='job-value job-name'>" + template_name + "</span></span><br>" +
@@ -3318,9 +3853,10 @@ function loadJob(type) {
                                     "</li>");
                             if (latitude != 0 && longitude != 0) {
                                 $('li[job_id=' + id + ']').prepend("<span class='job-title' style='border-bottom:2px solid #eeeeee;margin:5px;'><img src='img/navigate.png' /><span class='job-value job-navigate' style='color:blue;font-weight:bold!important'>" + lang.Mobile054 + "</span></span>");
-                            } 
+                            }
                         } else
                         { //else update
+                            console.log('here if 111 ********')
                             $('#main .jobList li[job_id=' + id + ']').attr('name', html_file);
                             $('#main .jobList li[job_id=' + id + ']').attr('job_name', template_name);
 							$('#main .jobList li[job_id=' + id + ']').attr('location_desc', description + job_location);
@@ -3344,10 +3880,12 @@ function loadJob(type) {
                         if (type == "all")
                         {
                             allJob.push(id);
+                            console.log('newDownload 3',status);
                             newDownload(html_file, details);
-
+                          //  alert("DEBUG status is",status);
                             if (status == "2")
                             { //if it's scheduled planned job
+                              //  alert("DEBUG status is:",status);
                                 receivedJob.push(id); //push in array for status change to received
                                 $('#main .jobList li[job_id=' + id + ']').attr('job_status', '12'); //update status display in advanced
                                 console.log('new for id ' + id + ', count = ' + count);
@@ -3359,8 +3897,10 @@ function loadJob(type) {
                         {
                             if (status == "2")
                             {
+                              // alert("DEBUG new job start..");
                                 newJob = true;
                                 allJob.push(id);
+                                console.log('newDownload 4',status);
                                 newDownload(html_file, details);
 
                                 receivedJob.push(id); //push in array for status change to received
@@ -3373,15 +3913,15 @@ function loadJob(type) {
                                 offset++;
                             }
                             count++;
-                        }  
-                                         
-                        console.log('N Result data ' + id); 
-                        
+                        }
+
+                        console.log('N Result data ' + id);
+
                     }
-                    
+
                     var now = getCurrentDateTime(4);
-                    $('#main .lastUpdate span').html(now);  
-                    
+                    $('#main .lastUpdate span').html(now);
+
                     //no more jobs to fetch, proceed to bind list items
                     $('#main .jobList li').off('click');
                     $('#main .jobList li').one('click', function () {
@@ -3389,22 +3929,23 @@ function loadJob(type) {
 //                            goForm($(this).attr('job_id'), $(this).attr('name'), $(this).attr('job_name'), $(this).attr('job_type_id'), $(this).attr('job_status'), false);
 //                        }
                         if ($(this).attr('name') != null ) {
-                            
+
                             var timeleft = jobDuration;
                             jobEndedInTime = false ;
                             jobDurationTimer = setInterval(function(){
                                 timeleft--;
                                 if(timeleft <= 0){
                                         clearInterval(jobDurationTimer);
-                                        jobEndedInTime = true ;  
+                                        jobEndedInTime = true ;
                                 }
-                            },1000); 
-        
+                            },1000);
+
                             goForm($(this).attr('job_id'), $(this).attr('name'), $(this).attr('job_name'), $(this).attr('job_type_id'), $(this).attr('job_status'), false);
-                        }                        
+                        }
                     });
                     $('#main .jobList .job-navigate').unbind('click'); //xxx
                     $('#main .jobList .job-navigate').bind('click', function () {
+                        console.log("DEBUG 2");
                         var lat = $(this).parent().parent().attr('latitude');
                         var lng = $(this).parent().parent().attr('longitude');
                         if (lat != "0" && lng != "0" && lat != undefined && lng != undefined) {
@@ -3425,24 +3966,24 @@ function loadJob(type) {
                                             }
                                             $("#confirmPopup").css({"width": "initial"});
                                         } else {
-                                            //else do nothing	
+                                            //else do nothing
                                             $("#confirmPopup").css({"width": "initial"});
                                         }
                                     }, lang.Mobile053, ["✔", "➡"]);
                         } else {
-                            // navigator.notification.alert('Unable to show map. Location coordinates are not available for this job.',function(){},'Coordinates Unavailable','✔');										
+                            // navigator.notification.alert('Unable to show map. Location coordinates are not available for this job.',function(){},'Coordinates Unavailable','✔');
                         }
-                    });                    
-                    
-                    
+                    });
+
+
                     console.log('N Result data successfully loaded ');
-                    
-                    
+
+
                 }
-            },null);                
-            
+            },null);
+
         }
-        
+
         // 20220222 refresh according to search
         setTimeout(function()
         {
@@ -3454,15 +3995,15 @@ function loadJob(type) {
               {
                   $(this).css("display","list-item");
               }
-              else 
+              else
               {
                   $(this).css("display","none");
               }
-          }); 
-        },2000);        
-        
+          });
+        },2000);
+
     }
-    
+
 }
 
 
@@ -3471,7 +4012,7 @@ function loadHistoryJob(type) {
     if (localStorage.getItem("uploadQueue") != "[]" && localStorage.getItem("uploadQueue") != null) {
         tuploadQueue = JSON.parse(window.localStorage["uploadQueue"]).toString().split(",");
         uploadCount = tuploadQueue.length;
-        $('.uploadCount span').html(uploadCount); //update Upload count	
+        $('.uploadCount span').html(uploadCount); //update Upload count
     } else {
         $('.uploadCount span').html("0"); //update Upload count
     }
@@ -3480,29 +4021,30 @@ function loadHistoryJob(type) {
     var offset = 0;
     var downloadURL;
     var newJob; //boolean to determine whether there were new jobs loaded
-    
+
     loadHistoryDownload("all");
     newJob = false;
-    
-    
+
+
 //    var dateSel = $('#mainSelectedDate').val();
 //    console.log("DATESEL: " + dateSel);
 
     function loadHistoryDownload(type) {
-              
+
         downloadURL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=downloadhistory&fetch=" + fetch + "&offset=" + offset + "&driver=" + user_id + "&mode=2";
-        
+
         console.log("downloadHistoryURL: " + downloadURL);
-        
+
         $.ajax({
             url: downloadURL,
             type: 'GET',
             timeout: 30000,
-            success: function (data) 
+            success: function (data)
             {
                 if (data.result)
                 {
                     // only reset if successfully retrieve
+                     console.log('Data is :::',JSON.stringify(data));
                     if (parseInt(offset,10) == 0)
                     {
                         $('#main .jobList ul').html(''); //clear list
@@ -3510,10 +4052,10 @@ function loadHistoryJob(type) {
                         jobsLoaded = 0;
                         allJob = [];
                     }
-        
+
                     if (data.data.total != 0)
                     {
-                        count = 0;   
+                        count = 0;
                         for (count = 0 ; count< data.data.total ; count++){
                             var schedule_dt = data.data.jobs[count].schedule_dt;
                             var format_dt = schedule_dt.slice(0, 4) + "/" + schedule_dt.slice(4, 6) + "/" + schedule_dt.slice(6, 8) + " " + schedule_dt.slice(8, 10) + ":" + schedule_dt.slice(10, 12) + ":" + schedule_dt.slice(12, 14);
@@ -3539,7 +4081,7 @@ function loadHistoryJob(type) {
                             }
                             var template_name = data.data.jobs[count].template_name;
                             var html_file = id + "_" + schedule_dt + "_" + user_id + ".v3";
-                            
+                            console.log('here if 1111 ********')
                             $('#main .jobList ul').append("<li name='" + html_file + "' job_name='" + template_name + "' job_id='" + id + "' job_type_id='" + job_type_id + "' job_status='" + status + "' latitude='" + latitude + "' longitude='" + longitude + "'>" +
                                 "<span class='job-title'><img src='img/location.png' /><span class='job-value job-location'>" + job_location + "</span></span><br>" +
                                 "<span class='job-title'><img src='img/job.png' /><span class='job-value job-name'>" + template_name + "</span></span><br>" +
@@ -3550,29 +4092,31 @@ function loadHistoryJob(type) {
                                 "<span class='job-title'><img src='img/id.png' /><span class='job-value job-id'>" + job_number + "</span></span><br>" +
                                 Base64.decode(preview) +
                                 "</li>");
-                            
+
                             if (latitude != 0 && longitude != 0) {
                                 $('li[job_id=' + id + ']').prepend("<span class='job-title' style='border-bottom:2px solid #eeeeee;margin:5px;'><img src='img/navigate.png' /><span class='job-value job-navigate' style='color:blue;font-weight:bold!important'>" + lang.Mobile054 + "</span></span>");
-                            } 
-                            
+                            }
+
                             $('#main .jobList li[job_id=' + id + ']').attr('download_url', data.data.jobs[count].download_url);
-                            
-                            console.log('DL URL: ' + data.data.jobs[count].download_url)
-                           
+
+                            console.log('DL URL: ' + JSON.stringify(data.data.jobs[count].download_url))
+
                             jobsLoaded = jobsLoaded +1;
                             $('#main .jobCount span').html(jobsLoaded);
                         }
                         var now = getCurrentDateTime(4);
                         $('#main .lastUpdate span').html(now);
-                       
+
                         if(jobsLoaded < data.data.overall_total) {
                             offset = offset + fetch;
                             loadHistoryDownload("all");
                         }else{
-                            $('#main .jobList li').on('click', function () { 
+                            $('#main .jobList li').on('click', function () {
+                                alert("download pdf");
                                 openUrl($(this).attr('download_url'))
+
 //                                window.cordova.InAppBrowser.open($(this).attr('download_url'), '_system', 'location=no','hardwareback=yes');
-                            });   
+                            });
                         }
                        // updateHistoryJob();
 
@@ -3596,25 +4140,25 @@ function loadHistoryJob(type) {
                 //console.log("Error: " + error.responseText + " errorText: " + errorText + " errorThrown: " + errorThrown);
             }
         });
-        
+
     }
 }
 
 function openUrl( link ) {
-	
+
 	//link = "http://www.africau.edu/images/default/sample.pdf";
    // alert(link);
    //var ref = window.open(encodeURI( link), '_system',        'transitionstyle=fliphorizontal');
    //var ref2 = window.open(encodeURI(link), '_blank', 'location=no');
    //var ref3 = window.open(encodeURI(link), '_system', 'location=no');
-   
-   
+
+
    //window.open(encodeURI(link), '_system');
-   
+
    window.open(encodeURI(link), "_system", "location=no,toolbar=no,hardwareback=yes");
-	
-   
-   
+
+
+
 }
 
 function updateJob() {
@@ -3623,11 +4167,11 @@ function updateJob() {
         if (localStorage.getItem("uploadQueue") != "[]" && localStorage.getItem("uploadQueue") != null) {
             tuploadQueue = JSON.parse(window.localStorage["uploadQueue"]).toString().split(",");
             uploadCount = tuploadQueue.length;
-            $('.uploadCount span').html(uploadCount); //update Upload count	
+            $('.uploadCount span').html(uploadCount); //update Upload count
         } else {
             $('.uploadCount span').html("0"); //update Upload count
         }
-        //do something that loops through each job, get their ID, check and update their statuses 	
+        //do something that loops through each job, get their ID, check and update their statuses
         var jobList = [];
         var jobStatus = [];
 
@@ -3647,6 +4191,7 @@ function updateJob() {
                     {
                         console.log("checkstatus success: " + data.arrStatus);
                         jobStatus = data.arrStatus.split(",");
+                      //  jobStatus.reverse();
                         var finalJobCount = jobStatus.length;
                         for (i = 0; i < $('#main .jobList li').length; i++) {
                             switch (jobStatus[i]) {
@@ -3661,7 +4206,7 @@ function updateJob() {
                                     $('#main .jobList li').eq(i).attr('job_status', jobStatus[i]);
                                     $('#main .jobList li').eq(i).find('.job-status').html(stat(jobStatus[i]));
                                     break;
-                                case "0": //Deleted	
+                                case "0": //Deleted
                                 case "8": //Ended
                                 case "9": //Handover
                                 case "10": //Rejected
@@ -3684,7 +4229,7 @@ function updateJob() {
                                     $('#main .jobList li').eq(i).remove();
                                     finalJobCount = finalJobCount - 1;
                                     break;
-                                case "5": //Acknowledged (means Broadcast Job) // JX : not sure if this will cause error as ajax is callback and the html_file might be replaced? need to test. 
+                                case "5": //Acknowledged (means Broadcast Job) // JX : not sure if this will cause error as ajax is callback and the html_file might be replaced? need to test.
                                     var job_id = $('#main .jobList li').eq(i).attr('job_id');
                                     var html_file = $('#main .jobList li').eq(i).attr('name');
                                     var checkstatus_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=checkStatus&jobScheduleIds=" + job_id;
@@ -3758,30 +4303,32 @@ function updateJob() {
 var isInForm = false;
 
 function goForm(job_id, html_file, job_name, job_type_id, job_status) {
-    
+
     console.log("isInForm value " + isInForm);
-    
+   // console.log('-----> job_id: ' + job_id + "; html_file:" + html_file + "; job_type_id: " + job_type_id + "; job_status: " + job_status);
+
     if (isInForm === true)
     {
         console.log("CHX20201030 ALREADY IN FORM!! dont continue")
         return;
     }
-	
+
 	$("#inputSearch").val('');
-    
+
     isInForm = true;
-    
-    
+
+
     var access = checkBeaconJob(job_id);
-    
-    
-    if (access) 
+
+
+    if (access)
     {
         spinIn();
         window.sessionStorage["selected_id"] = job_id;
         window.sessionStorage["selected_file"] = html_file;
         window.sessionStorage["selected_name"] = job_name;
         var checkstatus_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=checkStatus&jobScheduleIds=" + job_id;
+        //console.log('-----> checkStatusURL: ' + checkstatus_URL);
         $.ajax({
             url: checkstatus_URL,
             type: 'GET',
@@ -3850,36 +4397,36 @@ function goForm(job_id, html_file, job_name, job_type_id, job_status) {
             error: function (error, errorText, errorThrown) {
                 spinOut();
                 rebindMainJobList();
-                
+
                 writeLogs("Error Check Job Status for Job Id : " + job_id + "Job Type : " + job_type_id + "\n Error response" + error + " errorText: " + errorText + " errorThrown: " + errorThrown);
                 acceptWithoutNetwork();
 //                navigator.notification.alert(lang.Mobile068, function () {
 //                }, lang.Mobile055, '✔');
             }
         });
-    } 
-    else 
+    }
+    else
     {
         navigator.notification.alert('Please move nearer to beacon', function () {
         }, 'Alert', '✔');
         isInForm = false;
     }
-    
-    
+
+
     // CHX 20190807 allow attend job without signal
     function acceptWithoutNetwork()
     {
         spinIn();
 
-        if (job_type_id == "1" || job_type_id == "3") 
+        if (job_type_id == "1" || job_type_id == "3")
         { //if planned job or adhoc job
-            if (job_status != "0") 
+            if (job_status != "0")
             {
                 spinOut();
                 startJob();
                 writeLogs("Starting Job Id : " + job_id + " Job Type : " + job_type_id);
-            } 
-            else 
+            }
+            else
             {
                 spinOut();
                 navigator.notification.alert(lang.Mobile056, function () {
@@ -3887,8 +4434,8 @@ function goForm(job_id, html_file, job_name, job_type_id, job_status) {
                 console.log('Find auto refresh 1 '  );
                 if (isJobHistoryCheck  == true) {loadHistoryJob("all"); } else {loadJob("all"); }
             }
-        } 
-        else if (job_type_id == "2") 
+        }
+        else if (job_type_id == "2")
         { //if broadcast job
             spinOut();
             navigator.notification.alert(lang.Mobile068, function () {
@@ -3898,7 +4445,7 @@ function goForm(job_id, html_file, job_name, job_type_id, job_status) {
 
 
 
-    function startJob() 
+    function startJob()
     {
         if (job_type_id == "1" && job_status != "12" && job_status != "2") { //job is a planned and is not received or scheduled
             spinIn();
@@ -3961,17 +4508,17 @@ function goForm(job_id, html_file, job_name, job_type_id, job_status) {
     }
 }
 
-function confirmStartPlanned(response) 
+function confirmStartPlanned(response)
 {
-    if (response == 2) 
+    if (response == 2)
     { //if Yes
-        
+
         // this is the trigger for capturing lon-lat when starting job
         if (captureStartEndLocation)
         {
             isStartJob = true;
         }
-        
+
         var startedStatus = "7";
         var job_id = window.sessionStorage["selected_id"];
         var html_file = window.sessionStorage["selected_file"];
@@ -3984,14 +4531,14 @@ function confirmStartPlanned(response)
         var asset_id = window.sessionStorage["assetId"];
         var statuschange_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=statusChange&jobScheduleIds=" + job_id
                 + "&statusId=" + startedStatus + "&dateTime=" + now + "&assetId=" + asset_id;
-        
+
         $.ajax({
             url: statuschange_URL,
             type: 'GET',
             timeout: 30000,
-            success: function (data) 
+            success: function (data)
             {
-                if (data.result) 
+                if (data.result)
                 {
                     writeLogs("statusChange success: Started " + job_id + " status = " + startedStatus + " FileName " + html_file);
                     //console.log("statuschange success: Started " + job_id);
@@ -4002,8 +4549,8 @@ function confirmStartPlanned(response)
                     openDividedForm(html_file);
                     getCurrentLocationNew(7,job_id);
                     //26Sep
-                } 
-                else 
+                }
+                else
                 {
                     writeLogs("confirmStartPlanned,statuschange fail: result return fail, text:" + data.text)
                     //console.log("statuschange fail: result return fail, text:" + data.text);
@@ -4020,11 +4567,11 @@ function confirmStartPlanned(response)
 //                }, lang.Mobile066, '✔');
                 newPendingStatus(job_id, startedStatus, now, '', asset_id);
                 startPlannedWithoutNetwork(job_name, html_file, job_id);
-                
+
             }
         });
-    } 
-    else 
+    }
+    else
     {
         rebindMainJobList();
         isInForm = false;
@@ -4092,16 +4639,16 @@ function confirmAcceptBroadcast(response) {
 }
 
 function confirmBackForm(response) {
-    if (response == 2) { //if OK     
+    if (response == 2) { //if OK
         sessionStorage.removeItem('selected_id');
         sessionStorage.removeItem('selected_file');
         sessionStorage.removeItem('selected_name');
 //        sessionStorage.removeItem('beacon_id');
         spinIn();
-        
+
         clearTimeout(jobDurationTimer);
         jobEndedInTime = true;
-        
+
         clearTimeout(otptimerId);
         setTimeout(function () {
             $.mobile.changePage("#main", {transition: 'fade', reverse: 'true'});
@@ -4118,7 +4665,7 @@ function confirmBackForm(response) {
 
 
 function confirmSubmit(response) {
-    if (response == 2) 
+    if (response == 2)
     { //if Yes
         if(jobEndedInTime){
 
@@ -4139,7 +4686,7 @@ function confirmSubmit(response) {
                     geolocFail();
                 }, geoOptions);
 
-                function geolocFail() 
+                function geolocFail()
                 {
                     var geoOptions = {enableHighAccuracy: false, timeout: 10000};
                     navigator.geolocation.getCurrentPosition(function (position)
@@ -4151,31 +4698,29 @@ function confirmSubmit(response) {
                     }, function (error) {
                         spinOut();
                         navigator.notification.alert('Unable to submit, please try again.', function () {
-                        }, 'Location Not Captured', '✔');                   
+                        }, 'Location Not Captured', '✔');
                     }, geoOptions);
                 }
             }
             else
             {
                 newSubmitForm(window.sessionStorage["selected_file"]);
-            }            
-            
+            }
+
         }else {
-            
+
             navigator.notification.alert('Time is not up yet.', function () {
-                        }, 'Submission not allowed', '✔');  
-            
+                        }, 'Submission not allowed', '✔');
+
         }
-        
-       
+
+
         //26Sep
 //        submitForm(window.sessionStorage["selected_file"]);
     } else {
-        //else do nothing	
+        //else do nothing
     }
 }
-
-
 
 function encodeUnicode(theString) {
     var unicodeString = '';
@@ -4191,54 +4736,51 @@ function encodeUnicode(theString) {
     encodeString = window.btoa(unicodeString)
     return encodeString;
 }
-
-
+function onPhotoFail(message) {
+    alert("❌ getPicture failed: " + message);
+    console.log("Camera Error: ", message);
+}
 function takephoto(backupGallery) {
+backupGallery = true;
     var first = $picPointer.length - 1;
-//    var options = {};
-//    var networksArray = [];
 
-//    cordova.plugins.backgroundMode.disable();
 
-//    console.log('TFF1 ' + backupGallery);
 
     navigator.camera.getPicture(function (fileURI) {
+
         $picPointer.eq(first).attr("data-latitude", "0");
         $picPointer.eq(first).attr("data-longitude", "0");
         $picPointer.eq(first).attr("data-block-unit", "0");
         $picPointer.eq(first).attr("data-block-level", "0");
         $picPointer.eq(first).attr("data-location-name", "0");
         $picPointer.eq(first).attr("data-ver", "403");
-		$picPointer.eq(first).attr("data-title", "");
-        
+        $picPointer.eq(first).attr("data-title", "");
+
         var hideImgDate = $picPointer.eq(first).parent().parent().attr("data-hideimagedate");
 
-        if (typeof hideImgDate == 'undefined') { // if cannot find attr data-hideimagedate, display both date and time by default
+        if (typeof hideImgDate == 'undefined') {
             var now = getCurrentDateTime(1);
         } else {
-
-            if (($picPointer.eq(first).parent().parent().attr("data-hideimagedate") == "true") && ($picPointer.eq(first).parent().parent().attr("data-hideimagetime") == "true")) { // hide both date and time
+            if (($picPointer.eq(first).parent().parent().attr("data-hideimagedate") == "true") && ($picPointer.eq(first).parent().parent().attr("data-hideimagetime") == "true")) {
                 var now = "";
-            } else if (($picPointer.eq(first).parent().parent().attr("data-hideimagedate") == "true") && ($picPointer.eq(first).parent().parent().attr("data-hideimagetime") == "false")) { // hide date display time
+            } else if (($picPointer.eq(first).parent().parent().attr("data-hideimagedate") == "true") && ($picPointer.eq(first).parent().parent().attr("data-hideimagetime") == "false")) {
                 var now = getCurrentDateTime(2);
-            } else if (($picPointer.eq(first).parent().parent().attr("data-hideimagedate") == "false") && ($picPointer.eq(first).parent().parent().attr("data-hideimagetime") == "true")) { // display date hide time
+            } else if (($picPointer.eq(first).parent().parent().attr("data-hideimagedate") == "false") && ($picPointer.eq(first).parent().parent().attr("data-hideimagetime") == "true")) {
                 var now = getCurrentDateTime(3);
-            } else { // display both
+            } else {
                 var now = getCurrentDateTime(1);
             }
         }
         $picPointer.eq(first).attr("data-timestamp", now);
-
-        spinInPhoto(); // this is to prevent them from touch anything while photo is processing.
+        spinInPhoto();
         var spinTimeout = setTimeout(function () {
             $picPointer.eq($picPointer.length - 1).remove();
             spinOut();
             navigator.notification.alert("Try going outdoor or near a window, and take photo again.", function () {
-            }, "Unable to Capture Your Location", '✔');	            
-        }, 25000); // incase it never spin out and hang there.
+            }, "Unable to Capture Your Location", '✔');
+        }, 25000);
 
-        if ($picPointer.eq(first).parent().parent().attr("data-geotag") == "false") 
-        {
+        if ($picPointer.eq(first).parent().parent().attr("data-geotag") == "false") {
             console.log("Geotag is false.");
             $picPointer.eq(first).attr("data-latitude", "0");
             $picPointer.eq(first).attr("data-longitude", "0");
@@ -4249,7 +4791,11 @@ function takephoto(backupGallery) {
                         photoPreview($(this).attr('src'), $(this).attr('data-latitude'), $(this).attr('data-longitude'), $(this).attr('data-block-unit'), $(this).attr('data-block-level'), $(this).attr('data-location-name'), $(this).attr('data-title'));
                     }
                 }});
-            textWatermark(fileURI, "", now, function (base64Img) { //watermark photo with timestamp
+            textWatermark(fileURI, "", now, function (base64Img) {
+                var stringLength = base64Img.length - 'data:image/png;base64,'.length;
+                var sizeInBytes = 4 * Math.ceil((stringLength / 3)) * 0.5624896334383812;
+                var sizeInKb = sizeInBytes / 1000;
+                console.log("test photo size" + sizeInKb);
                 $picPointer.eq(first).css('background-color', 'black');
                 $picPointer.eq(first).attr('src', base64Img);
                 spinOut();
@@ -4261,99 +4807,109 @@ function takephoto(backupGallery) {
                 }
                 writeLogs("Camera Photo Successfully Loaded w/o GeoTag. PhotoBackup = " + backupGallery);
             }, null);
-        } 
-        else
-        {
-            $picPointer.on({'click' : function () {
-                if ($picPointer.attr('src') != "") {
-                    $photoPreviewPointer = $(this);
-                    photoPreview($(this).attr('src'), $(this).attr('data-latitude'), $(this).attr('data-longitude'), $(this).attr('data-block-unit'), $(this).attr('data-block-level'), $(this).attr('data-location-name'), $(this).attr('data-title'));
-                }
-            } });
-        
-            console.log('GPS1 ' );
-        
+
+        } else {
+            $picPointer.on({'click': function () {
+                    if ($picPointer.attr('src') != "") {
+                        $photoPreviewPointer = $(this);
+                        photoPreview($(this).attr('src'), $(this).attr('data-latitude'), $(this).attr('data-longitude'), $(this).attr('data-block-unit'), $(this).attr('data-block-level'), $(this).attr('data-location-name'), $(this).attr('data-title'));
+                    }
+                }});
+
+            console.log('GPS1 ');
+
             var geoOptions = {enableHighAccuracy: true, maximumAge: 0, timeout: 25000};
-            navigator.geolocation.getCurrentPosition(function (position) //add latlng attribute
-            {
-                //if ($picPointer.eq(first).attr('src') == "img/loading.png") {
-//                    clearTimeout(photolocation_timeout);
-                    console.log('GPS2 ' );
-                    console.log("Get Photo LongLat success: latitude:" + position.coords.latitude + ", longtitude:" + position.coords.longitude);
-                    $picPointer.eq(first).attr("data-latitude", position.coords.latitude);
-                    $picPointer.eq(first).attr("data-longitude", position.coords.longitude);
-                    $picPointer.eq(first).attr("data-location-name", "Location coordinates: " + position.coords.latitude + " , " + position.coords.longitude );
-                    
-                    var latN = position.coords.latitude.toString();
-                    var latP = latN.split('.');
-                    var laA = latP[0];
-                    var laB = latP[1];
-                    laB= laB.substring(0, 4);
+            navigator.geolocation.getCurrentPosition(function (position) {
+                console.log('GPS2 ');
+                console.log("Get Photo LongLat success: latitude:" + position.coords.latitude + ", longtitude:" + position.coords.longitude);
+                $picPointer.eq(first).attr("data-latitude", position.coords.latitude);
+                $picPointer.eq(first).attr("data-longitude", position.coords.longitude);
+                $picPointer.eq(first).attr("data-location-name", "Location coordinates: " + position.coords.latitude + " , " + position.coords.longitude);
 
-                    var lonN = position.coords.longitude.toString();
-                    var lonP = lonN.split('.');
-                    var loA = lonP[0];
-                    var loB = lonP[1];
-                    loB= loB.substring(0, 4);
+                var latN = position.coords.latitude.toString();
+                var latP = latN.split('.');
+                var laA = latP[0];
+                var laB = latP[1];
+                laB = laB.substring(0, 4);
 
-                    var LatName = laA + "." + laB;
-                    var LonName = loA + "." + loB;                    
-                    
-                    var locURL = databaseIP + "googleapi?type=geocode&action=reverse&lon=" + LonName + "&lat=" + LatName ;
-                    console.log('GPS3 ' );
-                    
-                    $.ajax({
-                        url: locURL,
-                        type: 'GET',
-                        timeout: 40000,
-                        success: function (data) {
-                           if (data.results != undefined) {
-                               console.log('GPS5 ' );
-                               if(data.results.length > 0){
-                                  if(data.results[0].formatted_address.length != 0) {
+                var lonN = position.coords.longitude.toString();
+                var lonP = lonN.split('.');
+                var loA = lonP[0];
+                var loB = lonP[1];
+                loB = loB.substring(0, 4);
+
+                var LatName = laA + "." + laB;
+                var LonName = loA + "." + loB;
+
+                var locURL = databaseIP + "googleapi?type=geocode&action=reverse&lon=" + LonName + "&lat=" + LatName;
+                console.log('GPS3 ');
+
+                $.ajax({
+                    url: locURL,
+                    type: 'GET',
+                    timeout: 40000,
+                    success: function (data) {
+                        if (data.results != undefined) {
+                            console.log('GPS5 ');
+                            if (data.results.length > 0) {
+                                if (data.results[0].formatted_address.length != 0) {
                                     $picPointer.eq(first).attr("data-location-name", "Location: " + data.results[0].formatted_address);
-                                  } 
-                               }else if(data.plus_code.compound_code.length != 0){
-                                   $picPointer.eq(first).attr("data-location-name", "Location: " + data.plus_code.compound_code.split(' ').slice(1).join(' '));
-                               }
-                           }
-                        },
-                        error: function (error, errorText, errorThrown) { 
-                            console.log('GPS4 ' );
-                            if ($picPointer.eq(first).attr('src') == "img/loading.png") {                            
-                                navigator.notification.alert("Please try again for GPS location capture.", function () {
-                                }, "Unable to Capture GPS", '✔');	
-                                spinOut();
+                                }
+                            } else if (data.plus_code.compound_code.length != 0) {
+                                $picPointer.eq(first).attr("data-location-name", "Location: " + data.plus_code.compound_code.split(' ').slice(1).join(' '));
                             }
                         }
-                    });
-                    
-                    $picPointer.on({'click' : function () {
-                            if ($picPointer.attr('src') != "") {
-                                $photoPreviewPointer = $(this);
-                                photoPreview($(this).attr('src'), $(this).attr('data-latitude'), $(this).attr('data-longitude'), $(this).attr('data-block-unit'), $(this).attr('data-block-level'), $(this).attr('data-location-name'), $(this).attr('data-title'));
-                            }
-                    } });
-//                    var staticmap = 'https://maps.googleapis.com/maps/api/staticmap?center=' + position.coords.latitude + ',' + position.coords.longitude + '&zoom=18&size=400x400&maptype=roadmap&markers=color:red%7C' + position.coords.latitude + ',' + position.coords.longitude;
-//                    var staticmap = 'http://www.v3nity.com:80/V3Nity4/googleapi?type=map&action=static&lat=' + position.coords.latitude + '&lon=' + position.coords.longitude + '&maptype=roadmap&zoom=18&width=800&height=800';
-                    var staticmap = 'http://www.v3nity.com:80/V3Nity4/googleapi?type=map&action=static&lat=' + position.coords.latitude + '&lon=' + position.coords.longitude + '&maptype=roadmap&zoom=18'
-                            + '&width=' + window.sessionStorage["imgDimension"]
-                            + '&height=' + window.sessionStorage["imgDimension"];
-                    textWatermark(fileURI, staticmap, now, function (base64Img) { //watermark photo with timestamp
-                        $picPointer.eq(first).css('background-color', 'black');
-                        $picPointer.eq(first).attr('src', base64Img);
-                        spinOut();
-                        if (backupGallery) {
-                            saveProcessedImage(base64Img);
+                    },
+                    error: function (error, errorText, errorThrown) {
+                        console.log('GPS4 ');
+                        if ($picPointer.eq(first).attr('src') == "img/loading.png") {
+                            navigator.notification.alert("Please try again for GPS location capture.", function () {
+                            }, "Unable to Capture GPS", '✔');
+                            spinOut();
                         }
-                        if (typeof spinTimeout !== "undefined") {
-                            clearTimeout(spinTimeout);
+                    }
+                });
+
+                $picPointer.on({'click': function () {
+                        if ($picPointer.attr('src') != "") {
+                            $photoPreviewPointer = $(this);
+                            photoPreview($(this).attr('src'), $(this).attr('data-latitude'), $(this).attr('data-longitude'), $(this).attr('data-block-unit'), $(this).attr('data-block-level'), $(this).attr('data-location-name'), $(this).attr('data-title'));
                         }
-                        writeLogs("Camera Photo Successfully Loaded w GeoTag. PhotoBackup = " + backupGallery);
-                    }, geoOptions);
-                //}
+                    }});
+
+                console.log("DEBUG 3");
+                var staticmap = 'http://www.v3nity.com:80/V3Nity4/googleapi?type=map&action=static&lat=' + position.coords.latitude + '&lon=' + position.coords.longitude + '&maptype=roadmap&zoom=14' + '&width=' + window.sessionStorage["imgDimension"] + '&height=' + window.sessionStorage["imgDimension"];
+              //  onPhotoSuccess(fileURI,staticmap);
+                                          // Combine photo with static map
+//                                            combineImages(fileURI, staticmap, function(combinedImgData) {
+//
+//                //                                // Success callback for combining images
+//                //
+//                //                                // Save combined image to device's photo gallery
+//                                               saveToPhotoGallery(combinedImgData);
+//
+//                                        });
+
+
+                console.log("Width :" + window.sessionStorage["imgDimension"] + "height :" + window.sessionStorage["imgDimension"]);
+                textWatermark(fileURI, staticmap, now, function (base64Img) {
+                    $picPointer.eq(first).css('background-color', 'black');
+                    $picPointer.eq(first).attr('src', base64Img);
+                    spinOut();
+                    if (backupGallery) {
+                        console.log('Debug backupGallery');
+                        saveProcessedImage(base64Img);
+                        fileURI = base64Img;
+
+                    }
+                    clearTimeout(spinTimeout);
+                    if (typeof spinTimeout !== "undefined") {
+                        clearTimeout(spinTimeout);
+                    }
+                    writeLogs("Camera Photo Successfully Loaded w GeoTag. PhotoBackup = " + backupGallery);
+                }, geoOptions);spinTimeout
             }, function (error) {
-                console.log('GPS6 ' );
+                console.log('GPS6 ');
                 console.log("Get Photo LongLat Failed");
                 navigator.notification.alert("Photo is saved without geotag. Please ensure you have enabled location info.", function () {
                 }, "Unable to Capture GPS", '✔');
@@ -4366,9 +4922,10 @@ function takephoto(backupGallery) {
                             photoPreview($(this).attr('src'), $(this).attr('data-latitude'), $(this).attr('data-longitude'), $(this).attr('data-block-unit'), $(this).attr('data-block-level'), $(this).attr('data-location-name'), $(this).attr('data-title'));
                         }
                     }});
-                textWatermark(fileURI, "", now, function (base64Img) { //watermark photo without timestamp
+                textWatermark(fileURI, "", now, function (base64Img) {
                     $picPointer.eq(first).css('background-color', 'black');
                     $picPointer.eq(first).attr('src', base64Img);
+
                     spinOut();
                     if (backupGallery) {
                         saveProcessedImage(base64Img);
@@ -4379,11 +4936,9 @@ function takephoto(backupGallery) {
                     writeLogs("Camera Photo Successfully Loaded w/o GeoTag Failed. PhotoBackup = " + backupGallery + " Error for getCurrentPosition : " + error.code + " error message " + error.message);
                 }, geoOptions);
             }, geoOptions);
-        } // end of else, end of successhandler
-        
-        // reenable backgroundmode
-//        cordova.plugins.backgroundMode.enable();
-        
+
+        }
+
     }, onPhotoFail, {
         correctOrientation: true,
         saveToPhotoAlbum: false,
@@ -4393,7 +4948,286 @@ function takephoto(backupGallery) {
         sourceType: pictureSource.CAMERA,
         destinationType: destinationType.FILE_URI
     });
+
 }
+
+// Function to combine captured photo with static map
+function combineImages(photoURI, mapUrl, callback) {
+    // Load the captured photo and the static map image
+    var photo = new Image();
+    var map = new Image();
+
+    photo.onload = function() {
+        map.onload = function() {
+            // Create a canvas element to combine images
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+
+            // Calculate the width and height for the canvas
+            // Canvas width is the sum of both image widths
+            // Canvas height is the maximum height of the two images
+            canvas.width = photo.width + map.width;
+            canvas.height = Math.max(photo.height, map.height);
+
+            console.log('Combine Images 1');
+
+            // Draw the captured photo onto the canvas at position (0,0)
+            ctx.drawImage(photo, 0, 0);
+
+            // Draw the static map image to the right of the captured photo
+            ctx.drawImage(map, photo.width, 0);  // Position it at the end of the first image
+
+            // Get data URL of the combined image
+            var combinedImgData = canvas.toDataURL('image/jpeg');
+
+            // Callback with the combined image data
+            callback(combinedImgData);
+        };
+
+        // Set the source of the map image
+        map.src = mapUrl;
+    };
+    console.log('Combine Images');
+    // Set the source of the captured photo
+    photo.src = photoURI;
+}
+
+//function onPhotoSuccess(imageURI) {
+//    // Read the captured image file
+//    window.resolveLocalFileSystemURL(imageURI, function(fileEntry) {
+//        // Get the folder path where you want to save the image
+//        var folderPath = cordova.file.externalRootDirectory + "DCIM/WAM";
+//
+//        // Create the folder if it doesn't exist
+//        window.resolveLocalFileSystemURL(folderPath, function(dirEntry) {
+//            // Folder exists, move the image file to the folder
+//            fileEntry.moveTo(dirEntry, fileEntry.name, function(newFileEntry) {
+//                // Image moved successfully
+//                console.log("Image saved to folder:", newFileEntry.nativeURL);
+//            }, onError);
+//        }, onError);
+//    }, onError);
+//}
+function onPhotoSuccess(imageURI,staticmap) {
+    // Read the captured image file
+    window.resolveLocalFileSystemURL(imageURI, function (fileEntry) {
+        // Get the folder path where you want to save the combined image
+        var folderPath = cordova.file.externalRootDirectory + "DCIM/WAM";
+
+        // Create the folder if it doesn't exist
+        window.resolveLocalFileSystemURL(folderPath, function (dirEntry) {
+            // Folder exists, create a new canvas to combine images
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+
+            // Set canvas dimensions based on image dimensions
+            canvas.width = window.sessionStorage["imgDimension"];
+            canvas.height = window.sessionStorage["imgDimension"];
+
+            // Load the captured photo onto the canvas
+            var photo = new Image();
+            photo.onload = function () {
+                ctx.drawImage(photo, 0, 0);
+                console.log('Captured photo drawn onto canvas');
+
+                // Load the static map image onto the canvas
+                var map = new Image();
+                map.onload = function () {
+                    // Draw the static map image over the captured photo
+                    ctx.drawImage(map, 0, 0, canvas.width, canvas.height);
+                    console.log('Map image drawn onto canvas');
+
+                    // Convert the canvas content to a data URL
+                    var combinedImgData = canvas.toDataURL('image/jpeg');
+                    console.log('Canvas converted to data URL');
+
+                    // Save the combined image data to a file
+                    saveToFile(dirEntry, combinedImgData);
+                };
+                map.onerror = function (error) {
+                    console.error('Error loading map image:', error);
+                };
+                map.src = staticmap;
+            };
+            photo.onerror = function (error) {
+                console.error('Error loading captured photo:', error);
+            };
+            photo.src = imageURI;
+        }, onError);
+    }, onError);
+}
+
+
+// Function to save the combined image data to a file
+function saveToFile(folderEntry, imageData) {
+    var fileName = "combined_" + Date.now() + ".jpg";
+
+    // Convert base64 image data to a Blob object
+    var byteCharacters = atob(imageData.split(',')[1]);
+    var byteNumbers = new Array(byteCharacters.length);
+    for (var i = 0; i < byteCharacters.length; i++) {
+        byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+    var byteArray = new Uint8Array(byteNumbers);
+    var blob = new Blob([byteArray], { type: 'image/jpeg' });
+
+    // Save the Blob to a file
+    folderEntry.getFile(fileName, { create: true, exclusive: false }, function (fileEntry) {
+        fileEntry.createWriter(function (fileWriter) {
+            fileWriter.onwriteend = function () {
+                console.log('Combined image saved to folder:', fileEntry.nativeURL);
+            };
+            fileWriter.onerror = function (error) {
+                console.error('Error writing file:', error);
+                console.log('Combined image data size:', imageData.length);
+
+            };
+            fileWriter.write(blob);
+        }, onError);
+    }, onError);
+}
+
+// Callback function for failed photo capture
+//function onPhotoFail(message) {
+//    console.error("Photo capture failed:", message);
+//}
+
+// Error callback function
+function onError(error) {
+    console.error("File operation failed:", error);
+}
+//f// Function to save the combined image to the "WAM3" folder
+//   function saveToPhotoGallery(combinedImgData) {
+//       var folderName = "DCIM/WAM"; // Destination folder name
+//       var fileName =  "photo_" + Date.now() + ".jpg"; // File name for the photo
+//
+//       // Convert base64 image data to binary data
+//       var binaryData = atob(combinedImgData.split(',')[1]);
+//       var arrayBuffer = new ArrayBuffer(binaryData.length);
+//       var uint8Array = new Uint8Array(arrayBuffer);
+//       for (var i = 0; i < binaryData.length; i++) {
+//           uint8Array[i] = binaryData.charCodeAt(i);
+//       }
+//
+//       // Get the folder path
+//       var folderPath = cordova.file.externalRootDirectory + folderName;
+//
+//       // Check if the folder exists
+//       window.resolveLocalFileSystemURL(folderPath, function(dirEntry) {
+//           // Folder exists, save the file
+//           saveFile(dirEntry);
+//       }, function(error) {
+//           // Folder doesn't exist, create it
+//           window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function(rootDirEntry) {
+//               rootDirEntry.getDirectory(folderName, { create: true, exclusive: false }, function(dirEntry) {
+//                   // Folder created, now save the file
+//                   saveFile(dirEntry);
+//               }, function(error) {
+//                   console.error('Error creating directory:', error);
+//                   // Handle error creating directory
+//               });
+//           }, function(error) {
+//               console.error('Error accessing root directory:', error);
+//               // Handle error accessing root directory
+//           });
+//       });
+//
+//       // Function to save the file to the folder
+//       function saveFile(folderEntry) {
+//           folderEntry.getFile(fileName, { create: true, exclusive: false }, function(fileEntry) {
+//               // Write the binary data to the file
+//               fileEntry.createWriter(function(writer) {
+//                   writer.onwriteend = function() {
+//                       console.log('File saved to WAM3 folder:', fileEntry.nativeURL);
+//                       // Optionally, perform additional operations with the saved file
+//                   };
+//                   writer.onerror = function(error) {
+//                       console.error('Error writing file:', error);
+//                       // Handle error writing file
+//                   };
+//                   writer.write(arrayBuffer);
+//               }, function(error) {
+//                   console.error('Error creating writer:', error);
+//                   // Handle error creating writer
+//               });
+//           }, function(error) {
+//               console.error('Error getting file:', error);
+//               // Handle error getting file
+//           });
+//       }
+//   } New fix below
+function saveToPhotoGallery(combinedImgData) {
+    var folderName = "DCIM/WAM"; // Destination folder name
+    var fileName = "photo_" + Date.now() + ".jpg"; // File name for the photo
+
+    // Convert base64 image data to a Blob object
+    var byteCharacters = atob(combinedImgData.split(',')[1]);
+    var byteNumbers = new Array(byteCharacters.length);
+    for (var i = 0; i < byteCharacters.length; i++) {
+        byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+    var byteArray = new Uint8Array(byteNumbers);
+
+    console.log('Byte array length:', byteArray.length); // Log the length of the byte array
+
+    var blob = new Blob([byteArray], { type: 'image/jpeg' });
+
+    // Get the folder path
+    var folderPath = cordova.file.externalRootDirectory + folderName;
+
+    // Check if the folder exists
+    window.resolveLocalFileSystemURL(folderPath, function (dirEntry) {
+        // Folder exists, save the file
+        saveFile(dirEntry);
+    }, function (error) {
+        // Folder doesn't exist, create it
+        window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function (rootDirEntry) {
+            rootDirEntry.getDirectory(folderName, { create: true, exclusive: false }, function (dirEntry) {
+                // Folder created, now save the file
+                saveFile(dirEntry);
+            }, function (error) {
+                console.error('Error creating directory:', error);
+                // Handle error creating directory
+            });
+        }, function (error) {
+            console.error('Error accessing root directory:', error);
+            // Handle error accessing root directory
+        });
+    });
+
+    // Function to save the file to the folder
+    function saveFile(folderEntry) {
+        folderEntry.getFile(fileName, { create: true, exclusive: false }, function (fileEntry) {
+            // Write the Blob object to the file
+            fileEntry.createWriter(function (fileWriter) {
+                fileWriter.onwriteend = function () {
+                    console.log('File saved to WAM3 folder:', fileEntry.nativeURL);
+                    // Optionally, perform additional operations with the saved file
+                };
+                fileWriter.onerror = function (error) {
+                    console.error('Error writing file:');
+                    console.error('Error code:', error.code);
+                    console.error('Error message:', error.message);
+                    console.error('Error object:', error);
+                    // Handle error writing file
+                };
+                fileWriter.write(blob);
+            }, function (error) {
+                console.error('Error creating writer:', error);
+                // Handle error creating writer
+            });
+        }, function (error) {
+            console.error('Error getting file:', error);
+            // Handle error getting file
+        });
+    }
+}
+
+
+
+
+
+
 
 
 function onPhotoFail(message) {
@@ -4430,64 +5264,56 @@ function takeGeotagphoto(backupGallery) {
         }
     }
     $picPointer.eq(first).attr("data-timestamp", now);
-      
+
     var geoOptions = {enableHighAccuracy: true, timeout: 25000};
     navigator.geolocation.getCurrentPosition(function (position) //add latlng attribute
     {
-        if ($picPointer.eq(first).attr('src') == "img/loading.png") {
-            console.log("Get Photo LongLat success: latitude:" + position.coords.latitude + ", longtitude:" + position.coords.longitude);
-            $picPointer.eq(first).attr("data-latitude", position.coords.latitude);
-            $picPointer.eq(first).attr("data-longitude", position.coords.longitude);
-            $picPointer.eq(first).attr("data-location-name", "Location coordinates: " + position.coords.latitude + " , " + position.coords.longitude );
+        if ($picPointer.eq(first).parent().parent().attr("data-geotag") == "false") {
+            // Handle case when geotag is disabled
+            // Your existing code for handling this case...
+        } else {
+            // Handle case when geotag is enabled
+            var geoOptions = {enableHighAccuracy: true, maximumAge: 0, timeout: 25000};
+            navigator.geolocation.getCurrentPosition(function (position) {
+                // Successfully retrieved geotag data
+                console.log('GPS2 ');
+                console.log("Get Photo LongLat success: latitude:" + position.coords.latitude + ", longtitude:" + position.coords.longitude);
+                $picPointer.eq(first).attr("data-latitude", position.coords.latitude);
+                $picPointer.eq(first).attr("data-longitude", position.coords.longitude);
+                $picPointer.eq(first).attr("data-location-name", "Location coordinates: " + position.coords.latitude + " , " + position.coords.longitude);
 
-            var latN = position.coords.latitude.toString();
-            var latP = latN.split('.');
-            var laA = latP[0];
-            var laB = latP[1];
-            laB= laB.substring(0, 4);
+                // Your existing codeyour for handling geotag data...
+            }, function (error) {
+                // Error occurred while retrieving geotag data
+                console.log('GPS6 ');
+                console.log("Get Photo LongLat Failed");
+                navigator.notification.alert("Photo is saved without geotag. Please ensure you have enabled location info.", function () {
+                }, "Unable to Capture GPS", '✔');
+                $picPointer.eq(first).attr("data-latitude", "0");
+                $picPointer.eq(first).attr("data-longitude", "0");
+                $picPointer.eq(first).attr("data-location-name", "");
+                $picPointer.on({'click': function () {
+                        if ($picPointer.attr('src') != "") {
+                            $photoPreviewPointer = $(this);
+                            photoPreview($(this).attr('src'), $(this).attr('data-latitude'), $(this).attr('data-longitude'), $(this).attr('data-block-unit'), $(this).attr('data-block-level'), $(this).attr('data-location-name'), $(this).attr('data-title'));
+                        }
+                    }});
+                textWatermark(fileURI, "", now, function (base64Img) {
+                    $picPointer.eq(first).css('background-color', 'black');
+                    $picPointer.eq(first).attr('src', base64Img);
 
-            var lonN = position.coords.longitude.toString();
-            var lonP = lonN.split('.');
-            var loA = lonP[0];
-            var loB = lonP[1];
-            loB= loB.substring(0, 4);
-
-            var LatName = laA + "." + laB;
-            var LonName = loA + "." + loB;                    
-//ORIGINAL BY BRAJENDRA
-//            var locURL = databaseIP + "googleapi?type=geocode&action=reverse&lon=" + LonName + "&lat=" + LatName ;
-//              $.ajax({
-//                url: locURL,
-//                type: 'GET',
-//                timeout: 15000,
-//                success: function (data) {
-//                   if (data.results != undefined) {
-//                       if(data.results[0].formatted_address.length != 0) {
-//                           $picPointer.eq(first).attr("data-location-name", "Location: " + data.results[0].formatted_address);
-//                       }
-//                   }
-//                },
-//                error: function (error, errorText, errorThrown) { 
-//                }
-//            });                     
-
-            $picPointer.on({'click' : function () {
-                    if ($picPointer.attr('src') != "") {
-                        $photoPreviewPointer = $(this);
-                        photoPreview($(this).attr('src'), $(this).attr('data-latitude'), $(this).attr('data-longitude'), $(this).attr('data-block-unit'), $(this).attr('data-block-level'), $(this).attr('data-location-name'), $(this).attr('data-title'));
+                    spinOut();
+                    if (backupGallery) {
+                        saveProcessedImage(base64Img);
                     }
-            } });
-//ORIGINAL BY BRAJENDRA
-//            var staticmap = 'http://www.v3nity.com:80/V3Nity4/googleapi?type=map&action=static&lat=' + position.coords.latitude + '&lon=' + position.coords.longitude + '&maptype=roadmap&zoom=18'
-//                    + '&width=' + window.sessionStorage["imgDimension"]
-//                    + '&height=' + window.sessionStorage["imgDimension"];
-//
-//            textGeotagWatermark(staticmap, now, function (base64Img) { //watermark photo with timestamp
-//                $picPointer.eq(first).css('background-color', 'black');
-//                $picPointer.eq(first).attr('src', base64Img);
-//            }, function (error){ alert('error!')},geoOptions);
-            $picPointer.eq(first).attr('src', 'img/accept.png');
+                    if (typeof spinTimeout !== "undefined") {
+                        clearTimeout(spinTimeout);
+                    }
+                    writeLogs("Camera Photo Successfully Loaded w/o GeoTag Failed. PhotoBackup = " + backupGallery + " Error for getCurrentPosition : " + error.code + " error message " + error.message);
+                }, geoOptions);
+            }, geoOptions);
         }
+
     }, function (error) {
         console.log("Get Geotag LongLat Failed");
         navigator.notification.alert("Unable to capture location. Please ensure you have enabled location info.", function () {
@@ -4496,16 +5322,16 @@ function takeGeotagphoto(backupGallery) {
         $picPointer.eq(first).attr("data-longitude", "0");
         $picPointer.eq(first).attr("data-location-name", "");
         spinOut();
-   
+
     }, geoOptions);
-    
+
 }
 
-function attachImg() 
-{  
-
+function attachImg()
+{
+    console.log("Debug attachImg");
     window.imagePicker.getPictures(
-    function (results) 
+    function (results)
     {
         if (results.length < 1) { //remove the loading.png if no image selected
             $picPointer.eq($picPointer.length - 1).remove();
@@ -4514,16 +5340,16 @@ function attachImg()
         var first = $picPo.length - 1;
         var hideImgDate = $picPointer.eq(first).parent().parent().attr("data-hideimagedate");
 
-        for (var i = 0; i < results.length; i++) 
+        for (var i = 0; i < results.length; i++)
         {
 
             var geoOptions = {enableHighAccuracy: true, timeout: 25000};
 
-            if (typeof hideImgDate == 'undefined') 
+            if (typeof hideImgDate == 'undefined')
             { // if cannot find attr data-hideimagedate, display both date and time by default
                 var now = getCurrentDateTime(1);
-            } 
-            else 
+            }
+            else
             {
 
                 if (($picPointer.eq(first).parent().parent().attr("data-hideimagedate") == "true") && ($picPointer.eq(first).parent().parent().attr("data-hideimagetime") == "true")) { // hide both date and time
@@ -4539,7 +5365,7 @@ function attachImg()
 
             if (i > 0) {
                 (function (url) {
-                    textWatermark(url, "", "", function (base64Img) { //watermark image with timestamp, still got issue with the index 
+                    textWatermark(url, "", "", function (base64Img) { //watermark image with timestamp, still got issue with the index
                         var img = $('<img/>', {src: base64Img}).insertAfter($picPointer.parent().find('img').last());
 //                        if (noOfImg > 0) {
 //                            var img = $('<img/>', {src:base64Img}).insertAfter($picPointer.parent().find('img').last());
@@ -4581,26 +5407,26 @@ function attachImg()
                 }, geoOptions);
             }
         }
-    }, 
-    function (error) 
+    },
+    function (error)
     {
         navigator.notification.alert("Please try again, or try with other images.", function () {
                 }, "Unable to Attach Image", '✔');
         $picPointer.eq($picPointer.length - 1).remove();
         console.log('Error: ' + error);
-    }, 
+    },
     {
         maximumImagesCount: $dataMax,
         quality: window.localStorage['galleryQuality'],
         height: window.localStorage['galleryHeight'],
-        width: window.localStorage['galleryWidth']            
-    });        
-           
+        width: window.localStorage['galleryWidth']
+    });
+
 }
 
 function getFileContentAsBase64(path,callback){
     window.resolveLocalFileSystemURL(path, gotFile, fail);
-            
+
     function fail(e) {
           alert('Cannot found requested file');
     }
@@ -4620,29 +5446,33 @@ function getFileContentAsBase64(path,callback){
 
 
 /**
- * Convert an image 
+ * Convert an image
  * to a base64 url
  * then add text watermark
- * @param  {String}   url 
- * @param  {String}   url2 //used for 400x400px static map 
- * @param  {String}   text         
- * @param  {Function} callback    
- * @param  {String}   [outputFormat=image/png]           
+ * @param  {String}   url
+ * @param  {String}   url2 //used for 400x400px static map
+ * @param  {String}   text
+ * @param  {Function} callback
+ * @param  {String}   [outputFormat=image/png]
  */
 function textWatermark(url, url2, text, callback, outputFormat) {
+    console.log("Debug textWatermark");
     var img = new Image();
     img.crossOrigin = 'Anonymous';
     img.onload = function () {
         var canvas = document.createElement('CANVAS'),
                 ctx = canvas.getContext('2d'), dataURL;
         if (url2 == "") {
+            console.log("IF")
             canvas.height = this.height;
             canvas.width = this.width;
             canvas.border = '1px solid black';
         } else {
+            console.log("Canvas Height",+canvas.height ,"width",canvas.width);
             canvas.height = this.height; //400px is the height of static map
             canvas.width = this.width + parseInt(window.sessionStorage["imgDimension"], 10); //400px is the width of static map
-//            console.log('%%%width: ' + canvas.width + ', height: ' + canvas.height)
+
+           console.log('%%%width: ' + canvas.width + ', height: ' + canvas.height)
         }
         ctx.drawImage(this, 0, 0);
         ctx.strokeStyle = "#FFFFFF";
@@ -4696,7 +5526,7 @@ function textGeotagWatermark(url2, text, callback, outputFormat) {
         ctx.font = "normal 17px arial";
         ctx.strokeText(text, 5, 17);
         ctx.fillText(text, 5, 17);
-        var initialwidth = this.width;  
+        var initialwidth = this.width;
         var img = new Image();
         img.crossOrigin = 'Anonymous';
         img.onload = function () {
@@ -4719,7 +5549,7 @@ function textGeotagWatermark(url2, text, callback, outputFormat) {
 }
 
 function photoPreview(photo, latitude, longtitude, block_unit, block_level,location_name,title) {
-    
+
     /*console.log('TFF4 ' + photo);
     console.log('TFF5 ' + latitude);
     console.log('TFF6 ' + longtitude);
@@ -4727,8 +5557,8 @@ function photoPreview(photo, latitude, longtitude, block_unit, block_level,locat
     console.log('TFF8 ' + block_level);
     console.log('TFF9 ' + location_name);*/
 
-    
-    
+
+
       var blockLabel = '';
     if (photo != "") {
         if (latitude == undefined) {
@@ -4743,7 +5573,7 @@ function photoPreview(photo, latitude, longtitude, block_unit, block_level,locat
         if (block_level == undefined) {
             block_level = "-";
         }
-        
+
         if (block_unit == '0' && block_level == '0' ){
             blockLabel= '';
         }else if (block_unit == '0'){
@@ -4754,41 +5584,41 @@ function photoPreview(photo, latitude, longtitude, block_unit, block_level,locat
             blockLabel=  lang.Mobile081 + ": " + block_unit + "<br>" +
                         lang.Mobile082 + ": " + block_level ;
         }
-        
+
         var locName = '';
         var allInfo = '';
         var viewportHeight = ($(window).height() - 104) * 0.5;
-        
+
         if (location_name.length == 0) {
             allInfo = '<div style="max-height:252px; width:100%; height:' + viewportHeight + 'px"><img id="photoPreview" src="' + photo + '"/></div>' +
                     '<div>' + blockLabel + '</div>';
             allInfo += '<br>' + '<input id="idTitle" placeholder="Title" value="' + title + '" type="text" style="width:100%;">' + '</div>';
-            confirmPopupImages(allInfo, confirmPhoto, lang.Mobile079, ["✔", "✂"]);            
+            confirmPopupImages(allInfo, confirmPhoto, lang.Mobile079, ["✔", "✂"]);
         }else {
             locName = location_name;
             allInfo = '<div style="max-height:252px; width:100%; height:' + viewportHeight + 'px"><img id="photoPreview" src="' + photo + '"/></div><div>';
             if (locName != '') allInfo +=  locName + '<br>';
             allInfo += blockLabel + '<br>' + '<input id="idTitle" placeholder="Title" value="' + title + '" type="text" style="width:100%;">' + '</div>';
-            confirmPopupImages(allInfo, confirmPhoto, lang.Mobile079, ["✔", "✂"]);            
+            confirmPopupImages(allInfo, confirmPhoto, lang.Mobile079, ["✔", "✂"]);
         }
-        
+
 //        var locURL = databaseIP + "googleapi?type=geocode&action=reverse&lon=" + longtitude + "&lat=" + latitude;
-//        
+//
 //        $.ajax({
 //            url: locURL,
 //            type: 'GET',
 //            timeout: 15000,
 //            success: function (data) {
 //
-//                if (data.results != undefined && data.results.length > 0) 
+//                if (data.results != undefined && data.results.length > 0)
 //                {
 //                    locName = data.results[0].formatted_address;
 //                }
 //
 //                allInfo = '<div style="max-height:252px; width:100%; height:' + viewportHeight + 'px"><img id="photoPreview" src="' + photo + '"/></div><div>';
-//                
+//
 //                if (locName != '') allInfo += 'Location: ' + locName + '<br>';
-//                        
+//
 //                allInfo += blockLabel + '</div>';
 //
 //                confirmPopupImages(allInfo, confirmPhoto, lang.Mobile079, ["✔", "✂"]);
@@ -4803,17 +5633,27 @@ function photoPreview(photo, latitude, longtitude, block_unit, block_level,locat
 //                confirmPopupImages(allInfo, confirmPhoto, lang.Mobile079, ["✔", "✂"]);
 //
 //            }
-//        });        
+//        });
     }
 }
 
 
 function confirmPhoto(response) {
     if (response == 2) { //if Yes
-        $photoPreviewPointer.eq($photoPreviewPointer.length - 1).remove();
+        var confirmation = confirm("Do you want to delete image?");
+
+                if (confirmation) {
+                    // User clicked "Yes," perform the desired action
+                    $photoPreviewPointer.eq($photoPreviewPointer.length - 1).remove();
+                    // ...
+                } else {
+                    // User clicked "No," perform a different action or do nothing
+                    $photoPreviewPointer.attr("data-title", $('#idTitle').val());
+                    // ...
+                }
     } else {
         //else do nothing
-		$photoPreviewPointer.attr("data-title", $('#idTitle').val());
+    $photoPreviewPointer.attr("data-title", $('#idTitle').val());
     }
 }
 
@@ -4903,7 +5743,7 @@ function confirmDraw(response) {
     }
 }
 
-//function captureBarcode() { 
+//function captureBarcode() {
 //
 //}
 
@@ -4955,7 +5795,7 @@ function toggleCollapser(id, count) { // for collapser form field to use...
 
 function openDividedFormForUpload(file)
 {
-    
+
     writeLogs("openDividedFormForUpload, fileName: " + file + "-" + uploadingFilenameIndex);
     jobBeingUploaded = file;
 
@@ -4967,16 +5807,17 @@ function openDividedFormForUpload(file)
 function openDividedFormForUploadUnusualFail(file, err)
 {
     writeLogs("openDividedFormForUploadUnusualFail " + file + " err " + err.code + err.message)
+    console.log("DEBUG openDividedFormForUploadUnusualFail " + file + " err " + err.code + err.message);
     resetFormUploader();
     openDividedFormForUpload(file);
 }
 
-function openSingleFileForUpload(file) // this will loop through all the diff filenameindex to add to uploadedJobAllHtml 
+function openSingleFileForUpload(file) // this will loop through all the diff filenameindex to add to uploadedJobAllHtml
 {
     var reader = new FileReader();
     reader.onloadend = function (evt) {
         uploadedJobAllHtml += evt.target.result;
-        //console.log('--- UPLOAD LENGTH: ' + evt.target.result.length + ', TOTAL UPLOAD LENGTH: ' + uploadedJobAllHtml.length);
+        console.log('---DEBUG UPLOAD LENGTH: ' + evt.target.result.length + ', TOTAL UPLOAD LENGTH: ' + uploadedJobAllHtml.length);
         writeLogs("--- UPLOAD LENGTH: " + evt.target.result.length + ", TOTAL UPLOAD LENGTH: " + uploadedJobAllHtml.length);
         uploadingFilenameIndex++;
         openDividedFormForUpload(jobBeingUploaded);
@@ -4984,7 +5825,7 @@ function openSingleFileForUpload(file) // this will loop through all the diff fi
     reader.readAsText(file);
 }
 
-function openFileUploadFail(err) // will come to here when there is no more file to read from. 
+function openFileUploadFail(err) // will come to here when there is no more file to read from.
 {
     //console.log('Completed opening file series for upload: ' + jobBeingUploaded);
 
@@ -5001,16 +5842,16 @@ function openFileUploadFail(err) // will come to here when there is no more file
 
     JSONText.job_id = parseInt(id);
     JSONText.driver_id = parseInt(driver_id);
-    JSONText.asset_id = parseInt(asset_id); 
+    JSONText.asset_id = parseInt(asset_id);
     JSONText.version_no = version_no;
     JSONText.status_id = parseInt(endedStatus);
     JSONText.details = details;
     JSONText = JSON.stringify(JSONText);
-
+    console.log("X2");
     var upload_url = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=upload&jobId=" + id + "&assetId=" + asset_id + "&detailsLength=" + details.length + "&driverId=" + driver_id;
 
     console.log('Uploading ' + jobBeingUploaded);
-    
+
 //    console.log('AATESTING1 ' + upload_url + "AATESTING1 JSON :-" + JSONText);
 
     $.ajax({
@@ -5044,12 +5885,12 @@ function openFileUploadFail(err) // will come to here when there is no more file
                 }
 
                 window.localStorage["uploadQueue"] = JSON.stringify(tuploadQueue);
-                $('.uploadCount span').html(tuploadQueue.length); //update Upload count	
+                $('.uploadCount span').html(tuploadQueue.length); //update Upload count
                 clearTimeout(uploadInterval); // not to have two instant of uploadInterval occuring at the same time, therefore, clear first before re-initatiate.
                 uploadInterval = setTimeout(function () {
                     newUploadQueue();
                 }, uploadDelay); //calls again after 30seconds
-//                
+//
 //                setTimeout(function () {
 //                    newUploadQueue();
 //                }, uploadDelay); //calls again after 30seconds
@@ -5100,20 +5941,22 @@ function resetFormOpener()
 
 function openDividedForm(file)
 {
-    console.log('fileName: ' + file + '-' + retrievingFilenameIndex);
+   // console.log('-----> openDividedForm fileName: ' + file + '-' + retrievingFilenameIndex);
     jobBeingOpened = file;
 
     appDirectory.getFile(file + '-' + retrievingFilenameIndex, {create: false}, function (fileEntry) {
+     //   console.log('-----> inside appDirectory.getFile: ' + JSON.stringify(fileEntry));
         fileEntry.file(openSingleFile, openFileFail);
     }, openFileFail);
 }
 
 function openSingleFile(file)
 {
+   // console.log('-----> openSingleFile: ' + JSON.stringify(file));
     var reader = new FileReader();
     reader.onloadend = function (evt) {
         fileAllHtml += evt.target.result;
-        console.log('--- LENGTH: ' + evt.target.result.length + ', TOTAL LENGTH: ' + fileAllHtml.length);
+        console.log('--- LENGTH: ' + evt.target.result.length + ', TOTAL LENGTH: ' + fileAllHtml.length + '; fileAllHtml: ' + fileAllHtml);
         retrievingFilenameIndex++;
         openDividedForm(jobBeingOpened);
     };
@@ -5122,21 +5965,23 @@ function openSingleFile(file)
 
 function openFileFail(err) // this is after openDividedForm(), when user open a new form
 {
-        console.log('Completed opening file series: ' + jobBeingOpened);
+       // console.log('-----> openFileFail: ' + JSON.stringify(err) + '; jobBeingOpened: ' + jobBeingOpened);
+        //console.log('Completed opening file series: ' + jobBeingOpened);
 
         $("#form_content").html(fileAllHtml);
-        
-        
+       // alert(JSON.stringify(fileAllHtml));
+        //console.log(fileAllHtml)
+
         if (isStartJob)
         {
             getCurrentLocation(START_JOB_EVENT, 0, 0);
         }
-        
+
         isStartJob = false;
 //        console.log('Testting' + fileAllHtml);
-        
+
         var user_id = window.sessionStorage["userID"];
-        
+
         $('.file-link').each(function()
         {
             if($(this).attr('href')!= undefined && $(this).attr('href')!='')
@@ -5146,21 +5991,21 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
             else
             {
                 $(this).removeAttr('style').attr('style','color:#D3D3D3;text-decoration:none');
-                $(this).html("(No file Uploaded)");       
+                $(this).html("(No file Uploaded)");
             }
-            
+
         });
-    
-        var href = ''; 
+
+        var href = '';
         $(document).off('click').on("click",".form-sheet a", function(event) {
         event.preventDefault();
-        href = $(this).attr("value");    
-        var clickClass = $(this).attr("class");    
-        
+        href = $(this).attr("value");
+        var clickClass = $(this).attr("class");
+
         if(clickClass === "send-otp"){
             if ($("#"+href+" input.cust-no").val() == "") {
                 navigator.notification.alert("Your mobile no is incorrect.", function () {
-                }, "Invalid Mobile no", '✔');    
+                }, "Invalid Mobile no", '✔');
             }else {
                 spinIn();
                 var otp_url = databaseIP + "/Controller/mobile_controller.jsp?type=system&action=sendotp&custNo=" + $("#"+href+" input.cust-no").val() + "&driverId=" + user_id ;
@@ -5174,7 +6019,7 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
                             spinOut();
                             //alert(data.pin)
                             var timeLeft = 60;
-                            otptimerId = setInterval(countdown, 1000);    
+                            otptimerId = setInterval(countdown, 1000);
                             $("#"+href+" input.otp-field").text("");
                             function countdown() {
                                 if (timeLeft == -1) {
@@ -5192,7 +6037,7 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
                                     $("#"+href+" input.otp-field").prop('disabled', false);
                                     timeLeft--;
                                 }
-                            }                      
+                            }
                         } else {
                             spinOut();
                         }
@@ -5200,17 +6045,17 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
                     error: function (error, errorText, errorThrown) {
                         spinOut();
                     }
-                })   
+                })
             }
-            
+
         }else if(clickClass === "verify-otp"){
                 if ($("#"+href+" input.cust-no").val() == "") {
                      navigator.notification.alert("Your mobile no is incorrect.", function () {
                      }, "Invalid Mobile no", '✔');
-                }else { 
+                }else {
                      if ($("#"+href+" input.otp-field").val() == "") {
                          navigator.notification.alert("Your OTP is incorrect.", function () {
-                         }, "Invalid OTP", '✔');       
+                         }, "Invalid OTP", '✔');
                      }else {
                         // $(".send-otp").css('pointer-events','none');
                          //clearTimeout(otptimerId);
@@ -5228,9 +6073,9 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
                                      $("#"+href+" .verify-otp").addClass('verified');
                                      $("#"+href+" .send-otp").addClass('verified');
                                      $("#"+href+" .send-otp").text('Send OTP');
-                                     $("#"+href+" input.otp-field").prop('disabled', true);       
-                                     $("#"+href+" input.cust-no").prop('disabled', true);   
-                                     $("#"+href+" .verify-otp").text('OTP has been verified');                   
+                                     $("#"+href+" input.otp-field").prop('disabled', true);
+                                     $("#"+href+" input.cust-no").prop('disabled', true);
+                                     $("#"+href+" .verify-otp").text('OTP has been verified');
                                      $("#"+href+" .verify-otp").data("verified","yes");
                                      $(".verify-otp").css('pointer-events','');
                                      $('.verify-otp.verified').css('pointer-events','none');
@@ -5247,7 +6092,7 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
                                      $("#"+href+" .verify-otp").data("verified","false");
                                      spinOut();
                                      navigator.notification.alert("Wrong OTP.", function () {
-                                     }, "Wrong OTP entered", '✔');                              
+                                     }, "Wrong OTP entered", '✔');
                                  }
                              },
                              error: function (error, errorText, errorThrown) {
@@ -5256,8 +6101,8 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
                                  $("#"+href+" .verify-otp").text('Verify OTP');
                                  spinOut();
                              }
-                         })                   
-                     }            
+                         })
+                     }
                  }
         }
         else if(clickClass === "file-link"){
@@ -5269,9 +6114,9 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
             var link =   $(this).attr('href');
             window.open(link, '_system', 'location=yes')
         }
-       
+
   });
-    
+
 
 
     $('.image img').on('click', function ()
@@ -5279,9 +6124,9 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
         var srcSource = $(this).attr('src');
         showImage(srcSource);
     });
-    
-    
-    
+
+
+
     // Added 21 Aug
     $('.camera img').on({'click': function () {
             if ($('.camera img').attr('src') != "") {
@@ -5291,9 +6136,9 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
         }});
     bindCameraImg('.camera input[type="image"]');
     bindVideoFile('.uploadVideo input[type="image"]');
-    
+
     bindGeotagImg('.capturegeotag input[type="image"]');
-      
+
 
     bindGalleryImg('.gallery input[type="image"]');
     $('.gallery img').on('click', function () {
@@ -5314,7 +6159,7 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
         }
     });
     /* End of Gallery & Camera Form Field */
-    
+
     if ($('.signature img').attr('src') == 'img/form_signature.png' || $('.signature img').attr('src') == '../img/form_signature.png') { // v3 format = ../img/form_signature.png v4 format = img/form_signature.png
         $('.signature img').attr('src', 'img/signature.png');
     }
@@ -5332,6 +6177,90 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
         $signPointer = $(this);
         takedrawing();
     });
+//TODO for api 30 and below use below code
+//   $('.nfc input[type="image"]').attr('src', 'img/nfc_icon.png');
+//  $('.nfc').each(function () {
+//
+//          if ($(this).find('img').attr('src') == "img/nfc_icon.png") {
+//              //empty++;
+//              $(this).parent().children().first().css("background-color", "pink");
+//          } else {
+//              $(this).parent().children().first().css("background-color", "inherit");
+//          }
+//                  console.log("nfc element: ", $(".nfc")[0].outerHTML);
+//                  console.log("nfc ul element: ", $(".nfc > ul")[0].outerHTML);
+//                  console.log("nfc ul li element size: ", $(".nfc > ul").children().length)
+//                  async function handleNfcEvent(nfcEvent) {
+//                              console.log("inside handleNfcEvent");
+//                              const tagId = nfc.bytesToHexString(nfcEvent.tag.id);
+//                              const tag = nfcEvent.tag;
+//                              const ndefMessage = tag.ndefMessage;
+//                              var nfcMsg = nfc.bytesToString(ndefMessage[0].payload).substring(3);
+//                              console.log("nfc message: ", nfcMsg);
+//                              if ($(".nfc > ul").children().length > 0) {
+//                                  console.log("li element present");
+//                                  $(".nfc > ul li:first-child").text(nfcMsg);
+//                              } else {
+//                                  console.log("li element absent");
+//                                  $(".nfc > ul").append("<li>" + nfcMsg + "</li>");
+//                                  //<ul data-nfc=""></ul>
+//                                  $(".nfc > ul").attr('data-nfc', nfcMsg);
+//                              }
+//                          }
+//
+//                  function addNfcListener() {
+//                      nfc.addNdefListener(handleNfcEvent);
+//                  }
+//
+//                  document.addEventListener('deviceready', addNfcListener, false);
+//
+//      });
+//TODO for API 31 below code
+        $('.nfc input[type="image"]').attr('src', 'img/nfc_icon.png');
+            $('.nfc').each(function () {
+            if($(this).children().length == 2){
+                $(this).children().attr("src","img/accept.png");
+            }
+            $('.nfc input[type="image"]').one('click', function ()
+            {
+              alert("NFC temporary out of service");
+
+            });
+            });
+    $('.timeCapture input[type="image"]').attr('src', 'img/form_time_capture.png');
+        $('.timeCapture').each(function () {
+//        console.log("Parent Length",$(this).parent().parent().length);
+//        console.log("Parent Length 123",$(this).parent().length);
+//        console.log("Children Length 123",$(this).children().length);
+//        console.log("Length@@",JSON.stringify($(this).siblings()[0].outHTML));
+        if($(this).children().length == 2){
+            $(this).children().attr("src","img/accept.png");
+        }
+        $('.timeCapture input[type="image"]').one('click', function ()
+        {
+           var src = $(this).attr("src"),
+            state = (src.indexOf("img/form_time_capture.png") === 0) ;
+            console.log("debug123: " + JSON.stringify($(this).parent()[0].outHTML));
+            console.log("Length:",$(this).parent().parent().length);
+            src = src.replace('img/form_time_capture.png','img/accept.png')
+             $(this).attr("src", src);
+
+             var today = new Date();
+             var dd = String(today.getDate()).padStart(2, '0');
+             var mm = String(today.getMonth() + 1).padStart(2, '0');
+             var yyyy = today.getFullYear();
+
+             var hours = today.getHours();
+             var minutes = today.getMinutes();
+             var seconds = today.getMinutes();
+             today = dd + '/' + mm + '/' + yyyy + ' ' + hours + ':' + minutes + ':' + seconds;
+             console.log("debug1: " + JSON.stringify($(this).parent()[0].outHTML));
+             if($(this).siblings().length == 0){
+                $(this).parent().append("<div>" + today + "</div>")
+             }
+             $(this).parent().parent().attr("data-timestamp",today );
+        });
+        });
 
     $('.barcode input[type="image"]').attr('src', 'img/barcode.png');
     $('.barcode input[type="image"]').on('click', function ()
@@ -5339,10 +6268,20 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
         $barcodeListPointer = $(this).parent().find('ul');
         if ($barcodeListPointer.parent().find('input[type="text"]').val() == "")
         { //if barcode not manually entered
-            if ($barcodeListPointer.attr('data-barcode').split(',').length < $barcodeListPointer.parent().attr("data-max") || $barcodeListPointer.parent().attr("data-max") == undefined) { //if still within max limit
+
+            console.log("Value 1:", $barcodeListPointer.attr('data-barcode').split(',').length);
+            if ($barcodeListPointer.attr('data-barcode').split(',').length < $barcodeListPointer.parent().attr("data-max")
+                || $barcodeListPointer.parent().attr("data-max") == undefined
+                || ($barcodeListPointer.attr('data-barcode').split(',').length == 1 && $barcodeListPointer.attr('data-barcode') == "")) { //if still within max limit
+
+
+
+                            //JSON.stringify(barcodeListPointer.attr('data-barcode').split(',').length));
+                            console.log("Value 2:",$barcodeListPointer.parent().attr("data-max") )
                 cordova.plugins.barcodeScanner.scan(
                         function (result) {
                             if (result.text != "") {
+
                                 var newbarcode = result.text;
                                 var barcodearray = [];
                                 if ($barcodeListPointer.attr('data-barcode') != "") {
@@ -5355,6 +6294,7 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
 
                                 $barcodeListPointer.find('li').unbind('click');
                                 $barcodeListPointer.find('li').bind('click', function () {
+
                                     $barcodeEntryPointer = $(this);
                                     console.log("A19");
                                     navigator.notification.confirm(
@@ -5382,6 +6322,7 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
         } else
         {
             var newbarcode = $barcodeListPointer.parent().find('input[type="text"]').val();
+
             var barcodearray = [];
             if ($barcodeListPointer.attr('data-barcode') != "" && $barcodeListPointer.attr('data-barcode') != undefined) {
                 barcodearray = $barcodeListPointer.attr('data-barcode').split(',');
@@ -5462,11 +6403,11 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
             });
             clonedCamera.find('.addcamera').empty();
             var image = $('<input/>', {type: 'image', src: 'img/camera.png'});
-            clonedCamera.find('.addcamera').append(image); // find the the inner div. with class addcamera 
+            clonedCamera.find('.addcamera').append(image); // find the the inner div. with class addcamera
             clonedCamera.children().last().attr('class', 'camera');
             clonedCamera.insertBefore(cameraSelector);
             bindCameraImg(clonedCamera.find('input'));
-        } else { // when the 
+        } else { // when the
             navigator.notification.alert("You have reached the limit of adding Dynamic Camera ", function () {
             }, "Maximum Limit", '✔');
         }
@@ -5522,22 +6463,22 @@ function bindVideoFile(attrSelector) {
 
 function uploadVideo() {
     var first = $videoPointer.length - 1;
-    
+
     navigator.camera.getPicture(function(fileUrl){
-        
-         spinInVideo(); 
+
+         spinInVideo();
          var spinTimeout = setTimeout(function () {
              spinOut();
-         }, 25000); 
-         
+         }, 25000);
+
           var options = new FileUploadOptions();
           options.fileKey = 'video';
           options.fileName = fileUrl.substr(fileUrl.lastIndexOf('/') + 1);
           options.mimeType = 'video/mpg';
-          options.chunkedMode = false; 
-         
+          options.chunkedMode = false;
+
          var ftfileUrl = fileUrl;
-        
+
         // fix path for file:// protocol
         fileUrl = (parseInt(fileUrl.indexOf('file://'))==0)?fileUrl:'file://'+fileUrl;
         // resolve and locate file
@@ -5549,12 +6490,13 @@ function uploadVideo() {
             console.log(fileObj.localURL);
             console.log(fileObj.name);
             console.log(fileObj.size);
-            
+
             if(((fileObj.size/1024)/1024) < 10 ) {      //// Set default condition to 5 MB
-                            
-                
+
+
                 var jobid = window.sessionStorage["selected_id"];
                 var ft = new FileTransfer();
+                console.log("X4")
                 var url = databaseIP + 'AssetController?type=job&action=uploadVideo&jobId=' + jobid ;
                 ft.upload(ftfileUrl, url, function (data) {
                        var Jsondata = JSON.parse(data.response);
@@ -5569,7 +6511,7 @@ function uploadVideo() {
                               if($videoPointer.eq(i).attr("data-link") == undefined || $videoPointer.eq(i).attr("data-link") == "undefined" ){
                                   $videoPointer.eq(i).remove();
                               }
-                           }                      
+                           }
                        }else {
                            spinOut();
                        }
@@ -5579,27 +6521,27 @@ function uploadVideo() {
                 }, options, true);
                 ft.onprogress = function (progressEvent) {
                    // console.log('onprogress: ' + ((progressEvent.loaded / progressEvent.total) * 100) + '%');
-                };                
-                
+                };
+
             }else {
-                spinOut(); 
+                spinOut();
                 navigator.notification.alert("Video size cannot be more than 10 MB, please upload another one.", function () {
                         }, "Video Too Large", '✔');
-                
+
             }
-      
+
           }, function(error) {
-              spinOut();      
+              spinOut();
               console.log('file entry error');
             });
         }, function (error) {
               spinOut();
               console.log('resolve error');
         });
-        
+
         if (typeof spinTimeout !== "undefined") {
             clearTimeout(spinTimeout);
-        }        
+        }
         writeLogs("Video Successfully Loaded ");
     }, function(message){
         alert("error");
@@ -5613,13 +6555,13 @@ function uploadVideo() {
         correctOrientation: true,
         allowEdit: true,
         maximumImagesCount :1
-    });   
-    
+    });
+
 }
 
 /*
  * OLD VIDEO UPLOAD, NO FILESIZE CHECK
-function uploadVideo() 
+function uploadVideo()
 {
         var first = $videoPointer.length - 1;
 
@@ -5631,10 +6573,10 @@ function uploadVideo()
                  options.mimeType = 'video/mpg';
                  options.chunkedMode = false;
 
-                 spinInVideo(); 
+                 spinInVideo();
                  var spinTimeout = setTimeout(function () {
                          spinOut();
-                 }, 25000); 
+                 }, 25000);
 
                  var jobid = window.sessionStorage["selected_id"];
                  var ft = new FileTransfer();
@@ -5652,7 +6594,7 @@ function uploadVideo()
                                            if($videoPointer.eq(i).attr("data-link") == undefined || $videoPointer.eq(i).attr("data-link") == "undefined" ){
                                                    $videoPointer.eq(i).remove();
                                            }
-                                        }                      
+                                        }
                                 }else {
                                         spinOut();
                                 }
@@ -5662,11 +6604,11 @@ function uploadVideo()
                  }, options, true);
                  ft.onprogress = function (progressEvent) {
                         // console.log('onprogress: ' + ((progressEvent.loaded / progressEvent.total) * 100) + '%');
-                 };       
+                 };
 
                 if (typeof spinTimeout !== "undefined") {
                         clearTimeout(spinTimeout);
-                }        
+                }
                 writeLogs("Video Successfully Loaded ");
         }, function(message){
                 spinOut();
@@ -5679,7 +6621,7 @@ function uploadVideo()
                 correctOrientation: true,
                 allowEdit: true,
                 maximumImagesCount :1
-        });   
+        });
 
 }
 */
@@ -5802,6 +6744,7 @@ function resetFormSaver()
 
 function newSaveForm(html_file, data)
 {
+    //console.log('-----> newSaveForm start html_file ' + html_file);
     appDirectory.getFile(html_file, {create: true, exclusive: false}, function (fileEntry) {
         fileEntry.createWriter(win, fail);
     }, fail);
@@ -5811,6 +6754,7 @@ function newSaveForm(html_file, data)
         {
             newSaveDividedForm(jobBeingSaved, isAutoSave, isNewForm, newFormData, isSavingBeforeQueued);
         };
+       // console.log('-----> newSaveForm writing. html_file: ' + html_file + '; data: ' + data);
         writer.write(data);
     }
     ;
@@ -5914,10 +6858,11 @@ function newUploadQueue()
         {
             //console.log("uploadqueue: Empty html_file id. Removed and updated uploadQueue.");
             writeLogs("uploadqueue: Empty html_file id. Removed and updated uploadQueue.");
-            //tuploadQueue.shift();
+            // TODO below is fix for job stuck uploading
+            tuploadQueue.shift();
             window.localStorage["uploadQueue"] = JSON.stringify(tuploadQueue);
 
-            $('.uploadCount span').html(tuploadQueue.length); //update Upload count	
+            $('.uploadCount span').html(tuploadQueue.length); //update Upload count
             clearTimeout(uploadInterval);
             uploadInterval = setTimeout(function () {
                 newUploadQueue();
@@ -5930,29 +6875,41 @@ function newUploadQueue()
 }
 
 
-function newDownload(html_file, details)
+function newDownload(html_file, details, jobStatus)
 {
     appDirectory.getFile(html_file + '-0', {create: false}, function (fileEntry)
     {
+       // console.log('----> newDownload:' + JSON.stringify(fileEntry));
         fileEntry.file(winCheck, failCheck); //file: Creates a File object containing file properties.
 
         function winCheck(file)
         {
-            if (file.size == 0)
-            {
-                resetFormSaver();
-                newSaveDividedForm(html_file, true, true, details, false);
-//                appDirectory.getFile(html_file, {create: true, exclusive: false}, function (fileEntry) {
-//                    fileEntry.createWriter(winWriter, failWriter);
-//                }, failWriter);
-            } 
-            else
-            {
-//                console.log("File Series exist: " + html_file);
-            }
+            // todo below change made for preview file size > 0
+           // console.log('----> newDownload winCheck: ' + file.size + "; " + JSON.stringify(file) + "; " + details);
+
+                if (file.size > 0 && (jobStatus == 12 || jobStatus == 5)) {
+                 //   console.log('-----> save 12 jobStatus file. details: ' + details);
+                    resetFormSaver();
+                    newSaveDividedForm(html_file, true, true, details, false);
+                } else if (file.size == 0)
+                            {
+                                resetFormSaver();
+                 //               console.log('-----> Before newSaveDividedForm 6');
+                                newSaveDividedForm(html_file, true, true, details, false);
+                //                appDirectory.getFile(html_file, {create: true, exclusive: false}, function (fileEntry) {
+                //                    fileEntry.createWriter(winWriter, failWriter);
+                //                }, failWriter);
+                            }
+                            else
+                            {
+                                console.log("----> newDownload File Series exist 1: " + html_file);
+                            }
+
         }
         function failCheck(error)
         {
+           // console.log("----> newDownload failCheck error: " + error);
+
             writeLogs("newDownload, failcheck funciton, if fail to create a file, go back into the loop again and try to create. Might cause inifinite loop.")
             newDownload(html_file, details);
         }
@@ -5963,6 +6920,7 @@ function newDownload(html_file, details)
         }, function () {
             console.log("Create new: " + html_file);
             resetFormSaver();
+           // console.log('-----> Before newSaveDividedForm 7');
             newSaveDividedForm(html_file, true, true, details, false);
 //            appDirectory.getFile(html_file, {create: true, exclusive: false}, function (fileEntry) {
 //                fileEntry.createWriter(winWriter, failWriter);
@@ -5978,7 +6936,7 @@ function newDownload(html_file, details)
 function newSubmitForm(html_file) {
     spinIn();
     var empty = 0; //count unfilled mandatory questions
-
+    console.log("HTML File",html_file);
     $('input[type="text"]').each(function () {
         if ($(this).attr("required") && $(this).val() == "") {
             empty++;
@@ -6054,8 +7012,8 @@ function newSubmitForm(html_file) {
     });
     $('fieldset').each(function () {
         var checkMandatory = $(this).parent().parent().children().first().hasClass('mandatory');
-        if ($(this).find('input[type="radio"]').val() != undefined) { //if radio  
-            if ($(this).parent().hasClass('ratings')) { // the following is for rating 
+        if ($(this).find('input[type="radio"]').val() != undefined) { //if radio
+            if ($(this).parent().hasClass('ratings')) { // the following is for rating
                 var emptyRating = 0;
                 $(this).children().each(function () {
                     if ($(this).find('input[type="radio"]:checked').val() == undefined && checkMandatory) {
@@ -6073,7 +7031,7 @@ function newSubmitForm(html_file) {
                 } else {
                     $(this).parent().parent().children().first().css("background-color", "inherit");
                 }
-            } else { // the following is for radio button 
+            } else { // the following is for radio button
                 if ($(this).find('input[type="radio"]:checked').val() == undefined && checkMandatory) {
                     empty++;
                     $(this).parent().parent().children().first().css("background-color", "pink");
@@ -6085,7 +7043,7 @@ function newSubmitForm(html_file) {
             }
 
         } else if ($(this).find('input[type="checkbox"]').val() != undefined) { //if checkbox
-            if ($(this).attr("required") && $(this).find('input[type="checkbox"]:checked').val() == undefined) {
+            if ($(this).find('input[type="checkbox"]:checked').val() == undefined && checkMandatory) {
                 empty++;
                 $(this).parent().css("background-color", "pink");
             } else {
@@ -6105,9 +7063,15 @@ function newSubmitForm(html_file) {
         {
             $(this).parent().children().first().css("background-color", "inherit");
             $(this).find('img').each(function () {
-                
+
                 $(this).parent().parent().children().first().css("background-color", "inherit");
-                
+
+                  var stringLength =  $(this).attr('src').length;
+                              //check size of captured image
+                             var sizeInBytes = 4 * Math.ceil((stringLength / 3))*0.5624896334383812;
+                             var sizeInKb=sizeInBytes/1000;
+                             console.log("test photo size before submit"+sizeInKb);
+
 //                var imgLength = $(this).attr('src').length;
 //                if (imgLength < 1000) {
 //                    empty++;
@@ -6128,10 +7092,10 @@ function newSubmitForm(html_file) {
         {
             $(this).parent().children().first().css("background-color", "inherit");
             $(this).find('img').each(function () {
-                
+
                  $(this).parent().parent().children().first().css("background-color", "inherit");
-                
-                
+
+
 //                var imgLength = $(this).attr('src').length;
 //                if (imgLength < 1000) {
 //                    empty++;
@@ -6162,6 +7126,7 @@ function newSubmitForm(html_file) {
     });
 
     $('.signature').each(function () {
+
         if ($(this).parent().children().first().hasClass('mandatory') && $(this).find('img').attr('src') == "img/signature.png") {
             empty++;
             $(this).parent().children().first().css("background-color", "pink");
@@ -6187,8 +7152,21 @@ function newSubmitForm(html_file) {
             $(this).parent().css("background-color", "inherit");
         }
     });
+    // Todo uncomment this for NFC
+//    $('.nfc').each(function () {
+//           // if ($(this).parent().children().first().hasClass('mandatory'))  {
+//           if($(".nfc > ul").children().length == 0){
+//            console.log("Length::",$(".nfc > ul").children().length);
+//           // if ($(this).attr("required") && $(this).find('ul').attr('data-nfc') == "" && $(this).find('ul').attr('data-nfc').split(',').length <= $(this).attr("data-min")) {
+//                empty++;
+//                $(this).parent().css("background-color", "pink");
+//                console.log("Empty Value:",empty);
+//            } else {
+//                $(this).parent().css("background-color", "inherit");
+//            }
+//    });
 
-    if (empty == 0) 
+    if (empty == 0)
     {
         var job_id = window.sessionStorage["selected_id"];
         var checkstatus_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=checkStatus&jobScheduleIds=" + job_id;
@@ -6238,13 +7216,14 @@ function newSubmitForm(html_file) {
                         }, 0);
                     } else { //nothing wrong
                         resetFormSaver();
+                      //  console.log('-----> Before newSaveDividedForm 1');
                         newSaveDividedForm(html_file, true, false, '', true);
                         getCurrentLocationNew(8,job_id);
                     }
-                } 
-                else 
+                }
+                else
                 {
-                    // What can cause Ajax to fail? Not sure why if ajax return false, the action is to do delete 
+                    // What can cause Ajax to fail? Not sure why if ajax return false, the action is to do delete
                     // maybe can change here to auto save manually and prompt a different message
                     writeLogs("newsubmitform, Checking of Job Status Ajax return false and save the job. jobStatus " + job_status + " job Id " + job_fullid);
 
@@ -6282,11 +7261,12 @@ function newSubmitForm(html_file) {
             }
         });
 
-    } else {
+    }
+    else {
         spinOut();
         navigator.notification.alert(empty + " " + lang.Mobile103, function () {
         }, lang.Mobile102, '✔');
-    }
+   }
 }
 
 function endPlannedWithoutNetwork(html_file, job_id)
@@ -6301,6 +7281,7 @@ function endPlannedWithoutNetwork(html_file, job_id)
 //  3 parts that will use this function : when new job is downloaded, user initial manual save, user submit form
 function newSaveDividedForm(html_file, auto_save, is_new_form, new_form_data, is_saving_before_queued)
 {
+   // console.log('-----> newSaveDividedForm start');
     jobBeingSaved = html_file;
     isAutoSave = auto_save;
     isNewForm = is_new_form;
@@ -6364,19 +7345,21 @@ function newSaveDividedForm(html_file, auto_save, is_new_form, new_form_data, is
 
     if (nextChunkStartPoint < allHtml.length) // this check if there a need for v1, if dont need, go delete v1 and continue
     {
+       // console.log('-----> newSaveDividedForm newSaveForm')
         newSaveForm(jobBeingSaved + '-' + savingFilenameIndex, savedContent); // this function ask to save the v0, v1, v2.
         nextChunkStartPoint += formDividerLimit;
         savingFilenameIndex++;
     } else
     {
         resetFormDeleter();
-        //newDeleteFile(html_file, savingFilenameIndex); // this is to delete the additional vX created. 
+        //newDeleteFile(html_file, savingFilenameIndex); // this is to delete the additional vX created.
 
         spinOut();
 
         if (isAutoSave == false)
         {
             //console.log("newSaveDividedForm manualSave success");
+           // console.log('-----> insde newSaveDividedForm 3 autoSave false');
             writeLogs("newSaveDividedForm, manaulSave success. saveBtm Clicked. file Name =  " + html_file);
 
             navigator.notification.alert(lang.Mobile092, function () {
@@ -6387,13 +7370,14 @@ function newSaveDividedForm(html_file, auto_save, is_new_form, new_form_data, is
 
         }
 
+        //console.log('-----> newSaveDividedForm isSavingBeforeQueued: ' + isSavingBeforeQueued);
         if (isSavingBeforeQueued == true)
         {
             queueJob(html_file);
         }
     }
 }
-// insert the job id of the submitted job into the queue array and update the status of the job to "Uploading" 
+// insert the job id of the submitted job into the queue array and update the status of the job to "Uploading"
 function queueJob(html_file)
 {
     // Test updateUploading with timeout 30
@@ -6409,10 +7393,10 @@ function queueJob(html_file)
 //        console.log('$$ queue job tuploadQueue size: ' + tuploadQueue.length);
         for (var i = 0; i < tuploadQueue.length; i++)
         {
-//            console.log('$$ ' + i + ' -- filename: ' + tuploadQueue[i])
+                console.log('-----> queueJob '+ i + ' -- filename: ' + tuploadQueue[i]);
             if (tuploadQueue[i] === html_file)
             {
-//                console.log('$$ file exists: ' + tuploadQueue[i])
+                console.log('-----> file exists: ' + tuploadQueue[i])
                 file_exists = true;
                 break;
             }
@@ -6425,10 +7409,12 @@ function queueJob(html_file)
         window.localStorage["uploadQueue"] = JSON.stringify(tuploadQueue);
         //console.log("Queue success. tuploadQueue = " + tuploadQueue );
         writeLogs("queueJob, queue success. tuploadQueue = " + tuploadQueue + " File Added to queue = " + html_file);
+
     } else
     {
         //console.log("$$ Job was already queued. tuploadQueue = " + tuploadQueue);
         writeLogs("queueJob, $$ Job was already queued. tuploadQueue = " + tuploadQueue + " File Name " + html_file);
+
     }
 
     // CHS 09 Sept -- Move this portion to after successfully returning to job screen?
@@ -6447,9 +7433,9 @@ function queueJob(html_file)
 //        console.log('assetId : ' + asset_id);
         var statuschange_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=statusChange&jobScheduleIds=" + id + "&statusId=" + uploadingStatus
                 + "&driverId=" + user_id + "&dateTime=" + now + "&assetId=" + asset_id;
-        
+
 //        console.log('AATESTING5 ' + statuschange_URL );
-        
+
         $.ajax({
             url: statuschange_URL,
             type: 'GET',
@@ -6462,7 +7448,7 @@ function queueJob(html_file)
                     spinOut();
 
                     $.mobile.changePage("#main", {transition: 'fade', reverse: 'true'});
-                    setTimeout(function () 
+                    setTimeout(function ()
                     {
                         // CHX 28 July loadJob("new");
                         if (isJobHistoryCheck  == true) {loadHistoryJob("all"); } else {loadJob("all"); }
@@ -6484,7 +7470,7 @@ function queueJob(html_file)
                         //console.log("Jobs uploading in queue. Job added to queue and pending upload.");
                     }
 //                    }, lang.Mobile104, '✔');
-                } 
+                }
                 else
                 {
                     spinOut();
@@ -6501,11 +7487,11 @@ function queueJob(html_file)
             }
         });
     }
-    
+
     function uploadPlannedWithoutNetwork()
     {
         $.mobile.changePage("#main", {transition: 'fade', reverse: 'true'});
-        setTimeout(function () 
+        setTimeout(function ()
         {
             if (isJobHistoryCheck  == true) {loadHistoryJob("all"); } else {loadJob("all"); }
             window.clearInterval(jobInterval);
@@ -6519,7 +7505,7 @@ function queueJob(html_file)
         { //if this is the only job in queue
             writeLogs("No jobs in queue. Starting upload queue now.");
             newUploadQueue();
-        } 
+        }
         else
         {
             writeLogs("Jobs uploading in queue. Job added to queue and pending upload.");
@@ -6528,12 +7514,12 @@ function queueJob(html_file)
 }
 
 
-$( document ).on( "pageshow", "#main", function( event ) 
+$( document ).on( "pageshow", "#main", function( event )
 {
     isInForm = false;
-    
+
     var uploadQueueArr = [];
-    
+
     if (window.localStorage["uploadQueue"])
     {
         uploadQueueArr = JSON.parse(window.localStorage["uploadQueue"]).toString().split(",");
@@ -6558,44 +7544,44 @@ $( document ).on( "pageshow", "#main", function( event )
             }
         });
     }
-    
+
     // CHX2019
-    if (appDirectory != undefined && uploadDirectory != undefined) 
+    if (appDirectory != undefined && uploadDirectory != undefined)
     {
-        setTimeout(function () 
+        setTimeout(function ()
         {
             if (isJobHistoryCheck  == true) {loadHistoryJob("all"); } else {loadJob("all"); }
             window.clearInterval(jobInterval);
             jobInterval = window.setInterval(function () {
-                if (isJobHistoryCheck  == true) 
+                if (isJobHistoryCheck  == true)
                 {
-                    if (autoRefresh == true) loadHistoryJob("all"); 
-                } 
-                else 
+                    if (autoRefresh == true) loadHistoryJob("all");
+                }
+                else
                 {
-                    if (autoRefresh == true) loadJob("all"); 
+                    if (autoRefresh == true) loadJob("all");
                 }
             }, refreshRate);
         }, 1000);
-    } 
-    else 
+    }
+    else
     {
         setTimeout(function () {
             if (isJobHistoryCheck  == true) {loadHistoryJob("all"); } else {loadJob("all"); }
             window.clearInterval(jobInterval);
             jobInterval = window.setInterval(function () {
-                if (isJobHistoryCheck  == true) 
+                if (isJobHistoryCheck  == true)
                 {
-                    if (autoRefresh == true) loadHistoryJob("all"); 
-                } 
-                else 
+                    if (autoRefresh == true) loadHistoryJob("all");
+                }
+                else
                 {
-                    if (autoRefresh == true) loadJob("all"); 
+                    if (autoRefresh == true) loadJob("all");
                 }
             }, refreshRate);
         }, 400);
     }
-    
+
     if ($('#mainSelectedDate').val() !== '')
     {
         document.getElementById("calendarNav").style.visibility = "visible";
@@ -6606,7 +7592,7 @@ $( document ).on( "pageshow", "#main", function( event )
         document.getElementById("calendarNav").style.visibility = "hidden";
         document.getElementById("logoutNav").style.visibility = "visible";
     }
-    
+
 });
 
 
@@ -6629,7 +7615,7 @@ function newPendingStatus(jobId, statusId, time, userId, assetId)
         var pendingUserId = [];
         var pendingAssetId = [];
     }
-    
+
     pendingJobId.push(jobId);
     pendingStatusId.push(statusId);
     pendingTime.push(time);
@@ -6654,41 +7640,41 @@ function sendPendingStatusUpdates()
         var pendingUserId = window.localStorage["pendingUserId"].split(',');
         var pendingAssetId = window.localStorage["pendingAssetId"].split(',');
 
-        
+
         /*
-         * 
+         *
          uploading
         var statuschange_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=statusChange&jobScheduleIds=" + id + "&statusId=" + uploadingStatus
                 + "&driverId=" + user_id + "&dateTime=" + now + "&assetId=" + asset_id;
-        
+
         startjob
             var statuschange_URL = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=statusChange&jobScheduleIds=" + job_id
                 + "&statusId=" + startedStatus + "&dateTime=" + now + "&assetId=" + asset_id;
-        
-         * 
-         * 
+
+         *
+         *
          */
-        
+
         var userId = 0;
         if (parseInt(pendingUserId[0],10) > 0)
         {
             userId = parseInt(pendingUserId[0],10);
         }
-        
+
         var url = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=statusChange&"
-                    + "jobScheduleIds=" + pendingJobId[0] 
+                    + "jobScheduleIds=" + pendingJobId[0]
                     + "&statusId=" + pendingStatusId[0]
                     + "&driverId=" + userId
-                    + "&dateTime=" + pendingTime[0] 
+                    + "&dateTime=" + pendingTime[0]
                     + "&assetId=" + pendingAssetId[0];
-        
+
 //        console.log('xxx sendPendingStatusUpdates: ' + url)
-        
+
         $.ajax({
             url: url,
             type: 'GET',
             timeout: 30000,
-            success: function (data) 
+            success: function (data)
             {
                 // send regardless of data.result, in case job got deleted.
                 pendingJobId.shift();
@@ -6701,7 +7687,7 @@ function sendPendingStatusUpdates()
                 window.localStorage["pendingStatusId"] = pendingStatusId.join();
                 window.localStorage["pendingTime"] = pendingTime.join();
                 window.localStorage["pendingUserId"] = pendingUserId.join();
-                window.localStorage["pendingAssetId"] = pendingAssetId.join(); 
+                window.localStorage["pendingAssetId"] = pendingAssetId.join();
             },
             error: function (error, errorText, errorThrown) {
 //                console.log('xxx still no network...');
@@ -6817,39 +7803,147 @@ function getCurrentDateTime(mode) {
 function rebindMainJobList() { // using .one function so that user dont spam click and cause problem to the loading of the form. This will rebind the joblist with .one so user can continue clicking
     $('#main .jobList li').off('click');
     $('#main .jobList li').one('click', function (e) {
-        if ($(this).attr('name') != null && $(e.target).attr('class') != "job-value job-navigate") {
-            
+        if ($(this).attr('name') != null && $(e.target).attr('class') != "job-value job-navigate" && $(e.target).attr('class') != "job-media" ) {
+
             var timeleft = jobDuration;
             jobEndedInTime = false ;
             jobDurationTimer = setInterval(function(){
                 timeleft--;
                 if(timeleft <= 0){
                         clearInterval(jobDurationTimer);
-                        jobEndedInTime = true ;  
+                        jobEndedInTime = true ;
                 }
-            },1000); 
-            
+            },1000);
+
             goForm($(this).attr('job_id'), $(this).attr('name'), $(this).attr('job_name'), $(this).attr('job_type_id'), $(this).attr('job_status'), false);
         }
     });
 }
-// when take photo, save image to user mobile gallery if form field enable "save to gallery" 
-function saveProcessedImage(base64String)
-{
-    var jobId = window.sessionStorage["selected_id"];
-    var params = {data: base64String, prefix: 'JOB_' + jobId + '_', format: 'JPG', quality: 100, mediaScanner: true};
-    window.imageSaver.saveBase64Image(params,
-            function (filePath) {
-                writeLogs("File saved on " + filePath);
-                //console.log('File saved on ' + filePath);
-            },
-            function (msg) {
-                //console.error(msg);
-                writeLogs("Saving Processed Image Error " + msg);
-            }
-    );
-}
+// when take photo, save image to user mobile gallery if form field enable "save to gallery"
+//function saveProcessedImage(base64String) {
+//    alert("DEBUG saveProcessedImage");
+//    var jobId = window.sessionStorage["selected_id"];
+//    var folderName = "WAM";
+//    var fileName = "JOB_" + jobId + "_" + Date.now() + ".jpg";
+//    saveProcessedImage(base64String);
+//    var params = {
+//        data: base64String,
+//        directory: "DCIM",
+//        filename: folderName + "/" + fileName,
+//        prefix: "",
+//        format: "JPG",
+//        quality: 100,
+//        mediaScanner: true
+//    };
+//
+//    alert("DEBUG before image saver");
+//    window.imageSaver.saveBase64Image(
+//        params,
+//        function (filePath) {
+//            alert("File saved on " + filePath);
+//            writeLogs("File saved on " + filePath);
+//            console.log('File saved on ' + filePath);
+//        },
+//        function (msg) {
+//            console.error(msg);
+//            writeLogs("Saving Processed Image Error " + msg);
+//        }
+//    );
+//}
 
+function saveProcessedImage(base64String) {
+   // alert("DEBUG saveProcessedImage");
+
+    var jobId = window.sessionStorage["selected_id"];
+    var folderName = "DCIM/WAM";
+    var fileName = "JOB_" + jobId + "_" + Date.now() + ".jpg";
+
+    // Convert base64 string to Uint8Array
+
+    try {
+            // Extract base64-encoded image data from the string
+            var base64Data = base64String.split(',')[1]; // Split at comma and take the second part
+
+            // Decode the base64 string
+            var binaryString = atob(base64Data);
+
+            // Convert the binary string to a Uint8Array
+            var len = binaryString.length;
+            var bytes = new Uint8Array(len);
+            for (var i = 0; i < len; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+
+            // Continue with saving the image to the file system...
+        } catch (error) {
+            // Handle the error
+            console.error("Error decoding base64 string:", error);
+        }
+
+    var len = binaryString.length;
+    var bytes = new Uint8Array(len);
+    for (var i = 0; i < len; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+    }
+
+    // Get the folder path
+    var folderPath = cordova.file.externalRootDirectory + folderName;
+
+    // Create the WAM folder if it doesn't exist
+    window.resolveLocalFileSystemURL(folderPath, function(dirEntry) {
+        saveFile(dirEntry);
+    }, function(error) {
+        window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function(rootDirEntry) {
+            rootDirEntry.getDirectory(folderName, { create: true, exclusive: false }, function(dirEntry) {
+                saveFile(dirEntry);
+            }, function(error) {
+                console.error('Error creating directory:', error);
+            });
+        }, function(error) {
+            console.error('Error accessing root directory:', error);
+        });
+    });
+
+    // Function to save the file to the folder
+    // Function to save the file to the folder
+    function saveFile(folderEntry) {
+        folderEntry.getFile(fileName, { create: true, exclusive: false }, function(fileEntry) {
+            // Write the file
+            fileEntry.createWriter(function(writer) {
+                writer.onwriteend = function() {
+                    console.log('File saved on ' + fileEntry.nativeURL);
+                    // Optionally, you can perform additional operations here
+                };
+                writer.onerror = function(error) {
+                    console.error('Error writing file:', error);
+                    // Log the error object as a string
+                    console.error('Error object:', JSON.stringify(error));
+                };
+                writer.write(bytes);
+            }, function(error) {
+                console.error('Error creating writer:', error);
+                // Log the error object as a string
+                console.error('Error object:', JSON.stringify(error));
+            });
+        }, function(error) {
+            console.error('Error getting file:', error);
+            // Log the error object as a string
+            console.error('Error object:', JSON.stringify(error));
+        });
+    }
+
+    // Resolve or create the directory
+    window.resolveLocalFileSystemURL(folderPath, function(dirEntry) {
+        saveFile(dirEntry);
+    }, function(error) {
+        // Handle directory not found error
+        console.error('Error resolving directory:', error);
+        // Log the error object as a string
+        console.error('Error object:', JSON.stringify(error));
+    });
+
+
+}
 
 function stat(status) { //give status id and returns status in string
     status = parseInt(status); //convert to int
@@ -6991,7 +8085,7 @@ var sort_by;
 }());
 
 
-// * Start of Queue Page */ Currently not activated. Not sure what exacting does this do. 
+// * Start of Queue Page */ Currently not activated. Not sure what exacting does this do.
 
 var queuePointer = ""; //yyy
 
@@ -7095,10 +8189,11 @@ function singleQueueUpload() { //yyy
                 JSONText.details = details;
                 JSONText = JSON.stringify(JSONText);
                 $("#queue .logView").append("JSONText formed success" + ".<br>");
+                console.log("X3")
                 var upload_url = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=upload";
-                
+
                 console.log('AATESTING2 ' + upload_url + "AATESTING2 JSON :-" + JSONText);
-                
+
                 $("#queue .logView").append("Uploading JSON To: " + upload_url + "<br>");
                 $("#queue .logView").append("Waiting response from server." + ".<br>");
                 $.ajax({
@@ -7175,7 +8270,7 @@ function singleQueueUpload() { //yyy
             $("#queue .logView").append("Removing index=" + index + " job from the list.<br>");
             window.localStorage["uploadQueue"] = JSON.stringify(tuploadQueue);
             $("#queue .logView").append("New Queuelist= " + window.localStorage["uploadQueue"] + "<br>");
-            $('.uploadCount span').html(tuploadQueue.length); //update Upload count	
+            $('.uploadCount span').html(tuploadQueue.length); //update Upload count
             $("#queue .logView").append("Queue Length= " + tuploadQueue.length + "<br>");
             $("#queue .logView").append("Finished. Closing log in 3 seconds.<br>");
             setTimeout(function () {
@@ -7227,7 +8322,7 @@ function singleQueueUpload() { //yyy
         $("#queue .logView").append("Removing index=" + index + " job from the list.<br>");
         window.localStorage["uploadQueue"] = JSON.stringify(tuploadQueue);
         $("#queue .logView").append("New Queuelist= " + window.localStorage["uploadQueue"] + "<br>");
-        $('.uploadCount span').html(tuploadQueue.length); //update Upload count	
+        $('.uploadCount span').html(tuploadQueue.length); //update Upload count
         $("#queue .logView").append("Queue Length= " + tuploadQueue.length + "<br>");
         $("#queue .logView").append("Finished. Closing log in 3 seconds.<br>");
         setTimeout(function () {
@@ -7291,7 +8386,7 @@ function singleQueueDelete() { //yyy
     $("#queue .logView").append("Removing index=" + index + " job from the list.<br>");
     window.localStorage["uploadQueue"] = JSON.stringify(tuploadQueue);
     $("#queue .logView").append("New Queuelist= " + window.localStorage["uploadQueue"] + "<br>");
-    $('.uploadCount span').html(tuploadQueue.length); //update Upload count	
+    $('.uploadCount span').html(tuploadQueue.length); //update Upload count
     $("#queue .logView").append("Queue Length= " + tuploadQueue.length + "<br>");
     $("#queue .logView").append("Finished. Closing log in 3 seconds.<br>");
     setTimeout(function () {
@@ -7318,32 +8413,32 @@ function confirmDelQueue(response) { //yyy
     }
 }
 
-function checkBeaconJob(id) 
+function checkBeaconJob(id)
 {
     rebindMainJobList();
     var output = false;
     var form = $('#main .jobList li[job_id=' + id + ']').children(".job-preview");
-    
+
     if ((form.children('.job-preview-value-bluetooth').text() === '')||(form.children('.job-preview-value-bluetooth').text() === null))
     {
         output = true;
-        
+
         // -1 means not a beacon job
         startJobBeaconId = '-1';
     }
     else
     {
         var beaconId = checkLastDetectedBeacons(form.children('.job-preview-value-bluetooth').text());
-        
+
         if (beaconId !== '')
         {
             output = true;
             startJobBeaconId = beaconId;
         }
     }
-    
+
     return output;
-    
+
 }
 
 
@@ -7359,24 +8454,24 @@ async function deleteUploadJobFile() { // this is to delete the upload job file 
         alert("Failed to list directory contents: " + error.code);
     }
     function readAllFilesSuccess(entries) {
-        
+
         synArr = [];
         var strdata = "Uploaded";
-        
+
         for (var i = 0; i < entries.length; i++) {
             if(entries[i].isFile) {
                 entries[i].file(function (file) {
                     if(file.name.length > 15) {
-                        
+
                         var strfilename = file.name.toString();
-                        
+
                         if (strfilename.includes(strdata)) {
-                            
+
                                 var getDatePart = file.name.split("_");
                                 var fileDateText = getDatePart[1];
                                 var year = fileDateText.substring(0, 4);
                                 var month = fileDateText.substring(4, 6);
-                                var dt = fileDateText.substring(6, 8);       
+                                var dt = fileDateText.substring(6, 8);
                                 var fileDate = new Date(year +"-" + month +"-" + dt);
                                 if (lastWeekDate.getTime() > fileDate.getTime()) {
                                     appDirectory.getFile(file.name, {create: false}, function (fileEntry) {
@@ -7385,12 +8480,12 @@ async function deleteUploadJobFile() { // this is to delete the upload job file 
                                             console.log('File removed.');
                                         }, errorCallback);
                                     }, errorCallback1);
-                                }                            
-                            
+                                }
+
                         }
 
                     }
-                });                
+                });
             }
         }
     }
@@ -7403,8 +8498,8 @@ async function deleteUploadJobFile() { // this is to delete the upload job file 
 }
 
 
-async function showUploadJobFile() { 
-    
+async function showUploadJobFile() {
+
     var directoryReader = appDirectory.createReader();
     directoryReader.readEntries(readAllFilesSuccess, readAllFilesFail);
 
@@ -7412,37 +8507,47 @@ async function showUploadJobFile() {
         alert("Failed to list directory contents: " + error.code);
     }
     function readAllFilesSuccess(entries) {
-        
+
         synArr = [];
-        
+
         $('#syncjobList .jobItemList ul').html('');
-        
+
         jobsLoaded = 0;
         allJob = [];
 
         arrCount = 0;
-        arrSyncJob = [];  
+        arrSyncJob = [];
         uploadCount = 0;
         var strdata = "Uploaded";
-        
-        
-        for (var i = 0; i < entries.length; i++) {
-            if(entries[i].isFile) {
-                entries[i].file(function (file) {
+
+        console.log("entries" + JSON.stringify(entries))
+        console.log("entries size: " + entries.length)
+        var fileEntries = entries.filter((e) => e.isFile).sort((a, b) => {
+            let aDate = a.name.split("_")[1]
+            let bDate = b.name.split("_")[1]
+            return bDate - aDate
+        })
+        console.log("fileEntries size: " + fileEntries.length)
+        console.log("fileEntries: " + JSON.stringify(fileEntries, null, 2))
+        for (var i = 0; i < fileEntries.length; i++) {
+            if(fileEntries[i].isFile) {
+                fileEntries[i].file(function (file) {
                     if(file.name.length > 15) {
                         var strfilename = file.name.toString();
-                        
+
                         if (strfilename.includes(strdata)) {
 
                             var getDatePart = file.name.split("_");
                             var fileDateText = getDatePart[1];
                             var year = fileDateText.substring(0, 4);
                             var month = fileDateText.substring(4, 6);
-                            var dt = fileDateText.substring(6, 8);       
+                            var dt = fileDateText.substring(6, 8);
                             var fileDate = new Date(year +"-" + month +"-" + dt);
                             var id = getDatePart[0];
                             console.log('File read ' + file.name );
                             synArr.push([id,file.name]);
+                            // alert('Add');
+                            setTimeout(function(){
                             appDirectory.getFile(file.name, {create: false}, function (fileEntry) {
                                     fileEntry.file(function(fileObj) {
 
@@ -7457,7 +8562,7 @@ async function showUploadJobFile() {
                                                 var  filesize;
                                                 filesize = ((fileObj.size)/1024);
                                                 filesize = filesize.toFixed(2);
-                                                console.log("actual size " + filesize + "KB"); 
+                                                console.log("actual size " + filesize + "KB");
                                                 var job_type_id = id;
                                                 $('#syncjobList .jobItemList ul').append("<li name='" + id + "' job_name='" + file.name + "' job_id='" + htmlpart[1] + "' job_base64='" + job_type_id   + "'>" +
                                                     "<span class='job-title'><img src='img/id.png' /><span class='job-value job-id'>" + "<mark style='background-color:#008000;border-radius:5px;padding:0 10px;color:#FFF;'>" + id + "</mark>" + "</span></span><br>" +
@@ -7465,9 +8570,9 @@ async function showUploadJobFile() {
                                                     "<span class='job-title'><img src='img/status.png' /><span class='job-value job-status'>" +  "<mark style='background-color:#FF8C00;border-radius:5px;padding:0 10px;color:#FFF;'>" + filesize + " KB" + "</mark>" + "</span></span><br>" +
                                                     "</li>");
                                                 uploadCount = uploadCount +1;
-                                                $('#syncjobList .uploadCount span').html(uploadCount); 
+                                                $('#syncjobList .uploadCount span').html(uploadCount);
                                                 $('#syncjobList .jobItemList li').off('click');
-                                                $('#syncjobList .jobItemList li').one('click', function () 
+                                                $('#syncjobList .jobItemList li').one('click', function ()
                                                 {
                                                     console.log("A21");
                                                     navigator.notification.confirm(
@@ -7476,28 +8581,28 @@ async function showUploadJobFile() {
                                                         lang.Mobile112,
                                                         ["✘", "✔"]
                                                     );
-                                                     
-                                                      //uploadFileToServer($(this).attr('name'),$(this).attr('job_id'));
-                                                      
-                                                });   
 
-                                        };                                    
+                                                      //uploadFileToServer($(this).attr('name'),$(this).attr('job_id'));
+
+                                                });
+
+                                        };
 
                                     }, function(error) {
                                         console.log('file entry error' + error);
-                                    });                             
-                            }, errorCallback1);                        
-                            
-                            
+                                    });
+                            }, errorCallback1);
+
+                            }, i * 1000);
                         }
-                        
+
                     }
-                    
+
                     ///
-                });                
+                });
             }
         }
-        
+
     }
     function errorCallback(error) {
         console.log("ERROR with removing file: " + error.code)
@@ -7507,7 +8612,7 @@ async function showUploadJobFile() {
     }
 }
 
-function uploadFileToServer(jobId,base64Html) // will come to here when there is no more file to read from. 
+function uploadFileToServer(jobId,base64Html) // will come to here when there is no more file to read from.
 {
 
     var id = jobId;
@@ -7521,14 +8626,14 @@ function uploadFileToServer(jobId,base64Html) // will come to here when there is
 
     JSONText.job_id = parseInt(id);
     JSONText.driver_id = parseInt(driver_id);
-    JSONText.asset_id = parseInt(asset_id); 
+    JSONText.asset_id = parseInt(asset_id);
     JSONText.version_no = version_no;
     JSONText.status_id = parseInt(endedStatus);
     JSONText.details = details;
     JSONText = JSON.stringify(JSONText);
-    
-    spinIn();
 
+    spinIn();
+    console.log("X1")
     var upload_url = databaseIP + "/Controller/mobile_controller.jsp?type=job&action=upload&jobId=" + id + "&assetId=" + asset_id + "&detailsLength=" + details.length + "&driverId=" + driver_id;
 
     $.ajax({
@@ -7548,14 +8653,14 @@ function uploadFileToServer(jobId,base64Html) // will come to here when there is
             if (data.result)
             {
                 spinOut();
-               
+
                 clearTimeout(uploadInterval); // not to have two instant of uploadInterval occuring at the same time, therefore, clear first before re-initatiate.
                 uploadInterval = setTimeout(function () {
-                   
+
                 }, uploadDelay); //calls again after 30seconds
             } else
             {
-               spinOut(); 
+               spinOut();
             }
         },
         error: function (error, errorText, errorThrown) {
@@ -7572,12 +8677,12 @@ function renameJobUploadedFile(html_file, startIndex)
 
     appDirectory.getFile(html_file + '-' + nextIndex, {create: false},
             function (fileEntry)
-            { 
-                fileEntry.moveTo(appDirectory,html_file + "Uploaded",renameSuccess,renameFail);   
+            {
+                fileEntry.moveTo(appDirectory,html_file + "Uploaded",renameSuccess,renameFail);
             },
             function (err)
             {
-               
+
             }
     );
 }
@@ -7591,3 +8696,33 @@ function renameSuccess() {
 function renameFail() {
     console.log('failed');
 }
+
+// (A) LOCK SCREEN ORIENTATION
+function lock (orientation) {
+  // (A1) GO INTO FULL SCREEN FIRST
+  let de = document.documentElement;
+  if (de.requestFullscreen) { de.requestFullscreen(); }
+  else if (de.mozRequestFullScreen) { de.mozRequestFullScreen(); }
+  else if (de.webkitRequestFullscreen) { de.webkitRequestFullscreen(); }
+  else if (de.msRequestFullscreen) { de.msRequestFullscreen(); }
+
+  // (A2) THEN LOCK ORIENTATION
+  screen.orientation.lock(orientation);
+}
+
+// (B) UNLOCK SCREEN ORIENTATION
+function unlock () {
+  // (B1) UNLOCK FIRST
+  screen.orientation.unlock();
+
+  // (B2) THEN EXIT FULL SCREEN
+  if (document.exitFullscreen) { document.exitFullscreen(); }
+  else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); }
+  else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); }
+  else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+}
+//Add search in form template selection
+
+
+
+
