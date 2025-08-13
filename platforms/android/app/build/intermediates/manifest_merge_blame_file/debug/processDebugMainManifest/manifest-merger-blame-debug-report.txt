@@ -2,8 +2,8 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.v3.wam"
 4    android:hardwareAccelerated="true"
-5    android:versionCode="4020180"
-6    android:versionName="4.2.18" >
+5    android:versionCode="4020190"
+6    android:versionName="4.2.19" >
 7
 8    <uses-sdk
 9        android:minSdkVersion="24"

@@ -9,6 +9,7 @@ function registerFCMDevice() {
 
     FirebasePlugin.getToken(function (token) {
         localStorage.setItem("deviceID", token);
+        localStorage.setItem("deviceType", 1);
     }, function (error) {
         console.error("Failed to get token:", error);
     });
