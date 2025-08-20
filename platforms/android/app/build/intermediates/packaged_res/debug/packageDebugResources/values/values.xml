@@ -26,9 +26,20 @@
     <string name="processing_images_message">This may take a few moments</string>
     <string name="project_id" translatable="false">v3nity-wam3-push</string>
     <string name="requesting_thumbnails">Requesting thumbnails, please be patient</string>
-    <style name="AppTheme.Splash" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowBackground">@layout/custom_splash</item>
-    </style>
     <style name="MyTheme" parent="android:Theme.Holo.Light">
+    </style>
+    <style name="Theme.WAM3.Splash" parent="Theme.SplashScreen">
+        
+        <item name="windowSplashScreenBackground">@color/result_text</item>
+
+        
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher</item>
+
+        
+        \
+        <item name="windowSplashScreenIconBackgroundColor">@color/result_view</item>
+
+        
+        <item name="postSplashScreenTheme">@style/Theme.AppCompat.NoActionBar</item>
     </style>
 </resources>

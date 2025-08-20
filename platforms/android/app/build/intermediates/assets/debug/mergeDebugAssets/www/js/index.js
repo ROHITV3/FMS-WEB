@@ -1,4 +1,4 @@
-window.localStorage["version"] = "4.2.19"; //set app version number
+window.localStorage["version"] = "4.2.20"; //set app version number
 // var network = "zonglipub"; //global variable that decides which databaseIP to connect to
 var initialheight; //used to record initial screen height
 //var databaseIP = 'http://v3nity.com/V3Nity4CMS/'; //global databaseIP variable

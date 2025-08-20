@@ -2,137 +2,137 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.v3.wam"
 4    android:hardwareAccelerated="true"
-5    android:versionCode="4020190"
-6    android:versionName="4.2.19" >
+5    android:versionCode="4020200"
+6    android:versionName="4.2.20" >
 7
 8    <uses-sdk
 9        android:minSdkVersion="24"
 10        android:targetSdkVersion="35" />
 11
 12    <supports-screens
-12-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:5-191
+12-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:5-191
 13        android:anyDensity="true"
-13-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:23-48
+13-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:23-48
 14        android:largeScreens="true"
-14-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:49-76
+14-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:49-76
 15        android:normalScreens="true"
-15-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:77-105
+15-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:77-105
 16        android:resizeable="true"
-16-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:106-131
+16-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:106-131
 17        android:smallScreens="true"
-17-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:132-159
+17-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:132-159
 18        android:xlargeScreens="true" />
-18-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:160-188
+18-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:160-188
 19
 20    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-20-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:42:5-81
-20-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:42:22-78
+20-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:42:5-81
+20-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:42:22-78
 21    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-21-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:5-75
-21-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:22-72
+21-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:5-75
+21-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:22-72
 22    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-22-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:5-80
-22-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:22-77
+22-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:5-80
+22-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:22-77
 23    <uses-permission android:name="android.permission.VIBRATE" />
-23-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:5-66
-23-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:22-63
+23-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:5-66
+23-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:22-63
 24    <uses-permission android:name="android.permission.CAMERA" />
-24-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:5-65
-24-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:22-62
+24-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:5-65
+24-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:22-62
 25    <uses-permission android:name="android.permission.FLASHLIGHT" />
-25-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:5-69
-25-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:22-66
+25-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:5-69
+25-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:22-66
 26    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-26-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:5-79
-26-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:22-76
+26-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:5-79
+26-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:22-76
 27    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-27-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:49:5-81
-27-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:49:22-78
+27-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:49:5-81
+27-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:49:22-78
 28    <uses-permission android:name="android.permission.BLUETOOTH" />
-28-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:5-68
-28-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:22-65
+28-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:5-68
+28-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:22-65
 29    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-29-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:51:5-74
-29-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:51:22-71
+29-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:51:5-74
+29-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:51:22-71
 30    <uses-permission android:name="android.permission.INTERNET" />
-30-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:52:5-67
-30-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:52:22-64
+30-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:52:5-67
+30-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:52:22-64
 31    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-31-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:53:5-79
-31-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:53:22-76
+31-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:53:5-79
+31-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:53:22-76
 32    <uses-permission android:name="android.permission.WAKE_LOCK" />
-32-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:54:5-68
-32-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:54:22-65
+32-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:54:5-68
+32-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:54:22-65
 33    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-33-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:5-77
-33-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:22-74
+33-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:5-77
+33-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:22-74
 34    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-34-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:5-76
-34-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:22-73
+34-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:5-76
+34-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:22-73
 35    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-35-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:57:5-75
-35-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:57:22-72
+35-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:57:5-75
+35-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:57:22-72
 36    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-36-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:5-75
-36-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:22-72
+36-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:5-75
+36-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:22-72
 37    <uses-permission android:name="android.permission.DELETE_CACHE_FILES" />
-37-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:5-77
-37-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:22-74
+37-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:5-77
+37-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:22-74
 38
 39    <uses-feature
-39-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:5-90
+39-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:5-90
 40        android:name="android.hardware.location.gps"
-40-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:19-63
+40-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:19-63
 41        android:required="true" />
-41-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:64-87
+41-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:64-87
 42    <uses-feature
-42-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:5-84
+42-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:5-84
 43        android:name="android.hardware.camera"
-43-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:19-57
+43-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:19-57
 44        android:required="true" />
-44-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:58-81
+44-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:58-81
 45    <uses-feature
-45-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:5-88
+45-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:5-88
 46        android:name="android.hardware.telephony"
-46-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:19-60
+46-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:19-60
 47        android:required="false" />
-47-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:61-85
+47-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:61-85
 48    <uses-feature android:name="android.hardware.screen.portrait" />
-48-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:5-69
-48-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:19-66
+48-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:5-69
+48-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:19-66
 49
 50    <queries>
-50-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:64:5-78:15
+50-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:64:5-78:15
 51        <intent>
-51-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:65:9-67:18
+51-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:65:9-67:18
 52            <action android:name="android.media.action.IMAGE_CAPTURE" />
-52-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:66:13-73
-52-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:66:21-70
+52-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:66:13-73
+52-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:66:21-70
 53        </intent>
 54        <intent>
-54-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:68:9-70:18
+54-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:68:9-70:18
 55            <action android:name="android.intent.action.GET_CONTENT" />
-55-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:69:13-72
-55-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:69:21-69
+55-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:69:13-72
+55-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:69:21-69
 56        </intent>
 57        <intent>
-57-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:71:9-73:18
+57-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:71:9-73:18
 58            <action android:name="android.intent.action.PICK" />
-58-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:72:13-65
-58-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:72:21-62
+58-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:72:13-65
+58-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:72:21-62
 59        </intent>
 60        <intent>
-60-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:74:9-77:18
+60-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:74:9-77:18
 61            <action android:name="com.android.camera.action.CROP" />
-61-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:75:13-69
-61-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:75:21-66
+61-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:75:13-69
+61-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:75:21-66
 62
 63            <data
-63-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:13-73
+63-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:13-73
 64                android:mimeType="image/*"
-64-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:19-45
+64-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:19-45
 65                android:scheme="content" />
-65-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:46-70
+65-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:46-70
 66        </intent>
 67        <intent>
 67-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/e278667bfc70075746fa3d282591bcb6/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:11:9-15:18
@@ -141,85 +141,85 @@
 68-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/e278667bfc70075746fa3d282591bcb6/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:12:21-62
 69
 70            <data android:scheme="https" />
-70-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:13-73
-70-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:46-70
+70-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:13-73
+70-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:46-70
 71        </intent>
 72    </queries>
 73
 74    <uses-feature
-74-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:5-90
+74-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:5-90
 75        android:name="android.hardware.location.gps"
-75-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:19-63
+75-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:19-63
 76        android:required="true" />
-76-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:64-87
+76-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:64-87
 77
 78    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-78-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:5-80
-78-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:22-77
+78-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:5-80
+78-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:22-77
 79    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-79-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:5-75
-79-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:22-72
+79-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:5-75
+79-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:22-72
 80    <uses-permission android:name="android.permission.VIBRATE" />
-80-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:5-66
-80-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:22-63
+80-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:5-66
+80-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:22-63
 81    <uses-permission android:name="android.permission.DELETE_CACHE_FILES" />
-81-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:5-77
-81-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:22-74
+81-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:5-77
+81-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:22-74
 82
 83    <uses-feature
-83-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:5-88
+83-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:5-88
 84        android:name="android.hardware.telephony"
-84-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:19-60
+84-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:19-60
 85        android:required="false" />
-85-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:61-85
+85-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:61-85
 86
 87    <uses-permission android:name="android.permission.CAMERA" />
-87-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:5-65
-87-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:22-62
+87-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:5-65
+87-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:22-62
 88    <uses-permission android:name="android.permission.FLASHLIGHT" />
-88-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:5-69
-88-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:22-66
+88-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:5-69
+88-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:22-66
 89
 90    <uses-feature
-90-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:5-84
+90-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:5-84
 91        android:name="android.hardware.camera"
-91-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:19-57
+91-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:19-57
 92        android:required="true" />
-92-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:58-81
+92-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:58-81
 93    <uses-feature android:name="android.hardware.screen.portrait" />
-93-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:5-69
-93-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:19-66
+93-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:5-69
+93-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:19-66
 94
 95    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-95-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:5-77
-95-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:22-74
+95-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:5-77
+95-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:22-74
 96    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-96-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:5-76
-96-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:22-73
+96-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:5-76
+96-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:22-73
 97    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-97-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:57:5-75
-97-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:57:22-72
+97-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:57:5-75
+97-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:57:22-72
 98    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-98-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:5-75
-98-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:22-72
+98-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:5-75
+98-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:22-72
 99    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-99-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:5-79
-99-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:22-76
+99-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:5-79
+99-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:22-76
 100    <uses-permission android:name="android.permission.BLUETOOTH" />
-100-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:5-68
-100-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:22-65
+100-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:5-68
+100-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:22-65
 101    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-101-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:51:5-74
-101-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:51:22-71
+101-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:51:5-74
+101-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:51:22-71
 102    <uses-permission
-102-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:96:5-120
+102-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:96:5-120
 103        android:name="android.permission.BLUETOOTH_SCAN"
-103-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:96:22-70
+103-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:96:22-70
 104        android:usesPermissionFlags="neverForLocation" />
-104-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:96:71-117
+104-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:96:71-117
 105    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-105-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:97:5-76
-105-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:97:22-73
+105-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:97:5-76
+105-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:97:22-73
 106    <uses-permission android:name="com.v3.wam.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Required by older versions of Google Play services to create IID tokens -->
 106-->[com.google.android.gms:play-services-tagmanager:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/7936c6ff2fb534abbbd255447186e337/transformed/jetified-play-services-tagmanager-18.1.1/AndroidManifest.xml:22:5-97
 106-->[com.google.android.gms:play-services-tagmanager:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/7936c6ff2fb534abbbd255447186e337/transformed/jetified-play-services-tagmanager-18.1.1/AndroidManifest.xml:22:22-94
@@ -250,218 +250,218 @@
 116-->[androidx.core:core:1.13.0] /Users/priyanka/.gradle/caches/8.13/transforms/c9b1677823ad5fd20d89f8c79a360690/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
 117
 118    <application
-118-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:5-41:19
+118-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:5-41:19
 119        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 119-->[androidx.core:core:1.13.0] /Users/priyanka/.gradle/caches/8.13/transforms/c9b1677823ad5fd20d89f8c79a360690/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
 120        android:debuggable="true"
 121        android:extractNativeLibs="false"
 122        android:hardwareAccelerated="true"
-122-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:18-52
+122-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:18-52
 123        android:icon="@drawable/ic_launcher"
-123-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:53-89
+123-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:53-89
 124        android:label="@string/app_name"
-124-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:90-122
+124-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:90-122
 125        android:requestLegacyExternalStorage="true"
-125-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:123-166
+125-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:123-166
 126        android:supportsRtl="true"
-126-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:167-193
+126-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:167-193
 127        android:testOnly="true"
 128        android:usesCleartextTraffic="true" >
-128-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:194-229
+128-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:194-229
 129        <activity
-129-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:9-10:20
+129-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:9-10:20
 130            android:name="com.v3.wam.MainActivity"
-130-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:212-250
+130-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:212-250
 131            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-131-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:19-135
+131-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:19-135
 132            android:exported="true"
-132-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:136-159
+132-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:136-159
 133            android:label="WAM3"
-133-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:160-180
+133-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:160-180
 134            android:launchMode="singleTop"
-134-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:181-211
-135            android:theme="@style/Theme.AppCompat.NoActionBar"
-135-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:251-301
+134-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:181-211
+135            android:theme="@style/Theme.WAM3.Splash"
+135-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:251-291
 136            android:windowSoftInputMode="adjustResize" >
-136-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:302-344
+136-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:292-334
 137            <intent-filter android:label="WAM3" >
-137-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:6:13-9:29
-137-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:6:28-48
+137-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:6:13-9:29
+137-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:6:28-48
 138                <action android:name="android.intent.action.MAIN" />
-138-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:7:17-69
-138-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:7:25-66
+138-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:7:17-69
+138-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:7:25-66
 139
 140                <category android:name="android.intent.category.LAUNCHER" />
-140-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:8:17-77
-140-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:8:27-74
+140-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:8:17-77
+140-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:8:27-74
 141            </intent-filter>
 142        </activity>
 143        <activity
-143-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:9-311
+143-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:9-311
 144            android:name="com.google.zxing.client.android.CaptureActivity"
-144-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:139-201
+144-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:139-201
 145            android:clearTaskOnLaunch="true"
-145-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:19-51
+145-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:19-51
 146            android:configChanges="orientation|keyboardHidden|screenSize"
-146-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:52-113
+146-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:52-113
 147            android:exported="false"
-147-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:114-138
+147-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:114-138
 148            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-148-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:202-260
+148-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:202-260
 149            android:windowSoftInputMode="stateAlwaysHidden" />
-149-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:261-308
+149-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:11:261-308
 150        <activity
-150-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:12:9-112
+150-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:12:9-112
 151            android:name="com.google.zxing.client.android.encode.EncodeActivity"
-151-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:12:41-109
+151-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:12:41-109
 152            android:label="Share" />
-152-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:12:19-40
+152-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:12:19-40
 153
 154        <provider
 155            android:name="org.apache.cordova.camera.FileProvider"
-155-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:13:149-202
+155-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:13:149-202
 156            android:authorities="com.v3.wam.cordova.plugin.camera.provider"
-156-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:13:19-88
+156-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:13:19-88
 157            android:exported="false"
-157-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:13:89-113
+157-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:13:89-113
 158            android:grantUriPermissions="true" >
-158-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:13:114-148
+158-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:13:114-148
 159            <meta-data
-159-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:14:13-123
+159-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:14:13-123
 160                android:name="android.support.FILE_PROVIDER_PATHS"
-160-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:14:24-74
+160-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:14:24-74
 161                android:resource="@xml/camera_provider_paths" />
-161-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:14:75-120
+161-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:14:75-120
 162        </provider>
 163
 164        <activity
-164-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:16:9-163
+164-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:16:9-163
 165            android:name="com.synconset.MultiImageChooserActivity"
-165-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:16:58-112
+165-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:16:58-112
 166            android:label="@string/multi_app_name"
-166-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:16:19-57
+166-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:16:19-57
 167            android:theme="@android:style/Theme.Holo.Light" />
-167-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:16:113-160
+167-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:16:113-160
 168
 169        <service
-169-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:9-140
+169-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:9-140
 170            android:name="com.google.android.gms.measurement.AppMeasurementService"
-170-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:66-137
+170-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:66-137
 171            android:enabled="true"
-171-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:18-40
+171-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:18-40
 172            android:exported="false" />
-172-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:41-65
+172-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:41-65
 173        <service
-173-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:18:9-22:19
+173-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:18:9-22:19
 174            android:name="org.apache.cordova.firebase.FirebasePluginMessagingService"
-174-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:18:43-116
+174-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:18:43-116
 175            android:exported="false" >
-175-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:18:18-42
+175-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:18:18-42
 176            <intent-filter>
-176-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:19:13-21:29
+176-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:19:13-21:29
 177                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-177-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:17-78
-177-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:25-75
+177-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:17-78
+177-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:25-75
 178            </intent-filter>
 179        </service>
 180
 181        <receiver android:name="org.apache.cordova.firebase.OnNotificationOpenReceiver" />
-181-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:23:9-91
-181-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:23:19-88
+181-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:23:9-91
+181-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:23:19-88
 182
 183        <activity
-183-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:9-262
+183-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:9-262
 184            android:name="org.apache.cordova.firebase.OnNotificationReceiverActivity"
-184-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:77-150
+184-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:77-150
 185            android:excludeFromRecents="true"
-185-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:19-52
+185-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:19-52
 186            android:exported="true"
-186-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:53-76
+186-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:53-76
 187            android:noHistory="true"
-187-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:151-175
+187-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:151-175
 188            android:taskAffinity=""
-188-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:176-199
+188-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:176-199
 189            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-189-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:200-259
+189-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:200-259
 190
 191        <meta-data
-191-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:25:9-127
+191-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:25:9-127
 192            android:name="com.google.firebase.messaging.default_notification_color"
-192-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:25:20-91
+192-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:25:20-91
 193            android:resource="@color/accent" />
-193-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:25:92-124
+193-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:25:92-124
 194        <meta-data
-194-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:26:9-96
+194-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:26:9-96
 195            android:name="firebase_analytics_collection_enabled"
-195-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:26:20-72
+195-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:26:20-72
 196            android:value="true" />
-196-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:26:73-93
+196-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:26:73-93
 197        <meta-data
-197-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:9-98
+197-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:9-98
 198            android:name="firebase_performance_collection_enabled"
-198-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:20-74
+198-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:20-74
 199            android:value="true" />
-199-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:75-95
+199-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:75-95
 200        <meta-data
-200-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:9-98
+200-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:9-98
 201            android:name="firebase_crashlytics_collection_enabled"
-201-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:20-74
+201-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:20-74
 202            android:value="true" />
-202-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:75-95
+202-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:75-95
 203        <meta-data
-203-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:9-95
+203-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:9-95
 204            android:name="firebase_messaging_auto_init_enabled"
-204-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:20-71
+204-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:20-71
 205            android:value="true" />
-205-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:72-92
+205-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:72-92
 206        <meta-data
-206-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:9-99
+206-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:9-99
 207            android:name="google_analytics_adid_collection_enabled"
-207-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:20-75
+207-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:20-75
 208            android:value="true" />
-208-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:76-96
+208-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:76-96
 209        <meta-data
-209-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:9-107
+209-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:9-107
 210            android:name="google_analytics_default_allow_analytics_storage"
-210-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:20-83
+210-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:20-83
 211            android:value="true" />
-211-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:84-104
+211-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:84-104
 212        <meta-data
-212-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:9-100
+212-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:9-100
 213            android:name="google_analytics_default_allow_ad_storage"
-213-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:20-76
+213-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:20-76
 214            android:value="true" />
-214-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:77-97
+214-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:77-97
 215        <meta-data
-215-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:9-102
+215-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:9-102
 216            android:name="google_analytics_default_allow_ad_user_data"
-216-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:20-78
+216-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:20-78
 217            android:value="true" />
-217-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:79-99
+217-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:79-99
 218        <meta-data
-218-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:9-116
+218-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:9-116
 219            android:name="google_analytics_default_allow_ad_personalization_signals"
-219-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:20-92
+219-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:20-92
 220            android:value="true" />
-220-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:93-113
+220-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:93-113
 221        <meta-data
-221-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:9-119
+221-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:9-119
 222            android:name="com.google.firebase.messaging.default_notification_channel_id"
-222-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:20-96
+222-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:20-96
 223            android:value="444" />
-223-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:97-116
+223-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:97-116
 224
 225        <service
-225-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:9-40:19
+225-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:9-40:19
 226            android:name="notifications.MyFirebaseMessagingService"
-226-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:43-98
+226-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:43-98
 227            android:exported="false" >
-227-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:18-42
+227-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:18-42
 228            <intent-filter>
-228-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:19:13-21:29
+228-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:19:13-21:29
 229                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-229-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:17-78
-229-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:25-75
+229-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:17-78
+229-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:25-75
 230            </intent-filter>
 231        </service>
 232        <service
@@ -668,11 +668,11 @@
 332-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/5fddd2362e068b4b02f0b9de23165db9/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:39:27-75
 333
 334                <data
-334-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:13-73
+334-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:13-73
 335                    android:host="firebase.auth"
 336                    android:path="/"
 337                    android:scheme="genericidp" />
-337-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:46-70
+337-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:46-70
 338            </intent-filter>
 339        </activity>
 340        <activity
@@ -701,11 +701,11 @@
 350-->[com.google.firebase:firebase-auth:23.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/5fddd2362e068b4b02f0b9de23165db9/transformed/jetified-firebase-auth-23.2.0/AndroidManifest.xml:39:27-75
 351
 352                <data
-352-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:13-73
+352-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:13-73
 353                    android:host="firebase.auth"
 354                    android:path="/"
 355                    android:scheme="recaptcha" />
-355-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:46-70
+355-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:46-70
 356            </intent-filter>
 357        </activity>
 358
@@ -800,10 +800,10 @@
 410            android:exported="false" >
 410-->[com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/3949af29c5fd33b5ee6fe315aed7059d/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:49:13-37
 411            <intent-filter android:priority="-500" >
-411-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:19:13-21:29
+411-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:19:13-21:29
 412                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-412-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:17-78
-412-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:25-75
+412-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:17-78
+412-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:25-75
 413            </intent-filter>
 414        </service>
 415        <service
@@ -826,8 +826,8 @@
 424            <intent-filter>
 424-->[com.google.android.gms:play-services-tagmanager-api:18.1.1] /Users/priyanka/.gradle/caches/8.13/transforms/ea3ea985e52fbedc846cdefcf7c3e844/transformed/jetified-play-services-tagmanager-api-18.1.1/AndroidManifest.xml:36:13-43:29
 425                <data android:scheme="tagmanager.c.com.v3.wam" />
-425-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:13-73
-425-->/Users/priyanka/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:46-70
+425-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:13-73
+425-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:46-70
 426
 427                <action android:name="android.intent.action.VIEW" />
 427-->[com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/e278667bfc70075746fa3d282591bcb6/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:12:13-65

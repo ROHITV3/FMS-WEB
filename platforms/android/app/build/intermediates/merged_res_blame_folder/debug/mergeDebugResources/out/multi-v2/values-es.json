@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/res/values-es/multiimagechooser_strings_es.xml",
+                    "from": {
+                        "startLines": "10,11,5,4,8,9,2,6,7,3",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "723,768,298,209,539,618,55,386,457,116",
+                        "endColumns": "44,35,87,88,78,104,60,70,81,92",
+                        "endOffsets": "763,799,381,293,613,718,111,452,534,204"
+                    },
+                    "to": {
+                        "startLines": "88,89,90,94,102,103,136,178,179,180",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "8186,8231,8267,8676,9248,9327,11880,15702,15773,15855",
+                        "endColumns": "44,35,87,88,78,104,60,70,81,92",
+                        "endOffsets": "8226,8262,8350,8760,9322,9427,11936,15768,15850,15943"
+                    }
+                },
+                {
                     "source": "/Users/priyanka/.gradle/caches/8.13/transforms/7936c6ff2fb534abbbd255447186e337/transformed/jetified-play-services-tagmanager-18.1.1/res/values-es/values.xml",
                     "from": {
                         "startLines": "4,5,6",
@@ -52,23 +69,6 @@
                         "startOffsets": "16964,17035,17131",
                         "endColumns": "70,95,72",
                         "endOffsets": "17030,17126,17199"
-                    }
-                },
-                {
-                    "source": "/Users/priyanka/WAM3/platforms/android/app/src/main/res/values-es/multiimagechooser_strings_es.xml",
-                    "from": {
-                        "startLines": "10,11,5,4,8,9,2,6,7,3",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "723,768,298,209,539,618,55,386,457,116",
-                        "endColumns": "44,35,87,88,78,104,60,70,81,92",
-                        "endOffsets": "763,799,381,293,613,718,111,452,534,204"
-                    },
-                    "to": {
-                        "startLines": "88,89,90,94,102,103,136,178,179,180",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "8186,8231,8267,8676,9248,9327,11880,15702,15773,15855",
-                        "endColumns": "44,35,87,88,78,104,60,70,81,92",
-                        "endOffsets": "8226,8262,8350,8760,9322,9427,11936,15768,15850,15943"
                     }
                 },
                 {

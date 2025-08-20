@@ -4,23 +4,6 @@
             "outputFile": "com.v3.wam.app-mergeDebugResources-47:/values-ja/values-ja.xml",
             "map": [
                 {
-                    "source": "/Users/priyanka/WAM3/platforms/android/app/src/main/res/values-ja/multiimagechooser_strings_ja.xml",
-                    "from": {
-                        "startLines": "10,11,4,3,8,9,2,6,7,5",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "669,712,179,116,485,564,55,332,403,258",
-                        "endColumns": "42,35,78,62,78,104,60,70,81,73",
-                        "endOffsets": "707,743,253,174,559,664,111,398,480,327"
-                    },
-                    "to": {
-                        "startLines": "88,89,90,94,102,103,136,178,179,180",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "7268,7311,7347,7717,8158,8237,10214,13239,13310,13392",
-                        "endColumns": "42,35,78,62,78,104,60,70,81,73",
-                        "endOffsets": "7306,7342,7421,7775,8232,8337,10270,13305,13387,13461"
-                    }
-                },
-                {
                     "source": "/Users/priyanka/.gradle/caches/8.13/transforms/16bc1b4a5fbcbab18408595d6f5ad61e/transformed/browser-1.4.0/res/values-ja/values-ja.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -137,6 +120,23 @@
                         "startOffsets": "4249,4341,4441,4535,4631,4724,4817,14208",
                         "endColumns": "91,99,93,95,92,92,100,100",
                         "endOffsets": "4336,4436,4530,4626,4719,4812,4913,14304"
+                    }
+                },
+                {
+                    "source": "/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/res/values-ja/multiimagechooser_strings_ja.xml",
+                    "from": {
+                        "startLines": "10,11,4,3,8,9,2,6,7,5",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "669,712,179,116,485,564,55,332,403,258",
+                        "endColumns": "42,35,78,62,78,104,60,70,81,73",
+                        "endOffsets": "707,743,253,174,559,664,111,398,480,327"
+                    },
+                    "to": {
+                        "startLines": "88,89,90,94,102,103,136,178,179,180",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "7268,7311,7347,7717,8158,8237,10214,13239,13310,13392",
+                        "endColumns": "42,35,78,62,78,104,60,70,81,73",
+                        "endOffsets": "7306,7342,7421,7775,8232,8337,10270,13305,13387,13461"
                     }
                 },
                 {

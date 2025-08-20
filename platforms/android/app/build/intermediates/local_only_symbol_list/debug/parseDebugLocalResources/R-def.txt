@@ -49,8 +49,8 @@ string processing_images_header
 string processing_images_message
 string project_id
 string requesting_thumbnails
-style AppTheme.Splash
 style MyTheme
+style Theme.WAM3.Splash
 xml camera_provider_paths
 xml cdv_core_file_provider_paths
 xml config
