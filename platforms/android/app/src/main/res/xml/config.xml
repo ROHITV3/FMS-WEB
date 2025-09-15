@@ -47,6 +47,11 @@
     <preference name="FIREBASE_MESSAGING_IMMEDIATE_PAYLOAD_DELIVERY" value="false" />
     <preference name="GradlePluginGoogleServicesEnabled" value="true" />
     <preference name="AndroidInsecureFileModeEnabled" value="true" />
+    <preference name="Fullscreen" value="false" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#1976d2" />
+
+    <preference name="android-windowOptOutEdgeToEdgeEnforcement" value="true" />
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
     </feature>
@@ -118,4 +123,5 @@
     <feature name="Toast">
         <param name="android-package" value="nl.xservices.plugins.Toast" />
     </feature>
+
 </widget>

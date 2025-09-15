@@ -1,4 +1,4 @@
-window.localStorage["version"] = "4.2.20"; //set app version number
+window.localStorage["version"] = "4.2.21"; //set app version number
 // var network = "zonglipub"; //global variable that decides which databaseIP to connect to
 var initialheight; //used to record initial screen height
 //var databaseIP = 'http://v3nity.com/V3Nity4CMS/'; //global databaseIP variable
@@ -108,6 +108,27 @@ window.onload = function () {
     initializeCordova(function success() {
         console.log("Cordova Initializing Success");
         setup();
+
+        document.addEventListener("deviceready", function() {
+                            var ua = navigator.userAgent || "";
+                            var androidMatch = ua.match(/Android\s([0-9.]+)/i);
+                            if (androidMatch) {
+                                var version = parseFloat(androidMatch[1]);
+                                if (version >= 16) {
+                                  //  alert("Version 15 plus" + version)
+                                    document.body.classList.add("android16plus");
+                                } else if (version  == 15 ) {
+                                         //             alert("Version 15 minus" +version)
+                                                      document.body.classList.add("android15");
+                                                  }
+                                 if (version < 15 +version)
+                                {
+                                  //  alert("Version " +version)
+                                    document.body.classList.add("below15");
+                                }
+
+                            }
+                        }, false);
 
 document.addEventListener("deviceready", function() {
     init();
@@ -1018,22 +1039,41 @@ $('.adhocBtn').bind('click', function () {
                                   }
                                  }
                                }
-                               confirmPopup(
-                                   "<div class='adhocForm'>" +
-                                       "<label>" + lang.Mobile029 + "</label>" +
-                                       "<input type='text' id='templateSearchInput' placeholder='Search Template...' oninput='filterTemplateOptions()' style='width:100%; margin-bottom:5px;' />" +
-                                       "<select id='ftempid' onchange='clearSearchInput()'>" + form_options + "</select><br><br>" +
-                                         "<input type='text' id='customerSearchInput' placeholder='Search Customer...' oninput='filterCustomerOptions()' style='width:100%; margin-bottom:5px;' />" +
-                                       "<label>Customer</label><select id='ftempcust' onchange='clearCustomerSearchInput()'>" + form_cust_option + "</select><br><br>" +
-                                       "<label>Contract</label><select id='ftempestype'>" + form_pest_option + "</select><br><br>" +
-                                       "<label>" + lang.Mobile030 + "</label><input type='number' value='10' placeholder='" + lang.Mobile031 + "' ><br><br>" +
-                                       "<label>" + lang.Mobile032 + "</label><textarea maxlength='100' rows='2' placeholder='" + lang.Mobile033 + "'></textarea><br><br>" +
-                                       "<label>Description</label><input id='adDesc' maxlength='900' rows='2' placeholder='Description'></input>" +
-                                   "</div>",
-                                   confirmAdhoc,
-                                   lang.Mobile028,
-                                   ["✘", "✔"]
-                               );
+//                               confirmPopup(
+//                                   "<div class='adhocForm'>" +
+//                                       "<label>" + lang.Mobile029 + "</label>" +
+//                                       "<input type='text' id='templateSearchInput' placeholder='Search Template...' oninput='filterTemplateOptions()' style='width:100%; margin-bottom:5px;' />" +
+//                                       "<select id='ftempid' onchange='clearSearchInput()'>" + form_options + "</select><br><br>" +
+//                                         "<input type='text' id='customerSearchInput' placeholder='Search Customer...' oninput='filterCustomerOptions()' style='width:100%; margin-bottom:5px;' />" +
+//                                       "<label>Customer</label><select id='ftempcust' onchange='clearCustomerSearchInput()'>" + form_cust_option + "</select><br><br>" +
+//                                       "<label>Contract</label><select id='ftempestype'>" + form_pest_option + "</select><br><br>" +
+//                                       "<label>" + lang.Mobile030 + "</label><input type='number' value='10' placeholder='" + lang.Mobile031 + "' ><br><br>" +
+//                                       "<label>" + lang.Mobile032 + "</label><textarea maxlength='100' rows='2' placeholder='" + lang.Mobile033 + "'></textarea><br><br>" +
+//                                       "<label>Description</label><input id='adDesc' maxlength='900' rows='2' placeholder='Description'></input>" +
+//                                   "</div>",
+//                                   confirmAdhoc,
+//                                   lang.Mobile028,
+//                                   ["✘", "✔"]
+//                               );
+confirmPopup(
+    "<div class='safe-area-wrapper'>" +
+        "<div class='adhocForm'>" +
+            "<label>" + lang.Mobile029 + "</label>" +
+            "<input type='text' id='templateSearchInput' placeholder='Search Template...' oninput='filterTemplateOptions()' style='width:100%; margin-bottom:5px;' />" +
+            "<select id='ftempid' onchange='clearSearchInput()'>" + form_options + "</select><br><br>" +
+            "<input type='text' id='customerSearchInput' placeholder='Search Customer...' oninput='filterCustomerOptions()' style='width:100%; margin-bottom:5px;' />" +
+            "<label>Customer</label><select id='ftempcust' onchange='clearCustomerSearchInput()'>" + form_cust_option + "</select><br><br>" +
+            "<label>Contract</label><select id='ftempestype'>" + form_pest_option + "</select><br><br>" +
+            "<label>" + lang.Mobile030 + "</label><input type='number' value='10' placeholder='" + lang.Mobile031 + "' ><br><br>" +
+            "<label>" + lang.Mobile032 + "</label><textarea maxlength='100' rows='2' placeholder='" + lang.Mobile033 + "'></textarea><br><br>" +
+            "<label>Description</label><input id='adDesc' maxlength='900' rows='2' placeholder='Description'></input>" +
+        "</div>" +
+    "</div>",
+    confirmAdhoc,
+    lang.Mobile028,
+    ["✘", "✔"]   // ✅ this ends here, no stray dot
+);
+
 
 
                             } else {

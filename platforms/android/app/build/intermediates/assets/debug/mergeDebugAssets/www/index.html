@@ -24,9 +24,9 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; media-src *; img-src * filesystem: data:">
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<!--        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover" />-->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover" />
-        
-          
+
        <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css">
 		<!-- <link rel="stylesheet" href="lib/jquery-ui.css" /> -->
@@ -38,14 +38,14 @@
 			});
 		</script>
 		<script src="lib/jquery.mobile-1.4.5.min.js"></script>
-		<script src="lib/jquery-ui.min.js"></script> <!-- must have this for PN to work --> 
+		<script src="lib/jquery-ui.min.js"></script> <!-- must have this for PN to work -->
 <!--                <script src="js/jquery-2.1.4.min.js"></script>-->
 		<script src="cordova.js"></script>
 		<script src="lib/base64.min.js"></script>
 		<script src="lib/jsignature/jSignature.min.js"></script>
-		
+
 		<script type="text/javascript" src="lib/spark-md5.min.js"></script>
-		
+
 		<link rel="stylesheet" href="css/index.css" />
 		<script src="js/index.js"></script>
                 <script src="js/v3nity-database.js"></script>
@@ -53,8 +53,8 @@
                 <script src="js/registerPN.js"></script>
                 <script src="js/registerFCM.js"></script>
                 <script src="js/bluetooth.js"></script>
-                
-                
+
+
                 <!--<script src="cordova.js"></script>-->
     </head>
     <body onResize="onResize()">
@@ -65,7 +65,7 @@
                 <div class="confirmBtn"> </div>
 	</div>
 	<!-------------  END OF Confirm Popup -------------->
-        
+
         <!---------------  Confirm Popup for camera and gallery images--------------->
 	<div data-role="popup" data-rel="popup" id="confirmPopupImages" data-overlay-theme="b" data-shadow="true" data-dismissible="false" class="ui-corner-all" style="display:none; width:100%; position:fixed; top:52px; left:0px;" >
                 <div class="confirmTitle"> </div>
@@ -73,9 +73,9 @@
                 <div class="confirmBtn"> </div>
 	</div>
 	<!-------------  END OF Confirm Popup -------------->
-        
+
 	<!-------------  Signature Popup -------------->
-	<div id="signaturepopup"> 
+	<div id="signaturepopup">
                 <div id="signature">
                         <div class="verifyTitle">Signature</div>
                         <div class="verifyText"><span>Please sign here.</span><br>
@@ -85,12 +85,12 @@
                                 <div class="verify0">✂</div>
                                 <div class="verify1">✔</div>
                         </div>
-                </div>	
+                </div>
 	</div>
         <!-------------  END OF Signature Popup -------------->
-        
+
 	<!-------------  Edit Image Popup -------------->
-<!--	<div id="editimagepopup"> 
+<!--	<div id="editimagepopup">
                 <div id="editimage">
                         <div class="verifyTitle">Drawing</div>
                         <div class="verifyText"><span>Please draw here.</span><br>
@@ -100,22 +100,22 @@
                                 <div class="verify0">✂</div>
                                 <div class="verify1">✔</div>
                         </div>
-                </div>	
+                </div>
 	</div>-->
         <!-------------  END OF Edit Image Popup -------------->
 
-        
-        
+
+
         <!-------------  Image Popup -------------->
-	<div id="imagepopup"  data-role="popup" data-rel="popup" data-overlay-theme="b" data-shadow="true" data-dismissible="true" class="ui-corner-all" style="display:none; position:fixed; top:0px; left:0px;" > 
+	<div id="imagepopup"  data-role="popup" data-rel="popup" data-overlay-theme="b" data-shadow="true" data-dismissible="true" class="ui-corner-all" style="display:none; position:fixed; top:0px; left:0px;" >
                 <div id="image">
-                    <img src=""> 
-                </div>	
+                    <img src="">
+                </div>
 	</div>
         <!-------------  END OF Image Popup -------------->
-        
+
         <!-------------  Drawing Popup -------------->
-	<div id="drawingpopup" style=""> 
+	<div id="drawingpopup" style="">
                 <div id="drawing">
                         <div class="verifyTitle">Drawing</div>
                         <div class="verifyText"><span>Please draw here.</span><br>
@@ -128,10 +128,10 @@
                 </div>
 	</div>
         <!-------------  END OF Drawing Popup -------------->
-                	
-        
-        
-        
+
+
+
+
         <!-------------  Index Page  ---------------->
         <div data-role="page" class="ui-page" id="index">
                 <div id="loginBox">
@@ -143,13 +143,13 @@
                                 <div id="registerDeviceText">Register New Device</div>
                                 <div id="registerShell">
                                         <input type="text" name="registerDeviceBtn" id="registerDeviceBtn" class="loginInput" placeholder="Register Device" data-theme="a" />
-                                </div>	
+                                </div>
                                 <div id="unitIdShell">
                                         <input type="text" name="unitId" id="unitId" class="loginInput" placeholder="Unit ID" />
-                                        
+
                                 </div>
                                 <p id="ManualRegistrationLink"><a id="ManualRegistrationBtn" >Manual Registration</a></p>
-                                
+
                                 <div id="overlay" >
                                     <div id="overlayBG">
 
@@ -167,20 +167,20 @@
                                         </div>
 
                                      </div>
-                                </div>                                
-                                
-                                
+                                </div>
+
+
                                 <input class="loginBtn" data-role="none" type="submit" value="LOG IN" />
                         </form>
-                </div>         
+                </div>
 		<img id="settingsBtn" src="img/settings.png" />
 		<div id="customer"> </div>
 		<div id="version"></div>
    	</div>
         <!-------------  END OF Index Page  ----------------->
-        
+
         <!-------------  Manual Device Registration Page  ---------------->
-        
+
         <div data-role="page" class="ui-page" id="ManualDeviceRegistrationPage">
 		<div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false"  data-hide-during-focus="" >
 			<h1>Manual Device Registration</h1><div class="navBtn top left backBtn"><img src="img/arrow-left-c.png" /></div>
@@ -207,27 +207,27 @@
                         <td>Unit ID</td>
                         <td><input type="text" id="unitIdName"/></td>
                     </tr>
-                    
+
                     <tr>
                         <td>Offline Records</td>
                         <td><input type="number" id="offlineRecords"/></td>
-                    </tr>                    
-                    
+                    </tr>
+
                     <tr>
                         <td colspan="2" align="center">
                             <input class="SaveBtn" type="submit" value="Save">
-                            <input class="CancelBtn" type="submit" value="Cancel"> 
+                            <input class="CancelBtn" type="submit" value="Cancel">
                         </td>
                     </tr>
                 </table>
-          
-            
+
+
             </div>
-            
-            
+
+
         </div>
         <!-------------  END OF Manual Device Registration Page ----------------->
-        
+
         <!-------------  Settings Page  ---------------->
 	<div data-role="page" class="ui-page" id="settings">
 		<div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
@@ -245,16 +245,16 @@
                     </select>
 		</div>
 	</div>
-        
+
         <!-------------  END OF Settings Page  ----------------->
-        
-        
+
+
         <!------------- CALENDAR PAGE START -------------------->
     	<div data-role="page" class="ui-page" id="calendar">
             <link rel="stylesheet" href="modules/calendar/css/calendar.css" />
             <script type="text/javascript" src="modules/calendar/js/calendar.js"></script>
 
-            <div role="main" class="ui-content" id="calendar_content">	
+            <div role="main" class="ui-content" id="calendar_content">
                 <script>
                     $("#calendar_content").load('modules/calendar/calendar.html', function () {
                             $(this).trigger('create');
@@ -263,29 +263,29 @@
             </div>
         </div>
         <!------------- CALENDAR PAGE END -------------------->
-        
+
 
         <!-------------  Sync Job Page  ---------------->
 	<div data-role="page" class="ui-page" id="syncjobList">
             <link rel="stylesheet" href="css/synctasklist.css" />
             <link rel="stylesheet" href="css/tasklist.css" />
             <link rel="stylesheet" href="css/index.css" />
-                <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">	
-                        <h1>Jobs Uploading</h1>        
+                <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+                        <h1>Jobs Uploading</h1>
                         <div class="navBtn top left backBtn"><img src="img/arrow-left-c.png" /></div>
 		</div>
 		<div class="jobItemList">
 			<ul> </ul>
-		</div> 
+		</div>
                 <div class="footer" data-role="footer" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
 			<div class="uploadCount"><span>-</span>
-                        <img src="img/upload.png" /></div> 
-		</div>                    
+                        <img src="img/upload.png" /></div>
+		</div>
 	</div>
-        
-        <!-------------  END OF Sync Job Page  ----------------->          
-        
-        
+
+        <!-------------  END OF Sync Job Page  ----------------->
+
+
 	<!-------------  Main Page  ---------------->
 	<div data-role="page" class="ui-page" id="main">
 		<link rel="stylesheet" href="css/tasklist.css" />
@@ -296,16 +296,16 @@
                         <div style="visibility: hidden" id="logoutNav" class="navBtn top left logoutBtn"><img src="img/log-out.png" /></div>
 			<div class="navBtn top right adhocBtn"><img src="img/add.png" /></div>
 		</div>
-                
+
                 <div>
                     <i class="fa fa-search"></i>
                     <input class="inputSearchBox" type="text" placeholder="SEARCH" id="inputSearch"/>
                 </div>
-                
+
 		<div class="jobList">
 			<ul> </ul>
 		</div>
-                
+
 		<div class="footer" data-role="footer" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
 			<div class="jobCount"><span>-</span><img src="img/job-white.png" /></div><div class="uploadCount"><span>-</span><img src="img/upload.png" /></div>
 			<div class="lastUpdate">Last Updated: <span>-</span></div>
@@ -325,9 +325,9 @@
 			<div class="navBtn top right logBtn"><img src="img/info_off.png" /></div>
 		</div>
 		<div class="logView">
-			
+
 		</div>
-                
+
 	</div>
         <div data-role="page" class="ui-page" id="admin" >
 		<link rel="stylesheet" href="css/queuelist.css" />
@@ -353,20 +353,20 @@
 		<link rel="stylesheet" href="css/form.css" />
 		<div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
 			<h1>Form Editor</h1><div class="navBtn top left backBtn"><img src="img/arrow-left-c.png" /></div><div class="navBtn top right submitBtn"><img src="img/android-send.png" /></div>
-		</div>	
+		</div>
 		<div role="main" class="ui-content" id="form_content"></div>
 		<div class="footer" data-role="footer" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
 			<div class="navBtn bot right saveBtn"><img src="img/save.png" /></div>
 		</div>
 	</div>
-        <!-------------  END OF Form Page  ----------------->	
-        
+        <!-------------  END OF Form Page  ----------------->
+
         <fieldset style="display:none">
             <input type="hidden" id="mainSelectedDate" value="">
         </fieldset>
-        
-        
-         
+
+
+
     </body>
 <!--    <script>
         $( document ).on( "change", "#flip-a",  function( event, ui ) {

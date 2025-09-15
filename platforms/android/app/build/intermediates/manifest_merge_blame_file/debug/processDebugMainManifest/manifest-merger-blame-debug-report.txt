@@ -2,12 +2,12 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.v3.wam"
 4    android:hardwareAccelerated="true"
-5    android:versionCode="4020200"
-6    android:versionName="4.2.20" >
+5    android:versionCode="4020210"
+6    android:versionName="4.2.21" >
 7
 8    <uses-sdk
 9        android:minSdkVersion="24"
-10        android:targetSdkVersion="35" />
+10        android:targetSdkVersion="36" />
 11
 12    <supports-screens
 12-->/Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:5-191

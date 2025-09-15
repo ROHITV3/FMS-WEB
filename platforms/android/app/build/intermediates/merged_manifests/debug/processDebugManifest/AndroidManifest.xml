@@ -2,12 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.v3.wam"
     android:hardwareAccelerated="true"
-    android:versionCode="4020200"
-    android:versionName="4.2.20" >
+    android:versionCode="4020210"
+    android:versionName="4.2.21" >
 
     <uses-sdk
         android:minSdkVersion="24"
-        android:targetSdkVersion="35" />
+        android:targetSdkVersion="36" />
 
     <supports-screens
         android:anyDensity="true"
