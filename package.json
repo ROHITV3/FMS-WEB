@@ -17,6 +17,7 @@
     "cordova-android": "^14.0.1",
     "cordova-plugin-add-swift-support": "^2.0.2",
     "cordova-plugin-ble-central": "^2.0.0",
+    "cordova-plugin-filepath": "^1.6.0",
     "cordova-plugin-firebasex": "^18.0.7",
     "cordova-plugin-media": "^5.0.4",
     "cordova-plugin-media-capture": "^3.0.3",
@@ -108,7 +109,8 @@
       },
       "cordova-plugin-device": {},
       "cordova-plugin-vibration": {},
-      "cordova-plugin-x-toast": {}
+      "cordova-plugin-x-toast": {},
+      "cordova-plugin-filepath": {}
     }
   },
   "dependencies": {

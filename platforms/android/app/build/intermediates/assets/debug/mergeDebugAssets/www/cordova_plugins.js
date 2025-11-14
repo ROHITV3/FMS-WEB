@@ -466,6 +466,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "window.plugins.toast"
       ]
+    },
+    {
+      "id": "cordova-plugin-filepath.FilePath",
+      "file": "plugins/cordova-plugin-filepath/www/FilePath.js",
+      "pluginId": "cordova-plugin-filepath",
+      "clobbers": [
+        "window.FilePath"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -491,6 +499,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-ble-central": "2.0.0",
     "cordova-plugin-device": "3.0.0",
     "cordova-plugin-vibration": "3.1.1",
-    "cordova-plugin-x-toast": "2.7.3"
+    "cordova-plugin-x-toast": "2.7.3",
+    "cordova-plugin-filepath": "1.6.0"
   };
 });

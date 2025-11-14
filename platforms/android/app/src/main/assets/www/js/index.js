@@ -1,4 +1,4 @@
-window.localStorage["version"] = "4.2.21"; //set app version number
+window.localStorage["version"] = "4.2.25"; //set app version number
 // var network = "zonglipub"; //global variable that decides which databaseIP to connect to
 var initialheight; //used to record initial screen height
 //var databaseIP = 'http://v3nity.com/V3Nity4CMS/'; //global databaseIP variable
@@ -962,10 +962,10 @@ $('.adhocBtn').bind('click', function () {
                             success: function(data) {
                                // console.log('Data is :::', JSON.stringify(data));
                                 if (data.result) {
-                                    var form_options = parseOptions(data.arrFormId, data.arrFormName);
-                                    var form_cust_option = parseCustomerOptions(data.jobCustomerName, data.jobCustomerId);
+                                    form_options = parseOptions(data.arrFormId, data.arrFormName);
+                                    form_cust_option = parseCustomerOptions(data.jobCustomerName, data.jobCustomerId);
                                     var form_pest_option = "<option value='0'></option>";  // Initialize with default option
-                                    var form_cust_option = parseCustomerOptions(data.jobCustomerName, data.jobCustomerId);
+                                    form_cust_option = parseCustomerOptions(data.jobCustomerName, data.jobCustomerId);
                                     //var form_cust_option = parseCustomerOptions(data.jobCustomerName, data.jobCustomerId);
                                   //  console.log("Before Sorting:");
                                    // console.log(form_cust_option);
@@ -1178,8 +1178,13 @@ confirmPopup(
 
                 function generatePopup(form_options, form_cust_option, form_pest_option) {
                     confirmPopup(
-                        "<div class='adhocForm'><label>" + lang.Mobile029 + "</label><select id='ftempid'>" + form_options + "</select><br><br>" +
-                        "<label>" + "Customer" + "</label><select id='ftempcust'>" + form_cust_option + "</select><br><br>" +
+                        "<div class='adhocForm'>" +
+                        "<label>" + lang.Mobile029 + "</label>" +
+                        "<input type='text' id='templateSearchInput' placeholder='Search Template...' oninput='filterTemplateOptions()' style='width:100%; margin-bottom:5px;' />" +
+                        "<select id='ftempid' onchange='clearSearchInput()'>" + form_options + "</select><br><br>" +
+                        "<input type='text' id='customerSearchInput' placeholder='Search Customer...' oninput='filterCustomerOptions()' style='width:100%; margin-bottom:5px;' />" +
+                        "<label>Customer</label><select id='ftempcust' onchange='clearCustomerSearchInput()'>" + form_cust_option + "</select><br><br>" +
+
                         "<label>" + "Contract" + "</label><select id='ftempestype'>" + form_pest_option + "</select><br><br>" +
                         "<label>" + lang.Mobile030 + "</label><input type='number' value='10' placeholder='" + lang.Mobile031 + "'><br><br>" +
                         "<label>" + lang.Mobile032 + "</label><textarea maxlength='100' rows='2' placeholder='" + lang.Mobile033 + "'></textarea><br><br>" +
@@ -4784,10 +4789,11 @@ function takephoto(backupGallery) {
 backupGallery = true;
     var first = $picPointer.length - 1;
 
-
+   // alert("DEBUG takephoto")
 
     navigator.camera.getPicture(function (fileURI) {
 
+        alert("DEBUG navigator.camera.getPicture")
         $picPointer.eq(first).attr("data-latitude", "0");
         $picPointer.eq(first).attr("data-longitude", "0");
         $picPointer.eq(first).attr("data-block-unit", "0");
@@ -4939,7 +4945,7 @@ backupGallery = true;
                     if (backupGallery) {
                         console.log('Debug backupGallery');
                         saveProcessedImage(base64Img);
-                        fileURI = base64Img;
+                      //  fileURI = base64Img;
 
                     }
                     clearTimeout(spinTimeout);
@@ -4981,12 +4987,12 @@ backupGallery = true;
 
     }, onPhotoFail, {
         correctOrientation: true,
-        saveToPhotoAlbum: false,
+        saveToPhotoAlbum: true,
         quality: window.sessionStorage["imgQuality"],
         targetWidth: window.sessionStorage["imgDimension"],
         targetHeight: window.sessionStorage["imgDimension"],
         sourceType: pictureSource.CAMERA,
-        destinationType: destinationType.FILE_URI
+        destinationType: Camera.DestinationType.FILE_URI
     });
 
 }
@@ -5274,7 +5280,7 @@ function onPhotoFail(message) {
     spinOut();
     $picPointer.eq($picPointer.length - 1).remove();
     writeLogs("Camera Take Photo Cancelled / Failed : " + message);
-    
+
     // reenable backgroundmode
 //    cordova.plugins.backgroundMode.enable();
 }
@@ -5589,7 +5595,7 @@ function textGeotagWatermark(url2, text, callback, outputFormat) {
 }
 
 function photoPreview(photo, latitude, longtitude, block_unit, block_level,location_name,title) {
-
+   // alert("DEBUG photoPreview")
     /*console.log('TFF4 ' + photo);
     console.log('TFF5 ' + latitude);
     console.log('TFF6 ' + longtitude);
@@ -6181,10 +6187,16 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
 
 
     bindGalleryImg('.gallery input[type="image"]');
+
     $('.gallery img').on('click', function () {
-        if ($('.gallery img').attr('src') != "") {
+        if ($(this).attr('src') !== "") {   // Use $(this), not $('.gallery img')
             $photoPreviewPointer = $(this);
-            photoPreview($(this).attr('src'), 0, 0, 0, 0,'', $(this).attr('data-title'));
+            photoPreview(
+                $(this).attr('src'),
+                0, 0, 0, 0,
+                '',
+                $(this).attr('data-title')
+            );
         }
     });
     /* End of Gallery Form Field */
@@ -6193,6 +6205,7 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
     bindCameraImg('.cameralibrary input[type="image"][src$="camera.png"]');
     bindGalleryImg('.cameralibrary input[type="image"][src$="gallery.png"]');
     $('.cameralibrary img').on('click', function () {
+       // alert("DEBUG bindGalleryImg 123")
         if ($('.cameralibrary img').attr('src') != "") {
             $photoPreviewPointer = $(this);
             photoPreview($(this).attr('src'), 0, 0, 0, 0,'', $(this).attr('data-title'));
@@ -6503,7 +6516,7 @@ function bindVideoFile(attrSelector) {
 
 function uploadVideo() {
     var first = $videoPointer.length - 1;
-
+  //  alert("DEBUG uploadVideo")
     navigator.camera.getPicture(function(fileUrl){
 
          spinInVideo();
@@ -6655,7 +6668,7 @@ function uploadVideo()
                 $videoPointer.eq($videoPointer.length - 1).remove();
                 writeLogs("Video Take Video Cancelled / Failed : " + message);
         }, { quality: 100,
-                destinationType: Camera.DestinationType.FILE_URI,
+                destinationType: f,
                 sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
                 mediaType: Camera.MediaType.VIDEO,
                 correctOrientation: true,
@@ -6676,7 +6689,7 @@ function bindCameraImg(attrSelector) {
             setTimeout(function () {
                 spinOut();
             }, 5000); // incase it never spin out and hang there.
-
+           // alert("DEBUG bindCameraImg")
             $(this).before('<img src="img/loading.png" />');
             $picPointer = $(this).parent().find('img');
             if ($picPointer.length < $(this).parent().attr('data-max'))
@@ -6742,29 +6755,121 @@ function bindGeotagImg(attrSelector) {
         }});
 }
 
+//function bindGalleryImg(attrSelector) {
+//   // alert("DEBUG gallery @@@@@");
+//    $(attrSelector).attr('src', 'img/gallery.png');
+//   // alert("DEBUG gallery #####");
+//
+//    $(attrSelector).off('click').on('click', function () {  // Ensure no duplicate bindings
+//        var $parent = $(this).parent();
+//        var $picPointer = $parent.find('img');
+//        var maxPics = parseInt($parent.attr('data-max')) || Infinity;
+//
+//        // Add loading image
+//        $(this).before('<img src="img/loading.png" class="temp-loading" />');
+//
+//        // Check number of images vs max
+//        if ($picPointer.length >= maxPics) {
+//            $(this).prev('.temp-loading').remove();
+//            navigator.notification.alert(lang.Mobile086, function () {}, lang.Mobile085, '✔');
+//            return;
+//        }
+//
+//        // Call Cordova camera plugin to pick from gallery
+//        navigator.camera.getPicture(
+//            function (imageURI) {
+//                // Remove loading image
+//                $parent.find('.temp-loading').remove();
+//
+//                var $btn = $(this);  // to keep context
+//                var src = imageURI;
+//                if (src.startsWith("content://")) {
+//                    // optional: convert if plugin requires
+//                }
+//                $btn.before('<img src="' + src + '"/>');
+//
+//            }.bind(this),
+//            function (message) {
+//                // On fail, remove loading
+//                $parent.find('.temp-loading').remove();
+//                console.log("Gallery pick cancelled: " + message);
+//            },
+//            {
+//                quality: 50,
+//                destinationType: Camera.DestinationType.FILE_URI,
+//                sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+//                mediaType: Camera.MediaType.PICTURE
+//            }
+//        );
+//    });
+//}
+
 function bindGalleryImg(attrSelector) {
+
+    console.log("[DEBUG] bindGalleryImg init for:", attrSelector);
+
     $(attrSelector).attr('src', 'img/gallery.png');
-    $(attrSelector).on('click', function () {
-        if (attrSelector.indexOf("cameralibrary") != -1) {
-            $(this).prev().before('<img src="img/loading.png" />');
-        } else {
-            $(this).before('<img src="img/loading.png" />');
-        }
-        $picPointer = $(this).parent().find('img');
-        $dataMax = $(this).parent().attr('data-max') - $picPointer.length + 1; // add plus 1 is because of the img/loading.png that will be remove
-        if ($picPointer.length < $(this).parent().attr('data-max')) {
-            attachImg();
-        } else if ($picPointer.length == $(this).parent().attr('data-max')) {
-            attachImg();
-        } else if ($(this).parent().attr('data-max') == undefined) { //if data-max was not defined
-            attachImg();
-        } else {
-            $picPointer.eq($picPointer.length - 1).remove();
-            navigator.notification.alert(lang.Mobile086, function () {
-            }, lang.Mobile085, '✔');
-        }
+
+    $(attrSelector).off('click').on('click', function () {
+
+        console.log("[DEBUG] Gallery icon clicked");
+
+        var $parent = $(this).parent();
+        var maxPics = parseInt($parent.attr('data-max')) || Infinity;
+
+        $(this).before('<img src="img/loading.png" class="temp-loading" />');
+
+        var $btn = $(this);
+
+        navigator.camera.getPicture(
+            function (imageURI) {
+
+                console.log("[DEBUG] Camera.getPicture SUCCESS");
+                console.log("[DEBUG] imageURI returned:", imageURI);
+
+                $parent.find('.temp-loading').remove();
+
+                // Check the type of URI returned
+                if (imageURI.startsWith("content://")) {
+
+                    console.log("[DEBUG] Returned URI is content:// → MUST RESOLVE");
+
+                    window.FilePath.resolveNativePath(
+                        imageURI,
+                        function (filePath) {
+                            console.log("[DEBUG] FilePath.resolveNativePath SUCCESS");
+                            console.log("[DEBUG] Resolved path:", filePath);
+
+                            // Insert final image
+                            $btn.before('<img src="' + filePath + '" />');
+                        },
+                        function (error) {
+                            console.error("[DEBUG] FilePath.resolveNativePath ERROR:", error);
+                        }
+                    );
+
+                } else {
+                    console.log("[DEBUG] Returned URI is file:// → safe to load directly");
+
+                    $btn.before('<img src="' + imageURI + '" />');
+                }
+            },
+
+            function (message) {
+                console.log("[DEBUG] Camera.getPicture FAILED:", message);
+                $parent.find('.temp-loading').remove();
+            },
+
+            {
+                quality: 50,
+                sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+                destinationType: Camera.DestinationType.DATA_URL,
+                mediaType: Camera.MediaType.PICTURE
+            }
+        );
     });
 }
+
 
 
 

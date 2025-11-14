@@ -11,10 +11,10 @@ INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/
 	android:name
 		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:13:149-202
 manifest
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-98:12
-INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-98:12
-INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-98:12
-INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-98:12
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-96:12
+INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-96:12
+INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-96:12
+INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-96:12
 MERGED from [:barcodescanner-release-2.1.5:] /Users/priyanka/.gradle/caches/8.13/transforms/d3304029784e25ac6727f0c45dcc07fa/transformed/jetified-barcodescanner-release-2.1.5/AndroidManifest.xml:2:1-14:12
 MERGED from [:CordovaLib] /Users/priyanka/Documents/android-apps/WAM3/platforms/android/CordovaLib/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:20:1-27:12
 MERGED from [com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/c64a5a59cee99416901f969ac0ab601a/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:3:1-23:12
@@ -154,8 +154,8 @@ ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src
 	android:anyDensity
 		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:3:23-48
 application
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:5-41:19
-INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:5-41:19
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:5-40:19
+INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:5-40:19
 MERGED from [:barcodescanner-release-2.1.5:] /Users/priyanka/.gradle/caches/8.13/transforms/d3304029784e25ac6727f0c45dcc07fa/transformed/jetified-barcodescanner-release-2.1.5/AndroidManifest.xml:11:5-12:19
 MERGED from [:barcodescanner-release-2.1.5:] /Users/priyanka/.gradle/caches/8.13/transforms/d3304029784e25ac6727f0c45dcc07fa/transformed/jetified-barcodescanner-release-2.1.5/AndroidManifest.xml:11:5-12:19
 MERGED from [com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/c64a5a59cee99416901f969ac0ab601a/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:10:5-21:19
@@ -264,12 +264,10 @@ MERGED from [com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/
 MERGED from [com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/caches/8.13/transforms/9dbadbad44dfcc47d0159f1b9590c874/transformed/jetified-core-common-2.0.3/AndroidManifest.xml:11:5-19:19
 	android:extractNativeLibs
 		INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml
-	android:requestLegacyExternalStorage
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:123-166
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.0] /Users/priyanka/.gradle/caches/8.13/transforms/c9b1677823ad5fd20d89f8c79a360690/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:167-193
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:123-149
 	android:label
 		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:90-122
 	android:hardwareAccelerated
@@ -277,7 +275,7 @@ MERGED from [com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/
 	android:icon
 		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:53-89
 	android:usesCleartextTraffic
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:194-229
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:4:150-185
 activity#com.v3.wam.MainActivity
 ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:5:9-10:20
 	android:label
@@ -334,160 +332,150 @@ ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src
 		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:16:113-160
 	android:name
 		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:16:58-112
-service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:9-140
-MERGED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/71c7dffe5fd4ddf22bacb12520ccb53e/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:35:9-38:40
-MERGED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/71c7dffe5fd4ddf22bacb12520ccb53e/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:35:9-38:40
-	android:enabled
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:18-40
-	android:exported
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:41-65
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:66-137
 service#org.apache.cordova.firebase.FirebasePluginMessagingService
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:18:9-22:19
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:9-21:19
 	android:exported
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:18:18-42
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:18-42
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:18:43-116
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:17:43-116
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:19:13-21:29
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:18:13-20:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:17-78
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:19:17-78
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:20:25-75
-receiver#org.apache.cordova.firebase.OnNotificationOpenReceiver
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:23:9-91
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:23:19-88
-activity#org.apache.cordova.firebase.OnNotificationReceiverActivity
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:9-262
-	android:excludeFromRecents
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:19-52
-	android:noHistory
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:151-175
-	android:exported
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:53-76
-	android:theme
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:200-259
-	android:taskAffinity
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:176-199
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:24:77-150
-meta-data#com.google.firebase.messaging.default_notification_color
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:25:9-127
-	android:resource
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:25:92-124
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:25:20-91
-meta-data#firebase_analytics_collection_enabled
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:26:9-96
-	android:value
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:26:73-93
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:26:20-72
-meta-data#firebase_performance_collection_enabled
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:9-98
-	android:value
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:75-95
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:20-74
-meta-data#firebase_crashlytics_collection_enabled
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:9-98
-	android:value
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:75-95
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:20-74
-meta-data#firebase_messaging_auto_init_enabled
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:9-95
-	android:value
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:72-92
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:20-71
-meta-data#google_analytics_adid_collection_enabled
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:9-99
-	android:value
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:76-96
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:20-75
-meta-data#google_analytics_default_allow_analytics_storage
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:9-107
-	android:value
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:84-104
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:20-83
-meta-data#google_analytics_default_allow_ad_storage
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:9-100
-	android:value
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:77-97
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:20-76
-meta-data#google_analytics_default_allow_ad_user_data
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:9-102
-	android:value
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:79-99
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:20-78
-meta-data#google_analytics_default_allow_ad_personalization_signals
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:9-116
-	android:value
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:93-113
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:20-92
-meta-data#com.google.firebase.messaging.default_notification_channel_id
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:9-119
-	android:value
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:97-116
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:20-96
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:19:25-75
 service#notifications.MyFirebaseMessagingService
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:9-40:19
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:22:9-26:19
 	android:exported
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:18-42
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:22:18-42
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:43-98
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:42:5-81
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:22:43-98
+receiver#org.apache.cordova.firebase.OnNotificationOpenReceiver
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:9-91
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:42:22-78
-uses-permission#android.permission.READ_PHONE_STATE
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:5-75
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:27:19-88
+activity#org.apache.cordova.firebase.OnNotificationReceiverActivity
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:9-262
+	android:excludeFromRecents
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:19-52
+	android:noHistory
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:151-175
+	android:exported
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:53-76
+	android:theme
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:200-259
+	android:taskAffinity
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:176-199
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:22-72
-uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:5-80
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:28:77-150
+meta-data#com.google.firebase.messaging.default_notification_color
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:9-127
+	android:resource
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:92-124
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:22-77
-uses-permission#android.permission.VIBRATE
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:5-66
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:29:20-91
+meta-data#firebase_analytics_collection_enabled
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:9-96
+	android:value
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:73-93
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:22-63
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:30:20-72
+meta-data#firebase_performance_collection_enabled
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:9-98
+	android:value
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:75-95
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:31:20-74
+meta-data#firebase_crashlytics_collection_enabled
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:9-98
+	android:value
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:75-95
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:32:20-74
+meta-data#firebase_messaging_auto_init_enabled
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:9-95
+	android:value
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:72-92
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:33:20-71
+meta-data#google_analytics_adid_collection_enabled
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:9-99
+	android:value
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:76-96
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:34:20-75
+meta-data#google_analytics_default_allow_analytics_storage
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:9-107
+	android:value
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:84-104
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:35:20-83
+meta-data#google_analytics_default_allow_ad_storage
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:9-100
+	android:value
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:77-97
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:36:20-76
+meta-data#google_analytics_default_allow_ad_user_data
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:37:9-102
+	android:value
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:37:79-99
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:37:20-78
+meta-data#google_analytics_default_allow_ad_personalization_signals
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:38:9-116
+	android:value
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:38:93-113
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:38:20-92
+meta-data#com.google.firebase.messaging.default_notification_channel_id
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:39:9-119
+	android:value
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:39:97-116
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:39:20-96
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:41:5-107
+	android:maxSdkVersion
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:41:22-48
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:41:49-104
 uses-permission#android.permission.CAMERA
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:5-65
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:42:5-65
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:22-62
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:42:22-62
 uses-permission#android.permission.FLASHLIGHT
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:5-69
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:5-69
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:22-66
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:43:22-66
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:5-79
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:5-79
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:22-76
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:44:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:49:5-81
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:5-81
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:49:22-78
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:45:22-78
 uses-permission#android.permission.BLUETOOTH
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:5-68
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:5-68
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:22-65
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:46:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:51:5-74
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:5-74
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:51:22-71
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:47:22-71
+uses-permission#android.permission.BLUETOOTH_SCAN
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:5-120
+	android:usesPermissionFlags
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:71-117
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:48:22-70
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:49:5-76
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:49:22-73
 uses-permission#android.permission.INTERNET
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:52:5-67
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:5-67
 MERGED from [com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/c64a5a59cee99416901f969ac0ab601a/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:8:5-67
 MERGED from [com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/c64a5a59cee99416901f969ac0ab601a/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:8:5-67
 MERGED from [com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/e278667bfc70075746fa3d282591bcb6/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:8:5-67
@@ -527,9 +515,9 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.2.0] /U
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/c8234459895c834b7a29d784b5003aef/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/c8234459895c834b7a29d784b5003aef/transformed/jetified-transport-backend-cct-3.3.0/AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:52:22-64
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:50:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:53:5-79
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:51:5-79
 MERGED from [com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/e278667bfc70075746fa3d282591bcb6/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:7:5-79
 MERGED from [com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/e278667bfc70075746fa3d282591bcb6/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:7:5-79
 MERGED from [com.google.firebase:firebase-iid:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/ef4fa25dd5a5aff2b794a629f35299fc/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:22:5-79
@@ -569,115 +557,117 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:3.3.0] /User
 MERGED from [com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/b563bf96ffdcf7d7dd68a4fa9ef4337e/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:20:5-79
 MERGED from [com.google.android.datatransport:transport-runtime:3.3.0] /Users/priyanka/.gradle/caches/8.13/transforms/b563bf96ffdcf7d7dd68a4fa9ef4337e/transformed/jetified-transport-runtime-3.3.0/AndroidManifest.xml:20:5-79
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:53:22-76
-uses-permission#android.permission.WAKE_LOCK
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:54:5-68
-MERGED from [com.google.firebase:firebase-iid:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/ef4fa25dd5a5aff2b794a629f35299fc/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:24:5-68
-MERGED from [com.google.firebase:firebase-iid:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/ef4fa25dd5a5aff2b794a629f35299fc/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:24:5-68
-MERGED from [com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/3949af29c5fd33b5ee6fe315aed7059d/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:24:5-68
-MERGED from [com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/3949af29c5fd33b5ee6fe315aed7059d/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:24:5-68
-MERGED from [com.google.android.gms:play-services-analytics-impl:18.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/bba6449981facb3362800fc37a2edda8/transformed/jetified-play-services-analytics-impl-18.2.0/AndroidManifest.xml:27:5-68
-MERGED from [com.google.android.gms:play-services-analytics-impl:18.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/bba6449981facb3362800fc37a2edda8/transformed/jetified-play-services-analytics-impl-18.2.0/AndroidManifest.xml:27:5-68
-MERGED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/71c7dffe5fd4ddf22bacb12520ccb53e/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/71c7dffe5fd4ddf22bacb12520ccb53e/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-impl:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/7b53f802f8f655c8e2f2e5ed67b6ff2a/transformed/jetified-play-services-measurement-impl-22.2.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-impl:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/7b53f802f8f655c8e2f2e5ed67b6ff2a/transformed/jetified-play-services-measurement-impl-22.2.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9f4f637a1f0b54088895d9e98da04c0/transformed/jetified-play-services-measurement-api-22.2.0/AndroidManifest.xml:24:5-68
-MERGED from [com.google.android.gms:play-services-measurement-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9f4f637a1f0b54088895d9e98da04c0/transformed/jetified-play-services-measurement-api-22.2.0/AndroidManifest.xml:24:5-68
-MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/ebde25f0705a69e952317e22aaaa6c32/transformed/jetified-play-services-cloud-messaging-17.2.0/AndroidManifest.xml:9:5-68
-MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/ebde25f0705a69e952317e22aaaa6c32/transformed/jetified-play-services-cloud-messaging-17.2.0/AndroidManifest.xml:9:5-68
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/66276afd09d4f7ec64ec7010319a7b6b/transformed/jetified-play-services-measurement-sdk-api-22.2.0/AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/66276afd09d4f7ec64ec7010319a7b6b/transformed/jetified-play-services-measurement-sdk-api-22.2.0/AndroidManifest.xml:25:5-68
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:51:22-76
+uses-permission#android.permission.VIBRATE
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:52:5-66
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:54:22-65
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:52:22-63
 uses-permission#android.permission.POST_NOTIFICATIONS
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:5-77
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:53:5-77
 MERGED from [com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/3949af29c5fd33b5ee6fe315aed7059d/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:23:5-77
 MERGED from [com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/3949af29c5fd33b5ee6fe315aed7059d/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:23:5-77
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:22-74
-uses-permission#android.permission.READ_MEDIA_IMAGES
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:5-76
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:53:22-74
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:54:5-75
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:22-73
-uses-permission#android.permission.READ_MEDIA_VIDEO
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:57:5-75
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:54:22-72
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:5-80
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:57:22-72
-uses-permission#android.permission.READ_MEDIA_AUDIO
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:5-75
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:55:22-77
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:5-68
+MERGED from [com.google.firebase:firebase-iid:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/ef4fa25dd5a5aff2b794a629f35299fc/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:21.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/ef4fa25dd5a5aff2b794a629f35299fc/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/3949af29c5fd33b5ee6fe315aed7059d/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-messaging:24.1.0] /Users/priyanka/.gradle/caches/8.13/transforms/3949af29c5fd33b5ee6fe315aed7059d/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-analytics-impl:18.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/bba6449981facb3362800fc37a2edda8/transformed/jetified-play-services-analytics-impl-18.2.0/AndroidManifest.xml:27:5-68
+MERGED from [com.google.android.gms:play-services-analytics-impl:18.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/bba6449981facb3362800fc37a2edda8/transformed/jetified-play-services-analytics-impl-18.2.0/AndroidManifest.xml:27:5-68
+MERGED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/71c7dffe5fd4ddf22bacb12520ccb53e/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/71c7dffe5fd4ddf22bacb12520ccb53e/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/7b53f802f8f655c8e2f2e5ed67b6ff2a/transformed/jetified-play-services-measurement-impl-22.2.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/7b53f802f8f655c8e2f2e5ed67b6ff2a/transformed/jetified-play-services-measurement-impl-22.2.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9f4f637a1f0b54088895d9e98da04c0/transformed/jetified-play-services-measurement-api-22.2.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/e9f4f637a1f0b54088895d9e98da04c0/transformed/jetified-play-services-measurement-api-22.2.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/ebde25f0705a69e952317e22aaaa6c32/transformed/jetified-play-services-cloud-messaging-17.2.0/AndroidManifest.xml:9:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/ebde25f0705a69e952317e22aaaa6c32/transformed/jetified-play-services-cloud-messaging-17.2.0/AndroidManifest.xml:9:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/66276afd09d4f7ec64ec7010319a7b6b/transformed/jetified-play-services-measurement-sdk-api-22.2.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/66276afd09d4f7ec64ec7010319a7b6b/transformed/jetified-play-services-measurement-sdk-api-22.2.0/AndroidManifest.xml:25:5-68
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:22-72
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:56:22-65
 uses-permission#android.permission.DELETE_CACHE_FILES
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:5-77
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:57:5-77
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:22-74
-uses-feature#android.hardware.location.gps
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:5-90
-	android:required
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:64-87
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:19-63
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:57:22-74
 uses-feature#android.hardware.camera
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:5-84
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:5-84
 	android:required
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:58-81
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:58-81
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:19-57
-uses-feature#android.hardware.telephony
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:5-88
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:58:19-57
+uses-feature#android.hardware.location.gps
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:5-90
 	android:required
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:61-85
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:64-87
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:19-60
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:59:19-63
 uses-feature#android.hardware.screen.portrait
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:5-69
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:5-69
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:19-66
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:60:19-66
+uses-feature#android.hardware.telephony
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:5-88
+	android:required
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:61-85
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:61:19-60
 queries
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:64:5-78:15
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:62:5-76:15
 MERGED from [com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/e278667bfc70075746fa3d282591bcb6/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:10:5-16:15
 MERGED from [com.google.firebase:firebase-inappmessaging-display:21.0.1] /Users/priyanka/.gradle/caches/8.13/transforms/e278667bfc70075746fa3d282591bcb6/transformed/jetified-firebase-inappmessaging-display-21.0.1/AndroidManifest.xml:10:5-16:15
 intent#action:name:android.media.action.IMAGE_CAPTURE
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:65:9-67:18
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:63:9-65:18
 action#android.media.action.IMAGE_CAPTURE
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:66:13-73
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:64:13-73
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:66:21-70
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:64:21-70
 intent#action:name:android.intent.action.GET_CONTENT
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:68:9-70:18
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:66:9-68:18
 action#android.intent.action.GET_CONTENT
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:69:13-72
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:67:13-72
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:69:21-69
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:67:21-69
 intent#action:name:android.intent.action.PICK
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:71:9-73:18
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:69:9-71:18
 action#android.intent.action.PICK
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:72:13-65
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:70:13-65
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:72:21-62
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:70:21-62
 intent#action:name:com.android.camera.action.CROP+data:mimeType:image/*+data:scheme:content
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:74:9-77:18
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:72:9-75:18
 action#com.android.camera.action.CROP
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:75:13-69
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:73:13-69
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:75:21-66
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:73:21-66
 data
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:13-73
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:74:13-73
 	android:scheme
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:46-70
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:74:46-70
 	android:mimeType
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:76:19-45
-uses-permission#android.permission.BLUETOOTH_SCAN
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:96:5-120
-	android:usesPermissionFlags
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:96:71-117
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:74:19-45
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:88:5-76
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:96:22-70
-uses-permission#android.permission.BLUETOOTH_CONNECT
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:97:5-76
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:88:22-73
+uses-permission#android.permission.READ_MEDIA_VIDEO
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:89:5-75
 	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:97:22-73
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:89:22-72
+uses-permission#android.permission.READ_MEDIA_AUDIO
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:90:5-75
+	android:name
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:90:22-72
 meta-data#android.support.FILE_PROVIDER_PATHS
 ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:14:13-123
 	android:resource
@@ -1220,6 +1210,14 @@ ADDED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priy
 		ADDED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/71c7dffe5fd4ddf22bacb12520ccb53e/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:32:13-37
 	android:name
 		ADDED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/71c7dffe5fd4ddf22bacb12520ccb53e/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:30:13-85
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/71c7dffe5fd4ddf22bacb12520ccb53e/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:35:9-38:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/71c7dffe5fd4ddf22bacb12520ccb53e/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/71c7dffe5fd4ddf22bacb12520ccb53e/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/71c7dffe5fd4ddf22bacb12520ccb53e/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:36:13-84
 service#com.google.android.gms.measurement.AppMeasurementJobService
 ADDED from [com.google.android.gms:play-services-measurement:22.2.0] /Users/priyanka/.gradle/caches/8.13/transforms/71c7dffe5fd4ddf22bacb12520ccb53e/transformed/jetified-play-services-measurement-22.2.0/AndroidManifest.xml:39:9-43:72
 	android:enabled

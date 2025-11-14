@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.v3.wam"
     android:hardwareAccelerated="true"
-    android:versionCode="4020210"
-    android:versionName="4.2.21" >
+    android:versionCode="4020250"
+    android:versionName="4.2.25" >
 
     <uses-sdk
         android:minSdkVersion="24"
@@ -17,35 +17,38 @@
         android:smallScreens="true"
         android:xlargeScreens="true" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="36" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.DELETE_CACHE_FILES" />
 
-    <uses-feature
-        android:name="android.hardware.location.gps"
-        android:required="true" />
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
     <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="true" />
+    <uses-feature android:name="android.hardware.screen.portrait" />
+    <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
-    <uses-feature android:name="android.hardware.screen.portrait" />
 
     <queries>
         <intent>
@@ -122,7 +125,6 @@
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:testOnly="true"
         android:usesCleartextTraffic="true" >
@@ -167,11 +169,14 @@
             android:theme="@android:style/Theme.Holo.Light" />
 
         <service
-            android:name="com.google.android.gms.measurement.AppMeasurementService"
-            android:enabled="true"
-            android:exported="false" />
-        <service
             android:name="org.apache.cordova.firebase.FirebasePluginMessagingService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="notifications.MyFirebaseMessagingService"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -222,13 +227,6 @@
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="444" />
 
-        <service
-            android:name="notifications.MyFirebaseMessagingService"
-            android:exported="false" >
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:directBootAware="true"
@@ -437,6 +435,10 @@
             android:exported="false" >
         </receiver>
 
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
         <service
             android:name="com.google.android.gms.measurement.AppMeasurementJobService"
             android:enabled="true"

@@ -87,6 +87,10 @@
             {
               "xml": "<feature name=\"Toast\"><param name=\"android-package\" value=\"nl.xservices.plugins.Toast\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"FilePath\"><param name=\"android-package\" value=\"com.hiddentao.cordova.filepath.FilePath\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
             }
           ],
           "/widget": [
@@ -279,6 +283,10 @@
             {
               "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH\" />",
               "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
+              "count": 1
             }
           ]
         }
@@ -448,6 +456,9 @@
       "PACKAGE_NAME": "com.v3.wam"
     },
     "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-filepath": {
       "PACKAGE_NAME": "com.v3.wam"
     }
   },
@@ -919,6 +930,14 @@
       "clobbers": [
         "window.plugins.toast"
       ]
+    },
+    {
+      "id": "cordova-plugin-filepath.FilePath",
+      "file": "plugins/cordova-plugin-filepath/www/FilePath.js",
+      "pluginId": "cordova-plugin-filepath",
+      "clobbers": [
+        "window.FilePath"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -944,6 +963,7 @@
     "cordova-plugin-ble-central": "2.0.0",
     "cordova-plugin-device": "3.0.0",
     "cordova-plugin-vibration": "3.1.1",
-    "cordova-plugin-x-toast": "2.7.3"
+    "cordova-plugin-x-toast": "2.7.3",
+    "cordova-plugin-filepath": "1.6.0"
   }
 }
