@@ -1,4 +1,4 @@
-window.localStorage["version"] = "4.2.25"; //set app version number
+window.localStorage["version"] = "4.2.26"; //set app version number
 // var network = "zonglipub"; //global variable that decides which databaseIP to connect to
 var initialheight; //used to record initial screen height
 //var databaseIP = 'http://v3nity.com/V3Nity4CMS/'; //global databaseIP variable
@@ -105,6 +105,7 @@ window.onload = function () {
 	window.open = cordova.InAppBrowser.open;
     window.screen.orientation.lock('portrait');
 
+
     initializeCordova(function success() {
         console.log("Cordova Initializing Success");
         setup();
@@ -126,6 +127,22 @@ window.onload = function () {
                                   //  alert("Version " +version)
                                     document.body.classList.add("below15");
                                 }
+                                setTimeout(function() {
+                                        if (window.StatusBar && StatusBar.height > 0) {
+                                            // Apply padding to the body or main content wrapper
+                                            document.body.style.paddingTop = StatusBar.height + 'px';
+                                        }
+                                    }, 100);
+                                 // --- INTEGRATION START ---
+                                            // Hide bottom navigation bar and enter immersive mode if the plugin is available
+                                            if (window.AndroidFullScreen) {
+                                                window.AndroidFullScreen.immersiveMode(function () {
+                                                  //  alert("Entered immersive mode (nav bar hidden) successfully.");
+                                                }, function (error) {
+                                                   // alert("Failed to enter immersive mode:", error);
+                                                });
+                                            }
+                                            // --- INTEGRATION END ---
 
                             }
                         }, false);
@@ -133,6 +150,9 @@ window.onload = function () {
 document.addEventListener("deviceready", function() {
     init();
     var permissions = cordova.plugins.permissions;
+    if (window.screen.orientation) {
+            window.screen.orientation.lock('portrait');
+        }
 });
 
 //        document.addEventListener("pause", function() {
@@ -4793,7 +4813,7 @@ backupGallery = true;
 
     navigator.camera.getPicture(function (fileURI) {
 
-        alert("DEBUG navigator.camera.getPicture")
+       // alert("DEBUG navigator.camera.getPicture")
         $picPointer.eq(first).attr("data-latitude", "0");
         $picPointer.eq(first).attr("data-longitude", "0");
         $picPointer.eq(first).attr("data-block-unit", "0");
@@ -4826,7 +4846,9 @@ backupGallery = true;
             }, "Unable to Capture Your Location", '✔');
         }, 25000);
 
-        if ($picPointer.eq(first).parent().parent().attr("data-geotag") == "false") {
+        if (($picPointer.eq(first).parent().parent().attr("data-geotag") || "true") === "false")
+
+        {
             console.log("Geotag is false.");
             $picPointer.eq(first).attr("data-latitude", "0");
             $picPointer.eq(first).attr("data-longitude", "0");
@@ -4854,7 +4876,9 @@ backupGallery = true;
                 writeLogs("Camera Photo Successfully Loaded w/o GeoTag. PhotoBackup = " + backupGallery);
             }, null);
 
-        } else {
+        }
+        else {
+
             $picPointer.on({'click': function () {
                     if ($picPointer.attr('src') != "") {
                         $photoPreviewPointer = $(this);
@@ -4943,6 +4967,7 @@ backupGallery = true;
                     $picPointer.eq(first).attr('src', base64Img);
                     spinOut();
                     if (backupGallery) {
+                        console.log("Geotag is false.");
                         console.log('Debug backupGallery');
                         saveProcessedImage(base64Img);
                       //  fileURI = base64Img;
@@ -4974,7 +4999,7 @@ backupGallery = true;
 
                     spinOut();
                     if (backupGallery) {
-                        saveProcessedImage(base64Img);
+                       // saveProcessedImage(base64Img);
                     }
                     if (typeof spinTimeout !== "undefined") {
                         clearTimeout(spinTimeout);
@@ -4987,7 +5012,7 @@ backupGallery = true;
 
     }, onPhotoFail, {
         correctOrientation: true,
-        saveToPhotoAlbum: true,
+        saveToPhotoAlbum: false,
         quality: window.sessionStorage["imgQuality"],
         targetWidth: window.sessionStorage["imgDimension"],
         targetHeight: window.sessionStorage["imgDimension"],
@@ -5054,54 +5079,54 @@ function combineImages(photoURI, mapUrl, callback) {
 //        }, onError);
 //    }, onError);
 //}
-function onPhotoSuccess(imageURI,staticmap) {
-    // Read the captured image file
-    window.resolveLocalFileSystemURL(imageURI, function (fileEntry) {
-        // Get the folder path where you want to save the combined image
-        var folderPath = cordova.file.externalRootDirectory + "DCIM/WAM";
-
-        // Create the folder if it doesn't exist
-        window.resolveLocalFileSystemURL(folderPath, function (dirEntry) {
-            // Folder exists, create a new canvas to combine images
-            var canvas = document.createElement('canvas');
-            var ctx = canvas.getContext('2d');
-
-            // Set canvas dimensions based on image dimensions
-            canvas.width = window.sessionStorage["imgDimension"];
-            canvas.height = window.sessionStorage["imgDimension"];
-
-            // Load the captured photo onto the canvas
-            var photo = new Image();
-            photo.onload = function () {
-                ctx.drawImage(photo, 0, 0);
-                console.log('Captured photo drawn onto canvas');
-
-                // Load the static map image onto the canvas
-                var map = new Image();
-                map.onload = function () {
-                    // Draw the static map image over the captured photo
-                    ctx.drawImage(map, 0, 0, canvas.width, canvas.height);
-                    console.log('Map image drawn onto canvas');
-
-                    // Convert the canvas content to a data URL
-                    var combinedImgData = canvas.toDataURL('image/jpeg');
-                    console.log('Canvas converted to data URL');
-
-                    // Save the combined image data to a file
-                    saveToFile(dirEntry, combinedImgData);
-                };
-                map.onerror = function (error) {
-                    console.error('Error loading map image:', error);
-                };
-                map.src = staticmap;
-            };
-            photo.onerror = function (error) {
-                console.error('Error loading captured photo:', error);
-            };
-            photo.src = imageURI;
-        }, onError);
-    }, onError);
-}
+//function onPhotoSuccess(imageURI,staticmap) {
+//    // Read the captured image file
+//    window.resolveLocalFileSystemURL(imageURI, function (fileEntry) {
+//        // Get the folder path where you want to save the combined image
+//        var folderPath = cordova.file.externalRootDirectory + "DCIM/WAM";
+//
+//        // Create the folder if it doesn't exist
+//        window.resolveLocalFileSystemURL(folderPath, function (dirEntry) {
+//            // Folder exists, create a new canvas to combine images
+//            var canvas = document.createElement('canvas');
+//            var ctx = canvas.getContext('2d');
+//
+//            // Set canvas dimensions based on image dimensions
+//            canvas.width = window.sessionStorage["imgDimension"];
+//            canvas.height = window.sessionStorage["imgDimension"];
+//
+//            // Load the captured photo onto the canvas
+//            var photo = new Image();
+//            photo.onload = function () {
+//                ctx.drawImage(photo, 0, 0);
+//                console.log('Captured photo drawn onto canvas');
+//
+//                // Load the static map image onto the canvas
+//                var map = new Image();
+//                map.onload = function () {
+//                    // Draw the static map image over the captured photo
+//                    ctx.drawImage(map, 0, 0, canvas.width, canvas.height);
+//                    console.log('Map image drawn onto canvas');
+//
+//                    // Convert the canvas content to a data URL
+//                    var combinedImgData = canvas.toDataURL('image/jpeg');
+//                    console.log('Canvas converted to data URL');
+//
+//                    // Save the combined image data to a file
+//                    saveToFile(dirEntry, combinedImgData);
+//                };
+//                map.onerror = function (error) {
+//                    console.error('Error loading map image:', error);
+//                };
+//                map.src = staticmap;
+//            };
+//            photo.onerror = function (error) {
+//                console.error('Error loading captured photo:', error);
+//            };
+//            photo.src = imageURI;
+//        }, onError);
+//    }, onError);
+//}
 
 
 // Function to save the combined image data to a file
@@ -5202,72 +5227,72 @@ function onError(error) {
 //           });
 //       }
 //   } New fix below
-function saveToPhotoGallery(combinedImgData) {
-    var folderName = "DCIM/WAM"; // Destination folder name
-    var fileName = "photo_" + Date.now() + ".jpg"; // File name for the photo
-
-    // Convert base64 image data to a Blob object
-    var byteCharacters = atob(combinedImgData.split(',')[1]);
-    var byteNumbers = new Array(byteCharacters.length);
-    for (var i = 0; i < byteCharacters.length; i++) {
-        byteNumbers[i] = byteCharacters.charCodeAt(i);
-    }
-    var byteArray = new Uint8Array(byteNumbers);
-
-    console.log('Byte array length:', byteArray.length); // Log the length of the byte array
-
-    var blob = new Blob([byteArray], { type: 'image/jpeg' });
-
-    // Get the folder path
-    var folderPath = cordova.file.externalRootDirectory + folderName;
-
-    // Check if the folder exists
-    window.resolveLocalFileSystemURL(folderPath, function (dirEntry) {
-        // Folder exists, save the file
-        saveFile(dirEntry);
-    }, function (error) {
-        // Folder doesn't exist, create it
-        window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function (rootDirEntry) {
-            rootDirEntry.getDirectory(folderName, { create: true, exclusive: false }, function (dirEntry) {
-                // Folder created, now save the file
-                saveFile(dirEntry);
-            }, function (error) {
-                console.error('Error creating directory:', error);
-                // Handle error creating directory
-            });
-        }, function (error) {
-            console.error('Error accessing root directory:', error);
-            // Handle error accessing root directory
-        });
-    });
-
-    // Function to save the file to the folder
-    function saveFile(folderEntry) {
-        folderEntry.getFile(fileName, { create: true, exclusive: false }, function (fileEntry) {
-            // Write the Blob object to the file
-            fileEntry.createWriter(function (fileWriter) {
-                fileWriter.onwriteend = function () {
-                    console.log('File saved to WAM3 folder:', fileEntry.nativeURL);
-                    // Optionally, perform additional operations with the saved file
-                };
-                fileWriter.onerror = function (error) {
-                    console.error('Error writing file:');
-                    console.error('Error code:', error.code);
-                    console.error('Error message:', error.message);
-                    console.error('Error object:', error);
-                    // Handle error writing file
-                };
-                fileWriter.write(blob);
-            }, function (error) {
-                console.error('Error creating writer:', error);
-                // Handle error creating writer
-            });
-        }, function (error) {
-            console.error('Error getting file:', error);
-            // Handle error getting file
-        });
-    }
-}
+//function saveToPhotoGallery(combinedImgData) {
+//    var folderName = "DCIM/WAM"; // Destination folder name
+//    var fileName = "photo_" + Date.now() + ".jpg"; // File name for the photo
+//
+//    // Convert base64 image data to a Blob object
+//    var byteCharacters = atob(combinedImgData.split(',')[1]);
+//    var byteNumbers = new Array(byteCharacters.length);
+//    for (var i = 0; i < byteCharacters.length; i++) {
+//        byteNumbers[i] = byteCharacters.charCodeAt(i);
+//    }
+//    var byteArray = new Uint8Array(byteNumbers);
+//
+//    console.log('Byte array length:', byteArray.length); // Log the length of the byte array
+//
+//    var blob = new Blob([byteArray], { type: 'image/jpeg' });
+//
+//    // Get the folder path
+//    var folderPath = cordova.file.externalRootDirectory + folderName;
+//
+//    // Check if the folder exists
+//    window.resolveLocalFileSystemURL(folderPath, function (dirEntry) {
+//        // Folder exists, save the file
+//        saveFile(dirEntry);
+//    }, function (error) {
+//        // Folder doesn't exist, create it
+//        window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function (rootDirEntry) {
+//            rootDirEntry.getDirectory(folderName, { create: true, exclusive: false }, function (dirEntry) {
+//                // Folder created, now save the file
+//                saveFile(dirEntry);
+//            }, function (error) {
+//                console.error('Error creating directory:', error);
+//                // Handle error creating directory
+//            });
+//        }, function (error) {
+//            console.error('Error accessing root directory:', error);
+//            // Handle error accessing root directory
+//        });
+//    });
+//
+//    // Function to save the file to the folder
+////    function saveFile(folderEntry) {
+////        folderEntry.getFile(fileName, { create: true, exclusive: false }, function (fileEntry) {
+////            // Write the Blob object to the file
+////            fileEntry.createWriter(function (fileWriter) {
+////                fileWriter.onwriteend = function () {
+////                    console.log('File saved to WAM3 folder:', fileEntry.nativeURL);
+////                    // Optionally, perform additional operations with the saved file
+////                };
+////                fileWriter.onerror = function (error) {
+////                    console.error('Error writing file:');
+////                    console.error('Error code:', error.code);
+////                    console.error('Error message:', error.message);
+////                    console.error('Error object:', error);
+////                    // Handle error writing file
+////                };
+////                fileWriter.write(blob);
+////            }, function (error) {
+////                console.error('Error creating writer:', error);
+////                // Handle error creating writer
+////            });
+////        }, function (error) {
+////            console.error('Error getting file:', error);
+////            // Handle error getting file
+////        });
+////    }
+//}
 
 
 
@@ -5350,7 +5375,7 @@ function takeGeotagphoto(backupGallery) {
 
                     spinOut();
                     if (backupGallery) {
-                        saveProcessedImage(base64Img);
+                       // saveProcessedImage(base64Img);
                     }
                     if (typeof spinTimeout !== "undefined") {
                         clearTimeout(spinTimeout);
@@ -5595,7 +5620,7 @@ function textGeotagWatermark(url2, text, callback, outputFormat) {
 }
 
 function photoPreview(photo, latitude, longtitude, block_unit, block_level,location_name,title) {
-   // alert("DEBUG photoPreview")
+   //  alert("DEBUG photoPreview")
     /*console.log('TFF4 ' + photo);
     console.log('TFF5 ' + latitude);
     console.log('TFF6 ' + longtitude);
@@ -6187,34 +6212,30 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
 
 
     bindGalleryImg('.gallery input[type="image"]');
-
-    $('.gallery img').on('click', function () {
-        if ($(this).attr('src') !== "") {   // Use $(this), not $('.gallery img')
-            $photoPreviewPointer = $(this);
-            photoPreview(
-                $(this).attr('src'),
-                0, 0, 0, 0,
-                '',
-                $(this).attr('data-title')
-            );
-        }
-    });
+        $('.gallery img').on('click', function () {
+            if ($('.gallery img').attr('src') != "") {
+                $photoPreviewPointer = $(this);
+              //  alert("DEBUG before photoPreview")
+                photoPreview($(this).attr('src'), 0, 0, 0, 0,'', $(this).attr('data-title'));
+            }
+        });
     /* End of Gallery Form Field */
 
-    /* Start of Gallery & Camera Form Field */
-    bindCameraImg('.cameralibrary input[type="image"][src$="camera.png"]');
-    bindGalleryImg('.cameralibrary input[type="image"][src$="gallery.png"]');
-    $('.cameralibrary img').on('click', function () {
-       // alert("DEBUG bindGalleryImg 123")
-        if ($('.cameralibrary img').attr('src') != "") {
-            $photoPreviewPointer = $(this);
-            photoPreview($(this).attr('src'), 0, 0, 0, 0,'', $(this).attr('data-title'));
-        }
-    });
+        /* Start of Gallery & Camera Form Field */
+            bindCameraImg('.cameralibrary input[type="image"][src$="camera.png"]');
+            bindGalleryImg('.cameralibrary input[type="image"][src$="gallery.png"]');
+             $(document).on("click", ".cameralibrary img:not([type='image'])", function () {
+             let src = $(this).attr("src");
+             if (!src) return;
+
+             $photoPreviewPointer = $(this);
+             photoPreview($(this).attr('src'), 0, 0, 0, 0,'', $(this).attr('data-title'));
+             });
+            /* End of Gallery & Camera Form Field */
     /* End of Gallery & Camera Form Field */
 
     if ($('.signature img').attr('src') == 'img/form_signature.png' || $('.signature img').attr('src') == '../img/form_signature.png') { // v3 format = ../img/form_signature.png v4 format = img/form_signature.png
-        $('.signature img').attr('src', 'img/signature.png');
+        $('.signature img').attr('src', 'img/signaturee.png');
     }
     $('.signature img').on('click', function () {
         $signPointer = $(this);
@@ -6806,53 +6827,38 @@ function bindGeotagImg(attrSelector) {
 
 function bindGalleryImg(attrSelector) {
 
-    console.log("[DEBUG] bindGalleryImg init for:", attrSelector);
-
     $(attrSelector).attr('src', 'img/gallery.png');
 
     $(attrSelector).off('click').on('click', function () {
 
-        console.log("[DEBUG] Gallery icon clicked");
-
         var $parent = $(this).parent();
-        var maxPics = parseInt($parent.attr('data-max')) || Infinity;
 
         $(this).before('<img src="img/loading.png" class="temp-loading" />');
 
         var $btn = $(this);
 
         navigator.camera.getPicture(
-            function (imageURI) {
+            function (imageData) {
 
                 console.log("[DEBUG] Camera.getPicture SUCCESS");
-                console.log("[DEBUG] imageURI returned:", imageURI);
+                console.log("[DEBUG] Raw imageData:", imageData.substring(0, 80));
 
                 $parent.find('.temp-loading').remove();
 
-                // Check the type of URI returned
-                if (imageURI.startsWith("content://")) {
+                // Fix duplicated prefix
+                let finalImg;
 
-                    console.log("[DEBUG] Returned URI is content:// → MUST RESOLVE");
-
-                    window.FilePath.resolveNativePath(
-                        imageURI,
-                        function (filePath) {
-                            console.log("[DEBUG] FilePath.resolveNativePath SUCCESS");
-                            console.log("[DEBUG] Resolved path:", filePath);
-
-                            // Insert final image
-                            $btn.before('<img src="' + filePath + '" />');
-                        },
-                        function (error) {
-                            console.error("[DEBUG] FilePath.resolveNativePath ERROR:", error);
-                        }
-                    );
-
+                if (imageData.startsWith("data:image")) {
+                    console.log("[DEBUG] Base64 already has prefix → using as is");
+                    finalImg = imageData;
                 } else {
-                    console.log("[DEBUG] Returned URI is file:// → safe to load directly");
-
-                    $btn.before('<img src="' + imageURI + '" />');
+                    console.log("[DEBUG] Base64 missing prefix → adding prefix");
+                    finalImg = "data:image/jpeg;base64," + imageData;
                 }
+
+                console.log("[DEBUG] finalImg preview:", finalImg.substring(0, 80));
+
+                $btn.before('<img src="' + finalImg + '" />');
             },
 
             function (message) {
@@ -6869,6 +6875,7 @@ function bindGalleryImg(attrSelector) {
         );
     });
 }
+
 
 
 
@@ -7997,98 +8004,84 @@ function rebindMainJobList() { // using .one function so that user dont spam cli
 //}
 
 function saveProcessedImage(base64String) {
-   // alert("DEBUG saveProcessedImage");
+
+    if (!base64String || base64String.length < 100) {
+        console.error("Base64 string is empty or too short. Not saving.");
+        return;
+    }
 
     var jobId = window.sessionStorage["selected_id"];
     var folderName = "DCIM/WAM";
-    var fileName = "JOB_" + jobId + "_" + Date.now() + ".jpg";
 
-    // Convert base64 string to Uint8Array
-
-    try {
-            // Extract base64-encoded image data from the string
-            var base64Data = base64String.split(',')[1]; // Split at comma and take the second part
-
-            // Decode the base64 string
-            var binaryString = atob(base64Data);
-
-            // Convert the binary string to a Uint8Array
-            var len = binaryString.length;
-            var bytes = new Uint8Array(len);
-            for (var i = 0; i < len; i++) {
-                bytes[i] = binaryString.charCodeAt(i);
-            }
-
-            // Continue with saving the image to the file system...
-        } catch (error) {
-            // Handle the error
-            console.error("Error decoding base64 string:", error);
-        }
-
-    var len = binaryString.length;
-    var bytes = new Uint8Array(len);
-    for (var i = 0; i < len; i++) {
-        bytes[i] = binaryString.charCodeAt(i);
+    // Detect image type
+    let base64Data;
+    let extension;
+    let mimeType;
+    if (base64String.startsWith("data:image/jpeg;base64,")) {
+        base64Data = base64String.split("data:image/jpeg;base64,")[1];
+        extension = "jpg";
+        mimeType = "image/jpeg";
+    } else if (base64String.startsWith("data:image/png;base64,")) {
+        base64Data = base64String.split("data:image/png;base64,")[1];
+        extension = "png";
+        mimeType = "image/png";
+    } else {
+        console.error("Unsupported image format. Must be JPEG or PNG.");
+        return;
     }
 
-    // Get the folder path
+    var fileName = `JOB_${jobId}_${Date.now()}.${extension}`;
     var folderPath = cordova.file.externalRootDirectory + folderName;
 
-    // Create the WAM folder if it doesn't exist
-    window.resolveLocalFileSystemURL(folderPath, function(dirEntry) {
-        saveFile(dirEntry);
-    }, function(error) {
-        window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function(rootDirEntry) {
-            rootDirEntry.getDirectory(folderName, { create: true, exclusive: false }, function(dirEntry) {
-                saveFile(dirEntry);
-            }, function(error) {
-                console.error('Error creating directory:', error);
-            });
-        }, function(error) {
-            console.error('Error accessing root directory:', error);
-        });
-    });
-
-    // Function to save the file to the folder
-    // Function to save the file to the folder
-    function saveFile(folderEntry) {
-        folderEntry.getFile(fileName, { create: true, exclusive: false }, function(fileEntry) {
-            // Write the file
-            fileEntry.createWriter(function(writer) {
-                writer.onwriteend = function() {
-                    console.log('File saved on ' + fileEntry.nativeURL);
-                    // Optionally, you can perform additional operations here
-                };
-                writer.onerror = function(error) {
-                    console.error('Error writing file:', error);
-                    // Log the error object as a string
-                    console.error('Error object:', JSON.stringify(error));
-                };
-                writer.write(bytes);
-            }, function(error) {
-                console.error('Error creating writer:', error);
-                // Log the error object as a string
-                console.error('Error object:', JSON.stringify(error));
-            });
-        }, function(error) {
-            console.error('Error getting file:', error);
-            // Log the error object as a string
-            console.error('Error object:', JSON.stringify(error));
-        });
+    // Convert Base64 to Blob
+    function base64ToBlob(base64, type) {
+        var byteCharacters = atob(base64);
+        var byteNumbers = new Array(byteCharacters.length);
+        for (var i = 0; i < byteCharacters.length; i++) {
+            byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+        var byteArray = new Uint8Array(byteNumbers);
+        return new Blob([byteArray], { type: type });
     }
 
-    // Resolve or create the directory
+    var blob = base64ToBlob(base64Data, mimeType);
+
+    // Resolve or create folder
     window.resolveLocalFileSystemURL(folderPath, function(dirEntry) {
         saveFile(dirEntry);
-    }, function(error) {
-        // Handle directory not found error
-        console.error('Error resolving directory:', error);
-        // Log the error object as a string
-        console.error('Error object:', JSON.stringify(error));
+    }, function() {
+        window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function(root) {
+            root.getDirectory(folderName, { create: true }, function(dirEntry) {
+                saveFile(dirEntry);
+            }, function(error) {
+                console.error("Error creating directory:", error);
+            });
+        });
     });
 
-
+    // Save file
+    function saveFile(dirEntry) {
+        dirEntry.getFile(fileName, { create: true }, function(fileEntry) {
+            fileEntry.createWriter(function(writer) {
+                writer.onwriteend = function() {
+                    console.log("File saved:", fileEntry.nativeURL);
+                    // Gallery will detect this file automatically after a few seconds
+                };
+                writer.onerror = function(err) {
+                    console.error("Write error:", err);
+                };
+                writer.write(blob);
+            });
+        }, function(err) {
+            console.error("Error getting file:", err);
+        });
+    }
 }
+
+
+
+
+
 
 function stat(status) { //give status id and returns status in string
     status = parseInt(status); //convert to int

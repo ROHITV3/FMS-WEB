@@ -19,12 +19,14 @@
     "cordova-plugin-ble-central": "^2.0.0",
     "cordova-plugin-filepath": "^1.6.0",
     "cordova-plugin-firebasex": "^18.0.7",
+    "cordova-plugin-fullscreen": "file:plugins/cordova-plugin-fullscreen",
     "cordova-plugin-media": "^5.0.4",
     "cordova-plugin-media-capture": "^3.0.3",
     "cordova-plugin-nativeaudio": "^3.0.9",
     "cordova-plugin-nativegeocoder": "^3.4.1",
     "cordova-plugin-push-notifications": "^1.2.0",
     "cordova-plugin-screen-orientation": "^3.0.2",
+    "cordova-plugin-statusbar": "^4.0.0",
     "cordova-save-image-gallery": "^0.0.26",
     "cordova-sms-plugin": "^1.0.2",
     "cordova-support-android-plugin": "~2.0.4",
@@ -110,7 +112,9 @@
       "cordova-plugin-device": {},
       "cordova-plugin-vibration": {},
       "cordova-plugin-x-toast": {},
-      "cordova-plugin-filepath": {}
+      "cordova-plugin-filepath": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-fullscreen": {}
     }
   },
   "dependencies": {

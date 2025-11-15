@@ -1,7 +1,5 @@
-body{
-	padding: 0;
-	margin: 0;
-	font-style:normal !important;
+body {
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 html, body {
@@ -43,7 +41,7 @@ body.below15 [data-role=header] {
 
 /* Android 16+ (WebView supports env()) */
 body.android16plus [data-role=header] {
-    top: calc(env(safe-area-inset-top, 0px) + 60px);
+    top: calc(env(safe-area-inset-top, 0px) + 10px);
 }
 
 /* Android 15 and below (fallback, no safe-area) */
@@ -79,7 +77,6 @@ body.android15 [data-role=header] {
 	height: 100%;
 	top: 0px;
 	width: 100%;
-    height: 100%;
 
 }
 
@@ -477,4 +474,7 @@ body.android15 .top {
 #confirmPopup::-webkit-scrollbar-thumb:hover,
 #confirmPopupImages::-webkit-scrollbar-thumb:hover {
     background: #888;
+}
+body {
+    padding-bottom: env(safe-area-inset-bottom);
 }

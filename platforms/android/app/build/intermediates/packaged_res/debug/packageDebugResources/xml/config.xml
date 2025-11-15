@@ -51,6 +51,8 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#1976d2" />
     <preference name="android-windowOptOutEdgeToEdgeEnforcement" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="android-windowSoftInputMode" value="adjustResize" />
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
     </feature>
@@ -125,5 +127,13 @@
     <feature name="FilePath">
         <param name="android-package" value="com.hiddentao.cordova.filepath.FilePath" />
         <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <feature name="AndroidFullScreen">
+        <param name="android-package" value="com.mesmotronic.plugins.FullScreenPlugin" />
     </feature>
 </widget>

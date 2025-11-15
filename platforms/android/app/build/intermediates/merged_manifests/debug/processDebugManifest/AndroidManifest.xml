@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.v3.wam"
     android:hardwareAccelerated="true"
-    android:versionCode="4020250"
-    android:versionName="4.2.25" >
+    android:versionCode="4020260"
+    android:versionName="4.2.26" >
 
     <uses-sdk
         android:minSdkVersion="24"
@@ -226,6 +226,9 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="444" />
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.16" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

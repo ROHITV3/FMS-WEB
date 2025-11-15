@@ -115,6 +115,12 @@
     },
     "cordova-plugin-filepath": {
       "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.v3.wam"
+    },
+    "cordova-plugin-fullscreen": {
+      "PACKAGE_NAME": "com.v3.wam"
     }
   },
   "dependent_plugins": {}
