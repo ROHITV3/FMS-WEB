@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.v3.wam"
     android:hardwareAccelerated="true"
-    android:versionCode="4020260"
-    android:versionName="4.2.26" >
+    android:versionCode="4020280"
+    android:versionName="4.2.28" >
 
     <uses-sdk
         android:minSdkVersion="24"
@@ -96,9 +96,6 @@
     <uses-feature android:name="android.hardware.screen.portrait" />
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />

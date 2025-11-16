@@ -11,10 +11,10 @@ INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/
 	android:name
 		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:13:149-202
 manifest
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-97:12
-INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-97:12
-INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-97:12
-INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-97:12
+ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-95:12
+INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-95:12
+INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-95:12
+INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:1-95:12
 MERGED from [:barcodescanner-release-2.1.5:] /Users/priyanka/.gradle/caches/8.13/transforms/d3304029784e25ac6727f0c45dcc07fa/transformed/jetified-barcodescanner-release-2.1.5/AndroidManifest.xml:2:1-14:12
 MERGED from [:CordovaLib] /Users/priyanka/Documents/android-apps/WAM3/platforms/android/CordovaLib/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:20:1-27:12
 MERGED from [com.google.firebase:firebase-perf:21.0.4] /Users/priyanka/.gradle/caches/8.13/transforms/c64a5a59cee99416901f969ac0ab601a/transformed/jetified-firebase-perf-21.0.4/AndroidManifest.xml:3:1-23:12
@@ -662,18 +662,6 @@ ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src
 		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:75:46-70
 	android:mimeType
 		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:75:19-45
-uses-permission#android.permission.READ_MEDIA_IMAGES
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:89:5-76
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:89:22-73
-uses-permission#android.permission.READ_MEDIA_VIDEO
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:90:5-75
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:90:22-72
-uses-permission#android.permission.READ_MEDIA_AUDIO
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:91:5-75
-	android:name
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:91:22-72
 meta-data#android.support.FILE_PROVIDER_PATHS
 ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:14:13-123
 	android:resource

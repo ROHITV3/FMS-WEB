@@ -25,7 +25,7 @@
     "cordova-plugin-nativeaudio": "^3.0.9",
     "cordova-plugin-nativegeocoder": "^3.4.1",
     "cordova-plugin-push-notifications": "^1.2.0",
-    "cordova-plugin-screen-orientation": "^3.0.2",
+    "cordova-plugin-screen-orientation": "file:plugins/cordova-plugin-screen-orientation",
     "cordova-plugin-statusbar": "^4.0.0",
     "cordova-save-image-gallery": "^0.0.26",
     "cordova-sms-plugin": "^1.0.2",
