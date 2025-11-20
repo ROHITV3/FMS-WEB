@@ -29,7 +29,7 @@ html, body {
 
 /* Default (common for all Androids) */
 body.below15 [data-role=header] {
-	top:0;
+	top:20;
 	position: fixed !important;
 	bottom: auto !important;
 	padding: 0 !important;

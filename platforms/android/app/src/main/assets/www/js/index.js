@@ -6824,6 +6824,56 @@ function bindGeotagImg(attrSelector) {
 //        );
 //    });
 //}
+//function bindGalleryImg(attrSelector) {
+//
+//    $(attrSelector).attr('src', 'img/gallery.png');
+//
+//    $(attrSelector).off('click').on('click', function () {
+//
+//        var $parent = $(this).parent();
+//
+//        $(this).before('<img src="img/loading.png" class="temp-loading" />');
+//
+//        var $btn = $(this);
+//
+//        navigator.camera.getPicture(
+//            function (imageData) {
+//
+//                console.log("[DEBUG] Camera.getPicture SUCCESS");
+//                console.log("[DEBUG] Raw imageData:", imageData.substring(0, 80));
+//
+//                $parent.find('.temp-loading').remove();
+//
+//                // Fix duplicated prefix
+//                let finalImg;
+//
+//                if (imageData.startsWith("data:image")) {
+//                    console.log("[DEBUG] Base64 already has prefix → using as is");
+//                    finalImg = imageData;
+//                } else {
+//                    console.log("[DEBUG] Base64 missing prefix → adding prefix");
+//                    finalImg = "data:image/jpeg;base64," + imageData;
+//                }
+//
+//                console.log("[DEBUG] finalImg preview:", finalImg.substring(0, 80));
+//
+//                $btn.before('<img src="' + finalImg + '" />');
+//            },
+//
+//            function (message) {
+//                console.log("[DEBUG] Camera.getPicture FAILED:", message);
+//                $parent.find('.temp-loading').remove();
+//            },
+//
+//            {
+//                quality: 50,
+//                sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+//                destinationType: Camera.DestinationType.DATA_URL,
+//                mediaType: Camera.MediaType.PICTURE
+//            }
+//        );
+//    });
+//}
 
 function bindGalleryImg(attrSelector) {
 
@@ -6832,50 +6882,69 @@ function bindGalleryImg(attrSelector) {
     $(attrSelector).off('click').on('click', function () {
 
         var $parent = $(this).parent();
-
-        $(this).before('<img src="img/loading.png" class="temp-loading" />');
-
         var $btn = $(this);
 
-        navigator.camera.getPicture(
-            function (imageData) {
+        // Add loading
+        $btn.before('<img src="img/loading.png" class="temp-loading" />');
 
-                console.log("[DEBUG] Camera.getPicture SUCCESS");
-                console.log("[DEBUG] Raw imageData:", imageData.substring(0, 80));
+        // Create hidden file input dynamically
+        let fileInput = document.createElement("input");
+        fileInput.type = "file";
+        fileInput.accept = "image/*";
+        fileInput.multiple = true;
+        fileInput.style.display = "none";
 
-                $parent.find('.temp-loading').remove();
+        document.body.appendChild(fileInput);
 
-                // Fix duplicated prefix
-                let finalImg;
+        // Open gallery
+        fileInput.click();
 
-                if (imageData.startsWith("data:image")) {
-                    console.log("[DEBUG] Base64 already has prefix → using as is");
-                    finalImg = imageData;
-                } else {
-                    console.log("[DEBUG] Base64 missing prefix → adding prefix");
-                    finalImg = "data:image/jpeg;base64," + imageData;
-                }
+        // Handle selected images
+        fileInput.onchange = function (event) {
 
-                console.log("[DEBUG] finalImg preview:", finalImg.substring(0, 80));
+            let files = event.target.files;
 
-                $btn.before('<img src="' + finalImg + '" />');
-            },
+            console.log("[DEBUG] Selected files:", files.length);
 
-            function (message) {
-                console.log("[DEBUG] Camera.getPicture FAILED:", message);
-                $parent.find('.temp-loading').remove();
-            },
-
-            {
-                quality: 50,
-                sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-                destinationType: Camera.DestinationType.DATA_URL,
-                mediaType: Camera.MediaType.PICTURE
+            if (!files || files.length === 0) {
+                $parent.find(".temp-loading").remove();
+                fileInput.remove();
+                return;
             }
-        );
+
+            let processed = 0;
+
+            Array.from(files).forEach((file, index) => {
+                console.log("[DEBUG] Processing file:", file.name);
+
+                let reader = new FileReader();
+
+                reader.onload = function (e) {
+                    let base64 = e.target.result;
+
+                    console.log("[DEBUG] Base64 prefix:", base64.substring(0, 40));
+
+                    // Insert preview image before the gallery icon (same as your existing logic)
+                    $btn.before('<img src="' + base64 + '" />');
+
+                    processed++;
+
+                    if (processed === files.length) {
+                        console.log("[DEBUG] All images processed");
+                        $parent.find('.temp-loading').remove();
+                        fileInput.remove();
+                    }
+                };
+
+                reader.onerror = function (err) {
+                    console.error("[ERROR] FileReader failed:", err);
+                };
+
+                reader.readAsDataURL(file);
+            });
+        };
     });
 }
-
 
 
 
