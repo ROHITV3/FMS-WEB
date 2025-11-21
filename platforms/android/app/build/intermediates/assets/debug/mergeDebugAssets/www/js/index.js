@@ -1,4 +1,4 @@
-window.localStorage["version"] = "4.2.28"; //set app version number
+window.localStorage["version"] = "4.2.29"; //set app version number
 // var network = "zonglipub"; //global variable that decides which databaseIP to connect to
 var initialheight; //used to record initial screen height
 //var databaseIP = 'http://v3nity.com/V3Nity4CMS/'; //global databaseIP variable
@@ -6775,105 +6775,6 @@ function bindGeotagImg(attrSelector) {
 
         }});
 }
-
-//function bindGalleryImg(attrSelector) {
-//   // alert("DEBUG gallery @@@@@");
-//    $(attrSelector).attr('src', 'img/gallery.png');
-//   // alert("DEBUG gallery #####");
-//
-//    $(attrSelector).off('click').on('click', function () {  // Ensure no duplicate bindings
-//        var $parent = $(this).parent();
-//        var $picPointer = $parent.find('img');
-//        var maxPics = parseInt($parent.attr('data-max')) || Infinity;
-//
-//        // Add loading image
-//        $(this).before('<img src="img/loading.png" class="temp-loading" />');
-//
-//        // Check number of images vs max
-//        if ($picPointer.length >= maxPics) {
-//            $(this).prev('.temp-loading').remove();
-//            navigator.notification.alert(lang.Mobile086, function () {}, lang.Mobile085, '✔');
-//            return;
-//        }
-//
-//        // Call Cordova camera plugin to pick from gallery
-//        navigator.camera.getPicture(
-//            function (imageURI) {
-//                // Remove loading image
-//                $parent.find('.temp-loading').remove();
-//
-//                var $btn = $(this);  // to keep context
-//                var src = imageURI;
-//                if (src.startsWith("content://")) {
-//                    // optional: convert if plugin requires
-//                }
-//                $btn.before('<img src="' + src + '"/>');
-//
-//            }.bind(this),
-//            function (message) {
-//                // On fail, remove loading
-//                $parent.find('.temp-loading').remove();
-//                console.log("Gallery pick cancelled: " + message);
-//            },
-//            {
-//                quality: 50,
-//                destinationType: Camera.DestinationType.FILE_URI,
-//                sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-//                mediaType: Camera.MediaType.PICTURE
-//            }
-//        );
-//    });
-//}
-//function bindGalleryImg(attrSelector) {
-//
-//    $(attrSelector).attr('src', 'img/gallery.png');
-//
-//    $(attrSelector).off('click').on('click', function () {
-//
-//        var $parent = $(this).parent();
-//
-//        $(this).before('<img src="img/loading.png" class="temp-loading" />');
-//
-//        var $btn = $(this);
-//
-//        navigator.camera.getPicture(
-//            function (imageData) {
-//
-//                console.log("[DEBUG] Camera.getPicture SUCCESS");
-//                console.log("[DEBUG] Raw imageData:", imageData.substring(0, 80));
-//
-//                $parent.find('.temp-loading').remove();
-//
-//                // Fix duplicated prefix
-//                let finalImg;
-//
-//                if (imageData.startsWith("data:image")) {
-//                    console.log("[DEBUG] Base64 already has prefix → using as is");
-//                    finalImg = imageData;
-//                } else {
-//                    console.log("[DEBUG] Base64 missing prefix → adding prefix");
-//                    finalImg = "data:image/jpeg;base64," + imageData;
-//                }
-//
-//                console.log("[DEBUG] finalImg preview:", finalImg.substring(0, 80));
-//
-//                $btn.before('<img src="' + finalImg + '" />');
-//            },
-//
-//            function (message) {
-//                console.log("[DEBUG] Camera.getPicture FAILED:", message);
-//                $parent.find('.temp-loading').remove();
-//            },
-//
-//            {
-//                quality: 50,
-//                sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-//                destinationType: Camera.DestinationType.DATA_URL,
-//                mediaType: Camera.MediaType.PICTURE
-//            }
-//        );
-//    });
-//}
 
 function bindGalleryImg(attrSelector) {
 
