@@ -130,12 +130,12 @@ MERGED from [com.google.android.play:core-common:2.0.3] /Users/priyanka/.gradle/
 	package
 		INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml
 	android:versionName
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:76-104
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:76-103
 		INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml
 	android:hardwareAccelerated
 		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:11-45
 	xmlns:android
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:105-163
+		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:104-162
 	android:versionCode
 		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml:2:46-75
 		INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/app/src/main/AndroidManifest.xml

@@ -1,4 +1,4 @@
-window.localStorage["version"] = "4.2.29"; //set app version number
+window.localStorage["version"] = "4.3.0"; //set app version number
 // var network = "zonglipub"; //global variable that decides which databaseIP to connect to
 var initialheight; //used to record initial screen height
 //var databaseIP = 'http://v3nity.com/V3Nity4CMS/'; //global databaseIP variable
@@ -5492,7 +5492,6 @@ function attachImg()
         height: window.localStorage['galleryHeight'],
         width: window.localStorage['galleryWidth']
     });
-
 }
 
 function getFileContentAsBase64(path,callback){
@@ -6235,7 +6234,7 @@ function openFileFail(err) // this is after openDividedForm(), when user open a 
     /* End of Gallery & Camera Form Field */
 
     if ($('.signature img').attr('src') == 'img/form_signature.png' || $('.signature img').attr('src') == '../img/form_signature.png') { // v3 format = ../img/form_signature.png v4 format = img/form_signature.png
-        $('.signature img').attr('src', 'img/signaturee.png');
+        $('.signature img').attr('src', 'img/signature.png');
     }
     $('.signature img').on('click', function () {
         $signPointer = $(this);
@@ -6777,35 +6776,43 @@ function bindGeotagImg(attrSelector) {
 }
 
 function bindGalleryImg(attrSelector) {
-
     $(attrSelector).attr('src', 'img/gallery.png');
 
     $(attrSelector).off('click').on('click', function () {
-
-        var $parent = $(this).parent();
         var $btn = $(this);
+        var $parent = $btn.parent();
 
-        // Add loading
+        // 1. Calculate Capacity
+        // Count existing images, but exclude the gallery icon itself and any loading placeholders
+        var currentCount = $parent.find('img').not(attrSelector).not('[src*="loading.png"]').length;
+        var maxVal = parseInt($parent.attr('data-max'));
+
+
+
+        // If data-max is defined and we are already at or over the limit
+        if (!isNaN(maxVal) && currentCount >= maxVal) {
+            if (typeof navigator !== 'undefined' && navigator.notification) {
+                navigator.notification.alert(lang.Mobile086 || "Limit Reached", function() {}, lang.Mobile085 || "Notice", '✔');
+            } else {
+                alert("Maximum limit of " + maxVal + " images reached.");
+            }
+            return;
+        }
+
+        // 2. Add Loading Spinner
         $btn.before('<img src="img/loading.png" class="temp-loading" />');
 
-        // Create hidden file input dynamically
+        // 3. Create Hidden File Input
         let fileInput = document.createElement("input");
         fileInput.type = "file";
         fileInput.accept = "image/*";
         fileInput.multiple = true;
         fileInput.style.display = "none";
-
         document.body.appendChild(fileInput);
-
-        // Open gallery
         fileInput.click();
 
-        // Handle selected images
         fileInput.onchange = function (event) {
-
-            let files = event.target.files;
-
-            console.log("[DEBUG] Selected files:", files.length);
+            let files = Array.from(event.target.files);
 
             if (!files || files.length === 0) {
                 $parent.find(".temp-loading").remove();
@@ -6813,40 +6820,73 @@ function bindGalleryImg(attrSelector) {
                 return;
             }
 
+            // 4. Slice files to fit remaining slots
+            if (!isNaN(maxVal)) {
+                var remainingSlots = maxVal - currentCount;
+                if (files.length > remainingSlots) {
+                    alert("Only " + remainingSlots + " images are allowed.");
+                    files = files.slice(0, remainingSlots);
+                }
+            }
+
             let processed = 0;
-
-            Array.from(files).forEach((file, index) => {
-                console.log("[DEBUG] Processing file:", file.name);
-
+            files.forEach((file) => {
                 let reader = new FileReader();
-
                 reader.onload = function (e) {
-                    let base64 = e.target.result;
+                    let rawBase64 = e.target.result;
 
-                    console.log("[DEBUG] Base64 prefix:", base64.substring(0, 40));
+                    // Create an image object to "hold" the data
+                    let img = new Image();
+                    img.src = rawBase64;
 
-                    // Insert preview image before the gallery icon (same as your existing logic)
-                    $btn.before('<img src="' + base64 + '" />');
+                    img.onload = function () {
+                        // 1. Setup Canvas
+                        let canvas = document.createElement('canvas');
+                        let ctx = canvas.getContext('2d');
 
-                    processed++;
+                        // 2. Set max dimensions (e.g., 1024px)
+                        let MAX_WIDTH = 1024;
+                        let MAX_HEIGHT = 1024;
+                        let width = img.width;
+                        let height = img.height;
 
-                    if (processed === files.length) {
-                        console.log("[DEBUG] All images processed");
-                        $parent.find('.temp-loading').remove();
-                        fileInput.remove();
-                    }
+                        if (width > height) {
+                            if (width > MAX_WIDTH) {
+                                height *= MAX_WIDTH / width;
+                                width = MAX_WIDTH;
+                            }
+                        } else {
+                            if (height > MAX_HEIGHT) {
+                                width *= MAX_HEIGHT / height;
+                                height = MAX_HEIGHT;
+                            }
+                        }
+
+                        canvas.width = width;
+                        canvas.height = height;
+
+                        // 3. Draw and Compress
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        // Convert to JPEG with 0.7 (70%) quality
+                        // This reduces a 5MB PNG/JPEG to ~200KB without major loss
+                        let compressedBase64 = canvas.toDataURL('image/jpeg', 0.7);
+
+                        // 4. Insert the COMPRESSED preview
+                        $btn.before('<img src="' + compressedBase64 + '" class="user-selected-img" />');
+
+                        processed++;
+                        if (processed === files.length) {
+                            $parent.find('.temp-loading').remove();
+                            fileInput.remove();
+                        }
+                    };
                 };
-
-                reader.onerror = function (err) {
-                    console.error("[ERROR] FileReader failed:", err);
-                };
-
                 reader.readAsDataURL(file);
             });
         };
     });
 }
-
 
 
 
