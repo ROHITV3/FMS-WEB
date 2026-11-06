@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/CordovaLib/AndroidManifest.xml:20:1-23:12
-INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/CordovaLib/AndroidManifest.xml:20:1-23:12
+ADDED from G:\2026 ANDROID PROJECT\FMS 3\WAM3\platforms\android\CordovaLib\AndroidManifest.xml:20:1-23:12
+INJECTED from G:\2026 ANDROID PROJECT\FMS 3\WAM3\platforms\android\CordovaLib\AndroidManifest.xml:20:1-23:12
 	package
-		INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/CordovaLib/AndroidManifest.xml
+		INJECTED from G:\2026 ANDROID PROJECT\FMS 3\WAM3\platforms\android\CordovaLib\AndroidManifest.xml
 	android:versionName
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/CordovaLib/AndroidManifest.xml:21:3-28
+		ADDED from G:\2026 ANDROID PROJECT\FMS 3\WAM3\platforms\android\CordovaLib\AndroidManifest.xml:21:3-28
 	xmlns:android
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/CordovaLib/AndroidManifest.xml:20:11-69
+		ADDED from G:\2026 ANDROID PROJECT\FMS 3\WAM3\platforms\android\CordovaLib\AndroidManifest.xml:20:11-69
 	android:versionCode
-		ADDED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/CordovaLib/AndroidManifest.xml:22:3-26
+		ADDED from G:\2026 ANDROID PROJECT\FMS 3\WAM3\platforms\android\CordovaLib\AndroidManifest.xml:22:3-26
 uses-sdk
-INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/CordovaLib/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/CordovaLib/AndroidManifest.xml
-INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/CordovaLib/AndroidManifest.xml
+INJECTED from G:\2026 ANDROID PROJECT\FMS 3\WAM3\platforms\android\CordovaLib\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from G:\2026 ANDROID PROJECT\FMS 3\WAM3\platforms\android\CordovaLib\AndroidManifest.xml
+INJECTED from G:\2026 ANDROID PROJECT\FMS 3\WAM3\platforms\android\CordovaLib\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/CordovaLib/AndroidManifest.xml
+		INJECTED from G:\2026 ANDROID PROJECT\FMS 3\WAM3\platforms\android\CordovaLib\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/priyanka/Documents/android-apps/WAM3/platforms/android/CordovaLib/AndroidManifest.xml
+		INJECTED from G:\2026 ANDROID PROJECT\FMS 3\WAM3\platforms\android\CordovaLib\AndroidManifest.xml

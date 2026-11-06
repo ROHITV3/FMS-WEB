@@ -25,16 +25,15 @@ layout actionbar_discard_button
 layout actionbar_done_button
 layout custom_splash
 layout multiselectorgrid
+mipmap ic_launcher
 string activity_name
 string app_name
 string com.crashlytics.android.build_id
 string default_notification_channel_id
 string default_notification_channel_name
-string default_web_client_id
 string discard
 string done
 string error_database
-string firebase_database_url
 string free_version_label
 string gcm_defaultSenderId
 string google_api_key
@@ -50,7 +49,7 @@ string processing_images_message
 string project_id
 string requesting_thumbnails
 style MyTheme
-style Theme.WAM3.Splash
+style Theme.FMS.Splash
 xml camera_provider_paths
 xml cdv_core_file_provider_paths
 xml config

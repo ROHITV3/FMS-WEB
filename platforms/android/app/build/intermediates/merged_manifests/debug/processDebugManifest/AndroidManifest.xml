@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.v3.wam"
+    package="com.v3smarttech.fms3"
     android:hardwareAccelerated="true"
-    android:versionCode="4030000"
-    android:versionName="4.3.0" >
+    android:versionCode="101040"
+    android:versionName="1.1.4" >
 
     <uses-sdk
         android:minSdkVersion="24"
@@ -103,7 +103,7 @@
         android:name="android.permission.BLUETOOTH_SCAN"
         android:usesPermissionFlags="neverForLocation" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-    <uses-permission android:name="com.v3.wam.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+    <uses-permission android:name="com.v3smarttech.fms3.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
@@ -112,7 +112,7 @@
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <permission
-        android:name="com.v3.wam.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.v3smarttech.fms3.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
     <application
@@ -120,20 +120,20 @@
         android:debuggable="true"
         android:extractNativeLibs="false"
         android:hardwareAccelerated="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:testOnly="true"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.v3.wam.MainActivity"
+            android:name="com.v3smarttech.fms3.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
             android:exported="true"
-            android:label="WAM3"
+            android:label="FMS"
             android:launchMode="singleTop"
-            android:theme="@style/Theme.WAM3.Splash"
+            android:theme="@style/Theme.FMS.Splash"
             android:windowSoftInputMode="adjustResize" >
-            <intent-filter android:label="WAM3" >
+            <intent-filter android:label="FMS" >
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -152,7 +152,7 @@
 
         <provider
             android:name="org.apache.cordova.camera.FileProvider"
-            android:authorities="com.v3.wam.cordova.plugin.camera.provider"
+            android:authorities="com.v3smarttech.fms3.cordova.plugin.camera.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -420,7 +420,7 @@
             android:exported="true"
             android:noHistory="true" > <!-- optional, removes the previewActivity from the activity stack. -->
             <intent-filter>
-                <data android:scheme="tagmanager.c.com.v3.wam" />
+                <data android:scheme="tagmanager.c.com.v3smarttech.fms3" />
 
                 <action android:name="android.intent.action.VIEW" />
 
@@ -457,13 +457,13 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.v3.wam.firebaseinitprovider"
+            android:authorities="com.v3smarttech.fms3.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.v3.wam.androidx-startup"
+            android:authorities="com.v3smarttech.fms3.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

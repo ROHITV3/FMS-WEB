@@ -1,4 +1,4 @@
-com.v3.wam
+com.v3smarttech.fms3
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1226,6 +1226,7 @@ layout support_simple_spinner_dropdown_item
 menu capture
 menu encode
 menu history
+mipmap ic_launcher
 raw beep
 raw firebase_common_keep
 raw firebase_crashlytics_keep
@@ -1322,7 +1323,6 @@ string contents_text
 string copy_toast_msg
 string default_notification_channel_id
 string default_notification_channel_name
-string default_web_client_id
 string discard
 string done
 string error_database
@@ -1330,7 +1330,6 @@ string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
 string fcm_fallback_notification_channel_label
-string firebase_database_url
 string free_version_label
 string gcm_defaultSenderId
 string google_api_key
@@ -1746,12 +1745,12 @@ style Theme_AppCompat_Light_Dialog_MinWidth
 style Theme_AppCompat_Light_DialogWhenLarge
 style Theme_AppCompat_Light_NoActionBar
 style Theme_AppCompat_NoActionBar
+style Theme_FMS_Splash
 style Theme_Hidden
 style Theme_PlayCore_Transparent
 style Theme_SplashScreen
 style Theme_SplashScreen_Common
 style Theme_SplashScreen_IconBackground
-style Theme_WAM3_Splash
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark

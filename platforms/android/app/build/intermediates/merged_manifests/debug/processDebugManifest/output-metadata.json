@@ -4,15 +4,15 @@
     "type": "MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.v3.wam",
+  "applicationId": "com.v3smarttech.fms3",
   "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 4030000,
-      "versionName": "4.3.0",
+      "versionCode": 101040,
+      "versionName": "1.1.4",
       "outputFile": "AndroidManifest.xml"
     }
   ],

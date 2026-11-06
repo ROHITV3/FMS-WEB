@@ -1,377 +1,88 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; media-src *; img-src * filesystem: data:">
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-<!--        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover" />-->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover" />
-
-       <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css">
-		<!-- <link rel="stylesheet" href="lib/jquery-ui.css" /> -->
-<!--		<script src="lib/jquery.min.js"></script>-->
-                <script src="lib/jquery-new2.js"></script>
-		<script type="text/javascript">
-			$(document).bind("mobileinit", function(){
-				$.mobile.pushStateEnabled = false;
-			});
-		</script>
-		<script src="lib/jquery.mobile-1.4.5.min.js"></script>
-		<script src="lib/jquery-ui.min.js"></script> <!-- must have this for PN to work -->
-<!--                <script src="js/jquery-2.1.4.min.js"></script>-->
-		<script src="cordova.js"></script>
-		<script src="lib/base64.min.js"></script>
-		<script src="lib/jsignature/jSignature.min.js"></script>
-
-		<script type="text/javascript" src="lib/spark-md5.min.js"></script>
-
-		<link rel="stylesheet" href="css/index.css" />
-		<script src="js/index.js"></script>
-                <script src="js/v3nity-database.js"></script>
-                <script src="js/pushNotificationHandler.js"></script>
-                <script src="js/registerPN.js"></script>
-                <script src="js/registerFCM.js"></script>
-                <script src="js/bluetooth.js"></script>
-
-
-                <!--<script src="cordova.js"></script>-->
-    </head>
-    <body onResize="onResize()">
-    	<!---------------  Confirm Popup --------------->
-	<div data-role="popup" id="confirmPopup" data-overlay-theme="b" data-shadow="true" data-dismissible="false" class="ui-corner-all" data-position-to="window" >
-                <div class="confirmTitle"> </div>
-                <div class="confirmText"> </div>
-                <div class="confirmBtn"> </div>
-	</div>
-	<!-------------  END OF Confirm Popup -------------->
-
-        <!---------------  Confirm Popup for camera and gallery images--------------->
-	<div data-role="popup" data-rel="popup" id="confirmPopupImages" data-overlay-theme="b" data-shadow="true" data-dismissible="false" class="ui-corner-all" style="display:none; width:100%; position:fixed; top:52px; left:0px;" >
-                <div class="confirmTitle"> </div>
-                <div class="confirmText"> </div>
-                <div class="confirmBtn"> </div>
-	</div>
-	<!-------------  END OF Confirm Popup -------------->
-
-	<!-------------  Signature Popup -------------->
-	<div id="signaturepopup">
-                <div id="signature">
-                        <div class="verifyTitle">Signature</div>
-                        <div class="verifyText"><span>Please sign here.</span><br>
-                                <div id="signatureview"> </div>
-                        </div>
-                        <div class="verifyBtn">
-                                <div class="verify0">✂</div>
-                                <div class="verify1">✔</div>
-                        </div>
-                </div>
-	</div>
-        <!-------------  END OF Signature Popup -------------->
-
-	<!-------------  Edit Image Popup -------------->
-<!--	<div id="editimagepopup">
-                <div id="editimage">
-                        <div class="verifyTitle">Drawing</div>
-                        <div class="verifyText"><span>Please draw here.</span><br>
-                                <div id="editimageview"> </div>
-                        </div>
-                        <div class="verifyBtn">
-                                <div class="verify0">✂</div>
-                                <div class="verify1">✔</div>
-                        </div>
-                </div>
-	</div>-->
-        <!-------------  END OF Edit Image Popup -------------->
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; connect-src http://app.v3teletech.com http://www.v3nity.com; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+    <!-- comment away above if not cannot use mainframe, not sure if it will cause any security issue -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/V3Nity3Index.css">
+    <link rel="stylesheet" type="text/css" href="css/V3Nity3Frame.css">
+    <title>V3Nity FMS</title>
 
 
 
-        <!-------------  Image Popup -------------->
-	<div id="imagepopup"  data-role="popup" data-rel="popup" data-overlay-theme="b" data-shadow="true" data-dismissible="true" class="ui-corner-all" style="display:none; position:fixed; top:0px; left:0px;" >
-                <div id="image">
-                    <img src="">
-                </div>
-	</div>
-        <!-------------  END OF Image Popup -------------->
+</head>
+<body>
+<div id="startLoad">
+    <table>
+        <tr class="top">
+            <td style="text-align: right;">
+                &nbsp;
+            </td>
+        </tr>
+        <tr class="middle">
+            <td>
+                <p id="QRButton">
+                    <img id="v3nityImage" src="img/v3nity-logo.png"/>
+                    <br>
+                    <br>
+                    <br>
+                    <!-- Javascript will add button in here after PN registration attempt -->
+                </p>
+            </td>
+        </tr>
+        <tr class="top">
+            <td id="countDown">
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="mainFrame" style="display:none;">
 
-        <!-------------  Drawing Popup -------------->
-	<div id="drawingpopup" style="">
-                <div id="drawing">
-                        <div class="verifyTitle">Drawing</div>
-                        <div class="verifyText"><span>Please draw here.</span><br>
-                                <div id="drawingview"> </div>
-                        </div>
-                        <div class="verifyBtn">
-                                <div class="verify0">✂</div>
-                                <div class="verify1">✔</div>
-                        </div>
-                </div>
-	</div>
-        <!-------------  END OF Drawing Popup -------------->
+    <div class="V3Nity3Portal" id="V3Nity3Portal-iframe">
 
+    </div>
+</div>
 
+<!--
+The following 3 .js is from this QR code scanner tutorial.
+It came from https://www.sitepoint.com/scanning-qr-code-cordova/
+-->
 
+<!--
+jquery is needed for the device ID and the push notification registration.
+-->
+<script type="text/javascript" src="lib/jquery-new2.js"></script>
 
-        <!-------------  Index Page  ---------------->
-        <div data-role="page" class="ui-page" id="index">
-                <div id="loginBox">
-                        <form action="javascript:login();">
-                                <img class="loginLogo" src="img/v3nity-logo.png" />
-                                <span class="loginLogoText">Powered by V3 Smart Technologies Pte. Ltd.</span>
-                                <input type="text" name="loginUser" id="loginUser" class="loginInput" placeholder="Username" data-theme="a"/>
-                                <input type="password" name="loginPassword" id="loginPassword" class="loginInput" placeholder="Password" data-theme="a" />
-                                <div id="registerDeviceText">Register New Device</div>
-                                <div id="registerShell">
-                                        <input type="text" name="registerDeviceBtn" id="registerDeviceBtn" class="loginInput" placeholder="Register Device" data-theme="a" />
-                                </div>
-                                <div id="unitIdShell">
-                                        <input type="text" name="unitId" id="unitId" class="loginInput" placeholder="Unit ID" />
+<!--
+Not sure what is the purpose of this...
+if both jquery and jquery.mobile-1.4.5.min.js are included, there will be
+a "loading" text at the bottom, and trying to navigate to another page within the app
+will cause that other page to load inside index.html at the bottom...??!?
+-->
+<!-- <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script> -->
 
-                                </div>
-                                <p id="ManualRegistrationLink"><a id="ManualRegistrationBtn" >Manual Registration</a></p>
+<!-- cordova.js is needed for the QR code scanner.
+In my index.js when calling the camera, there is this line cordova.plugins.barcodeScanner.scan -->
+<script type="text/javascript" src="cordova.js"></script>
 
-                                <div id="overlay" >
-                                    <div id="overlayBG">
+<!-- push notification registration function refactored to another .js file -->
+<script type="text/javascript" src="js/registerPN.js"></script>
+<script type="text/javascript" src="js/registerFCM.js"></script>
+<!-- push notification handling functions refactored to another .js file -->
+<script type="text/javascript" src="js/pushNotificationHandler.js"></script>
 
-                                        <div>
-                                          <input type="text" name="loginUser" id="loginmanualUser" class="loginInput" placeholder="Username" data-theme="a"/>
-                                        </div>
-
-                                        <div>
-                                          <input type="password" name="loginPassword" id="loginmanualPassword" class="loginInput"  placeholder="Password" data-theme="a" />
-                                        </div>
-
-                                        <div style="width:100%; height:100%"  >
-                                          <input type="button" class="loginmanualBtn" id="btnmOk" data-role="none" value="Ok"  />
-                                          <input type="button" class="loginmanualBtn" id="btnmCancel" data-role="none" value="Cancel"  />
-                                        </div>
-
-                                     </div>
-                                </div>
-
-
-                                <input class="loginBtn" data-role="none" type="submit" value="LOG IN" />
-                        </form>
-                </div>
-		<img id="settingsBtn" src="img/settings.png" />
-		<div id="customer"> </div>
-		<div id="version"></div>
-   	</div>
-        <!-------------  END OF Index Page  ----------------->
-
-        <!-------------  Manual Device Registration Page  ---------------->
-
-        <div data-role="page" class="ui-page" id="ManualDeviceRegistrationPage">
-		<div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false"  data-hide-during-focus="" >
-			<h1>Manual Device Registration</h1><div class="navBtn top left backBtn"><img src="img/arrow-left-c.png" /></div>
-                </div>
-            <div id="InputList">
-                <table id="inputdata" align = "center" cellpadding="10">
-                    <tr>
-                        <td>Domain</td>
-                        <td><input type="text" id="domain"/></td>
-                    </tr>
-                    <tr>
-                        <td>Application Name</td>
-                        <td><input type="text" id="applicationName" /></td>
-                    </tr>
-                    <tr>
-                        <td>Company</td>
-                        <td><input type="text" id="companyName"/></td>
-                    </tr>
-                    <tr>
-                        <td>Label</td>
-                        <td><input type="text" id="labelName"/></td>
-                    </tr>
-                    <tr>
-                        <td>Unit ID</td>
-                        <td><input type="text" id="unitIdName"/></td>
-                    </tr>
-
-                    <tr>
-                        <td>Offline Records</td>
-                        <td><input type="number" id="offlineRecords"/></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2" align="center">
-                            <input class="SaveBtn" type="submit" value="Save">
-                            <input class="CancelBtn" type="submit" value="Cancel">
-                        </td>
-                    </tr>
-                </table>
-
-
-            </div>
-
-
-        </div>
-        <!-------------  END OF Manual Device Registration Page ----------------->
-
-        <!-------------  Settings Page  ---------------->
-	<div data-role="page" class="ui-page" id="settings">
-		<div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
-			<h1>Settings</h1><div class="navBtn top left backBtn"><img src="img/arrow-left-c.png" /></div>
-		</div>
-		<div class="settingsList">
-                    <h2 id="languageHeader">Language</h2>
-                    <select id="languageSelect"></select>
-                    <br/>
-                    <br/>
-                    <h2 id="calendarModeHeader">Calendar Mode</h2>
-                    <select id="calendarModeSelect">
-                        <option value='0'>OFF</option>
-                        <option value='1'>ON</option>
-                    </select>
-		</div>
-	</div>
-
-        <!-------------  END OF Settings Page  ----------------->
-
-
-        <!------------- CALENDAR PAGE START -------------------->
-    	<div data-role="page" class="ui-page" id="calendar">
-            <link rel="stylesheet" href="modules/calendar/css/calendar.css" />
-            <script type="text/javascript" src="modules/calendar/js/calendar.js"></script>
-
-            <div role="main" class="ui-content" id="calendar_content">
-                <script>
-                    $("#calendar_content").load('modules/calendar/calendar.html', function () {
-                            $(this).trigger('create');
-                    });
-                </script>
-            </div>
-        </div>
-        <!------------- CALENDAR PAGE END -------------------->
-
-
-        <!-------------  Sync Job Page  ---------------->
-	<div data-role="page" class="ui-page" id="syncjobList">
-            <link rel="stylesheet" href="css/synctasklist.css" />
-            <link rel="stylesheet" href="css/tasklist.css" />
-            <link rel="stylesheet" href="css/index.css" />
-                <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
-                        <h1>Jobs Uploading</h1>
-                        <div class="navBtn top left backBtn"><img src="img/arrow-left-c.png" /></div>
-		</div>
-		<div class="jobItemList">
-			<ul> </ul>
-		</div>
-                <div class="footer" data-role="footer" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
-			<div class="uploadCount"><span>-</span>
-                        <img src="img/upload.png" /></div>
-		</div>
-	</div>
-
-        <!-------------  END OF Sync Job Page  ----------------->
-
-
-	<!-------------  Main Page  ---------------->
-	<div data-role="page" class="ui-page" id="main">
-		<link rel="stylesheet" href="css/tasklist.css" />
-		<div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
-				<!-- <h1>Job List</h1> -->
-				<!-- <div class="navBtn top left exitBtn"><img src="img/power.png" /></div> -->
-                        <div style="visibility: hidden" id="calendarNav" class="navBtn top left calendarBtn"><img src="img/calendar_white.png" /></div>
-                        <div style="visibility: hidden" id="logoutNav" class="navBtn top left logoutBtn"><img src="img/log-out.png" /></div>
-			<div class="navBtn top right adhocBtn"><img src="img/add.png" /></div>
-		</div>
-
-                <div>
-                    <i class="fa fa-search"></i>
-                    <input class="inputSearchBox" type="text" placeholder="SEARCH" id="inputSearch"/>
-                </div>
-
-		<div class="jobList">
-			<ul> </ul>
-		</div>
-
-		<div class="footer" data-role="footer" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
-			<div class="jobCount"><span>-</span><img src="img/job-white.png" /></div><div class="uploadCount"><span>-</span><img src="img/upload.png" /></div>
-			<div class="lastUpdate">Last Updated: <span>-</span></div>
-			<div class="navBtn bot right1 autorefreshBtn"><img id="autorefreshimg" src="img/ref_on.png" /></div>
-			<div class="navBtn bot right refreshBtn"><img src="img/refresh.png" /></div>
-			<div class="navBtn bot left HistoryBtn"><img id="historyimg" src="img/currentjob.png" /></div>
-		</div>
-	</div>
-	<!-------------  END OF Main Page  ----------------->
-
-        <!-------------  Queue Page  ---------------->
-	<div data-role="page" class="ui-page" id="queue" >
-		<link rel="stylesheet" href="css/queuelist.css" />
-		<div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
-			<h1>Queue List</h1>
-			<div class="navBtn top left backBtn"><img src="img/arrow-left-c.png" /></div>
-			<div class="navBtn top right logBtn"><img src="img/info_off.png" /></div>
-		</div>
-		<div class="logView">
-
-		</div>
-
-	</div>
-        <div data-role="page" class="ui-page" id="admin" >
-		<link rel="stylesheet" href="css/queuelist.css" />
-		<div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
-			<h1>Admin Page</h1>
-			<div class="navBtn top left backBtn"><img src="img/arrow-left-c.png" /></div>
-		</div>
-
-		<div class="logFiles">
-		</div>
-                <input class="" id="copyToStorage"  type="button" value="copyLogFilesToStorage" />
-                <input class="" id="copyJobToStorage"  type="button" value="copyJobFileToStorage(Not Using)" />
-                <br>
-                <input class="" id="deleteAllFiles"  type="button" value="deleteAllFiles" />
-                <div id="adminUpload">
-                </div>
-                <div id="adminWAM"></div>
-	</div>
-        <!-------------  END OF Queue Page  ----------------->
-
-        <!-------------  Form Page  ---------------->
-	<div data-role="page" class="ui-page" id="form">
-		<link rel="stylesheet" href="css/form.css" />
-		<div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
-			<h1>Form Editor</h1><div class="navBtn top left backBtn"><img src="img/arrow-left-c.png" /></div><div class="navBtn top right submitBtn"><img src="img/android-send.png" /></div>
-		</div>
-		<div role="main" class="ui-content" id="form_content"></div>
-		<div class="footer" data-role="footer" data-theme="a" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
-			<div class="navBtn bot right saveBtn"><img src="img/save.png" /></div>
-		</div>
-	</div>
-        <!-------------  END OF Form Page  ----------------->
-
-        <fieldset style="display:none">
-            <input type="hidden" id="mainSelectedDate" value="">
-        </fieldset>
-
-
-
-    </body>
-<!--    <script>
-        $( document ).on( "change", "#flip-a",  function( event, ui ) {
-            var selected = $(this).val();
-    alert(selected);
-} );
-    </script>-->
+<!-- index.js must be below, else the camera will not work -->
+<script type="text/javascript" src="js/index.js"></script>
+</body>
 </html>
